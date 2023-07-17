@@ -53,6 +53,10 @@ h1 {
     transition: 0.3s ease;
   }
   
+  .button:hover {
+    transform: scale(1.1);
+  }
+
   .button:hover::before,
   .button:focus::before {
     width: 100%;
