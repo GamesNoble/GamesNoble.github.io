@@ -30,6 +30,7 @@ h1 {
 
 
 .button {
+  position: relative;
   background-color: white;
   border: none;
   border-radius: 10px;
@@ -41,9 +42,26 @@ h1 {
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
+.button:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+  border-radius: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
 .button:hover,
 .button:focus {
   background-color: #f0f0f0;
   transform: scale(1.2);
-  transform-origin: center;
+}
+
+.button:hover:before,
+.button:focus:before {
+  opacity: 1;
 }
