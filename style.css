@@ -18,11 +18,7 @@ body {
 }
 
 .button {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: rgb(32, 32, 32);
+  background-color: rgb(0, 255, 106);
   border: none;
   border-radius: 10px;
   padding: 15px 30px;
@@ -30,10 +26,29 @@ body {
   font-weight: 200;
   font-size: 20px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .button:hover,
 .button:focus {
-  background-color: #02fd88;
+  transform: scale(1.1);
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(240, 240, 240, 0.3);
+  border-radius: 10px;
+  pointer-events: none;
+  transition: transform 0.3s ease;
+  transform: scale(0);
+}
+
+.button:hover::before,
+.button:focus::before {
+  transform: scale(1);
 }
