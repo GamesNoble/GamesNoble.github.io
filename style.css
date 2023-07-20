@@ -3,7 +3,7 @@
 body {
   display: flex;
   justify-content: center;
-  align-items: center; /* Change this to center or flex-end */
+  align-items: center;
   height: 100vh;
   margin: 0;
   background-color: #252525;
@@ -17,7 +17,12 @@ body {
   color: rgb(0, 255, 106);
 }
 
+.container {
+  text-align: center;
+}
+
 .button {
+  display: inline-block;
   background-color: rgb(0, 255, 106);
   border: none;
   border-radius: 10px;
@@ -46,9 +51,4 @@ body {
   pointer-events: none;
   transition: transform 0.3s ease;
   transform: scale(0);
-}
-
-.button:hover::before,
-.button:focus::before {
-  transform: scale(1);
 }
