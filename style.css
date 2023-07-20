@@ -3,7 +3,7 @@
 body {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center; /* Change this to center or flex-end */
   height: 100vh;
   margin: 0;
   background-color: #252525;
