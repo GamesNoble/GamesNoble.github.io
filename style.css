@@ -18,11 +18,13 @@ body {
 }
 
 .container {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .button {
-  display: inline-block;
+  margin-top: 20px; /* Add some top margin to separate the button from the heading */
   background-color: rgb(0, 255, 106);
   border: none;
   border-radius: 10px;
@@ -52,3 +54,4 @@ body {
   transition: transform 0.3s ease;
   transform: scale(0);
 }
+
