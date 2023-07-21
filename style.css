@@ -1,7 +1,7 @@
+/* Your existing CSS styles here */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
 
 body {
-  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -9,7 +9,6 @@ body {
   height: 100vh;
   margin: 0;
   background-color: #252525;
-  overflow: hidden; /* Hide any overflowing content, which might occur due to animation */
 }
 
 .centered-heading {
@@ -18,7 +17,7 @@ body {
   font-size: 100px;
   text-align: center;
   color: rgb(0, 255, 106);
-  margin-top: 20px; /* Add some top margin to separate the heading from the button */
+  margin-top: 20px;
 }
 
 .button {
@@ -37,26 +36,3 @@ body {
 .button:focus {
   transform: scale(1.1);
 }
-
-/* Tear Drop Animation */
-.tear-drop {
-  position: absolute;
-  width: 8px;
-  height: 16px;
-  border-radius: 50% 50% 40% 40%;
-  background-color: rgb(0, 255, 106);
-  animation: fall 5s linear infinite, drift 3s ease-in-out infinite alternate;
-}
-
-@keyframes fall {
-  0% { top: -10px; opacity: 0; }
-  50% { opacity: 1; }
-  100% { top: 110vh; opacity: 0; }
-}
-
-@keyframes drift {
-  0%, 100% { transform: translateX(0); }
-  50% { transform: translateX(10px); }
-}
-
-
