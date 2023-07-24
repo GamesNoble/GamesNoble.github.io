@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,9 +8,57 @@
   <link rel="stylesheet" type="text/css" href="style.css">
   <style>
     /* Your original CSS styles go here (if any) */
+
+    /* Sidebar styles */
+    .sidebar {
+      position: fixed;
+      top: 0;
+      right: -200px;
+      height: 100%;
+      width: 200px;
+      background-color: #333;
+      padding-top: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      transition: right 0.3s ease;
+    }
+
+    .sidebar.show-sidebar {
+      right: 0;
+    }
+
+    .sidebar a {
+      color: white;
+      text-decoration: none;
+      margin: 10px 0;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    .magnifying-glass {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 24px;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <a href="./index.html">Home</a>
+    <a href="./about.html">About</a>
+    <a href="./games.html">Games</a>
+    <!-- Add more anchor links for other pages -->
+  </div>
+
+  <!-- Magnifying Glass Icon -->
+  <div class="magnifying-glass" id="magnifyingGlass">🔍</div>
+
+  <!-- Main Content -->
   <h1 class="centered-heading">Mokeleven</h1>
   <a href="./games/"><button class="button">Games</button></a>
   <div class="rain-container">
@@ -20,8 +67,20 @@
 
   <script>
     // Your original JavaScript code goes here (if any)
+    document.addEventListener("DOMContentLoaded", function () {
+      const magnifyingGlass = document.getElementById("magnifyingGlass");
+      const sidebar = document.getElementById("sidebar");
+
+      function toggleSidebar() {
+        sidebar.classList.toggle("show-sidebar");
+      }
+
+      magnifyingGlass.addEventListener("mouseenter", toggleSidebar);
+      sidebar.addEventListener("mouseleave", toggleSidebar);
+    });
   </script>
   <script src="./script.js"></script>
 </body>
 </html>
+
 
