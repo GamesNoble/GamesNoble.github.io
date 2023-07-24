@@ -7,55 +7,45 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="style.css">
   <style>
-    /* Sidebar styles */
-    .sidebar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 200px;
-      background-color: #333;
-      padding-top: 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      transition: transform 0.3s ease;
-    }
-
-    .sidebar a {
-      color: white;
-      text-decoration: none;
-      margin: 10px 0;
-      font-size: 18px;
-    }
-
-    .sidebar.show-sidebar {
-      transform: translateX(0);
-    }
-
+    /* ... Your existing styles ... */
+    
+    /* Styles for the magnifying glass icon */
     .magnifying-glass {
-      position: absolute;
+      position: fixed;
       top: 20px;
       right: 20px;
       font-size: 24px;
       cursor: pointer;
+      transition: transform 0.3s ease; /* Added a transition for smooth sliding */
+    }
+    
+    /* Styles for the expanded sidebar */
+    .sidebar-expanded {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 200px;
+      height: 100vh;
+      background-color: #252525;
+      z-index: 1;
+      transform: translateX(100%); /* Initial position outside the screen */
+      transition: transform 0.3s ease; /* Added a transition for smooth sliding */
+    }
+    
+    /* Styles to show the expanded sidebar */
+    .show-sidebar .sidebar-expanded {
+      transform: translateX(0); /* Show the sidebar when class "show-sidebar" is added */
     }
   </style>
 </head>
 <body>
-  <!-- Sidebar -->
-  <div class="sidebar" id="sidebar">
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#games">Games</a>
-    <!-- Add more anchor links for other pages -->
-  </div>
+  <!-- The magnifying glass icon -->
+  <div class="magnifying-glass" onclick="toggleSidebar()">🔍</div>
 
-  <!-- Magnifying Glass Icon -->
-  <div class="magnifying-glass" id="magnifyingGlass">🔍</div>
+  <!-- The sidebar -->
+  <div class="sidebar-expanded"></div>
 
-  <!-- Main Content -->
+  <!-- Your existing content -->
   <h1 class="centered-heading">Mokeleven</h1>
   <a href="./games/"><button class="button">Games</button></a>
   <div class="rain-container">
@@ -63,18 +53,9 @@
   </div>
 
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const magnifyingGlass = document.getElementById("magnifyingGlass");
-      const sidebar = document.getElementById("sidebar");
-
-      function toggleSidebar() {
-        sidebar.classList.toggle("show-sidebar");
-      }
-
-      magnifyingGlass.addEventListener("mouseenter", toggleSidebar);
-      magnifyingGlass.addEventListener("mouseleave", toggleSidebar);
-    });
+    function toggleSidebar() {
+      document.body.classList.toggle("show-sidebar");
+    }
   </script>
-  <script src="./script.js"></script>
 </body>
 </html>
