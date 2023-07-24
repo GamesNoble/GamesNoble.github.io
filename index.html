@@ -8,7 +8,7 @@
   <link rel="stylesheet" type="text/css" href="style.css">
   <style>
     /* ... Your existing styles ... */
-    
+
     /* Styles for the magnifying glass icon */
     .magnifying-glass {
       position: fixed;
@@ -18,7 +18,7 @@
       cursor: pointer;
       transition: transform 0.3s ease; /* Added a transition for smooth sliding */
     }
-    
+
     /* Styles for the expanded sidebar */
     .sidebar-expanded {
       position: fixed;
@@ -31,7 +31,7 @@
       transform: translateX(100%); /* Initial position outside the screen */
       transition: transform 0.3s ease; /* Added a transition for smooth sliding */
     }
-    
+
     /* Styles to show the expanded sidebar */
     .show-sidebar .sidebar-expanded {
       transform: translateX(0); /* Show the sidebar when class "show-sidebar" is added */
@@ -43,11 +43,14 @@
   <div class="magnifying-glass" onclick="toggleSidebar()">🔍</div>
 
   <!-- The sidebar -->
-  <div class="sidebar-expanded"></div>
+  <div class="sidebar-expanded" onmouseleave="hideSidebar()">
+    <a href="./games/"><button class="button">Games</button></a>
+    <a href="./about/"><button class="button">About</button></a>
+    <a href="./home/"><button class="button">Home</button></a>
+  </div>
 
   <!-- Your existing content -->
   <h1 class="centered-heading">Mokeleven</h1>
-  <a href="./games/"><button class="button">Games</button></a>
   <div class="rain-container">
     <div class="raindrop"></div>
   </div>
@@ -55,6 +58,10 @@
   <script>
     function toggleSidebar() {
       document.body.classList.toggle("show-sidebar");
+    }
+
+    function hideSidebar() {
+      document.body.classList.remove("show-sidebar");
     }
   </script>
 </body>
