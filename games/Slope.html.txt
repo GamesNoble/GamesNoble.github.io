@@ -1,0 +1,1900 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-YM453QYRHC"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+
+            gtag('config', 'G-YM453QYRHC');
+        </script>
+        <title>Slope Game</title>
+        <meta name="description" content="Slope Game is a fantastic speed run game where you can drive a ball rolling on tons of slopes and obstacles. See how far you can go in this endless course.">
+        <meta name="title" content="Slope Game">
+        <meta name="keywords" content="Slope Game">
+        <meta name="news_keywords" content="Slope Game">
+        <link rel="canonical" href="https://slopegame.io/">
+        <link rel="icon" href="/upload/imgs/options/slope-game-character5.png"/>
+        <meta property="og:title" content="Slope Game" itemprop="headline"/>
+        <meta property="og:type" content="website"/>
+        <meta property="og:url" itemprop="url" content="https://slopegame.io/"/>
+        <meta property="og:image" itemprop="thumbnailUrl" content="/upload/imgs/options/slope.jpg"/>
+        <meta property="og:description" content="Slope Game is a fantastic speed run game where you can drive a ball rolling on tons of slopes and obstacles. See how far you can go in this endless course." itemprop="description"/>
+        <meta property="og:site_name" content="Slope Game"/>
+        <link rel="apple-touch-icon" href="/upload/imgs/options/slope-game-character5.png"/>
+        <meta name="twitter:title" content="Slope Game"/>
+        <meta name="twitter:url" content="https://slopegame.io/"/>
+        <meta name="twitter:image" content="/upload/imgs/options/slope.jpg"/>
+        <meta name="twitter:description" content="Slope Game is a fantastic speed run game where you can drive a ball rolling on tons of slopes and obstacles. See how far you can go in this endless course."/>
+        <meta name="twitter:card" content="summary"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/themes/slopegame.io/rs/css/reboot.css">
+        <link rel="stylesheet" href="/themes/slopegame.io/rs/css/grid.css">
+        <link rel="stylesheet" href="/themes/slopegame.io/rs/css/main.css?v=1.2">
+        <script data-ad-client="ca-pub-8691120312399474" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    </head>
+    <body>
+        <div class="container slopegameio-menu">
+            <div class="row">
+                <div class="slopegameio-menu-block col-24 col-lg-24 col-xl-7 col-xxl-7 col-x3l-6">
+                    <div class="slopegameio-menu-content">
+                        <div class="row">
+                            <div class="col-2 col-lg-1 col-xl-3">
+                                <div class="btn-home">
+                                    <a href="/">
+                                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAADsUlEQVR4nO3ZTYhVZRzH8efo2JhkmRVWZhHVBAm9QGFQCUWEUOEiIjQSiphtS6lVixbVIpqlYQSBkKBBQSC06AUqK3oxXFRYBL1ZaQ1SOeY0nxbnDj2cOc+5c8frfS56vst7f8/5//6/e85z/ufcEFpaWnKAEUxgG87I7Weg4AK85X/ew0W5fQ0E3IDvzOVHrMvt76SCzfi7pvlZpvBIbp99B4vxdEPjVbZhSW7ffQHn4c0emp/lXaxKHLMrg+6zFlyLbxMej+MxjOOfhOZ73Fhz3OEPAA/gz4S/Q7gj0t6KXxLao9hSOfbwBoACT2Im4e0LXF6zbg0+aehpAos72uEMAGfjtQZfb+CchvVn4dWG9Xtw7lAGgGvwdcLPDJ7Cokg/ihfwLIro80UdbeoMStXIFwDuxmTCy1E8VNGvxgeR5mWV2x7ux1/zaTZbAMrrfSv+Tfj4ATdV1tyGn2u0r+PMivY69VNj/gCU1+vuBg/v48LKmqZbHryjskfgfLw9VAHgSuxvqL9D9GtiKV6ap/f9WF2pN4oXhyIAbMDvibrT2FrRX4qPezGvHJ6uqqk9rhyg8gSgnNymEzWP4N6asA732PwsB3F9jYe7pH+AkxMAluGVhnpfYizSF3hCOqz5Mon1NX7GOjWbWNav5tdoPoX3YEWkX45dJ9h4zBTuq/G1XHnnSLFPzcTZa/PrpWd0ysfWkUg/pnlzXCjTeLTGX7fH7EO4c6HNN92ypvBwRX+P9DDUD2ZUNtio9ibpFy1zNuZujXe75fwqui51H4b6zYRopI583IyfGtbt0G1fUI6oexsO8hkui/QrlXvAoJkzOnf8XIyPGtZ9KvJfXXyL+hF1lp2iBJVj6jd9amghzBmdO76WKgNK8Rtury4ax7HEghnlRhM/sW2SftkxSOaMzh1/3S7L4+J9AdsTwiPYGOlG8HyfmzhRPld55oj8blT2UMf2WLhE2Vh8FuzF2kizygIeSgbEAVyRCGEtPoy0U3hO5/ZdVMQrQghXhxAOF0VxIPp8XQhhVwjhkroiQ8LBEMKGoij21X2pfLZYGUL4qiiKyXkfFVs0/5kxTPyhZnRuougmYAheMffGsRDCg0VR7J6PeM5AcQowGkLYqWZ0rmNgZ0BRFF1r9bmuEMLjRVE80yQ6lQOYV91T8RLoiTaA3AZy0waQ20Bu2gByG8hNG0BuA7lpA8htIDdtALkN5KYNILeB3Jz2AYx0l/SHYX23eNqfAW0AuQ20tLS0tLS0tOTiP09bhYCRFghZAAAAAElFTkSuQmCC">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-2 col-lg-1 col-xl-3">
+                                <div class="btn-new">
+                                    <a href="/new-games">New</a>
+                                </div>
+                            </div>
+                            <div class="col-2 col-lg-1 col-xl-3">
+                                <div class="btn-hot">
+                                    <a href="/hot-games">Hot</a>
+                                </div>
+                            </div>
+                            <div class="col-18 col-sm-14 col-md-10 col-lg-8 col-xl-15 ml-auto">
+                                <div class="slopegameio-right">
+                                    <div class="slopegameio-formsearch">
+                                        <form method="get" action="/search" id="search">
+                                            <input id="slopegameio-input-search" name="keywords" type="text" placeholder="Search here..." class="inputsearch">
+                                            <button id="slopegameio-search-button" type="submit" class="fa fa-search">
+                                                <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 511.999 511.999" style="enable-background:new 0 0 511.999 511.999;" xml:space="preserve">
+                                                    <path d="M508.874,478.708L360.142,329.976c28.21-34.827,45.191-79.103,45.191-127.309c0-111.75-90.917-202.667-202.667-202.667
+ S0,90.917,0,202.667s90.917,202.667,202.667,202.667c48.206,0,92.482-16.982,127.309-45.191l148.732,148.732
+ c4.167,4.165,10.919,4.165,15.086,0l15.081-15.082C513.04,489.627,513.04,482.873,508.874,478.708z M202.667,362.667
+ c-88.229,0-160-71.771-160-160s71.771-160,160-160s160,71.771,160,160S290.896,362.667,202.667,362.667z"></path>
+                                                </svg>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="application/ld+json">
+            [{"@context":"https:\/\/schema.org","@type":"SoftwareApplication","name":"Slope Game","url":"https:\/\/slopegame.io\/1","author":{"@type":"Organization","name":"Slope Game"},"description":"Slope Game is a fantastic speed run game where you can drive a ball rolling on tons of slopes and obstacles. See how far you can go in this endless course.","applicationCategory":"GameApplication","operatingSystem":"any","aggregateRating":{"@type":"AggregateRating","worstRating":1,"bestRating":5,"ratingValue":"4.3","ratingCount":"156121"},"image":"https:\/\/slopegame.io\/upload\/imgs\/slope1.jpg","offers":{"@type":"Offer","category":"free","price":0,"priceCurrency":"USD"}},{"@context":"https:\/\/schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Slope Game","item":"https:\/\/slopegame.io"},{"@type":"ListItem","position":2,"name":"Slope Game","item":"https:\/\/slopegame.io\/1"}]}]
+        </script>
+        <div class="container slopegameio-main-body">
+            <div class="row ">
+                <div class="col-24 col-lg-19 col-xl-17 col-xxl-17 col-x3l-18">
+                    <div class="row">
+                        <div class="col-24 pt-5" style="overflow: hidden;">
+                            <div class="ads">
+                                <div class="ads-title">Advertisement</div>
+                                <div class="ads-content">
+                                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8691120312399474" crossorigin="anonymous"></script>
+                                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8691120312399474" data-ad-slot="2401996583" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                                    <script>
+                                        (adsbygoogle = window.adsbygoogle || []).push({});
+                                    </script>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-24 pt-5">
+                            <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=625632dd4dfddd0019d6ca5d&product=sop' async='async'></script>
+                            <div class="sharethis-inline-share-buttons"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xxl-4 col-x3l-3 d-none d-x3l-block ">
+                            <div class="d-flex justify-content-center pt-15">
+                                <div class="ads">
+                                    <div class="ads-title">Advertisement</div>
+                                    <div class="ads-content">
+                                        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8691120312399474" crossorigin="anonymous"></script>
+                                        <ins class="adsbygoogle" style="display:inline-block;width:160px;height:600px" data-ad-client="ca-pub-8691120312399474" data-ad-slot="5818044134"></ins>
+                                        <script>
+                                            (adsbygoogle = window.adsbygoogle || []).push({});
+                                        </script>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xxl-3 col-x3l-2 d-none d-xxl-block d-x3l-block">
+                            <div class="row" style=" overflow: hidden;">
+                                <div class="col-24 d-block ">
+                                    <div class="fk-item">
+                                        <div class="fk-detail">
+                                            <a href="/geometry-dash-lite">
+                                                <div class="fk-item-content">
+                                                    <div class="fk-img">
+                                                        <img loading="lazy" src="/upload/cache/upload/imgs/geometry-dash-lite-m180x180.jpg" title="Geometry Dash Lite" alt="Geometry Dash Lite">
+                                                    </div>
+                                                    <div class="fk-info">Geometry Dash Lite </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-24 d-block ">
+                                    <div class="fk-item">
+                                        <div class="fk-detail">
+                                            <a href="/poke-game">
+                                                <div class="fk-item-content">
+                                                    <div class="fk-img">
+                                                        <img loading="lazy" src="/upload/cache/upload/imgs/poke-game-logo-m180x180.jpg" title="Poke Game" alt="Poke Game">
+                                                    </div>
+                                                    <div class="fk-info">Poke Game </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-24 d-block ">
+                                    <div class="fk-item">
+                                        <div class="fk-detail">
+                                            <a href="/only-up">
+                                                <div class="fk-item-content">
+                                                    <div class="fk-img">
+                                                        <img loading="lazy" src="/upload/cache/upload/imgs/only-up-logo-m180x180.jpg" title="Only Up!" alt="Only Up!">
+                                                    </div>
+                                                    <div class="fk-info">Only Up! </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-24 d-block ">
+                                    <div class="fk-item">
+                                        <div class="fk-detail">
+                                            <a href="/death-run-3d">
+                                                <div class="fk-item-content">
+                                                    <div class="fk-img">
+                                                        <img loading="lazy" src="/upload/imgs/death-run-3d.png" title="Death Run 3D" alt="Death Run 3D">
+                                                    </div>
+                                                    <div class="fk-info">Death Run 3D </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-24 d-block ">
+                                    <div class="fk-item">
+                                        <div class="fk-detail">
+                                            <a href="/cubes-2048">
+                                                <div class="fk-item-content">
+                                                    <div class="fk-img">
+                                                        <img loading="lazy" src="/upload/cache/upload/imgs/cube-2048-io-m180x180.png" title="Cubes 2048" alt="Cubes 2048">
+                                                    </div>
+                                                    <div class="fk-info">Cubes 2048 </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-24 d-block d-lg-none d-xl-block">
+                                    <div class="fk-item">
+                                        <div class="fk-detail">
+                                            <a href="/capybara-clicker">
+                                                <div class="fk-item-content">
+                                                    <div class="fk-img">
+                                                        <img loading="lazy" src="/upload/cache/upload/imgs/capybara-clicker-logo-m180x180.jpg" title="Capybara Clicker" alt="Capybara Clicker">
+                                                    </div>
+                                                    <div class="fk-info">Capybara Clicker </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-24 d-none d-xl-block d-xxl-none">
+                            <div class="row d-flex justify-content-center" style=" overflow: hidden;">
+                                <div class="col-xl-3 d-block ">
+                                    <div class="fk-item">
+                                        <div class="fk-detail">
+                                            <a href="/geometry-dash-lite">
+                                                <div class="fk-item-content">
+                                                    <div class="fk-img">
+                                                        <img loading="lazy" src="/upload/cache/upload/imgs/geometry-dash-lite-m180x180.jpg" title="Geometry Dash Lite" alt="Geometry Dash Lite">
+                                                    </div>
+                                                    <div class="fk-info">Geometry Dash Lite </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 d-block ">
+                                    <div class="fk-item">
+                                        <div class="fk-detail">
+                                            <a href="/poke-game">
+                                                <div class="fk-item-content">
+                                                    <div class="fk-img">
+                                                        <img loading="lazy" src="/upload/cache/upload/imgs/poke-game-logo-m180x180.jpg" title="Poke Game" alt="Poke Game">
+                                                    </div>
+                                                    <div class="fk-info">Poke Game </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 d-block ">
+                                    <div class="fk-item">
+                                        <div class="fk-detail">
+                                            <a href="/only-up">
+                                                <div class="fk-item-content">
+                                                    <div class="fk-img">
+                                                        <img loading="lazy" src="/upload/cache/upload/imgs/only-up-logo-m180x180.jpg" title="Only Up!" alt="Only Up!">
+                                                    </div>
+                                                    <div class="fk-info">Only Up! </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 d-block ">
+                                    <div class="fk-item">
+                                        <div class="fk-detail">
+                                            <a href="/death-run-3d">
+                                                <div class="fk-item-content">
+                                                    <div class="fk-img">
+                                                        <img loading="lazy" src="/upload/imgs/death-run-3d.png" title="Death Run 3D" alt="Death Run 3D">
+                                                    </div>
+                                                    <div class="fk-info">Death Run 3D </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 d-block d-lg-none d-xl-block">
+                                    <div class="fk-item">
+                                        <div class="fk-detail">
+                                            <a href="/cubes-2048">
+                                                <div class="fk-item-content">
+                                                    <div class="fk-img">
+                                                        <img loading="lazy" src="/upload/cache/upload/imgs/cube-2048-io-m180x180.png" title="Cubes 2048" alt="Cubes 2048">
+                                                    </div>
+                                                    <div class="fk-info">Cubes 2048 </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 d-block d-lg-none d-xl-block">
+                                    <div class="fk-item">
+                                        <div class="fk-detail">
+                                            <a href="/capybara-clicker">
+                                                <div class="fk-item-content">
+                                                    <div class="fk-img">
+                                                        <img loading="lazy" src="/upload/cache/upload/imgs/capybara-clicker-logo-m180x180.jpg" title="Capybara Clicker" alt="Capybara Clicker">
+                                                    </div>
+                                                    <div class="fk-info">Capybara Clicker </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 d-block ">
+                                    <div class="fk-item">
+                                        <div class="fk-detail">
+                                            <a href="/pizza-tower">
+                                                <div class="fk-item-content">
+                                                    <div class="fk-img">
+                                                        <img loading="lazy" src="/upload/cache/upload/imgs/pizza-tower-game-m180x180.jpg" title="Pizza Tower" alt="Pizza Tower">
+                                                    </div>
+                                                    <div class="fk-info">Pizza Tower </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 d-block ">
+                                    <div class="fk-item">
+                                        <div class="fk-detail">
+                                            <a href="/basket-random">
+                                                <div class="fk-item-content">
+                                                    <div class="fk-img">
+                                                        <img loading="lazy" src="/upload/cache/upload/imgs/basket-random-logo-m180x180.jpg" title="Basket Random" alt="Basket Random">
+                                                    </div>
+                                                    <div class="fk-info">Basket Random </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-20 col-xl-24 col-xxl-21 col-x3l-19">
+                            <div class="game-play">
+                                <div class="play-block">
+                                    <div class="play-box">
+                                        <iframe id="iframe_game_play" style=" width: 100% ; height: 100%;" src="/1.embed" frameborder="0" border="0" scrolling="no" class="iframe-default" allowfullscreen></iframe>
+                                    </div>
+                                    <div class="title-box p-10">
+                                        <div class="row">
+                                            <div class="col-24 col-sm-24 col-md-24 col-lg-12 col-xl-12 col-xxl-12 d-flex align-items-center justify-content-start ">
+                                                <h1>Slope Game</h1>
+                                            </div>
+                                            <div class="col-24 col-sm-24 col-md-24 col-lg-12 col-xl-12 col-xxl-12 d-flex align-items-center justify-content-end">
+                                                <link rel="stylesheet" href="/themes/slopegame.io/rs/css/rating-style.css">
+                                                <div id="rating">
+                                                    <div class="inner-rating" itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating">
+                                                        <div id="full_rate_1" class="full_rate">
+                                                            <div class="text-center">
+                                                                <div class="rating_hover rating-element">
+                                                                    <div class="rating" id="default-demo" data-id="382" style="cursor: pointer;" data-score="4.3" data-readonly=""></div>
+                                                                </div>
+                                                                <span class="rating-element" id="rate-avg" rel="v:rating">
+                                                                    <span class="rate-info">
+                                                                        <span id="countrate">156121 votes </span>
+                                                                        <span itemprop="ratingValue" class="rating-num gorgeous" id="averagerate">4.3</span>
+                                                                        <span class="rating-num gorgeous">/</span>
+                                                                        <span itemprop="bestRating" class="rating-num gorgeous">5</span>
+                                                                    </span>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <script type="text/javascript">
+                                                    var dir_theme = '/themes/slopegame.io/';
+                                                    var domain_url = 'https://slopegame.io';
+                                                </script>
+                                                <script src="/themes/slopegame.io/rs/js/rating.js"></script>
+                                                <div class="box-full-screen d-flex align-items-center">
+                                                    <div class="full-screen d-flex align-items-center" id="expand">
+                                                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAD0ElEQVR4nO2bvY8VVRjGn5erRrCyUIRCCl2IImoCNBIraDQqNliYWMBfAI3buVtCaQvZLZROLYSGqIUhEhOV+LGyIWxiY8Rg0DUEbO7Cz2Lu1cPszJk5H3uzyZ5fcpudOe/zvO/eOWfuO2ekQqFQKGxcrO0AcFXSTUlXJC1KuizpBzO7PSFvUQAPSZqStFfSs5J2S3rSzF5oOv8BT6xfJR2SdKAm8LuqYriFuWpmd5PdBwJs1/2J7pW0S9KgduoXbTF8BVhQVYA62yS9NvqMGQJLur8wV8zsl44cegE8qipBN9EXJT3SM8RCjOhR0pgJFm338m6il6MxovvWQ/KZirAvRnAzsLIeknc8xRThLtD3UlkleG29JO94Ci3CtRSxjwOEzmXMs8vXpwG+PvHF2tShFTJ7vgo0rRpZAV6S9ErAkJ98B3MWYCDpLNXavCYAWyV9JOnBgGHhS6AjOBXwVRtzCQgx2NfLAPg8ws9Uiugm4HaE6KmMuY+9nIrw8Q9QvysMFv6mIfB5YOgRvgcczpS7gDdGMdsYjjzV+TaH+Fwt6Mzo7y8D1z2mbgG7MujvAP706PzBaPJl9RI5l6ov4Hg9eefYY/ivyx+BLQnaDwOXPfEvUpt0a0U4HqvtBjzYlLxzfADMUt1xNfFhgnb92zfmHvA+LZOtU4SDsdpusMfbkq+ddxhYbjA7m6A90xDvb+DNHmPfo1o2JwfV9epOmsm3xsC0E+974OkcXtcMqh9Rcyn/+YaYM8A8sDlXzEKhUCgUCoVCoVAoFDJC1cY6DZzMGHMW+ICE9tpEaGiIJBdhlPyYReCZHF5DDGzt2RJ7HfiroYUVXYRa8mNuAUd6jJ3O0hIDDvnaW3Q3Rc8kaJ9pidnVFB230dKfVQInHOGYtnh0G4tqPvnOE7+pLe72EE/EarsB52uifR+MLANPZdDfAdz06LgPRqZrx+ZT9Tf2ozGq6/uOR7iNbEug4+VkhI+0h6PAzgjRLwHf9rtYLwPgswg/O31xuzZI7An0eUPS22a2Ejiuk9FGzHck/RY41JtDzgKsSHrLzK4HjAnCzG5IOiJpGDAsqQDPBQhdMLOLAedHYWZfS7oQMCT0W/w/wFLg9ZZ98mvwVF/quliKFdpC+92dj7XcKBmaPMRulAT2R4itWREikx+zP0bwWIJg1iIkJg9wrC22b70OmTyGklZtlw8Y38VpSZcUv12+NZeYAkz8hQkzW5b01ejzH/R/YaK1AL5XZhZU3dgsSPpZ1ZbTRTO7E57C5KDqGu2W9LyqZXyPpCfMLGRJLxQKhcKG4F9xOJ7ce/iNWwAAAABJRU5ErkJggg==">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 d-none d-lg-block d-xl-none">
+                            <div class="row" style=" overflow: hidden;">
+                                <div class="col-24 d-block ">
+                                    <div class="fk-item">
+                                        <div class="fk-detail">
+                                            <a href="/geometry-dash-lite">
+                                                <div class="fk-item-content">
+                                                    <div class="fk-img">
+                                                        <img loading="lazy" src="/upload/cache/upload/imgs/geometry-dash-lite-m180x180.jpg" title="Geometry Dash Lite" alt="Geometry Dash Lite">
+                                                    </div>
+                                                    <div class="fk-info">Geometry Dash Lite </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-24 d-block ">
+                                    <div class="fk-item">
+                                        <div class="fk-detail">
+                                            <a href="/poke-game">
+                                                <div class="fk-item-content">
+                                                    <div class="fk-img">
+                                                        <img loading="lazy" src="/upload/cache/upload/imgs/poke-game-logo-m180x180.jpg" title="Poke Game" alt="Poke Game">
+                                                    </div>
+                                                    <div class="fk-info">Poke Game </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-24 d-block ">
+                                    <div class="fk-item">
+                                        <div class="fk-detail">
+                                            <a href="/only-up">
+                                                <div class="fk-item-content">
+                                                    <div class="fk-img">
+                                                        <img loading="lazy" src="/upload/cache/upload/imgs/only-up-logo-m180x180.jpg" title="Only Up!" alt="Only Up!">
+                                                    </div>
+                                                    <div class="fk-info">Only Up! </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-24 d-block ">
+                                    <div class="fk-item">
+                                        <div class="fk-detail">
+                                            <a href="/death-run-3d">
+                                                <div class="fk-item-content">
+                                                    <div class="fk-img">
+                                                        <img loading="lazy" src="/upload/imgs/death-run-3d.png" title="Death Run 3D" alt="Death Run 3D">
+                                                    </div>
+                                                    <div class="fk-info">Death Run 3D </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-24 d-block ">
+                                    <div class="fk-item">
+                                        <div class="fk-detail">
+                                            <a href="/cubes-2048">
+                                                <div class="fk-item-content">
+                                                    <div class="fk-img">
+                                                        <img loading="lazy" src="/upload/cache/upload/imgs/cube-2048-io-m180x180.png" title="Cubes 2048" alt="Cubes 2048">
+                                                    </div>
+                                                    <div class="fk-info">Cubes 2048 </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-24 d-block d-lg-none d-xl-block">
+                                    <div class="fk-item">
+                                        <div class="fk-detail">
+                                            <a href="/capybara-clicker">
+                                                <div class="fk-item-content">
+                                                    <div class="fk-img">
+                                                        <img loading="lazy" src="/upload/cache/upload/imgs/capybara-clicker-logo-m180x180.jpg" title="Capybara Clicker" alt="Capybara Clicker">
+                                                    </div>
+                                                    <div class="fk-info">Capybara Clicker </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-8 col-sm-6 col-md-4 col-lg-4 col-xl-3 col-xxl-3 col-x3l-2 d-none d-xxl-block d-x3l-block">
+                            <div class="fk-item">
+                                <div class="fk-detail">
+                                    <a href="/friday-night-funkin">
+                                        <div class="fk-item-content">
+                                            <div class="fk-img">
+                                                <img loading="lazy" src="/upload/cache/upload/imgs/friday-night-funkin-logo-m180x180.png" title="Friday Night Funkin'" alt="Friday Night Funkin'">
+                                            </div>
+                                            <div class="fk-info">Friday Night Funkin' </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-8 col-sm-6 col-md-4 col-lg-4 col-xl-3 col-xxl-3 col-x3l-2 d-none d-xxl-block d-x3l-block">
+                            <div class="fk-item">
+                                <div class="fk-detail">
+                                    <a href="/tunnel-rush-game">
+                                        <div class="fk-item-content">
+                                            <div class="fk-img">
+                                                <img loading="lazy" src="/upload/cache/upload/imgs/tunnel-rush-logo1-m180x180.jpg" title="Tunnel Rush" alt="Tunnel Rush">
+                                            </div>
+                                            <div class="fk-info">Tunnel Rush </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-8 col-sm-6 col-md-4 col-lg-4 col-xl-3 col-xxl-3 col-x3l-2 d-none d-x3l-block">
+                            <div class="fk-item">
+                                <div class="fk-detail">
+                                    <a href="/geometry-dash-lite">
+                                        <div class="fk-item-content">
+                                            <div class="fk-img">
+                                                <img loading="lazy" src="/upload/cache/upload/imgs/geometry-dash-lite-m180x180.jpg" title="Geometry Dash Lite" alt="Geometry Dash Lite">
+                                            </div>
+                                            <div class="fk-info">Geometry Dash Lite </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-24 col-sm-24 col-md-24 col-lg-24 col-xl-24 col-xxl-18 col-x3l-14 d-none d-md-block">
+                            <div class="d-flex justify-content-center">
+                                <div class="ads-h">
+                                    <div class="ads-title-h">Advertisement</div>
+                                    <div style="height: 90px; width:1px; float: left;"></div>
+                                    <div class="ads-content" style="max-width: 728px; min-height: 90px; overflow: hidden; float: left;">
+                                        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8691120312399474" crossorigin="anonymous"></script>
+                                        <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8691120312399474" data-ad-slot="3218903166"></ins>
+                                        <script>
+                                            (adsbygoogle = window.adsbygoogle || []).push({});
+                                        </script>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-24 d-block d-md-none">
+                            <div class="d-flex justify-content-center" style="overflow: hidden; width:100%;">
+                                <div class="ads">
+                                    <div class="ads-title">Advertisement</div>
+                                    <div class="ads-content">
+                                        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8691120312399474" crossorigin="anonymous"></script>
+                                        <ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-8691120312399474" data-ad-slot="1130831840"></ins>
+                                        <script>
+                                            (adsbygoogle = window.adsbygoogle || []).push({});
+                                        </script>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-8 col-sm-6 col-md-4 col-lg-4 col-xl-3 col-xml-2 col-xxl-3 col-x3l-2 d-block d-xxl-none d-x3l-none">
+                            <div class="fk-item">
+                                <div class="fk-detail">
+                                    <a href="/friday-night-funkin">
+                                        <div class="fk-item-content">
+                                            <div class="fk-img">
+                                                <img loading="lazy" src="/upload/cache/upload/imgs/friday-night-funkin-logo-m180x180.png" title="Friday Night Funkin'" alt="Friday Night Funkin'">
+                                            </div>
+                                            <div class="fk-info">Friday Night Funkin' </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-8 col-sm-6 col-md-4 col-lg-4 col-xl-3 col-xml-2 col-xxl-3 col-x3l-2 d-block d-xxl-none d-x3l-none">
+                            <div class="fk-item">
+                                <div class="fk-detail">
+                                    <a href="/tunnel-rush-game">
+                                        <div class="fk-item-content">
+                                            <div class="fk-img">
+                                                <img loading="lazy" src="/upload/cache/upload/imgs/tunnel-rush-logo1-m180x180.jpg" title="Tunnel Rush" alt="Tunnel Rush">
+                                            </div>
+                                            <div class="fk-info">Tunnel Rush </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-8 col-sm-6 col-md-4 col-lg-4 col-xl-3 col-xml-2 col-xxl-3 col-x3l-2 d-block d-x3l-none">
+                            <div class="fk-item">
+                                <div class="fk-detail">
+                                    <a href="/geometry-dash-lite">
+                                        <div class="fk-item-content">
+                                            <div class="fk-img">
+                                                <img loading="lazy" src="/upload/cache/upload/imgs/geometry-dash-lite-m180x180.jpg" title="Geometry Dash Lite" alt="Geometry Dash Lite">
+                                            </div>
+                                            <div class="fk-info">Geometry Dash Lite </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-8 col-sm-6 col-md-4 col-lg-4 col-xl-3 col-xxl-3 col-x3l-2">
+                            <div class="fk-item">
+                                <div class="fk-detail">
+                                    <a href="/poke-game">
+                                        <div class="fk-item-content">
+                                            <div class="fk-img">
+                                                <img loading="lazy" src="/upload/cache/upload/imgs/poke-game-logo-m180x180.jpg" title="Poke Game" alt="Poke Game">
+                                            </div>
+                                            <div class="fk-info">Poke Game </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-8 col-sm-6 col-md-4 col-lg-4 col-xl-3 col-xxl-3 col-x3l-2">
+                            <div class="fk-item">
+                                <div class="fk-detail">
+                                    <a href="/only-up">
+                                        <div class="fk-item-content">
+                                            <div class="fk-img">
+                                                <img loading="lazy" src="/upload/cache/upload/imgs/only-up-logo-m180x180.jpg" title="Only Up!" alt="Only Up!">
+                                            </div>
+                                            <div class="fk-info">Only Up! </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-8 col-sm-6 col-md-4 col-lg-4 col-xl-3 col-xxl-3 col-x3l-2">
+                            <div class="fk-item">
+                                <div class="fk-detail">
+                                    <a href="/death-run-3d">
+                                        <div class="fk-item-content">
+                                            <div class="fk-img">
+                                                <img loading="lazy" src="/upload/imgs/death-run-3d.png" title="Death Run 3D" alt="Death Run 3D">
+                                            </div>
+                                            <div class="fk-info">Death Run 3D </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-8 col-sm-6 col-md-4 col-lg-4 col-xl-3 col-xxl-3 col-x3l-2">
+                            <div class="fk-item">
+                                <div class="fk-detail">
+                                    <a href="/drive-mad-game">
+                                        <div class="fk-item-content">
+                                            <div class="fk-img">
+                                                <img loading="lazy" src="/upload/cache/upload/imgs/drive-mad-m180x180.jpg" title="Drive Mad" alt="Drive Mad">
+                                            </div>
+                                            <div class="fk-info">Drive Mad </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-8 col-sm-6 col-md-4 col-lg-4 col-xl-3 col-xxl-3 col-x3l-2">
+                            <div class="fk-item">
+                                <div class="fk-detail">
+                                    <a href="/slope-3">
+                                        <div class="fk-item-content">
+                                            <div class="fk-img">
+                                                <img loading="lazy" src="/upload/cache/upload/imgs/slope-3-logo-m180x180.png" title="Slope 3" alt="Slope 3">
+                                            </div>
+                                            <div class="fk-info">Slope 3 </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-8 col-sm-6 col-md-4 col-lg-4 col-xl-3 col-xxl-3 col-x3l-2">
+                            <div class="fk-item">
+                                <div class="fk-detail">
+                                    <a href="/cubes-2048">
+                                        <div class="fk-item-content">
+                                            <div class="fk-img">
+                                                <img loading="lazy" src="/upload/cache/upload/imgs/cube-2048-io-m180x180.png" title="Cubes 2048" alt="Cubes 2048">
+                                            </div>
+                                            <div class="fk-info">Cubes 2048 </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-8 col-sm-6 col-md-4 col-lg-4 col-xl-3 col-xxl-3 col-x3l-2">
+                            <div class="fk-item">
+                                <div class="fk-detail">
+                                    <a href="/drift-hunters">
+                                        <div class="fk-item-content">
+                                            <div class="fk-img">
+                                                <img loading="lazy" src="/upload/cache/upload/imgs/drift-hunters-logo-m180x180.png" title="Drift Hunters" alt="Drift Hunters">
+                                            </div>
+                                            <div class="fk-info">Drift Hunters </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-8 col-sm-6 col-md-4 col-lg-4 col-xl-3 col-xxl-3 col-x3l-2">
+                            <div class="fk-item">
+                                <div class="fk-detail">
+                                    <a href="/capybara-clicker">
+                                        <div class="fk-item-content">
+                                            <div class="fk-img">
+                                                <img loading="lazy" src="/upload/cache/upload/imgs/capybara-clicker-logo-m180x180.jpg" title="Capybara Clicker" alt="Capybara Clicker">
+                                            </div>
+                                            <div class="fk-info">Capybara Clicker </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-8 col-sm-6 col-md-4 col-lg-4 col-xl-3 col-xxl-3 col-x3l-2">
+                            <div class="fk-item">
+                                <div class="fk-detail">
+                                    <a href="/backrooms">
+                                        <div class="fk-item-content">
+                                            <div class="fk-img">
+                                                <img loading="lazy" src="/upload/imgs/backrooms-game.png" title="Backrooms" alt="Backrooms">
+                                            </div>
+                                            <div class="fk-info">Backrooms </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-8 col-sm-6 col-md-4 col-lg-4 col-xl-3 col-xxl-3 col-x3l-2">
+                            <div class="fk-item">
+                                <div class="fk-detail">
+                                    <a href="/drift-boss">
+                                        <div class="fk-item-content">
+                                            <div class="fk-img">
+                                                <img loading="lazy" src="/upload/imgs/drift-boss1.jpg" title="Drift Boss" alt="Drift Boss">
+                                            </div>
+                                            <div class="fk-info">Drift Boss </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-8 col-sm-6 col-md-4 col-lg-4 col-xl-3 col-xxl-3 col-x3l-2">
+                            <div class="fk-item">
+                                <div class="fk-detail">
+                                    <a href="/vampire-survivors">
+                                        <div class="fk-item-content">
+                                            <div class="fk-img">
+                                                <img loading="lazy" src="/upload/cache/upload/imgs/vampire-survivors-logo-m180x180.png" title="Vampire Survivors" alt="Vampire Survivors">
+                                            </div>
+                                            <div class="fk-info">Vampire Survivors </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-8 col-sm-6 col-md-4 col-lg-4 col-xl-3 col-xxl-3 col-x3l-2">
+                            <div class="fk-item">
+                                <div class="fk-detail">
+                                    <a href="/skiing-fred">
+                                        <div class="fk-item-content">
+                                            <div class="fk-img">
+                                                <img loading="lazy" src="/upload/cache/upload/imgs/skiing-fred-m180x180.png" title="Skiing Fred" alt="Skiing Fred">
+                                            </div>
+                                            <div class="fk-info">Skiing Fred </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-8 col-sm-6 col-md-4 col-lg-4 col-xl-3 col-xxl-3 col-x3l-2">
+                            <div class="fk-item">
+                                <div class="fk-detail">
+                                    <a href="/avatar-game">
+                                        <div class="fk-item-content">
+                                            <div class="fk-img">
+                                                <img loading="lazy" src="/upload/cache/upload/imgs/avatar-game-logo-m180x180.png" title="Avatar Game" alt="Avatar Game">
+                                            </div>
+                                            <div class="fk-info">Avatar Game </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-8 col-sm-6 col-md-4 col-lg-4 col-xl-3 col-xxl-3 col-x3l-2">
+                            <div class="fk-item">
+                                <div class="fk-detail">
+                                    <a href="/smash-karts">
+                                        <div class="fk-item-content">
+                                            <div class="fk-img">
+                                                <img loading="lazy" src="/upload/cache/upload/imgs/smash-karts-logo-m180x180.png" title="Smash Karts" alt="Smash Karts">
+                                            </div>
+                                            <div class="fk-info">Smash Karts </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-8 col-sm-6 col-md-4 col-lg-4 col-xl-3 col-xxl-3 col-x3l-2">
+                            <div class="fk-item">
+                                <div class="fk-detail">
+                                    <a href="/tower-defense">
+                                        <div class="fk-item-content">
+                                            <div class="fk-img">
+                                                <img loading="lazy" src="/upload/cache/upload/imgs/tower-defense-logo-m180x180.png" title="Tower Defense" alt="Tower Defense">
+                                            </div>
+                                            <div class="fk-info">Tower Defense </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-8 col-sm-6 col-md-4 col-lg-4 col-xl-3 col-xxl-3 col-x3l-2">
+                            <div class="fk-item">
+                                <div class="fk-detail">
+                                    <a href="/geometry-dash">
+                                        <div class="fk-item-content">
+                                            <div class="fk-img">
+                                                <img loading="lazy" src="/upload/imgs/geometry-dash-logo2.jpg" title="Geometry Dash" alt="Geometry Dash">
+                                            </div>
+                                            <div class="fk-info">Geometry Dash </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-8 col-sm-6 col-md-4 col-lg-4 col-xl-3 col-xxl-3 col-x3l-2">
+                            <div class="fk-item">
+                                <div class="fk-detail">
+                                    <a href="/slope-unblocked">
+                                        <div class="fk-item-content">
+                                            <div class="fk-img">
+                                                <img loading="lazy" src="/upload/imgs/slope-unblocked.png" title="Slope Unblocked" alt="Slope Unblocked">
+                                            </div>
+                                            <div class="fk-info">Slope Unblocked </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-8 col-sm-6 col-md-4 col-lg-4 col-xl-3 col-xxl-3 col-x3l-2">
+                            <div class="fk-item">
+                                <div class="fk-detail">
+                                    <a href="/among-us">
+                                        <div class="fk-item-content">
+                                            <div class="fk-img">
+                                                <img loading="lazy" src="/upload/imgs/among-us.jpg" title="Among Us" alt="Among Us">
+                                            </div>
+                                            <div class="fk-info">Among Us </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-8 col-sm-6 col-md-4 col-lg-4 col-xl-3 col-xxl-3 col-x3l-2">
+                            <div class="fk-item">
+                                <div class="fk-detail">
+                                    <a href="/pacman-30th-anniversary">
+                                        <div class="fk-item-content">
+                                            <div class="fk-img">
+                                                <img loading="lazy" src="/upload/cache/upload/imgs/pac-man-30th-anniversary-logo-m180x180.jpg" title="Pacman 30th Anniversary" alt="Pacman 30th Anniversary">
+                                            </div>
+                                            <div class="fk-info">Pacman 30th Anniversary </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-8 col-sm-6 col-md-4 col-lg-4 col-xl-3 col-xxl-3 col-x3l-2">
+                            <div class="fk-item">
+                                <div class="fk-detail">
+                                    <a href="/geometry-dash-23">
+                                        <div class="fk-item-content">
+                                            <div class="fk-img">
+                                                <img loading="lazy" src="/upload/cache/upload/imgs/geometry-dash-23-logo-m180x180.png" title="Geometry dash 23" alt="Geometry dash 23">
+                                            </div>
+                                            <div class="fk-info">Geometry dash 23 </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-8 col-sm-6 col-md-4 col-lg-4 col-xl-3 col-xxl-3 col-x3l-2">
+                            <div class="fk-item">
+                                <div class="fk-detail">
+                                    <a href="/bad-time-simulator">
+                                        <div class="fk-item-content">
+                                            <div class="fk-img">
+                                                <img loading="lazy" src="/upload/cache/upload/imgs/bad-time-simulator-logo1-m180x180.jpg" title="Bad Time Simulator" alt="Bad Time Simulator">
+                                            </div>
+                                            <div class="fk-info">Bad Time Simulator </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-8 col-sm-6 col-md-4 col-lg-4 col-xl-3 col-xxl-3 col-x3l-2">
+                            <div class="fk-item">
+                                <div class="fk-detail">
+                                    <a href="/funny-shooter-2">
+                                        <div class="fk-item-content">
+                                            <div class="fk-img">
+                                                <img loading="lazy" src="/upload/cache/upload/imgs/funny-shooter-2-logo-m180x180.png" title="Funny Shooter 2" alt="Funny Shooter 2">
+                                            </div>
+                                            <div class="fk-info">Funny Shooter 2 </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-8 col-sm-6 col-md-4 col-lg-4 col-xl-3 col-xxl-3 col-x3l-2">
+                            <div class="fk-item">
+                                <div class="fk-detail">
+                                    <a href="/time-shooter-2">
+                                        <div class="fk-item-content">
+                                            <div class="fk-img">
+                                                <img loading="lazy" src="/upload/cache/upload/imgs/time-shooter-2-logo-m180x180.jpg" title="Time Shooter 2" alt="Time Shooter 2">
+                                            </div>
+                                            <div class="fk-info">Time Shooter 2 </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-8 col-sm-6 col-md-4 col-lg-4 col-xl-3 col-xxl-3 col-x3l-2">
+                            <div class="fk-item">
+                                <div class="fk-detail">
+                                    <a href="/territorialio">
+                                        <div class="fk-item-content">
+                                            <div class="fk-img">
+                                                <img loading="lazy" src="/upload/cache/upload/imgs/territorial-io-m180x180.png" title="Territorial.io" alt="Territorial.io">
+                                            </div>
+                                            <div class="fk-info">Territorial.io </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-8 col-sm-6 col-md-4 col-lg-4 col-xl-3 col-xxl-3 col-x3l-2">
+                            <div class="fk-item">
+                                <div class="fk-detail">
+                                    <a href="/lands-of-blight">
+                                        <div class="fk-item-content">
+                                            <div class="fk-img">
+                                                <img loading="lazy" src="/upload/cache/upload/imgs/lands-of-blight-logo-m180x180.jpg" title="Lands of Blight" alt="Lands of Blight">
+                                            </div>
+                                            <div class="fk-info">Lands of Blight </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-8 col-sm-6 col-md-4 col-lg-4 col-xl-3 col-xxl-3 col-x3l-2">
+                            <div class="fk-item">
+                                <div class="fk-detail">
+                                    <a href="/dino-game">
+                                        <div class="fk-item-content">
+                                            <div class="fk-img">
+                                                <img loading="lazy" src="/upload/cache/upload/imgs/dino-game-logo-m180x180.png" title="Dino Game" alt="Dino Game">
+                                            </div>
+                                            <div class="fk-info">Dino Game </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-8 col-sm-6 col-md-4 col-lg-4 col-xl-3 col-xxl-3 col-x3l-2">
+                            <div class="fk-item">
+                                <div class="fk-detail">
+                                    <a href="/slope-run">
+                                        <div class="fk-item-content">
+                                            <div class="fk-img">
+                                                <img loading="lazy" src="/upload/imgs/slope-run-logo.png" title="Slope Run" alt="Slope Run">
+                                            </div>
+                                            <div class="fk-info">Slope Run </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-8 col-sm-6 col-md-4 col-lg-4 col-xl-3 col-xxl-3 col-x3l-2">
+                            <div class="fk-item">
+                                <div class="fk-detail">
+                                    <a href="/curve-ball-3d">
+                                        <div class="fk-item-content">
+                                            <div class="fk-img">
+                                                <img loading="lazy" src="/upload/imgs/curve-ball-3d-logo.jpg" title="Curve Ball 3D" alt="Curve Ball 3D">
+                                            </div>
+                                            <div class="fk-info">Curve Ball 3D </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-8 col-sm-6 col-md-4 col-lg-4 col-xl-3 col-xxl-3 col-x3l-2">
+                            <div class="fk-item">
+                                <div class="fk-detail">
+                                    <a href="/papa-louie">
+                                        <div class="fk-item-content">
+                                            <div class="fk-img">
+                                                <img loading="lazy" src="/upload/cache/upload/imgs/papa-louie-logo-m180x180.jpg" title="Papa Louie" alt="Papa Louie">
+                                            </div>
+                                            <div class="fk-info">Papa Louie </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-8 col-sm-6 col-md-4 col-lg-4 col-xl-3 col-xxl-3 col-x3l-2">
+                            <div class="fk-item">
+                                <div class="fk-detail">
+                                    <a href="/roller-baller">
+                                        <div class="fk-item-content">
+                                            <div class="fk-img">
+                                                <img loading="lazy" src="/upload/cache/upload/imgs/roller-baller-logo-m180x180.jpg" title="Roller Baller" alt="Roller Baller">
+                                            </div>
+                                            <div class="fk-info">Roller Baller </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-8 col-sm-6 col-md-4 col-lg-4 col-xl-3 col-xxl-3 col-x3l-2">
+                            <div class="fk-item">
+                                <div class="fk-detail">
+                                    <a href="/bloxd-io">
+                                        <div class="fk-item-content">
+                                            <div class="fk-img">
+                                                <img loading="lazy" src="/upload/cache/upload/imgs/bloxd-io-logo-m180x180.jpg" title="Bloxd io" alt="Bloxd io">
+                                            </div>
+                                            <div class="fk-info">Bloxd io </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-8 col-sm-6 col-md-4 col-lg-4 col-xl-3 col-xxl-3 col-x3l-2">
+                            <div class="fk-item">
+                                <div class="fk-detail">
+                                    <a href="/rooftop-snipers">
+                                        <div class="fk-item-content">
+                                            <div class="fk-img">
+                                                <img loading="lazy" src="/upload/cache/upload/imgs/rooftop-snipers-logo-m180x180.jpg" title="Rooftop Snipers" alt="Rooftop Snipers">
+                                            </div>
+                                            <div class="fk-info">Rooftop Snipers </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-8 col-sm-6 col-md-4 col-lg-4 col-xl-3 col-xxl-3 col-x3l-2">
+                            <div class="fk-item">
+                                <div class="fk-detail">
+                                    <a href="/yahtzee">
+                                        <div class="fk-item-content">
+                                            <div class="fk-img">
+                                                <img loading="lazy" src="/upload/cache/upload/imgs/yahtzee-logo-m180x180.jpg" title="Yahtzee" alt="Yahtzee">
+                                            </div>
+                                            <div class="fk-info">Yahtzee </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-8 col-sm-6 col-md-4 col-lg-4 col-xl-3 col-xxl-3 col-x3l-2">
+                            <div class="fk-item">
+                                <div class="fk-detail">
+                                    <a href="/jetpack-joyride">
+                                        <div class="fk-item-content">
+                                            <div class="fk-img">
+                                                <img loading="lazy" src="/upload/cache/upload/imgs/jetpack-joyride-m180x180.jpeg" title="Jetpack Joyride" alt="Jetpack Joyride">
+                                            </div>
+                                            <div class="fk-info">Jetpack Joyride </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-8 col-sm-6 col-md-4 col-lg-4 col-xl-3 col-xxl-3 col-x3l-2">
+                            <div class="fk-item">
+                                <div class="fk-detail">
+                                    <a href="/flappy-bird">
+                                        <div class="fk-item-content">
+                                            <div class="fk-img">
+                                                <img loading="lazy" src="/upload/imgs/flappy-bird-logo.jpg" title="Flappy Bird" alt="Flappy Bird">
+                                            </div>
+                                            <div class="fk-info">Flappy Bird </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-8 col-sm-6 col-md-4 col-lg-4 col-xl-3 col-xxl-3 col-x3l-2">
+                            <div class="fk-item">
+                                <div class="fk-detail">
+                                    <a href="/papas-pizzeria">
+                                        <div class="fk-item-content">
+                                            <div class="fk-img">
+                                                <img loading="lazy" src="/upload/cache/upload/imgs/papas-pizzeria-logo-m180x180.png" title="Papa's Pizzeria" alt="Papa's Pizzeria">
+                                            </div>
+                                            <div class="fk-info">Papa's Pizzeria </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-8 col-sm-6 col-md-4 col-lg-4 col-xl-3 col-xxl-3 col-x3l-2">
+                            <div class="fk-item">
+                                <div class="fk-detail">
+                                    <a href="/return-man-2">
+                                        <div class="fk-item-content">
+                                            <div class="fk-img">
+                                                <img loading="lazy" src="/upload/cache/upload/imgs/return-man-2-logo-m180x180.jpg" title="Return Man 2" alt="Return Man 2">
+                                            </div>
+                                            <div class="fk-info">Return Man 2 </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-8 col-sm-6 col-md-4 col-lg-4 col-xl-3 col-xxl-3 col-x3l-2">
+                            <div class="fk-item">
+                                <div class="fk-detail">
+                                    <a href="/snake-game">
+                                        <div class="fk-item-content">
+                                            <div class="fk-img">
+                                                <img loading="lazy" src="/upload/cache/upload/imgs/snakes-game-logo-m180x180.png" title="Snake Game" alt="Snake Game">
+                                            </div>
+                                            <div class="fk-info">Snake Game </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-8 col-sm-6 col-md-4 col-lg-4 col-xl-3 col-xxl-3 col-x3l-2">
+                            <div class="fk-item">
+                                <div class="fk-detail">
+                                    <a href="/basketball-stars">
+                                        <div class="fk-item-content">
+                                            <div class="fk-img">
+                                                <img loading="lazy" src="/upload/imgs/basketball-stars-logo.png" title="Basketball Stars" alt="Basketball Stars">
+                                            </div>
+                                            <div class="fk-info">Basketball Stars </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-8 col-sm-6 col-md-4 col-lg-4 col-xl-3 col-xxl-3 col-x3l-2">
+                            <div class="fk-item">
+                                <div class="fk-detail">
+                                    <a href="/healing-rush">
+                                        <div class="fk-item-content">
+                                            <div class="fk-img">
+                                                <img loading="lazy" src="/upload/imgs/healing-rush-logo.jpeg" title="Healing Rush" alt="Healing Rush">
+                                            </div>
+                                            <div class="fk-info">Healing Rush </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-8 col-sm-6 col-md-4 col-lg-4 col-xl-3 col-xxl-3 col-x3l-2">
+                            <div class="fk-item">
+                                <div class="fk-detail">
+                                    <a href="/sonic-exe">
+                                        <div class="fk-item-content">
+                                            <div class="fk-img">
+                                                <img loading="lazy" src="/upload/cache/upload/imgs/sonic-exe-m180x180.png" title="Sonic Exe" alt="Sonic Exe">
+                                            </div>
+                                            <div class="fk-info">Sonic Exe </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-8 col-sm-6 col-md-4 col-lg-4 col-xl-3 col-xxl-3 col-x3l-2">
+                            <div class="fk-item">
+                                <div class="fk-detail">
+                                    <a href="/little-big-snake">
+                                        <div class="fk-item-content">
+                                            <div class="fk-img">
+                                                <img loading="lazy" src="/upload/cache/upload/imgs/little-big-snake-logo-m180x180.jpg" title="Little Big Snake" alt="Little Big Snake">
+                                            </div>
+                                            <div class="fk-info">Little Big Snake </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-8 col-sm-6 col-md-4 col-lg-4 col-xl-3 col-xxl-3 col-x3l-2">
+                            <div class="fk-item">
+                                <div class="fk-detail">
+                                    <a href="/stack-colors">
+                                        <div class="fk-item-content">
+                                            <div class="fk-img">
+                                                <img loading="lazy" src="/upload/cache/upload/imgs/stack-colors-logo-m180x180.png" title="Stack colors" alt="Stack colors">
+                                            </div>
+                                            <div class="fk-info">Stack colors </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-8 col-sm-6 col-md-4 col-lg-4 col-xl-3 col-xxl-3 col-x3l-2">
+                            <div class="fk-item">
+                                <div class="fk-detail">
+                                    <a href="/vengeio">
+                                        <div class="fk-item-content">
+                                            <div class="fk-img">
+                                                <img loading="lazy" src="/upload/cache/upload/imgs/venge.io-logo-m180x180.jpg" title="Venge.io" alt="Venge.io">
+                                            </div>
+                                            <div class="fk-info">Venge.io </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-8 col-sm-6 col-md-4 col-lg-4 col-xl-3 col-xxl-3 col-x3l-2">
+                            <div class="fk-item">
+                                <div class="fk-detail">
+                                    <a href="/endless-siege">
+                                        <div class="fk-item-content">
+                                            <div class="fk-img">
+                                                <img loading="lazy" src="/upload/cache/upload/imgs/endless-siege-logo-m180x180.jpg" title="Endless Siege" alt="Endless Siege">
+                                            </div>
+                                            <div class="fk-info">Endless Siege </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-8 col-sm-6 col-md-4 col-lg-4 col-xl-3 col-xxl-3 col-x3l-2">
+                            <div class="fk-item">
+                                <div class="fk-detail">
+                                    <a href="/pizza-tower">
+                                        <div class="fk-item-content">
+                                            <div class="fk-img">
+                                                <img loading="lazy" src="/upload/cache/upload/imgs/pizza-tower-game-m180x180.jpg" title="Pizza Tower" alt="Pizza Tower">
+                                            </div>
+                                            <div class="fk-info">Pizza Tower </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-8 col-sm-6 col-md-4 col-lg-4 col-xl-3 col-xxl-3 col-x3l-2">
+                            <div class="fk-item">
+                                <div class="fk-detail">
+                                    <a href="/ovo">
+                                        <div class="fk-item-content">
+                                            <div class="fk-img">
+                                                <img loading="lazy" src="/upload/cache/upload/imgs/ovo-logo-m180x180.jpg" title="OvO" alt="OvO">
+                                            </div>
+                                            <div class="fk-info">OvO </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-8 col-sm-6 col-md-4 col-lg-4 col-xl-3 col-xxl-3 col-x3l-2">
+                            <div class="fk-item">
+                                <div class="fk-detail">
+                                    <a href="/sonic-the-hedgehog">
+                                        <div class="fk-item-content">
+                                            <div class="fk-img">
+                                                <img loading="lazy" src="/upload/cache/upload/imgs/sonic-the-hedgehog-logo-m180x180.png" title="Sonic the Hedgehog" alt="Sonic the Hedgehog">
+                                            </div>
+                                            <div class="fk-info">Sonic the Hedgehog </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-8 col-sm-6 col-md-4 col-lg-4 col-xl-3 col-xxl-3 col-x3l-2">
+                            <div class="fk-item">
+                                <div class="fk-detail">
+                                    <a href="/cat-mario">
+                                        <div class="fk-item-content">
+                                            <div class="fk-img">
+                                                <img loading="lazy" src="/upload/cache/upload/imgs/cat-mario-logo-m180x180.jpg" title="Cat Mario" alt="Cat Mario">
+                                            </div>
+                                            <div class="fk-info">Cat Mario </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-8 col-sm-6 col-md-4 col-lg-4 col-xl-3 col-xxl-3 col-x3l-2">
+                            <div class="fk-item">
+                                <div class="fk-detail">
+                                    <a href="/bubble-trouble">
+                                        <div class="fk-item-content">
+                                            <div class="fk-img">
+                                                <img loading="lazy" src="/upload/cache/upload/imgs/bubble-trouble-logo-m180x180.jpg" title="Bubble Trouble" alt="Bubble Trouble">
+                                            </div>
+                                            <div class="fk-info">Bubble Trouble </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-8 col-sm-6 col-md-4 col-lg-4 col-xl-3 col-xxl-3 col-x3l-2">
+                            <div class="fk-item">
+                                <div class="fk-detail">
+                                    <a href="/tank-trouble">
+                                        <div class="fk-item-content">
+                                            <div class="fk-img">
+                                                <img loading="lazy" src="/upload/cache/upload/imgs/tank-trouble-logo-m180x180.jpg" title="Tank Trouble" alt="Tank Trouble">
+                                            </div>
+                                            <div class="fk-info">Tank Trouble </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-8 col-sm-6 col-md-4 col-lg-4 col-xl-3 col-xxl-3 col-x3l-2">
+                            <div class="fk-item">
+                                <div class="fk-detail">
+                                    <a href="/bob-the-robber-4">
+                                        <div class="fk-item-content">
+                                            <div class="fk-img">
+                                                <img loading="lazy" src="/upload/cache/upload/imgs/bob-the-robber-4-logo-m180x180.jpg" title="Bob The Robber 4" alt="Bob The Robber 4">
+                                            </div>
+                                            <div class="fk-info">Bob The Robber 4 </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-8 col-sm-6 col-md-4 col-lg-4 col-xl-3 col-xxl-3 col-x3l-2">
+                            <div class="fk-item">
+                                <div class="fk-detail">
+                                    <a href="/slope-multiplayer">
+                                        <div class="fk-item-content">
+                                            <div class="fk-img">
+                                                <img loading="lazy" src="/upload/imgs/slope-multiplayer-logo.png" title="Slope Multiplayer" alt="Slope Multiplayer">
+                                            </div>
+                                            <div class="fk-info">Slope Multiplayer </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-8 col-sm-6 col-md-4 col-lg-4 col-xl-3 col-xxl-3 col-x3l-2">
+                            <div class="fk-item">
+                                <div class="fk-detail">
+                                    <a href="/bad-ice-cream">
+                                        <div class="fk-item-content">
+                                            <div class="fk-img">
+                                                <img loading="lazy" src="/upload/cache/upload/imgs/bad-ice-cream-m180x180.jpg" title="Bad Ice Cream" alt="Bad Ice Cream">
+                                            </div>
+                                            <div class="fk-info">Bad Ice Cream </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-8 col-sm-6 col-md-4 col-lg-4 col-xl-3 col-xxl-3 col-x3l-2">
+                            <div class="fk-item">
+                                <div class="fk-detail">
+                                    <a href="/hover-racer-drive">
+                                        <div class="fk-item-content">
+                                            <div class="fk-img">
+                                                <img loading="lazy" src="/upload/cache/upload/imgs/hover-racer-drive-logo-m180x180.jpg" title="Hover Racer Drive" alt="Hover Racer Drive">
+                                            </div>
+                                            <div class="fk-info">Hover Racer Drive </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-8 col-sm-6 col-md-4 col-lg-4 col-xl-3 col-xxl-3 col-x3l-2">
+                            <div class="fk-item">
+                                <div class="fk-detail">
+                                    <a href="/bad-ice-cream-3">
+                                        <div class="fk-item-content">
+                                            <div class="fk-img">
+                                                <img loading="lazy" src="/upload/cache/upload/imgs/bad-ice-cream-3-m180x180.jpg" title="Bad Ice Cream 3" alt="Bad Ice Cream 3">
+                                            </div>
+                                            <div class="fk-info">Bad Ice Cream 3 </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-8 col-sm-6 col-md-4 col-lg-4 col-xl-3 col-xxl-3 col-x3l-2">
+                            <div class="fk-item">
+                                <div class="fk-detail">
+                                    <a href="/cuphead">
+                                        <div class="fk-item-content">
+                                            <div class="fk-img">
+                                                <img loading="lazy" src="/upload/cache/upload/imgs/cuphead-logo-m180x180.jpg" title="Cuphead" alt="Cuphead">
+                                            </div>
+                                            <div class="fk-info">Cuphead </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-8 col-sm-6 col-md-4 col-lg-4 col-xl-3 col-xxl-3 col-x3l-2">
+                            <div class="fk-item">
+                                <div class="fk-detail">
+                                    <a href="/basket-random">
+                                        <div class="fk-item-content">
+                                            <div class="fk-img">
+                                                <img loading="lazy" src="/upload/cache/upload/imgs/basket-random-logo-m180x180.jpg" title="Basket Random" alt="Basket Random">
+                                            </div>
+                                            <div class="fk-info">Basket Random </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-8 col-sm-6 col-md-4 col-lg-4 col-xl-3 col-xxl-3 col-x3l-2">
+                            <div class="fk-item">
+                                <div class="fk-detail">
+                                    <a href="/five-nights-at-freddys-2">
+                                        <div class="fk-item-content">
+                                            <div class="fk-img">
+                                                <img loading="lazy" src="/upload/cache/upload/imgs/five-nights-at-freddys-2-logo1-m180x180.jpg" title="Five Nights at Freddy's 2" alt="Five Nights at Freddy's 2">
+                                            </div>
+                                            <div class="fk-info">Five Nights at Freddy's 2 </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-8 col-sm-6 col-md-4 col-lg-4 col-xl-3 col-xxl-3 col-x3l-2">
+                            <div class="fk-item">
+                                <div class="fk-detail">
+                                    <a href="/shell-shockers">
+                                        <div class="fk-item-content">
+                                            <div class="fk-img">
+                                                <img loading="lazy" src="/upload/imgs/shell-shockers-logo.jpg" title="Shell Shockers" alt="Shell Shockers">
+                                            </div>
+                                            <div class="fk-info">Shell Shockers </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-8 col-sm-6 col-md-4 col-lg-4 col-xl-3 col-xxl-3 col-x3l-2">
+                            <div class="fk-item">
+                                <div class="fk-detail">
+                                    <a href="/madalin-stunt-cars">
+                                        <div class="fk-item-content">
+                                            <div class="fk-img">
+                                                <img loading="lazy" src="/upload/cache/upload/imgs/madalin-stunt-cars-logo1-m180x180.jpg" title="Madalin Stunt Cars" alt="Madalin Stunt Cars">
+                                            </div>
+                                            <div class="fk-info">Madalin Stunt Cars </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-8 col-sm-6 col-md-4 col-lg-4 col-xl-3 col-xxl-3 col-x3l-2">
+                            <div class="fk-item">
+                                <div class="fk-detail">
+                                    <a href="/1v1lol">
+                                        <div class="fk-item-content">
+                                            <div class="fk-img">
+                                                <img loading="lazy" src="/upload/cache/upload/imgs/1v1-lol-m180x180.jpg" title="1v1.LOL" alt="1v1.LOL">
+                                            </div>
+                                            <div class="fk-info">1v1.LOL </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 d-none d-lg-block d-xl-none ">
+                    <div class="d-flex justify-content-center">
+                        <div class="ads">
+                            <div class="ads-title">Advertisement</div>
+                            <div class="ads-content">
+                                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8691120312399474" crossorigin="anonymous"></script>
+                                <ins class="adsbygoogle" style="display:inline-block;width:160px;height:600px" data-ad-client="ca-pub-8691120312399474" data-ad-slot="5818044134"></ins>
+                                <script>
+                                    (adsbygoogle = window.adsbygoogle || []).push({});
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-24 col-lg-24 col-xl-7 col-xxl-7 col-x3l-6">
+                    <div class="slopegameio-detail">
+                        <div style="width: 100%;">
+                            <div class="ads">
+                                <div class="ads-title">Advertisement</div>
+                                <div class="ads-content">
+                                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8691120312399474" crossorigin="anonymous"></script>
+                                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8691120312399474" data-ad-slot="2401996583" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                                    <script>
+                                        (adsbygoogle = window.adsbygoogle || []).push({});
+                                    </script>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slopegameio-detail-content" style="height: calc(100vh - 320px); height: -moz-calc(100vh - 320px); height: -webkit-calc(100vh - 320px); margin-top: 3px;">
+                            <div class="slopegameio-detail-container ">
+                                <div class="slopegameio-content p-5">
+                                    <div class="slopegameio-panel-heading">
+                                        About <h2>Slope Game</h2>
+                                    </div>
+                                    <div style="width:100%;">
+                                        <div class="d-flex justify-content-center" style="overflow: hidden;"></div>
+                                    </div>
+                                    <div class="game-detail ">
+                                        <div class="game-title">
+                                            <h3>Description</h3>
+                                        </div>
+                                        <div class="game-content">
+                                            <p>
+                                                <a href="https://slopegame.io">
+                                                    <strong>Slope game</strong>
+                                                </a>
+                                                is a fantastic speed run game where you can drive a ball rolling on tons of slopes and obstacles. See how far you can go in this endless course.
+                                            </p>
+                                            <p>Your goal in this running game is to drive the ball as far as possible to get a high score. With simple control, high-speed gameplay. You have to use the keyboard arrow keys to start playing the game. Control your ball rolling on the course's complicated, which has many slopes and red obstacles.</p>
+                                            <p>The longer you keep the ball on the course, the faster the ball will be rolling. This game is both exhilarating and challenging to play. ​You can practice hundreds of times to avoid colliding with obstacles while allowing the ball to continue on the slope. You will enjoy this game if you prefer fast-paced platform games.</p>
+                                            <p>Developer: This game was developed by Rob Kay and is suitable for players of all ages!</p>
+                                            <p>Platforms: Now is available through a web browser.</p>
+                                            <h3>Features of the game</h3>
+                                            <ul>
+                                                <li>Eye-catching graphics.</li>
+                                                <li>Obstacles and slopes keep changing, becoming more difficult and unpredictable.</li>
+                                                <li>Suitable for players of all ages.</li>
+                                                <li>Top player on the leaderboard.</li>
+                                                <li>Full-screen mode available.</li>
+                                            </ul>
+                                            <h3>
+                                                <strong>Tips to play</strong>
+                                            </h3>
+                                            <ul>
+                                                <li>Try to keep the ball stay in the middle of the track at all times.</li>
+                                                <li>Try to keep the ball steady and turn the ball in time.</li>
+                                            </ul>
+                                            <h3>
+                                                <strong>How to control</strong>
+                                            </h3>
+                                            <ul>
+                                                <li>Try to avoid obstacles, and adjust for gravity.</li>
+                                                <li>Left arrow = Move Left</li>
+                                                <li>Right arrow = Move Right</li>
+                                            </ul>
+                                            <p>This game sounds easy, but it's not. A slight error can result in the ball falling into the deep or red blocks, and you must replay the game. The real-time gameplay is responsive, requiring just minor modifications to the player's motions.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <style>
+            .cookieBubble {
+                position: fixed;
+                width: 400px;
+                min-height: 100px;
+                border-radius: 10px;
+                background-color: #fff;
+                -webkit-box-shadow: 0 2px 15px rgba(0,0,0,.2);
+                box-shadow: 0 2px 15px rgba(0,0,0,.2);
+                z-index: 9999;
+                font-family: sans-serif
+            }
+
+            .cookieBubble.top-left {
+                top: 10px;
+                left: 10px
+            }
+
+            .cookieBubble.top-right {
+                top: 10px;
+                right: 0
+            }
+
+            .cookieBubble.top-center {
+                top: 10px;
+                left: calc(100vw - 100vw/2 - 400px/2)
+            }
+
+            .cookieBubble.bottom-left {
+                bottom: 10px;
+                left: 10px
+            }
+
+            .cookieBubble.bottom-right {
+                bottom: 10px;
+                right: 0
+            }
+
+            .cookieBubble.bottom-center {
+                bottom: 10px;
+                left: calc(100vw - 100vw/2 - 400px/2)
+            }
+
+            .cookieBubble.show.top-center,.cookieBubble.show.top-left,.cookieBubble.show.top-right {
+                -webkit-animation-name: popInTop;
+                animation-name: popInTop;
+                -webkit-animation-duration: 2s;
+                animation-duration: 2s;
+                -webkit-animation-timing-function: cubic-bezier(.19,1,.22,1);
+                animation-timing-function: cubic-bezier(.19,1,.22,1);
+                -webkit-animation-fill-mode: forwards;
+                animation-fill-mode: forwards
+            }
+
+            .cookieBubble.show.bottom-center,.cookieBubble.show.bottom-left,.cookieBubble.show.bottom-right {
+                -webkit-animation-name: popInBottom;
+                animation-name: popInBottom;
+                -webkit-animation-duration: 2s;
+                animation-duration: 2s;
+                -webkit-animation-timing-function: cubic-bezier(.19,1,.22,1);
+                animation-timing-function: cubic-bezier(.19,1,.22,1);
+                -webkit-animation-fill-mode: forwards;
+                animation-fill-mode: forwards
+            }
+
+            .cookieBubble.hide {
+                display: none
+            }
+
+            .cookieBubble .cb-wrapper {
+                position: relative;
+                display: inline-block;
+                padding: 15px
+            }
+
+            .cookieBubble .cb-wrapper .cb-row {
+                position: relative;
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                text-align: left
+            }
+
+            .cookieBubble .cb-wrapper .cb-row .cb-message span {
+                position: relative;
+                width: 100%;
+                display: inline-block;
+                color: #000;
+                font-size: 18px;
+                margin-top: 0
+            }
+
+            .cookieBubble .cb-wrapper .cb-row .cb-image {
+                padding-right: 23px
+            }
+
+            .cookieBubble .cb-wrapper .cb-row .cb-image .cookie-inner {
+                fill: #00a4ff
+            }
+
+            .cookieBubble .cb-wrapper .cb-row .cb-image svg {
+                width: 75px
+            }
+
+            .cookieBubble .cb-wrapper .cb-row .agreement-btn {
+                margin: 0;
+                text-decoration: none;
+                color: #fff;
+                background: #00a4ff;
+                padding: 10px 20px;
+                display: inline-block;
+                border-radius: 100px;
+                font-size: 14px;
+                opacity: 1;
+                border: none;
+                cursor: pointer;
+                text-transform: uppercase;
+                font-weight: 600
+            }
+
+            .cookieBubble .cb-wrapper .cb-row .agreement-btn:hover {
+                background-color: #0083cc
+            }
+
+            .cookieBubble .cb-wrapper .cb-row .cookie-policy-btn {
+                margin: 15px 0 0;
+                color: #000;
+                padding: 10px;
+                display: inline-block;
+                border-radius: 100px;
+                font-size: 14px;
+                opacity: .95;
+                border: none;
+                cursor: pointer;
+                font-weight: 400
+            }
+
+            .cookieBubble .cb-wrapper .cb-row .cookie-policy-btn:hover {
+                opacity: 1;
+                text-decoration: underline
+            }
+
+            .cookieBubble .copyright-wrapper {
+                margin-top: 20px
+            }
+
+            .cookieBubble .copyright-wrapper a.copyright {
+                position: absolute;
+                width: 80px;
+                height: 16px;
+                bottom: 8px;
+                right: 7px;
+                margin-top: 30px;
+                background: url(../img/cb_copyright.svg);
+                background-size: cover
+            }
+
+            @-webkit-keyframes popInBottom {
+                0% {
+                    -webkit-transform: translateY(120%);
+                    transform: translateY(120%)
+                }
+
+                100% {
+                    -webkit-transform: translateY(0);
+                    transform: translateY(0)
+                }
+            }
+
+            @keyframes popInBottom {
+                0% {
+                    -webkit-transform: translateY(120%);
+                    transform: translateY(120%)
+                }
+
+                100% {
+                    -webkit-transform: translateY(0);
+                    transform: translateY(0)
+                }
+            }
+
+            @-webkit-keyframes popInTop {
+                0% {
+                    -webkit-transform: translateY(-120%);
+                    transform: translateY(-120%)
+                }
+
+                100% {
+                    -webkit-transform: translateY(0);
+                    transform: translateY(0)
+                }
+            }
+
+            @keyframes popInTop {
+                0% {
+                    -webkit-transform: translateY(-120%);
+                    transform: translateY(-120%)
+                }
+
+                100% {
+                    -webkit-transform: translateY(0);
+                    transform: translateY(0)
+                }
+            }
+
+            .pacman {
+                position: absolute;
+                display: inline-block;
+                top: 50%;
+                margin-top: -25px
+            }
+
+            .pacman>div:nth-child(1),.pacman>div:nth-child(2) {
+                width: 0;
+                height: 0;
+                border: 37.5px solid #fed75a;
+                border-right-color: transparent;
+                border-radius: 50%;
+                left: -60px;
+                -webkit-animation: rotate_pacman_half_up .5s infinite;
+                animation: rotate_pacman_half_up .5s infinite;
+                position: relative
+            }
+
+            .pacman>div:nth-child(2) {
+                -webkit-animation-name: rotate_pacman_half_down;
+                animation-name: rotate_pacman_half_down;
+                margin-top: -75px
+            }
+
+            .pacman>div:nth-child(3),.pacman>div:nth-child(4),.pacman>div:nth-child(5) {
+                -webkit-animation: pacman-balls 1s infinite linear;
+                animation: pacman-balls 1s infinite linear;
+                background-color: #fed75a;
+                border-radius: 50%;
+                width: 15px;
+                height: 15px;
+                position: absolute;
+                top: 30px;
+                left: 75px
+            }
+
+            .pacman>div:nth-child(3) {
+                -webkit-animation-delay: -.66s;
+                animation-delay: -.66s
+            }
+
+            .pacman>div:nth-child(4) {
+                -webkit-animation-delay: -.33s;
+                animation-delay: -.33s
+            }
+
+            @-webkit-keyframes rotate_pacman_half_up {
+                0% {
+                    -webkit-transform: rotate(270deg);
+                    transform: rotate(270deg)
+                }
+
+                50% {
+                    -webkit-transform: rotate(360deg);
+                    transform: rotate(360deg)
+                }
+
+                100% {
+                    -webkit-transform: rotate(270deg);
+                    transform: rotate(270deg)
+                }
+            }
+
+            @keyframes rotate_pacman_half_up {
+                0% {
+                    -webkit-transform: rotate(270deg);
+                    transform: rotate(270deg)
+                }
+
+                50% {
+                    -webkit-transform: rotate(360deg);
+                    transform: rotate(360deg)
+                }
+
+                100% {
+                    -webkit-transform: rotate(270deg);
+                    transform: rotate(270deg)
+                }
+            }
+
+            @-webkit-keyframes rotate_pacman_half_down {
+                0% {
+                    -webkit-transform: rotate(90deg);
+                    transform: rotate(90deg)
+                }
+
+                50% {
+                    -webkit-transform: rotate(0);
+                    transform: rotate(0)
+                }
+
+                100% {
+                    -webkit-transform: rotate(90deg);
+                    transform: rotate(90deg)
+                }
+            }
+
+            @keyframes rotate_pacman_half_down {
+                0% {
+                    -webkit-transform: rotate(90deg);
+                    transform: rotate(90deg)
+                }
+
+                50% {
+                    -webkit-transform: rotate(0);
+                    transform: rotate(0)
+                }
+
+                100% {
+                    -webkit-transform: rotate(90deg);
+                    transform: rotate(90deg)
+                }
+            }
+
+            @-webkit-keyframes pacman-balls {
+                75% {
+                    opacity: .7
+                }
+
+                100% {
+                    -webkit-transform: translateX(-93.75px);
+                    transform: translateX(-93.75px)
+                }
+            }
+
+            @keyframes pacman-balls {
+                75% {
+                    opacity: .7
+                }
+
+                100% {
+                    -webkit-transform: translateX(-93.75px);
+                    transform: translateX(-93.75px)
+                }
+            }
+        </style>
+        <div class="slopegameio-block-footer">
+            <div class="container-fluid">
+                <div class="box-footer d-flex align-items-center justify-content-center">
+                    <div class="footer-content">
+                        <a href="/about-us">About Us </a>
+                        <a href="/contact-us">Contact Us </a>
+                        <a href="/copyright-infringement-notice-procedure">Copyright infringement notice procedure </a>
+                        <a href="/privacy-policy">Privacy Policy </a>
+                        <a href="/term-of-use">Term of use </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="/themes/slopegame.io/rs/js/jquery-3.4.1.min.js"></script>
+        <script defer src="/themes/slopegame.io/rs/plugins/raty/jquery.raty.min.js"></script>
+        <script src="/themes/slopegame.io/rs/js/games.js"></script>
+        <script src="/themes/slopegame.io/rs/js/cookiebubble.min.js"></script>
+        <script type="text/javascript">
+            
+        </script>
+    </body>
+</html>
