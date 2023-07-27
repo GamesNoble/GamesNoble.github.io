@@ -75,3 +75,18 @@ h1 {
 .button::before {
   content: "";
   position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(240, 240, 240, 0.3);
+  border-radius: 10px;
+  pointer-events: none;
+  transition: transform 0.3s ease;
+  transform: scale(0);
+}
+
+.button:hover::before,
+.button:focus::before {
+  transform: scale(1);
+}
