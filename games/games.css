@@ -1,3 +1,4 @@
+/* Add this CSS code to your games.css file */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
 
 body {
@@ -8,6 +9,8 @@ body {
   justify-content: center;
   align-items: center;
   background-color: #252525;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 200;
 }
 
 .rain-container {
@@ -41,8 +44,6 @@ body {
 }
 
 h1 {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 200;
   font-size: 80px;
   text-align: center;
   color: rgb(0, 255, 106);
@@ -61,11 +62,12 @@ h1 {
   border: none;
   border-radius: 10px;
   padding: 15px 30px;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 200;
   font-size: 20px;
   cursor: pointer;
   transition: transform 0.3s ease;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
 }
 
 .button:hover,
@@ -85,6 +87,7 @@ h1 {
   pointer-events: none;
   transition: transform 0.3s ease;
   transform: scale(0);
+  z-index: -1;
 }
 
 .button:hover::before,
@@ -92,20 +95,14 @@ h1 {
   transform: scale(1);
 }
 
-/* Footer styles */
 .footer {
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
-  background-color: #333;
+  background-color: #252525;
+  padding: 10px;
   color: white;
   text-align: center;
-  padding: 10px 0;
-  font-size: 16px; /* Adjust the font size as needed */
-}
-
-/* Optional: Add some margin to the footer text */
-.footer p {
-  margin: 5px;
+  font-size: 16px;
 }
