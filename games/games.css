@@ -1,6 +1,4 @@
 /* Add this CSS code to your games.css file */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
-
 body {
   height: 100vh;
   margin: 0;
@@ -9,8 +7,6 @@ body {
   justify-content: center;
   align-items: center;
   background-color: #252525;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 200;
 }
 
 .rain-container {
@@ -89,16 +85,4 @@ h1 {
 .button:hover::before,
 .button:focus::before {
   transform: scale(1);
-}
-
-.footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: #252525;
-  padding: 10px;
-  color: white;
-  text-align: center;
-  font-size: 16px;
 }
