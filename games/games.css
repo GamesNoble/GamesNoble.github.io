@@ -23,6 +23,14 @@ h1 {
   margin-top: 20px;
 }
 
+/* Update the .grid selector to create a responsive line of buttons */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 10px;
+  margin-top: 20px;
+}
+
 /* Update the .button selector to apply Poppins font */
 .button {
   background-color: #00ff73;
@@ -36,5 +44,5 @@ h1 {
   transition: transform 0.3s ease;
 }
 
-/* The rest of your existing CSS styles for .rain-container, .raindrop, .grid, and .button:hover remain the same */
+/* The rest of your existing CSS styles for .rain-container, .raindrop, and .button:hover remain the same */
 /* ... */
