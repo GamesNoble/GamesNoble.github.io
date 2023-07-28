@@ -1,0 +1,127 @@
+
+<!DOCTYPE html><html lang=en><head><title>Basketball Stars</title><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><meta name=description content="Basketball Stars is a cool 2 player basketball game by MadPuffers. Choose your team and enter a challenging tournament. Control your player to perform awesome dunks and 3 pointers to win the game. Feel free to block and slap your opponent to knock him out and get the ball, and pay attention to the supershot bar on the top of the screen, once it’s fully loaded, you can use the hot special dunk from wherever you are standing, it never fails. Be the best player on the field. Enjoy Basketball Stars!"><meta name=keywords content=2players,#ball,#basketball,#sports><meta property=og:type content=website><meta property=og:title content="Basketball Stars"><meta property=og:description content="Basketball Stars is a cool 2 player basketball game by MadPuffers. Choose your team and enter a challenging tournament. Control your player to perform awesome dunks and 3 pointers to win the game. Feel free to block and slap your opponent to knock him out and get the ball, and pay attention to the supershot bar on the top of the screen, once it’s fully loaded, you can use the hot special dunk from wherever you are standing, it never fails. Be the best player on the field. Enjoy Basketball Stars!"><meta property=og:image content=https://img.gamedistribution.com/69d78d071f704fa183d75b4114ae40ec-512x512.jpeg><meta property=og:url content=https://html5.gamedistribution.com/69d78d071f704fa183d75b4114ae40ec/ ><link rel=canonical href=https://html5.gamedistribution.com/69d78d071f704fa183d75b4114ae40ec/ ><link rel=preconnect href=https://html5.api.gamedistribution.com><link rel=preconnect href=https://game.api.gamedistribution.com><link rel=preconnect href=https://pm.gamedistribution.com><script type=application/ld+json>{
+  "@context": "http://schema.org",
+  "@type": "Game",
+  "name": "Basketball Stars",
+  "url": "https://html5.gamedistribution.com/69d78d071f704fa183d75b4114ae40ec/",
+  "image": "https://img.gamedistribution.com/69d78d071f704fa183d75b4114ae40ec-512x512.jpeg",    
+  "description": "Basketball Stars is a cool 2 player basketball game by MadPuffers. Choose your team and enter a challenging tournament. Control your player to perform awesome dunks and 3 pointers to win the game. Feel free to block and slap your opponent to knock him out and get the ball, and pay attention to the supershot bar on the top of the screen, once it’s fully loaded, you can use the hot special dunk from wherever you are standing, it never fails. Be the best player on the field. Enjoy Basketball Stars!",
+  "creator":{
+    "name":"MadPuffers"
+    
+    },
+  "publisher":{
+    "name":"GameDistribution",
+    "url":"https://gamedistribution.com/games/basketball-stars"
+    },
+  "genre":[
+      "2players",
+      "#ball",
+      "#basketball",
+      "#sports"
+  ]
+}</script><style>html{height:100%}body{margin:0;padding:0;background-color:#000;overflow:hidden;height:100%}#game{position:absolute;top:0;left:0;width:0;height:0;overflow:hidden;max-width:100%;max-height:100%;min-width:100%;min-height:100%;box-sizing:border-box}</style></head><body><iframe id=game frameborder=0 allow=autoplay allowfullscreen seamless scrolling=no></iframe><script type=text/javascript>(function () {
+    function GameLoader() {
+      this.init = function () {
+        this._gameId = "69d78d071f704fa183d75b4114ae40ec";
+        this._container = document.getElementById("game");
+        this._loader = this._getLoaderData();
+        this._hasImpression = false;
+        this._hasSuccess = false;
+        this._insertGameSDK();
+      };
+
+      this._getLoaderData = function () {
+        return {"enabled":true,"sdk_version":"1.15.2"};
+      }
+
+      this._insertGameSDK = function () {
+        if (!this._gameId) return;
+
+        window["GD_OPTIONS"] = {
+          gameId: this._gameId,
+          loader: this._loader,
+          onLoaderEvent: this._onLoaderEvent.bind(this),
+          onEvent: this._onEvent.bind(this)
+        };
+
+        (function (d, s, id) {
+          var js,fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s);
+          js.id = id;
+          js.src = "https://html5.api.gamedistribution.com/main.min.js";
+          fjs.parentNode.insertBefore(js, fjs);
+        })(document, "script", "gamedistribution-jssdk");
+      };
+
+      this._loadGame = function (options) {
+
+        if (this._container_initialized) {
+          return;
+        }
+
+        var formatTokenURLSearch = this._bridge.exports.formatTokenURLSearch;
+        var extendUrlQuery = this._bridge.exports.extendUrlQuery;
+        var base64Encode = this._bridge.exports.base64Encode;
+        const ln_param = new URLSearchParams(window.location.search).get('lang');
+
+        var data = {
+          parentURL: this._bridge.parentURL,
+          parentDomain: this._bridge.parentDomain,
+          topDomain: this._bridge.topDomain,
+          hasImpression: options.hasImpression,
+          loaderEnabled: true,
+          host: window.location.hostname,
+          version: "1.5.4"
+        };
+
+        var searchPart = formatTokenURLSearch(data);
+        var gameSrc = "//html5.gamedistribution.com/rvvASMiM/69d78d071f704fa183d75b4114ae40ec/" + searchPart;
+        this._container.src = gameSrc;
+
+        this._container.onload=this._onFrameLoaded.bind(this);
+
+        this._container_initialized = true;
+      };
+
+      this._onLoaderEvent = function (event) {
+        switch (event.name) {
+          case "LOADER_DATA":
+            this._bridge = event.message.bridge;
+            this._game = event.message.game;
+            break;
+        }
+      };
+
+      this._onEvent = function (event) {
+        switch (event.name) {
+          case "SDK_GAME_START":
+            this._bridge && this._loadGame({hasImpression: this._hasImpression});
+            break;
+          case "AD_ERROR":
+          case "AD_SDK_CANCELED":
+            this._hasImpression = false || this._hasSuccess;
+            break;
+          case "ALL_ADS_COMPLETED":
+          case "COMPLETE":
+          case "USER_CLOSE":
+          case "SKIPPED":
+            this._hasImpression = true;
+            this._hasSuccess = true;
+            break;
+        }
+      };
+
+      this._onFrameLoaded=function(event){
+        var container=this._container;
+        setTimeout(function(){
+          try{
+            container.contentWindow.focus();
+          }catch(err){
+          }
+        },100);
+      }
+    }
+    new GameLoader().init();
+  })();</script></body></html>
