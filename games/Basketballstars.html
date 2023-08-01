@@ -39,24 +39,20 @@
     <body>
         <div id="__nuxt">
             <style>
-                #nuxt-loading {
-                    background: white;
-                    visibility: hidden;
-                    opacity: 0;
-                    position: absolute;
-                    left: 0;
-                    right: 0;
-                    top: 0;
-                    bottom: 0;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    flex-direction: column;
-                    animation: nuxtLoadingIn 10s ease;
-                    -webkit-animation: nuxtLoadingIn 10s ease;
-                    animation-fill-mode: forwards;
-                    overflow: hidden;
-                }
+                body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            background-color: #252525; /* Set the background color to dark grey */
+            overflow: hidden;
+        }
+
+        iframe {
+            height: 100%;
+            width: 100%;
+            overflow: auto;
+        }
 
                 @keyframes nuxtLoadingIn {
                     0% {
