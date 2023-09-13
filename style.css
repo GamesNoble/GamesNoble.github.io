@@ -51,6 +51,15 @@ body {
   margin-top: 20px;
 }
 
+.centered-heading2 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 200;
+  font-size: 30px;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  margin-top: 20px;
+}
+
 .button {
   background-color: rgb(0, 255, 106);
   border: none;
