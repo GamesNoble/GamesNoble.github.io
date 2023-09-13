@@ -67,6 +67,7 @@ body {
   height: 160px;
   border-radius: 10px;
   box-shadow: #00ff73, 20px;
+  background-color: #00ff73;
 }
 
 .button {
