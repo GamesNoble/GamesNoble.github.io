@@ -55,7 +55,7 @@ body {
 .centered-heading2 {
   font-family: 'Poppins', sans-serif;
   font-weight: 200;
-  font-size: 3px;
+  font-size: 15px;
   text-align: center;
   color: rgb(255, 255, 255);
   margin-top: 40px;
@@ -68,6 +68,7 @@ body {
   border-radius: 10px;
   box-shadow: #00ff73, 20px;
   background-color: #00ff73;
+  color: whitesmoke;
 }
 
 .button {
