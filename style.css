@@ -56,7 +56,8 @@ body {
   font-family: 'Poppins', sans-serif;
   font-weight: 200;
   font-size: 15px;
-  text-align: center;
+  left: 0;
+  bottom: 0;
   color: rgb(255, 255, 255);
   margin-top: 40px;
 }
