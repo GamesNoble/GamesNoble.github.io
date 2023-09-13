@@ -61,6 +61,14 @@ body {
   margin-top: 40px;
 }
 
+.customad {
+  font-size: 5px;
+  width: 350px;
+  height: 160px;
+  border-radius: 10px;
+  box-shadow: #00ff73, 20px;
+}
+
 .button {
   background-color: rgb(0, 255, 106);
   border: none;
