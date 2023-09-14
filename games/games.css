@@ -134,19 +134,9 @@ body {
 h6 {
   color: #ff3300;
   text-align: center;
-  margin-top: 15px;
-  font-size: 15px;
+  font-size: 20px;
 }
 
-.hotbutton:hover,
-.hotbutton:focus {
-  transform: scale(1.1);
-}
-
-.hotbutton:hover,
-.hotbutton:focus {
-  transform: scale(1.1);
-}
 
 .button::before {
   content: "";
@@ -164,5 +154,5 @@ h6 {
 
 .button:hover::before,
 .button:focus::before {
-  transform: scale(1);
+  transform: scale(0.8);
 }
