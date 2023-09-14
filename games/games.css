@@ -119,8 +119,31 @@ body {
   transition: transform 0.3s ease;
 }
 
-.button:hover,
-.button:focus {
+.hotbutton {
+  background-color: #00ff73;
+  border: none;
+  border-radius: 10px;
+  padding: 15px 30px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 200;
+  font-size: 20px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.hotbutton a {
+  color: #ff3300;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.hotbutton:hover,
+.hotbutton:focus {
+  transform: scale(1.1);
+}
+
+.hotbutton:hover,
+.hotbutton:focus {
   transform: scale(1.1);
 }
 
