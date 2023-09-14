@@ -131,10 +131,11 @@ body {
   transition: transform 0.3s ease;
 }
 
-.hotbutton a {
+h6 {
   color: #ff3300;
   text-align: center;
   margin-top: 15px;
+  font-size: 15px;
 }
 
 .hotbutton:hover,
