@@ -14,7 +14,7 @@ body {
   top: 0;
   right: -200px;
   height: 100%;
-  z-index: 999;
+  z-index: 999999999999;
   width: 200px;
   background-color: #333;
   padding-top: 20px;
@@ -23,8 +23,6 @@ body {
   align-items: center;
   justify-content: flex-start;
   transition: right 0.3s ease;
-   
-
 }
 
 .sidebar.show-sidebar {
