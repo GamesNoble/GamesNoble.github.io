@@ -1,12 +1,65 @@
 <!DOCTYPE html>
 <html>
+ 
 <head>
-  <link rel="stylesheet" type="text/css" href="../style.css">
+  <link rel="icon" type="x-icon" href="Untitled design.png">
+
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mokeleven</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
-  <title>Mokeleven - Tools</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <style>
+    /* Your original CSS styles go here (if any) */
+
+    /* Sidebar styles */
+    .sidebar {
+      font-family: Poppins, Arial, sans-serif;
+      position: fixed;
+      top: 0;
+      right: -200px;
+      height: 100%;
+      z-index: 999;
+      width: 200px;
+      background-color: #333;
+      padding-top: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      transition: right 0.3s ease;
+       
+    
+    }
+
+    .sidebar.show-sidebar {
+      right: 0;
+    }
+
+    .sidebar a {
+      color: #00ff73;
+      text-decoration: wavy;
+      margin: 10px 0;
+      font-size: 20px;
+      cursor: none;
+      transition: ease 0.3s;
+    }
+
+    .sidebar a:hover {
+      font-size: 23px;
+    }
+
+    .magnifying-glass {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 28px;
+      cursor: pointer;
+      color:white;
+    }
+  </style>
 </head>
-
-
 <body>
   <!-- Sidebar -->
   <div class="sidebar" id="sidebar">
@@ -14,21 +67,20 @@
     <a href="./Aboutus.html">About</a>
     <a href="./games/">Games</a>
     <a href="./tools/">Tools</a>
+    
   </div>
 
   <!-- Magnifying Glass Icon -->
   <div class="magnifying-glass" id="magnifyingGlass">☰</div>
 
+  <!-- Main Content -->
+  <h1 class="centered-heading">T.A.V</h1>
+  <h1 class="centered-heading2">- Tools And Vulnerabilities -</h1>
+  <a href="./games/"><button class="button">Field-U7 - Advanced</button></a>
   <div class="rain-container">
     <div class="raindrop"></div>
   </div>
-  <h1>T.A.V</h1>
-  <h2>'Tools And Vulnerabilities'</h2>
-  <div class="grid">
-    <button class="button" onclick="window.location.href = './';">1v1.lol</button>
-    <button class="button" onclick="window.location.href = './subwaysurfers.html';">Subway Surfers</button>
-    <button class="button" onclick="window.location.href = './Forcez.html';">ForceZ</button>
-  </div>
+
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const magnifyingGlass = document.getElementById("magnifyingGlass");
@@ -45,3 +97,5 @@
   <script src="./script.js"></script>
 </body>
 </html>
+
+
