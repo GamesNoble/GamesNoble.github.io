@@ -8,6 +8,51 @@ body {
   background-color: #252525;
 }
 
+.sidebar {
+  font-family: Poppins, Arial, sans-serif;
+  position: fixed;
+  top: 0;
+  right: -200px;
+  height: 100%;
+  z-index: 999;
+  width: 200px;
+  background-color: #333;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  transition: right 0.3s ease;
+   
+
+}
+
+.sidebar.show-sidebar {
+  right: 0;
+}
+
+.sidebar a {
+  color: #00ff73;
+  text-decoration: wavy;
+  margin: 10px 0;
+  font-size: 20px;
+  cursor: none;
+  transition: ease 0.3s;
+}
+
+.sidebar a:hover {
+  font-size: 23px;
+}
+
+.magnifying-glass {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 28px;
+  cursor: pointer;
+  color:white;
+}
+
 .rain-container {
   position: fixed;
   top: 0;
@@ -16,7 +61,6 @@ body {
   width: 100%;
   height: 100%;
   pointer-events: none;
-  overflow: hidden; /* Ensures raindrops stay within the container */
 }
 
 .raindrop {
