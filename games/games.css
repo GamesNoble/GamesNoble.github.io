@@ -107,7 +107,8 @@ body {
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 10px;
 }
-.button {
+
+button {
   background-color: #00ff73;
   border: none;
   border-radius: 10px;
@@ -126,7 +127,7 @@ h6 {
 }
 
 
-.button::before {
+button::before {
   content: "";
   position: absolute;
   top: 0;
@@ -140,7 +141,7 @@ h6 {
   transform: scale(0);
 }
 
-.button:hover::before,
-.button:focus::before {
-  transform: scale(0.8);
+button:hover::before,
+button:focus::before {
+  transform: scale(0.1);
 }
