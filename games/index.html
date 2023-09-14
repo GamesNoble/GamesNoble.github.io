@@ -35,6 +35,19 @@
     <button class="button" onclick="window.location.href = './Blacksmith.html';">Black Smith</button>
     <button class="button" onclick="window.location.href = './Soccerrandom.html';">Soccer Random</button>
   </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const magnifyingGlass = document.getElementById("magnifyingGlass");
+      const sidebar = document.getElementById("sidebar");
+
+      function toggleSidebar() {
+        sidebar.classList.toggle("show-sidebar");
+      }
+
+      magnifyingGlass.addEventListener("mouseenter", toggleSidebar);
+      sidebar.addEventListener("mouseleave", toggleSidebar);
+    });
+  </script>
   <script src="./script.js"></script>
 </body>
 </html>
