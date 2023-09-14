@@ -119,18 +119,6 @@ body {
   transition: transform 0.3s ease;
 }
 
-.hotbutton {
-  background-color: #00ff73;
-  border: none;
-  border-radius: 10px;
-  padding: 15px 30px;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 200;
-  font-size: 20px;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
 h6 {
   color: #ff3300;
   text-align: center;
