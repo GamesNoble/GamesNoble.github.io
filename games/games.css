@@ -3,7 +3,6 @@ body {
   margin: 0;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   background-color: #252525;
 }
@@ -100,7 +99,7 @@ body {
   margin-top: 40px;
 }
 
-.game-container {
+.grid {
   display: grid;
   flex-wrap: wrap;
   justify-content: center;
