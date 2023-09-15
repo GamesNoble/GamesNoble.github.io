@@ -105,6 +105,8 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   margin-top: 40px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 13px;
 }
 
 .abutton {
