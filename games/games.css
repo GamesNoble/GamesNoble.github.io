@@ -101,7 +101,7 @@ body {
 }
 
 .game-container {
-  display: flex;
+  display: grid;
   flex-wrap: wrap;
   justify-content: center;
   margin-top: 40px;
