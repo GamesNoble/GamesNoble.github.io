@@ -117,7 +117,7 @@ body {
   transition: transform 0.3s ease;
 }
 
-.button {
+.pbutton {
   background-color: #acacac;
   border: none;
   border-radius: 10px;
