@@ -101,6 +101,7 @@ body {
 
 .grid {
   display: grid;
+  flex-wrap: wrap;
   justify-content: center;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 13px;
