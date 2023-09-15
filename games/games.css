@@ -105,7 +105,7 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 15px;
+  grid-gap: 20px;
 }
 .abutton,
 .pbutton {
