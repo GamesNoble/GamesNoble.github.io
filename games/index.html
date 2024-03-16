@@ -3,7 +3,32 @@
 <head>
   <link rel="stylesheet" type="text/css" href="./games.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <title>Chips Unblocked games</title>
+  <style>
+    /* Updated CSS for search input */
+    .search-container {
+      position: relative;
+      display: inline-block;
+    }
+
+    #searchInput {
+      width: 200px;
+      padding: 8px 30px 8px 10px;
+      margin: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    .search-icon {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #555;
+    }
+  </style>
 </head>
 
 <body>
@@ -22,7 +47,10 @@
   <h1 class="centered-heading1">Games</h1>
 
   <!-- Search input -->
-  <input type="text" id="searchInput" placeholder="Search games..." oninput="searchGames()">
+  <div class="search-container">
+    <input type="text" id="searchInput" placeholder="Search games..." oninput="searchGames()">
+    <i class="fas fa-search search-icon"></i>
+  </div>
 
   <div class="grid" id="gamesGrid">
     <button class="abutton" onclick="window.location.href = './fortnite.html';">1v1.lol</button>
