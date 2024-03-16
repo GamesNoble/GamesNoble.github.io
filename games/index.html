@@ -6,13 +6,10 @@
   <title>Chips Unblocked games</title>
 </head>
 
-
 <body>
   <!-- Sidebar -->
   <div class="sidebar" id="sidebar">
     <a href="../games/">Home</a>
-
-    
   </div>
 
   <!-- Magnifying Glass Icon -->
@@ -23,13 +20,17 @@
   </div>
   
   <h1 class="centered-heading1">Games</h1>
-  <div class="grid">
+
+  <!-- Search input -->
+  <input type="text" id="searchInput" placeholder="Search games..." oninput="searchGames()">
+
+  <div class="grid" id="gamesGrid">
     <button class="abutton" onclick="window.location.href = './fortnite.html';">1v1.lol</button>
     <button class="abutton" onclick="window.location.href = './subwaysurfers.html';">Subway Surfers</button>
     <button class="abutton" onclick="window.location.href = './Forcez.html';">ForceZ</button>
     <button class="abutton" onclick="window.location.href = './retrobowl.html';">Retro Bowl</button>
     <button class="abutton" onclick="window.location.href = './Bitlife.html';">Bitlife</button>
-    <button class="abutton" onclick="window.location.href = './FruitNinja.html';">fruit Ninja</button>
+    <button class="abutton" onclick="window.location.href = './FruitNinja.html';">Fruit Ninja</button>
     <button class="abutton" onclick="window.location.href = './basketballstars.html';">Basketballstars</button>
     <button class="abutton" onclick="window.location.href = './Blacksmith.html';">Black Smith</button>
     <button class="abutton" onclick="window.location.href = './Soccerrandom.html';">Soccer Random</button>
@@ -41,6 +42,7 @@
     <button class="pbutton" onclick="window.location.href = './#inactive';">SOON</button>
     <button class="pbutton" onclick="window.location.href = './#inactive';">SOON</button>
   </div>
+
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const magnifyingGlass = document.getElementById("magnifyingGlass");
@@ -53,7 +55,20 @@
       magnifyingGlass.addEventListener("mouseenter", toggleSidebar);
       sidebar.addEventListener("mouseleave", toggleSidebar);
     });
+
+    function searchGames() {
+      const searchInput = document.getElementById("searchInput").value.toLowerCase();
+      const games = document.querySelectorAll(".abutton");
+
+      games.forEach(game => {
+        const gameName = game.innerText.toLowerCase();
+        if (gameName.includes(searchInput)) {
+          game.style.display = "block";
+        } else {
+          game.style.display = "none";
+        }
+      });
+    }
   </script>
-  <script src="./index.html"></script>
 </body>
 </html>
