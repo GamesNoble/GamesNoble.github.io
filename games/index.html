@@ -154,6 +154,15 @@
       sidebar.addEventListener("mouseleave", toggleSidebar);
     });
     
+      function showPopup() {
+        const screenWidth = window.innerWidth;
+        const gamesSectionWidth = gamesGrid.scrollWidth;
+        
+        if (screenWidth < gamesSectionWidth) {
+          alert("If you have a small screen, hover your mouse on the games and scroll to view more.");
+        }
+      }
+
     // Function to always scroll to games section when user scrolls down
     window.addEventListener('scroll', function() {
       const gamesSection = document.getElementById('gamesGrid'); // Get the games section element
