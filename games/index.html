@@ -151,15 +151,10 @@
       sidebar.addEventListener("mouseleave", toggleSidebar);
     });
     
-    // Function to scroll to games section when user scrolls down
+ // Function to always scroll to games section when user scrolls down
     window.addEventListener('scroll', function() {
       const gamesSection = document.getElementById('gamesGrid'); // Get the games section element
-      const distanceToTop = gamesSection.getBoundingClientRect().top; // Calculate the distance from the top of the viewport to the games section
-
-      // If the games section is near the top of the viewport (within 100 pixels), scroll smoothly to it
-      if (distanceToTop < 100) {
-        gamesSection.scrollIntoView({ behavior: 'smooth', block: 'start' }); // Scroll to the games section smoothly
-      }
+      gamesSection.scrollIntoView({ behavior: 'smooth', block: 'start' }); // Scroll to the games section smoothly
     });
 
     function searchGames() {
