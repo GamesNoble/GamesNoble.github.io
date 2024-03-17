@@ -26,7 +26,7 @@
 
     .search-icon {
       position: absolute;
-      right: 10px;
+      right: 20px; /* Adjusted position */
       top: 50%;
       transform: translateY(-50%);
       color: #555;
@@ -35,6 +35,37 @@
     /* Adjustments to the game grid */
     .grid {
       margin-top: 20px; /* Add margin to create space between header and games */
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .abutton {
+      margin: 10px;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      background-color: #f0f0f0;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      max-width: 200px; /* Adjusted maximum width */
+      text-align: center;
+    }
+
+    .abutton:hover {
+      background-color: #e0e0e0;
+    }
+
+    .abutton img {
+      max-width: 100px; /* Adjusted maximum width for the game icons */
+      height: auto;
+      display: block;
+      margin: 0 auto 10px; /* Center the icons vertically */
+    }
+
+    .game-name {
+      font-family: 'Poppins', sans-serif; /* Updated font family */
+      font-weight: 200;
     }
   </style>
 </head>
@@ -64,9 +95,11 @@
     <button class="abutton" onclick="window.location.href = './fortnite.html';">
       <img src="https://play-lh.googleusercontent.com/QYGRIDJbyVO7L7jH8CwiKJ4NumTGgcTVqU3ITooLWxro-eeNns1RZ0uwGGFe-r8M4co" alt="1v1.lol Logo">
       <div class="game-name">1v1.lol</div>
+    </button>
     <button class="abutton" onclick="window.location.href = './subwaysurfers.html';">
       <img src="https://images-ext-2.discordapp.net/external/QSK1mJfEjMxTqf-dMM7B_nmZVwC9Q0zHQHz9qa8C43c/https/cdn.mobygames.com/b885ab36-abef-11ed-8d66-02420a000132.webp?format=webp&width=395&height=395" alt="Subway Surfers Logo">
       <div class="game-name">Subway Surfers</div>
+    </button>
     <button class="abutton" onclick="window.location.href = './Forcez.html';">ForceZ</button>
     <button class="abutton" onclick="window.location.href = './retrobowl.html';">Retro Bowl</button>
     <button class="abutton" onclick="window.location.href = './Bitlife.html';">Bitlife</button>
