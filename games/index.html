@@ -36,8 +36,8 @@
     .grid {
       margin-top: 20px; /* Add margin to create space between header and games */
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjust box sizes here */
-      gap: 20px; /* Add gap between boxes */
+      grid-auto-flow: column; /* Arrange items horizontally */
+      gap: 20px; /* Add gap between items */
     }
 
     .abutton {
@@ -136,4 +136,3 @@
   </script>
 </body>
 </html>
-
