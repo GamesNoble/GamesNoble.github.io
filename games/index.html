@@ -34,34 +34,35 @@
 
     /* Adjustments to the game grid */
     .grid {
-      margin-top: 20px; /* Add margin to create space between header and games */
-      display: flex; /* Use flexbox to arrange items */
-      overflow-x: auto; /* Enable horizontal scrolling */
-      gap: 20px; /* Add gap between items */
+      margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
     }
 
     .abutton {
-      width: 200px; /* Set fixed width for each button */
-      text-align: center; /* Center button content */
-      background-color: #f1f1f1; /* Background color */
-      border: 2px solid #e0e0e0; /* Border */
-      border-radius: 10px; /* Rounded corners */
-      padding: 10px; /* Padding */
-      transition: transform 0.3s ease-in-out; /* Transition effect for hover */
+      width: calc(25% - 20px);
+      text-align: center;
+      background-color: #f1f1f1;
+      border: 2px solid #e0e0e0;
+      border-radius: 10px;
+      padding: 10px;
+      transition: transform 0.3s ease-in-out;
     }
 
     .abutton:hover {
-      transform: scale(1.1); /* Scale on hover */
+      transform: scale(1.1);
     }
 
     .abutton img {
-      max-width: 100%; /* Set max width for the images */
-      height: auto; /* Maintain aspect ratio */
+      max-width: 100%;
+      height: auto;
     }
 
     .game-name {
-      margin-top: 10px; /* Margin between image and name */
-      font-weight: bold; /* Bold font for the name */
+      margin-top: 10px;
+      font-weight: bold;
     }
   </style>
 </head>
@@ -104,6 +105,7 @@
       <img src="https://img.poki.com/cdn-cgi/image/quality=78,width=600,height=600,fit=cover,f=auto/ee9ca3764ef4289a48a1ebf457ef605441ed1f35a0f2eb12707a70d609e53686.png">
       <div class="game-name">Retro Bowl</div>
     </button>
+    <!-- Add more buttons here as needed -->
   </div>
 
   <script>
@@ -143,4 +145,3 @@
   </script>
 </body>
 </html>
-
