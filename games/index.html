@@ -137,7 +137,7 @@
       <div class="game-name">Cookie Clicker</div>
     </button>
   </div>
- 
+
   <!-- How to Scroll Button -->
   <div class="how-to-scroll" id="howToScroll" onclick="showPopup()">How to Scroll</div>
 
@@ -154,14 +154,14 @@
       sidebar.addEventListener("mouseleave", toggleSidebar);
     });
     
-      function showPopup() {
-        const screenWidth = window.innerWidth;
-        const gamesSectionWidth = gamesGrid.scrollWidth;
+    function showPopup() {
+      const screenWidth = window.innerWidth;
+      const gamesSectionWidth = gamesGrid.scrollWidth;
         
-        if (screenWidth < gamesSectionWidth) {
-          alert("If you have a small screen, hover your mouse on the games and scroll to view more.");
-        }
+      if (screenWidth < gamesSectionWidth) {
+        alert("If you have a small screen, hover your mouse on the games and scroll to view more.");
       }
+    }
 
     // Function to always scroll to games section when user scrolls down
     window.addEventListener('scroll', function() {
@@ -192,4 +192,3 @@
     }
   </script>
 </body>
-</html>
