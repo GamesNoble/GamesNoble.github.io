@@ -34,30 +34,15 @@
 
     /* Adjustments to the game grid */
     .grid {
-      margin-top: 80px; /* Add margin to create space between header and games */
+      margin-top: 20px; /* Add margin to create space between header and games */
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjust box sizes here */
+      gap: 20px; /* Add gap between boxes */
     }
 
     .abutton {
-      width: 150px; /* Set width of the button */
-      height: 150px; /* Set height of the button */
-      margin: 10px; /* Adjust margin as needed */
-      display: inline-block;
-      text-align: center;
-      border: none;
-      background-color: #f0f0f0;
-      border-radius: 10px;
-      overflow: hidden; /* Ensure contents don't overflow */
-    }
-
-    .abutton img {
-      max-width: 100%;
-      max-height: 100%;
-      object-fit: contain; /* Maintain aspect ratio */
-    }
-
-    .game-name {
-      margin-top: 5px;
-      font-size: 14px;
+      width: 100%; /* Set button width to 100% of its container */
+      text-align: center; /* Center button content */
     }
   </style>
 </head>
@@ -92,7 +77,20 @@
       <img src="https://images-ext-2.discordapp.net/external/QSK1mJfEjMxTqf-dMM7B_nmZVwC9Q0zHQHz9qa8C43c/https/cdn.mobygames.com/b885ab36-abef-11ed-8d66-02420a000132.webp?format=webp&width=395&height=395" alt="Subway Surfers Logo">
       <div class="game-name">Subway Surfers</div>
     </button>
-    <!-- Add more buttons for other games -->
+    <button class="abutton" onclick="window.location.href = './Forcez.html';">ForceZ</button>
+    <button class="abutton" onclick="window.location.href = './retrobowl.html';">Retro Bowl</button>
+    <button class="abutton" onclick="window.location.href = './Bitlife.html';">Bitlife</button>
+    <button class="abutton" onclick="window.location.href = './FruitNinja.html';">Fruit Ninja</button>
+    <button class="abutton" onclick="window.location.href = './basketballstars.html';">Basketballstars</button>
+    <button class="abutton" onclick="window.location.href = './Blacksmith.html';">Black Smith</button>
+    <button class="abutton" onclick="window.location.href = './Soccerrandom.html';">Soccer Random</button>
+    <button class="abutton" onclick="window.location.href = './basketballrandom';">Basket Ball random</button>
+    <button class="abutton" onclick="window.location.href = './NUT SIM.html';">NUT SIM</button>
+    <button class="abutton" onclick="window.location.href = './cookieclicker.html';">Cookie Clicker</button>
+    <button class="abutton" onclick="window.location.href = './cookieclicker2.html';">Cookie Clicker 2</button>
+    <button class="pbutton" onclick="window.location.href = './#inactive';">SOON</button>
+    <button class="pbutton" onclick="window.location.href = './#inactive';">SOON</button>
+    <button class="pbutton" onclick="window.location.href = './#inactive';">SOON</button>
   </div>
 
   <script>
