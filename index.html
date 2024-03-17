@@ -1,1 +1,104 @@
+<!DOCTYPE html>
+<html>
+ <link rel="icon" href="https://cdn.discordapp.com/attachments/1215827926239543358/1218679222730625044/IMG_1226.png?ex=66088a78&is=65f61578&hm=1362c5d6d09397dda253dc199966cfbf46eac88a3e2f54ebf5094868def96c25" type="image/png">
+<head>
+  <img src="https://cdn.discordapp.com/attachments/1215827926239543358/1218679222730625044/IMG_1226.png?ex=66088a78&is=65f61578&hm=1362c5d6d09397dda253dc199966cfbf46eac88a3e2f54ebf5094868def96c25" alt="Website Image">
+    <script type="text/javascript">
+        window.onload = function() {
+            window.location.href = "block.html";
 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chip Hill - Unblocked games </title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <style>
+    /* Your original CSS styles go here (if any) */
+
+    /* Sidebar styles */
+    .sidebar {
+      font-family: Poppins, Arial, sans-serif;
+      position: fixed;
+      top: 0;
+      right: -200px;
+      height: 100%;
+      z-index: 999;
+      width: 200px;
+      background-color: #333;
+      padding-top: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      transition: right 0.3s ease;
+       
+    
+    }
+
+    .sidebar.show-sidebar {
+      right: 0;
+    }
+
+    .sidebar a {
+      color: #00ff73;
+      text-decoration: wavy;
+      margin: 10px 0;
+      font-size: 20px;
+      cursor: pointer;
+      transition: ease 0.15s;
+    }
+
+    .sidebar a:hover {
+      font-size: 23px;
+    }
+
+    .magnifying-glass {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 28px;
+      cursor: pointer;
+      color:white;
+    }
+  </style>
+</head>
+<body>
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <a href="./games/">Home</a>
+    
+   
+    
+  </div>
+
+  <!-- Magnifying Glass Icon -->
+  
+ <div class="magnifying-glass" id="magnifyingGlass">☰</div>
+  <div class="rain-container">
+    <div class="raindrop"></div>
+  </div>
+ 
+  <!-- Main Content -->
+  <h1 class="centered-heading">Chips Unblocked Games</h1>
+  <h1 class="centered-heading2">The Best Unblocked Games Out There</h1>
+  <a href="./games/"><button class="button">Games</button></a>
+  <div class="rain-container">
+    <div class="raindrop"></div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const magnifyingGlass = document.getElementById("magnifyingGlass");
+      const sidebar = document.getElementById("sidebar");
+
+      function toggleSidebar() {
+        sidebar.classList.toggle("show-sidebar");
+      }
+
+      magnifyingGlass.addEventListener("mouseenter", toggleSidebar);
+      sidebar.addEventListener("mouseleave", toggleSidebar);
+    });
+  </script>
+  <script src="./script.js"></script>
+</body>
+</html>
