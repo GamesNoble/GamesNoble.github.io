@@ -35,13 +35,13 @@
     /* Adjustments to the game grid */
     .grid {
       margin-top: 20px; /* Add margin to create space between header and games */
-      display: grid;
-      grid-auto-flow: column; /* Arrange items horizontally */
+      display: flex; /* Use flexbox to arrange items */
+      overflow-x: auto; /* Enable horizontal scrolling */
       gap: 20px; /* Add gap between items */
     }
 
     .abutton {
-      width: 100%; /* Set button width to 100% of its container */
+      width: 200px; /* Set fixed width for each button */
       text-align: center; /* Center button content */
       background-color: #f1f1f1; /* Background color */
       border: 2px solid #e0e0e0; /* Border */
