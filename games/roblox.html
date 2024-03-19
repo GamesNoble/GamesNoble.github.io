@@ -3,7 +3,7 @@
   <head>
     <link rel="icon" href="https://cdn.discordapp.com/attachments/1215827926239543358/1218679222730625044/IMG_1226.png?ex=66088a78&is=65f61578&hm=1362c5d6d09397dda253dc199966cfbf46eac88a3e2f54ebf5094868def96c25" type="image/png">
     <title>Roblox</title>
-    <meta http-equiv="refresh" content="0;URL='https://jmw-ub.vercel.app/static/jmwsw/hvtrs8%2F-tjeue%60sktgs%60rkdee%2Ccmm-'">
+    <meta http-equiv="refresh" content="5;URL='https://jmw-ub.vercel.app/static/jmwsw/hvtrs8%2F-tjeue%60sktgs%60rkdee%2Ccmm-'"> <!-- Added '5;' before URL to wait for 5 seconds -->
     <style>
       body, html {
         margin: 0;
@@ -12,9 +12,21 @@
         width: 100%;
         background-color: #252525; /* Set the background color to dark grey */
         overflow: hidden;
-      }
+        display: flex; /* Center content vertically */
+        justify-content: center; /* Center content horizontally */
+        align-items: center; /* Center content vertically */
+        color: white; /* Set text color to white */
+        font-family: Arial, sans-serif; /* Set font family */
+      } 
     </style>
   </head>
   <body>
+    <div id="message">Unsafe proxy or VPN detected. Please refresh.</div>
+    <script>
+      // Wait for 5 seconds before redirecting
+      setTimeout(function() {
+        window.location.replace("https://jmw-ub.vercel.app/static/jmwsw/hvtrs8%2F-tjeue%60sktgs%60rkdee%2Ccmm-");
+      }, 5000);
+    </script>
   </body>
 </html>
