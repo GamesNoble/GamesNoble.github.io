@@ -27,11 +27,22 @@
       pointer-events: none;
       display: none;
     }
+
+    #choose-size-button {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      padding: 10px;
+      background-color: #ffffff;
+      border: 1px solid #000000;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
   <iframe id="game-frame" src="https://highwayracer.github.io/game/funny-shooter-2.html" width="800" height="600"></iframe>
   <div id="selection-area"></div>
+  <div id="choose-size-button" onclick="showSelectionArea()">Choose Size</div>
   <script>
     var selectionArea = document.getElementById("selection-area");
     var gameFrame = document.getElementById("game-frame");
@@ -39,13 +50,18 @@
 
     window.addEventListener("resize", updateSelection);
 
-    gameFrame.addEventListener("mousedown", function(event) {
+    function showSelectionArea() {
+      selectionArea.style.display = "block";
+      document.addEventListener("mousedown", startSelection);
+    }
+
+    function startSelection(event) {
       startPosX = event.clientX;
       startPosY = event.clientY;
 
       document.addEventListener("mousemove", moveSelection);
       document.addEventListener("mouseup", endSelection);
-    });
+    }
 
     function moveSelection(event) {
       endPosX = event.clientX;
@@ -69,7 +85,6 @@
       selectionArea.style.height = height + "px";
       selectionArea.style.left = left + "px";
       selectionArea.style.top = top + "px";
-      selectionArea.style.display = "block";
     }
 
     function updateSize() {
@@ -83,7 +98,16 @@
       gameFrame.style.height = height + "px";
 
       selectionArea.style.display = "none";
+      document.removeEventListener("mousedown", startSelection);
     }
+
+    // Confirmation process when pressing Enter
+    document.addEventListener("keydown", function(event) {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        updateSize();
+      }
+    });
   </script>
 </body>
 </html>
