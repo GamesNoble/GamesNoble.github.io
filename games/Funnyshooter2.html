@@ -35,18 +35,22 @@
 </head>
 <body>
   <iframe id="game-frame" src="https://highwayracer.github.io/game/funny-shooter-2.html" width="800" height="600"></iframe>
-  <div id="fullscreen-button" onclick="toggleFullscreen()">Fullscreen</div>
+  <div id="fullscreen-button">
+    <label for="size-select">Choose Size:</label>
+    <select id="size-select" onchange="changeSize(this.value)">
+      <option value="800x600">800x600</option>
+      <option value="1024x768">1024x768</option>
+      <option value="1280x720">1280x720</option>
+      <option value="1920x1080">1920x1080</option>
+    </select>
+  </div>
 
   <script>
-    function toggleFullscreen() {
+    function changeSize(size) {
       var iframe = document.getElementById("game-frame");
-      if (!document.fullscreenElement) {
-        iframe.requestFullscreen().catch(err => {
-          console.error('Failed to enter fullscreen mode:', err);
-        });
-      } else {
-        document.exitFullscreen();
-      }
+      var dimensions = size.split("x");
+      iframe.style.width = dimensions[0] + "px";
+      iframe.style.height = dimensions[1] + "px";
     }
   </script>
 </body>
