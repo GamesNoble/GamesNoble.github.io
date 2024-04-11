@@ -21,36 +21,68 @@
       border: none;
     }
 
-    #fullscreen-button {
+    #selection-area {
       position: absolute;
-      top: 10px;
-      right: 10px;
-      z-index: 9999;
-      padding: 10px;
-      background-color: #ffffff;
-      border: 1px solid #000000;
-      cursor: pointer;
+      border: 2px dashed #ffffff;
+      pointer-events: none;
+      display: none;
     }
   </style>
 </head>
 <body>
   <iframe id="game-frame" src="https://highwayracer.github.io/game/funny-shooter-2.html" width="800" height="600"></iframe>
-  <div id="fullscreen-button">
-    <label for="size-select">Choose Size:</label>
-    <select id="size-select" onchange="changeSize(this.value)">
-      <option value="800x600">800x600</option>
-      <option value="1024x768">1024x768</option>
-      <option value="1280x720">1280x720</option>
-      <option value="1920x1080">1920x1080</option>
-    </select>
-  </div>
-
+  <div id="selection-area"></div>
   <script>
-    function changeSize(size) {
-      var iframe = document.getElementById("game-frame");
-      var dimensions = size.split("x");
-      iframe.style.width = dimensions[0] + "px";
-      iframe.style.height = dimensions[1] + "px";
+    var selectionArea = document.getElementById("selection-area");
+    var gameFrame = document.getElementById("game-frame");
+    var startPosX, startPosY, endPosX, endPosY;
+
+    window.addEventListener("resize", updateSelection);
+
+    gameFrame.addEventListener("mousedown", function(event) {
+      startPosX = event.clientX;
+      startPosY = event.clientY;
+
+      document.addEventListener("mousemove", moveSelection);
+      document.addEventListener("mouseup", endSelection);
+    });
+
+    function moveSelection(event) {
+      endPosX = event.clientX;
+      endPosY = event.clientY;
+      updateSelection();
+    }
+
+    function endSelection() {
+      document.removeEventListener("mousemove", moveSelection);
+      document.removeEventListener("mouseup", endSelection);
+      updateSize();
+    }
+
+    function updateSelection() {
+      var width = Math.abs(startPosX - endPosX);
+      var height = Math.abs(startPosY - endPosY);
+      var left = Math.min(startPosX, endPosX);
+      var top = Math.min(startPosY, endPosY);
+
+      selectionArea.style.width = width + "px";
+      selectionArea.style.height = height + "px";
+      selectionArea.style.left = left + "px";
+      selectionArea.style.top = top + "px";
+      selectionArea.style.display = "block";
+    }
+
+    function updateSize() {
+      var scaleX = gameFrame.offsetWidth / gameFrame.clientWidth;
+      var scaleY = gameFrame.offsetHeight / gameFrame.clientHeight;
+
+      var width = selectionArea.offsetWidth * scaleX;
+      var height = selectionArea.offsetHeight * scaleY;
+
+      gameFrame.style.width = width + "px";
+      gameFrame.style.height = height + "px";
+
+      selectionArea.style.display = "none";
     }
   </script>
 </body>
