@@ -10,6 +10,7 @@
       width: 100%;
       background-color: #252525;
       overflow: hidden;
+      position: relative;
     }
 
     iframe {
@@ -96,6 +97,12 @@
 
       gameFrame.style.width = width + "px";
       gameFrame.style.height = height + "px";
+
+      var centerX = (window.innerWidth - width) / 2;
+      var centerY = (window.innerHeight - height) / 2;
+
+      gameFrame.style.left = centerX + "px";
+      gameFrame.style.top = centerY + "px";
 
       selectionArea.style.display = "none";
       document.removeEventListener("mousedown", startSelection);
