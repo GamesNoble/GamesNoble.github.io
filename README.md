@@ -1,6 +1,5 @@
 <div align="center">
-  <img src="public/assets/images/icon.png" />
-  <h1>Art Class v4</h1>
+  <h1>CUG</h1>
 </div>
 A website with tons of games, apps, built-in proxy, emulator, and more fun goodies. If you fork this repository, please consider giving it a star ⭐!
 
@@ -19,4 +18,4 @@ Most issues can be answered by [opening an issue](https://github.com/DamageCodin
 
 ## Contributors
 
-[![Contrib](https://contrib.rocks/image?repo=art-class/v4#)](https://github.com/art-class/v4/graphs/contributors)
+[![Contrib](https://github.com/DamageCoding/CUG/)](https://github.com/DamageCoding/CUG/graphs/contributors)
