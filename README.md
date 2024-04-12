@@ -17,5 +17,6 @@ npm start # Start the bare server + serve static files
 Most issues can be answered by [opening an issue](https://github.com/DamageCoding/CUG/issues).
 
 ## Contributors
-
-[![Contrib](https://github.com/DamageCoding/CUG/)](https://github.com/DamageCoding/CUG/graphs/contributors)
+<a href="https://github.com/DamageCoding/CUG/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=DamageCoding/CUG" />
+</a>
