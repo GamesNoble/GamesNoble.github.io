@@ -1,4 +1,4 @@
-f// script one; raindrops !!!
+// script one; raindrops !!!
 const numRaindrops = 100;
 const container = document.querySelector(".rain-container");
 
