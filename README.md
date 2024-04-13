@@ -1,4 +1,4 @@
-f<div align="center">
+<div align="center">
   <head>
  <img src="https://media.discordapp.net/attachments/1226374391336665229/1228630909469589525/JvYapbs.md.png?ex=662cbeb3&is=661a49b3&hm=026c2b73a57845f1fa367177bb61a40baf67716e0ff20d502bd3646039cc3b57&=&format=webp&quality=lossless&width=250&height=250">
 <h1>CUG</h1>
