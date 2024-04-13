@@ -1,11 +1,7 @@
 <!DOCTYPE html>
 <html>
- <link rel="icon" href="https://iili.io/JvYapbs.md.png" type="image/png">
 <head>
- <img src="https://media.discordapp.net/attachments/1226374391336665229/1228630909469589525/JvYapbs.md.png?ex=662cbeb3&is=661a49b3&hm=026c2b73a57845f1fa367177bb61a40baf67716e0ff20d502bd3646039cc3b57&=&format=webp&quality=lossless&width=250&height=250">
-
-
-
+  <link rel="icon" href="https://iili.io/JvYapbs.md.png" type="image/png">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CUG</title>
@@ -30,8 +26,6 @@
       align-items: center;
       justify-content: flex-start;
       transition: right 0.3s ease;
-       
-    
     }
 
     .sidebar.show-sidebar {
@@ -40,7 +34,7 @@
 
     .sidebar a {
       color: #00ff73;
-      text-decoration: wavy;
+      text-decoration: none;
       margin: 10px 0;
       font-size: 20px;
       cursor: pointer;
@@ -62,26 +56,20 @@
   </style>
 </head>
 <body>
-
-    
-   
-    
+  <div class="sidebar" id="sidebar">
+    <a href="#">Link 1</a>
+    <a href="#">Link 2</a>
+    <a href="#">Link 3</a>
+    <!-- Add more links as needed -->
   </div>
 
   <!-- Magnifying Glass Icon -->
-  
- <div class="magnifying-glass" id="magnifyingGlass">☰</div>
-  <div class="rain-container">
-    <div class="raindrop"></div>
-  </div>
- 
+  <div class="magnifying-glass" id="magnifyingGlass">☰</div>
+
   <!-- Main Content -->
   <h1 class="centered-heading">CUG</h1>
   <h1 class="centered-heading2">The Best Unblocked Games Out There</h1>
   <a href="./games/"><button class="button">Games</button></a>
-  <div class="rain-container">
-    <div class="raindrop"></div>
-  </div>
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
@@ -92,10 +80,8 @@
         sidebar.classList.toggle("show-sidebar");
       }
 
-      magnifyingGlass.addEventListener("mouseenter", toggleSidebar);
-      sidebar.addEventListener("mouseleave", toggleSidebar);
+      magnifyingGlass.addEventListener("click", toggleSidebar);
     });
   </script>
-  <script src="./script.js"></script>
 </body>
 </html>
