@@ -4,9 +4,6 @@
   <link rel="icon" href="Logo/Logo.png" type="image/png">
  <head>
  <img src="Logo/Logo.png" width="250" height="250">
-
-
-
  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CUG</title>
@@ -14,7 +11,6 @@
   <link rel="stylesheet" type="text/css" href="style.css">
   <style>
     /* Your original CSS styles go here (if any) */
-
     /* Sidebar styles */
     .sidebar {
       font-family: Poppins, Arial, sans-serif;
@@ -58,6 +54,12 @@
       cursor: pointer;
       color:white;
     }
+
+    #randomFact {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 18px;
+    }
   </style>
 </head>
 <body>
@@ -73,6 +75,10 @@
 
   <!-- Main Content -->
   <h1 class="centered-heading">CUG</h1>
+  
+  <!-- Display Random Fact or Text -->
+  <div id="randomFact"></div>
+  
   <h1 class="centered-heading2">The Best Unblocked Games Out There</h1>
   <a href="./games/"><button class="button">Games</button></a>
 
@@ -80,9 +86,32 @@
     document.addEventListener("DOMContentLoaded", function () {
       const magnifyingGlass = document.getElementById("magnifyingGlass");
       const sidebar = document.getElementById("sidebar");
+      const randomFactContainer = document.getElementById("randomFact");
+
+      // Array of random facts or texts
+      const randomFacts = [
+        "Did you know that the shortest war in history was between Britain and Zanzibar on August 27, 1896? It lasted only 38 minutes.",
+        "Honey never spoils. Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3,000 years old and still perfectly edible.",
+        "The Eiffel Tower can be 15 cm taller during the summer, due to the expansion of the iron in the heat.",
+        // Add more facts or texts as needed
+      ];
+
+      function getRandomFact() {
+        const randomIndex = Math.floor(Math.random() * randomFacts.length);
+        return randomFacts[randomIndex];
+      }
+
+      function displayRandomFact() {
+        const fact = getRandomFact();
+        randomFactContainer.textContent = fact;
+      }
 
       function toggleSidebar() {
         sidebar.classList.toggle("show-sidebar");
+        // Display random fact when sidebar is opened
+        if (sidebar.classList.contains("show-sidebar")) {
+          displayRandomFact();
+        }
       }
 
       magnifyingGlass.addEventListener("click", toggleSidebar);
