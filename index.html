@@ -58,7 +58,8 @@
     #randomFact {
       text-align: center;
       margin-top: 20px;
-      font-size: 18px;
+      font-size: 20px;
+      color: #00ff73; /* Green color */
     }
   </style>
 </head>
@@ -106,6 +107,9 @@
         randomFactContainer.textContent = fact;
       }
 
+      // Display random fact when the page is loaded
+      displayRandomFact();
+
       function toggleSidebar() {
         sidebar.classList.toggle("show-sidebar");
         // Display random fact when sidebar is opened
@@ -119,4 +123,3 @@
   </script>
 </body>
 </html>
-
