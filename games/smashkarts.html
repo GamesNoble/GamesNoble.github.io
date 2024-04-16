@@ -1,9 +1,10 @@
+<!DOCTYPE html>
 <html>
-  <head>
-     <link rel="icon" href="https://webglmath.github.io/smash-karts/logo.png" type="image/png">
+<head>
+    <link rel="icon" href="https://webglmath.github.io/smash-karts/logo.png" type="image/png">
     <title>Smash Carts</title>
     <style>
-           body, html {
+        body, html {
             margin: 0;
             padding: 0;
             height: 100%;
@@ -18,20 +19,75 @@
             overflow: auto;
         }
 
-        .forceIosScrolling {
-            overflow: scroll;
-            -webkit-overflow-scrolling: touch;
+        .sidebar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+            z-index: 1;
         }
-  
+
+        .sidebar a {
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .sidebar a:hover {
+            color: #f1f1f1;
+        }
+
+        .sidebar .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+
+        #main-content {
+            transition: margin-left 0.5s;
+            padding: 16px;
+        }
+
+        @media screen and (max-height: 450px) {
+            .sidebar {padding-top: 15px;}
+            .sidebar a {font-size: 18px;}
+        }
     </style>
-<html>
-  <head>
-    <body>
-      <iframe src="https://highwayracer.github.io/game/smash-karts.html" width="800" height="600" scrolling="none" frameborder="0"></iframe>
-    </body>
-  </head>
+</head>
+<body>
+
+<div class="sidebar" id="mySidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="index.html">Go Home</a>
+</div>
+
+<div id="main-content">
+    <button style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Open Sidebar</button>
+
+    <iframe src="https://highwayracer.github.io/game/smash-karts.html" width="800" height="600" scrolling="none" frameborder="0"></iframe>
+</div>
+
+<script>
+    function openNav() {
+        document.getElementById("mySidebar").style.width = "250px";
+        document.getElementById("main-content").style.marginLeft = "250px";
+    }
+
+    function closeNav() {
+        document.getElementById("mySidebar").style.width = "0";
+        document.getElementById("main-content").style.marginLeft = "0";
+    }
+</script>
+
+</body>
 </html>
-<style>
-  
-  
-</style>
