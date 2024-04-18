@@ -6,22 +6,40 @@
 <title>Dice Code Hunt</title>
 <style>
   body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-  }
-  #dice {
-    width: 100px;
-    height: 100px;
-    background-color: white;
-    border: 1px solid #999;
-    border-radius: 5px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f3f3f3;
+    margin: 0;
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100vh;
+  }
+  .container {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    text-align: center;
+  }
+  h1 {
     font-size: 36px;
+    margin-bottom: 30px;
+    color: #333;
+  }
+  #dice {
+    width: 120px;
+    height: 120px;
+    background-color: #fff;
+    border: 2px solid #333;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 48px;
     cursor: pointer;
     margin: 20px auto;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
     position: relative;
     overflow: hidden;
   }
@@ -51,24 +69,46 @@
   #codes {
     margin-top: 20px;
     text-align: left;
+    list-style: none;
+    padding: 0;
+  }
+  .code-item {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  }
+  .code-item strong {
+    color: #333;
   }
 </style>
 </head>
 <body>
-<h1>Dice Code Hunt</h1>
-<div id="dice" onclick="rollDice()">Click to roll the dice!</div>
-<ul id="codes"></ul>
+<div class="container">
+  <h1>Dice Code Hunt</h1>
+  <div id="dice" onclick="rollDice()">⚀</div>
+  <div class="code-container">
+    <h2>Codes for Users</h2>
+    <ul id="codes"></ul>
+  </div>
+</div>
 
 <audio id="diceSound" src="dice_roll_sound.mp3"></audio>
 
 <script>
-  var generatedNumber = Math.floor(Math.random() * 6) + 1; // Generate a random number between 1 and 6
   var diceElement = document.getElementById('dice');
   var diceSound = document.getElementById('diceSound');
+  var codes = [
+    "ABC123",
+    "DEF456",
+    "GHI789"
+    // Add more codes here if needed
+  ];
 
   function rollDice() {
     var diceValue = Math.floor(Math.random() * 6) + 1; // Generate a random number between 1 and 6
-    diceElement.textContent = diceValue;
+    diceElement.textContent = getDiceFace(diceValue);
 
     // Play dice roll sound
     diceSound.currentTime = 0;
@@ -88,21 +128,32 @@
       }, 50);
 
       // Check if the rolled number matches the generated number
-      if (diceValue === generatedNumber) {
-        fetch('dicelist.txt')
-          .then(response => response.text())
-          .then(data => {
-            var codes = data.split('\n').filter(code => code.trim() !== '');
-            var code = codes[Math.floor(Math.random() * codes.length)];
-            var codesElement = document.getElementById('codes');
-            var listItem = document.createElement('li');
-            listItem.textContent = "Congratulations! You unlocked a code: " + code;
-            codesElement.appendChild(listItem);
-            generatedNumber = Math.floor(Math.random() * 6) + 1; // Generate a new random number
-          })
-          .catch(error => console.error('Error fetching codes:', error));
+      if (diceValue === 6) { // Change this condition to whatever you like
+        var codesElement = document.getElementById('codes');
+        var code = codes[Math.floor(Math.random() * codes.length)];
+        var listItem = document.createElement('li');
+        listItem.className = 'code-item';
+        listItem.innerHTML = "<strong>Congratulations!</strong> You unlocked a code: " + code;
+        codesElement.appendChild(listItem);
       }
     }, 1000);
+  }
+
+  function getDiceFace(number) {
+    switch (number) {
+      case 1:
+        return '⚀';
+      case 2:
+        return '⚁';
+      case 3:
+        return '⚂';
+      case 4:
+        return '⚃';
+      case 5:
+        return '⚄';
+      case 6:
+        return '⚅';
+    }
   }
 </script>
 </body>
