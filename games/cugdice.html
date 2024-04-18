@@ -16,10 +16,6 @@
     height: 100vh;
   }
   .container {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-    padding: 40px;
     text-align: center;
   }
   h1 {
@@ -28,32 +24,14 @@
     color: #333;
   }
   #dice {
-    width: 120px;
-    height: 120px;
-    background-color: #fff;
-    border: 2px solid #333;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 48px;
+    font-size: 150px;
     cursor: pointer;
-    margin: 20px auto;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-    position: relative;
-    overflow: hidden;
+    user-select: none; /* Disable text selection */
   }
-  #dice:before {
-    content: "";
-    position: absolute;
-    top: 5px;
-    left: 5px;
-    right: 5px;
-    bottom: 5px;
-    background-image: linear-gradient(45deg, #ccc 25%, transparent 25%, transparent 75%, #ccc 75%, #ccc), 
-                      linear-gradient(-45deg, #ccc 25%, transparent 25%, transparent 75%, #ccc 75%, #ccc);
-    background-size: 20px 20px;
-    border-radius: 5px;
+  #cooldownMessage {
+    color: red;
+    font-size: 20px;
+    margin-top: 10px;
   }
   #codes {
     margin-top: 20px;
@@ -77,6 +55,7 @@
 <div class="container">
   <h1>Dice Code Hunt</h1>
   <div id="dice" onclick="rollDice()">⚀</div>
+  <div id="cooldownMessage" style="display: none;">ON COOL DOWN PLEASE WAIT!</div>
   <div class="code-container">
     <h2>Codes for Users</h2>
     <ul id="codes"></ul>
@@ -88,6 +67,7 @@
 <script>
   var diceElement = document.getElementById('dice');
   var diceSound = document.getElementById('diceSound');
+  var cooldownMessage = document.getElementById('cooldownMessage');
   var codes = [
     "ABC123",
     "DEF456",
@@ -100,7 +80,11 @@
   function rollDice() {
     var currentTime = Date.now();
     if (currentTime - lastRollTime < cooldownDuration) {
-      // Still in cooldown, do nothing
+      // Still in cooldown, show cooldown message and do nothing
+      cooldownMessage.style.display = 'block';
+      setTimeout(function() {
+        cooldownMessage.style.display = 'none';
+      }, cooldownDuration);
       return;
     }
     lastRollTime = currentTime;
