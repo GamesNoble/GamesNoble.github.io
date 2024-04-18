@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dice Code Hunt</title>
+<title>CUGS DICE</title>
 <style>
   body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -32,6 +32,11 @@
     color: red;
     font-size: 20px;
     margin-top: 10px;
+    display: none;
+  }
+  #cooldownTimer {
+    font-size: 20px;
+    margin-bottom: 10px;
   }
   #codes {
     margin-top: 20px;
@@ -55,7 +60,8 @@
 <div class="container">
   <h1>Dice Code Hunt</h1>
   <div id="dice" onclick="rollDice()">⚀</div>
-  <div id="cooldownMessage" style="display: none;">ON COOL DOWN PLEASE WAIT!</div>
+  <div id="cooldownMessage">ON COOL DOWN PLEASE WAIT!</div>
+  <div id="cooldownTimer"></div>
   <div class="code-container">
     <h2>Codes for Users</h2>
     <ul id="codes"></ul>
@@ -66,33 +72,33 @@
 
 <script>
   var diceElement = document.getElementById('dice');
-  var diceSound = document.getElementById('diceSound');
   var cooldownMessage = document.getElementById('cooldownMessage');
+  var cooldownTimer = document.getElementById('cooldownTimer');
   var codes = [
-    "ABC123",
-    "DEF456",
-    "GHI789"
+    "5L0P-2V8R-9T1G-6Q7W",
+    "P1NK-6C4D-9R2B-3M0N",
+    "8RB0-3X5T-2W1L-7Z9D"
     // Add more codes here if needed
   ];
-  var lastRollTime = 0;
-  var cooldownDuration = 2000; // Cooldown duration in milliseconds
+  var lastRollTime = localStorage.getItem('lastRollTime') || 0;
+  var cooldownDuration = 15 * 60 * 1000; // 15 minutes in milliseconds
 
   function rollDice() {
     var currentTime = Date.now();
     if (currentTime - lastRollTime < cooldownDuration) {
       // Still in cooldown, show cooldown message and do nothing
       cooldownMessage.style.display = 'block';
-      setTimeout(function() {
-        cooldownMessage.style.display = 'none';
-      }, cooldownDuration);
+      updateCooldownTimer();
       return;
     }
     lastRollTime = currentTime;
+    localStorage.setItem('lastRollTime', lastRollTime);
 
     var diceValue = Math.floor(Math.random() * 6) + 1; // Generate a random number between 1 and 6
     diceElement.textContent = getDiceFace(diceValue);
 
     // Play dice roll sound
+    var diceSound = document.getElementById('diceSound');
     diceSound.currentTime = 0;
     diceSound.play();
 
@@ -137,6 +143,17 @@
         return '⚅';
     }
   }
+
+  function updateCooldownTimer() {
+    var currentTime = Date.now();
+    var remainingTime = lastRollTime + cooldownDuration - currentTime;
+    var minutes = Math.floor(remainingTime / (1000 * 60));
+    var seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
+    cooldownTimer.textContent = "Cooldown: " + minutes + "m " + seconds + "s";
+  }
+
+  // Initial update of the cooldown timer
+  updateCooldownTimer();
 </script>
 </body>
 </html>
