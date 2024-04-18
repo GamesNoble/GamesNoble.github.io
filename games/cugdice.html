@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dice Code Hunt</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+  #dice {
+    font-size: 36px;
+    margin-top: 20px;
+  }
+  #rollButton {
+    padding: 10px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  #codes {
+    margin-top: 20px;
+  }
+</style>
+</head>
+<body>
+<h1>Dice Code Hunt</h1>
+<div id="dice">Click "Roll" to roll the dice!</div>
+<button id="rollButton" onclick="rollDice()">Roll</button>
+<div id="codes"></div>
+
+<script>
+  var generatedNumber = Math.floor(Math.random() * 6) + 1; // Generate a random number between 1 and 6
+
+  function rollDice() {
+    var diceValue = Math.floor(Math.random() * 6) + 1; // Generate a random number between 1 and 6
+    var diceElement = document.getElementById('dice');
+    diceElement.textContent = "You rolled: " + diceValue;
+
+    var codesElement = document.getElementById('codes');
+    if (diceValue === generatedNumber) {
+      var code = generateCode();
+      codesElement.innerHTML += "<p>Congratulations! You unlocked a code: <strong>" + code + "</strong></p>";
+      generatedNumber = Math.floor(Math.random() * 6) + 1; // Generate a new random number
+    }
+  }
+
+  function generateCode() {
+    var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    var code = '';
+    for (var i = 0; i < 6; i++) {
+      code += characters.charAt(Math.floor(Math.random() * characters.length));
+    }
+    return code;
+  }
+</script>
+</body>
+</html>
