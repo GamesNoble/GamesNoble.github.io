@@ -23,18 +23,27 @@
     margin-bottom: 30px;
     color: #333;
   }
+  #dice-container {
+    width: 150px;
+    height: 150px;
+    position: relative;
+    perspective: 1000px;
+  }
   #dice {
     font-size: 150px;
     cursor: pointer;
     user-select: none; /* Disable text selection */
     border: 5px solid #333;
     border-radius: 10px;
-    width: 150px;
-    height: 150px;
-    position: relative;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3); /* Add shadow */
     transform-style: preserve-3d;
     animation: none;
+    transform-origin: center center;
   }
   .dot {
     display: block;
@@ -112,16 +121,18 @@
 <body>
 <div class="container">
   <h1>Dice Code Hunt</h1>
-  <div id="dice" onclick="rollDice()">
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
+  <div id="dice-container" onclick="rollDice()">
+    <div id="dice">
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
   </div>
   <div id="cooldownMessage">ON COOL DOWN PLEASE WAIT!</div>
   <div id="cooldownTimer"></div>
@@ -134,6 +145,7 @@
 <audio id="diceSound" src="dice_roll_sound.mp3"></audio>
 
 <script>
+  var diceContainer = document.getElementById('dice-container');
   var diceElement = document.getElementById('dice');
   var cooldownMessage = document.getElementById('cooldownMessage');
   var cooldownTimer = document.getElementById('cooldownTimer');
@@ -169,11 +181,11 @@
     diceSound.currentTime = 0;
     diceSound.play();
 
-    // Add spinning animation
-    diceElement.style.animation = 'spin 1s linear forwards';
+    // Add rolling animation
+    diceElement.style.animation = 'roll 1s cubic-bezier(0.1, 0.6, 0.1, 1) forwards';
 
     setTimeout(function() {
-      // Remove spinning animation
+      // Remove rolling animation
       diceElement.style.animation = 'none';
 
       // Check if the rolled number matches the generated number
