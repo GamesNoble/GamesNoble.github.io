@@ -10,14 +10,17 @@
     text-align: center;
   }
   #dice {
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 36px;
-    margin-top: 20px;
-  }
-  #rollButton {
-    padding: 10px 20px;
-    font-size: 20px;
     cursor: pointer;
-    margin-top: 20px;
+    margin: 20px auto;
   }
   #codes {
     margin-top: 20px;
@@ -26,17 +29,21 @@
 </head>
 <body>
 <h1>Dice Code Hunt</h1>
-<div id="dice">Click "Roll" to roll the dice!</div>
-<button id="rollButton" onclick="rollDice()">Roll</button>
+<div id="dice" onclick="rollDice()">Click to roll the dice!</div>
 <div id="codes"></div>
 
 <script>
   var generatedNumber = Math.floor(Math.random() * 6) + 1; // Generate a random number between 1 and 6
 
   function rollDice() {
-    var diceValue = Math.floor(Math.random() * 6) + 1; // Generate a random number between 1 and 6
     var diceElement = document.getElementById('dice');
-    diceElement.textContent = "You rolled: " + diceValue;
+    var diceValue = Math.floor(Math.random() * 6) + 1; // Generate a random number between 1 and 6
+    diceElement.textContent = diceValue;
+    diceElement.style.animation = 'rollDiceAnimation 1s ease';
+
+    setTimeout(function() {
+      diceElement.style.animation = ''; // Clear the animation
+    }, 1000);
 
     var codesElement = document.getElementById('codes');
     if (diceValue === generatedNumber) {
