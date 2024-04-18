@@ -55,17 +55,6 @@
     background-size: 20px 20px;
     border-radius: 5px;
   }
-  #dice:after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 20px;
-    height: 20px;
-    background-color: #333;
-    border-radius: 50%;
-  }
   #codes {
     margin-top: 20px;
     text-align: left;
@@ -105,8 +94,17 @@
     "GHI789"
     // Add more codes here if needed
   ];
+  var lastRollTime = 0;
+  var cooldownDuration = 2000; // Cooldown duration in milliseconds
 
   function rollDice() {
+    var currentTime = Date.now();
+    if (currentTime - lastRollTime < cooldownDuration) {
+      // Still in cooldown, do nothing
+      return;
+    }
+    lastRollTime = currentTime;
+
     var diceValue = Math.floor(Math.random() * 6) + 1; // Generate a random number between 1 and 6
     diceElement.textContent = getDiceFace(diceValue);
 
