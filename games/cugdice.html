@@ -13,53 +13,96 @@
     width: 100px;
     height: 100px;
     background-color: white;
-    border: 2px solid black;
-    border-radius: 10px;
+    border: 1px solid #999;
+    border-radius: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 36px;
     cursor: pointer;
     margin: 20px auto;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    position: relative;
+    overflow: hidden;
+  }
+  #dice:before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    background-image: linear-gradient(45deg, #ccc 25%, transparent 25%, transparent 75%, #ccc 75%, #ccc), 
+                      linear-gradient(-45deg, #ccc 25%, transparent 25%, transparent 75%, #ccc 75%, #ccc);
+    background-size: 20px 20px;
+    border-radius: 5px;
+  }
+  #dice:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    background-color: #333;
+    border-radius: 50%;
   }
   #codes {
     margin-top: 20px;
+    text-align: left;
   }
 </style>
 </head>
 <body>
 <h1>Dice Code Hunt</h1>
 <div id="dice" onclick="rollDice()">Click to roll the dice!</div>
-<div id="codes"></div>
+<ul id="codes"></ul>
+
+<audio id="diceSound" src="dice_roll_sound.mp3"></audio>
 
 <script>
   var generatedNumber = Math.floor(Math.random() * 6) + 1; // Generate a random number between 1 and 6
+  var diceElement = document.getElementById('dice');
+  var diceSound = document.getElementById('diceSound');
 
   function rollDice() {
-    var diceElement = document.getElementById('dice');
     var diceValue = Math.floor(Math.random() * 6) + 1; // Generate a random number between 1 and 6
     diceElement.textContent = diceValue;
-    diceElement.style.animation = 'rollDiceAnimation 1s ease';
+
+    // Play dice roll sound
+    diceSound.currentTime = 0;
+    diceSound.play();
+
+    // Add spinning animation
+    diceElement.style.transform = 'rotateX(360deg) rotateY(360deg)';
 
     setTimeout(function() {
-      diceElement.style.animation = ''; // Clear the animation
+      // Clear the animation and reset transform
+      diceElement.style.transition = 'none';
+      diceElement.style.transform = 'none';
+
+      // Set timeout to allow the browser to reset the transform before reapplying transition
+      setTimeout(function() {
+        diceElement.style.transition = 'transform 1s ease';
+      }, 50);
+
+      // Check if the rolled number matches the generated number
+      if (diceValue === generatedNumber) {
+        fetch('dicelist.txt')
+          .then(response => response.text())
+          .then(data => {
+            var codes = data.split('\n').filter(code => code.trim() !== '');
+            var code = codes[Math.floor(Math.random() * codes.length)];
+            var codesElement = document.getElementById('codes');
+            var listItem = document.createElement('li');
+            listItem.textContent = "Congratulations! You unlocked a code: " + code;
+            codesElement.appendChild(listItem);
+            generatedNumber = Math.floor(Math.random() * 6) + 1; // Generate a new random number
+          })
+          .catch(error => console.error('Error fetching codes:', error));
+      }
     }, 1000);
-
-    var codesElement = document.getElementById('codes');
-    if (diceValue === generatedNumber) {
-      var code = generateCode();
-      codesElement.innerHTML += "<p>Congratulations! You unlocked a code: <strong>" + code + "</strong></p>";
-      generatedNumber = Math.floor(Math.random() * 6) + 1; // Generate a new random number
-    }
-  }
-
-  function generateCode() {
-    var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-    var code = '';
-    for (var i = 0; i < 6; i++) {
-      code += characters.charAt(Math.floor(Math.random() * characters.length));
-    }
-    return code;
   }
 </script>
 </body>
