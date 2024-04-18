@@ -27,7 +27,60 @@
     font-size: 150px;
     cursor: pointer;
     user-select: none; /* Disable text selection */
+    border: 5px solid #333;
+    border-radius: 10px;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
+  #dice span {
+    display: block;
+    width: 33%;
+    height: 33%;
+    position: absolute;
+    background: #fff;
+    border: 1px solid #333;
+    border-radius: 50%;
+  }
+  #dice span:nth-child(1) {
+    top: 15%;
+    left: 15%;
+  }
+  #dice span:nth-child(2) {
+    top: 15%;
+    left: 50%;
+  }
+  #dice span:nth-child(3) {
+    top: 15%;
+    right: 15%;
+  }
+  #dice span:nth-child(4) {
+    top: 50%;
+    left: 15%;
+  }
+  #dice span:nth-child(5) {
+    top: 50%;
+    left: 50%;
+  }
+  #dice span:nth-child(6) {
+    top: 50%;
+    right: 15%;
+  }
+  #dice span:nth-child(7) {
+    bottom: 15%;
+    left: 15%;
+  }
+  #dice span:nth-child(8) {
+    bottom: 15%;
+    left: 50%;
+  }
+  #dice span:nth-child(9) {
+    bottom: 15%;
+    right: 15%;
+  }
+
   #cooldownMessage {
     color: red;
     font-size: 20px;
@@ -59,7 +112,17 @@
 <body>
 <div class="container">
   <h1>Dice Code Hunt</h1>
-  <div id="dice" onclick="rollDice()">⚀</div>
+  <div id="dice" onclick="rollDice()">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
   <div id="cooldownMessage">ON COOL DOWN PLEASE WAIT!</div>
   <div id="cooldownTimer"></div>
   <div class="code-container">
@@ -81,7 +144,7 @@
     // Add more codes here if needed
   ];
   var lastRollTime = localStorage.getItem('lastRollTime') || 0;
-  var cooldownDuration = 15 * 60 * 1000; // 15 minutes in milliseconds
+  var cooldownDuration = 5000; // 5 seconds in milliseconds
 
   function rollDice() {
     var currentTime = Date.now();
@@ -93,7 +156,10 @@
     localStorage.setItem('lastRollTime', lastRollTime);
 
     var diceValue = Math.floor(Math.random() * 6) + 1; // Generate a random number between 1 and 6
-    diceElement.textContent = getDiceFace(diceValue);
+    diceElement.innerHTML = ''; // Clear previous dots
+    for (var i = 0; i < diceValue; i++) {
+      diceElement.innerHTML += '<span></span>';
+    }
 
     // Play dice roll sound
     var diceSound = document.getElementById('diceSound');
@@ -101,17 +167,11 @@
     diceSound.play();
 
     // Add spinning animation
-    diceElement.style.transform = 'rotateX(360deg) rotateY(360deg)';
+    diceElement.style.animation = 'spin 1s linear forwards';
 
     setTimeout(function() {
-      // Clear the animation and reset transform
-      diceElement.style.transition = 'none';
-      diceElement.style.transform = 'none';
-
-      // Set timeout to allow the browser to reset the transform before reapplying transition
-      setTimeout(function() {
-        diceElement.style.transition = 'transform 1s ease';
-      }, 50);
+      // Remove spinning animation
+      diceElement.style.animation = 'none';
 
       // Check if the rolled number matches the generated number
       if (diceValue === 6) { // Change this condition to whatever you like
@@ -125,34 +185,17 @@
     }, 1000);
   }
 
-  function getDiceFace(number) {
-    switch (number) {
-      case 1:
-        return '⚀';
-      case 2:
-        return '⚁';
-      case 3:
-        return '⚂';
-      case 4:
-        return '⚃';
-      case 5:
-        return '⚄';
-      case 6:
-        return '⚅';
-    }
-  }
-
   function updateCooldownTimer() {
     var currentTime = Date.now();
     var remainingTime = lastRollTime + cooldownDuration - currentTime;
-    var minutes = Math.ceil(remainingTime / (1000 * 60)); // Round up to the nearest minute
+    var seconds = Math.ceil(remainingTime / 1000); // Round up to the nearest second
 
-    // If remaining time is negative or zero, set minutes to 0
-    if (minutes <= 0) {
-        minutes = 0;
+    // If remaining time is negative or zero, set seconds to 0
+    if (seconds <= 0) {
+        seconds = 0;
     }
 
-    cooldownTimer.textContent = "Cooldown: " + minutes + "m";
+    cooldownTimer.textContent = "Cooldown: " + seconds + "s";
 
     if (remainingTime > 0) {
       cooldownMessage.style.display = 'block';
