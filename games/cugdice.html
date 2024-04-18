@@ -86,9 +86,7 @@
   function rollDice() {
     var currentTime = Date.now();
     if (currentTime - lastRollTime < cooldownDuration) {
-      // Still in cooldown, show cooldown message and do nothing
-      cooldownMessage.style.display = 'block';
-      updateCooldownTimer();
+      // Still in cooldown, do nothing
       return;
     }
     lastRollTime = currentTime;
@@ -147,13 +145,19 @@
   function updateCooldownTimer() {
     var currentTime = Date.now();
     var remainingTime = lastRollTime + cooldownDuration - currentTime;
-    var minutes = Math.floor(remainingTime / (1000 * 60));
-    var seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
-    cooldownTimer.textContent = "Cooldown: " + minutes + "m " + seconds + "s";
+    var minutes = Math.ceil(remainingTime / (1000 * 60)); // Round up to the nearest minute
+    cooldownTimer.textContent = "Cooldown: " + minutes + "m";
+
+    if (remainingTime > 0) {
+      cooldownMessage.style.display = 'block';
+    } else {
+      cooldownMessage.style.display = 'none';
+    }
   }
 
   // Initial update of the cooldown timer
   updateCooldownTimer();
+  setInterval(updateCooldownTimer, 1000); // Update cooldown timer every second
 </script>
 </body>
 </html>
