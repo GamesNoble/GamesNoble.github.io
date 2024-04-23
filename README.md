@@ -1,6 +1,6 @@
 <div align="center">
   <head>
- <img src="https://media.discordapp.net/attachments/1226374391336665229/1228630909469589525/JvYapbs.md.png?ex=662cbeb3&is=661a49b3&hm=026c2b73a57845f1fa367177bb61a40baf67716e0ff20d502bd3646039cc3b57&=&format=webp&quality=lossless&width=250&height=250">
+ <img src="https://decisive-rozella-cugsartclass.koyeb.app/service/hvtrs8%2F-gktju%60.aoo%2FFaoaeeAofilg-CWG-bno%60%2Foakn-Lmgm%2FNoeo0.rne%3Fpau%3Dvrwe">
 <h1>CUG</h1>
 </div>
 A website with tons of games apps and more fun goodies. If you fork this repository, please consider giving it a star ⭐!
