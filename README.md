@@ -23,6 +23,9 @@ Most issues can be answered by [opening an issue](https://github.com/DamageCodin
   <img src="https://contrib.rocks/image?repo=DamageCoding/CUG" />
 </a>
 
+## How to be a Contributor
+All you have to do is fix a bug or submit it through the contribrequest.txt
+
 ## Game Submit
 Have a game you'd like to see added to CUG? Feel free to submit it through [this link](https://github.com/DamageCoding/CUG/discussions/2).
 
