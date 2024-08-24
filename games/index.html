@@ -12,97 +12,139 @@
       font-family: 'Poppins', sans-serif;
       margin: 0;
       padding: 0;
-      background: #f4f4f4;
-      color: #333;
+      background: #1a1a1d;
+      color: #f1f1f1;
       text-align: center;
-      overflow-x: hidden; /* Prevent horizontal scrolling */
+      overflow-x: hidden;
     }
-    h1 {
-      color: #ffcc00;
-      margin: 40px 0;
-      font-weight: 600;
+
+    header {
+      background-color: #ffcc00;
+      padding: 20px 0;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    header h1 {
+      margin: 0;
       font-size: 2.5em;
+      color: #1a1a1d;
     }
+
     .search-container {
       position: relative;
       display: inline-block;
-      margin: 20px;
+      margin: 30px 0;
     }
+
     #searchInput {
-      width: 300px;
+      width: 400px;
       padding: 12px 50px 12px 20px;
-      border: 2px solid #ddd;
+      border: 2px solid #ffcc00;
       border-radius: 30px;
-      font-size: 16px;
+      font-size: 18px;
       outline: none;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      transition: box-shadow 0.3s ease;
     }
+
+    #searchInput:focus {
+      box-shadow: 0 8px 24px rgba(255, 204, 0, 0.5);
+    }
+
     .search-icon {
       position: absolute;
       right: 15px;
       top: 50%;
       transform: translateY(-50%);
-      color: #888;
-      font-size: 18px;
+      color: #ffcc00;
+      font-size: 20px;
     }
+
     .grid {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 20px;
-      padding: 0 20px;
+      gap: 30px;
+      padding: 20px;
     }
+
     .abutton {
-      width: 200px;
-      background-color: #fff;
+      width: 220px;
+      background-color: #2d2d34;
       border: none;
       border-radius: 15px;
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
       cursor: pointer;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
-      outline: none;
-      display: block; /* Ensure buttons are displayed by default */
+      overflow: hidden;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
     }
+
     .abutton img {
       border-radius: 15px 15px 0 0;
       width: 100%;
       height: auto;
     }
+
     .game-name {
-      padding: 10px;
+      padding: 15px;
       font-weight: 600;
-      color: #333;
+      font-size: 1.2em;
+      color: #ffcc00;
     }
+
     .abutton:hover {
-      transform: scale(1.05);
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      transform: scale(1.08);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
     }
+
     .magnifying-glass {
       position: fixed;
       top: 20px;
       right: 20px;
-      font-size: 24px;
+      font-size: 26px;
       cursor: pointer;
       z-index: 1000;
-      color: #333;
+      color: #ffcc00;
+    }
+
+    footer {
+      background-color: #1a1a1d;
+      padding: 20px;
+      color: #ffcc00;
+      font-size: 0.9em;
+      text-align: center;
+      border-top: 2px solid #ffcc00;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 600px) {
+      #searchInput {
+        width: 80%;
+      }
+      .abutton {
+        width: 80%;
+      }
     }
   </style>
 </head>
 <body>
 
+  <header>
+    <h1>CUG - Games</h1>
+  </header>
+
   <div class="magnifying-glass" id="magnifyingGlass"><i class="fas fa-search"></i></div>
 
-  <h1>Games</h1>
-
-  <!-- Search input -->
   <div class="search-container">
     <input type="text" id="searchInput" placeholder="Search games..." oninput="searchGames()">
     <i class="fas fa-search search-icon"></i>
   </div>
 
   <div class="grid" id="gamesGrid">
-    <!-- Existing Game Buttons -->
-    <button class="abutton" onclick="window.location.href = './1v1.lol.html';">
+     <button class="abutton" onclick="window.location.href = './1v1.lol.html';">
       <img src="https://play-lh.googleusercontent.com/QYGRIDJbyVO7L7jH8CwiKJ4NumTGgcTVqU3ITooLWxro-eeNns1RZ0uwGGFe-r8M4co" alt="1v1.lol">
       <div class="game-name">1v1.lol</div>
     </button>
@@ -223,6 +265,10 @@
       <div class="game-name">Boxing Random</div>
     </button>
   </div>
+
+  <footer>
+    &copy; 2024 CUG - Games | All Rights Reserved
+  </footer>
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
