@@ -3,12 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="./CUG_files/Logo2.png" type="image/png">
   <title>CUG</title>
-  <link href="./CUG_files/css2" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="./CUG_files/style.css">
+  <link rel="icon" href="./Logo/Logo2.png" type="image/png">
   <style>
-    /* Preload screen styles */
+    /* General Styles */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #fff;
+      background-color: #000;
+      overflow-x: hidden;
+    }
+
+    /* Preload Screen Styles */
     .preload {
       position: fixed;
       top: 0;
@@ -32,25 +39,24 @@
     .preload h1 {
       font-size: 24px;
       margin-top: 20px;
-      font-family: Poppins, Arial, sans-serif;
     }
 
-    /* Sidebar styles */
+    /* Sidebar Styles */
     .sidebar {
-      font-family: Poppins, Arial, sans-serif;
       position: fixed;
       top: 0;
       right: -200px;
       height: 100%;
-      z-index: 999;
       width: 200px;
       background-color: #333;
+      color: yellow;
       padding-top: 20px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: flex-start;
       transition: right 0.3s ease;
+      z-index: 999;
     }
 
     .sidebar.show-sidebar {
@@ -62,27 +68,26 @@
       text-decoration: none;
       margin: 10px 0;
       font-size: 20px;
-      cursor: pointer;
-      transition: ease 0.15s;
+      text-align: center;
+      transition: font-size 0.15s ease;
     }
 
     .sidebar a:hover {
       font-size: 23px;
     }
 
-    .magnifying-glass {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      font-size: 28px;
-      cursor: pointer;
-      color: white;
+    /* Main Content Styles */
+    .logo {
+      display: block;
+      margin: 20px auto;
+      width: 150px;
+      height: auto;
     }
 
-    .centered-heading,
-    .centered-heading2 {
+    .centered-heading, .centered-heading2 {
       color: yellow;
       text-align: center;
+      margin: 20px;
     }
 
     #randomFact {
@@ -100,37 +105,38 @@
       font-size: 16px;
       cursor: pointer;
       transition: background-color 0.3s ease;
+      text-decoration: none;
     }
 
     .button:hover {
       background-color: #ffea00;
     }
 
-    /* Logo styles */
-    .logo {
-      display: block;
-      margin: 20px auto;
-      width: 150px;
-      height: auto;
+    /* Magnifying Glass Icon */
+    .magnifying-glass {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      font-size: 28px;
+      cursor: pointer;
+      color: white;
+      z-index: 1001;
     }
   </style>
 </head>
 <body>
   <!-- Preload Screen -->
   <div class="preload" id="preloadScreen">
-    <img src="./CUG_files/Logo2.png" alt="Logo">
+    <img src="./Logo/Logo2.png" alt="Logo">
     <h1>CUG</h1>
   </div>
 
   <!-- Main Content -->
-  <img src="./CUG_files/Logo2.png" alt="Logo" class="logo">
+  <img src="./Logo/Logo2.png" alt="Logo" class="logo">
   <h1 class="centered-heading">CUG</h1>
-
-  <!-- Display Random Fact or Text -->
-  <div id="randomFact">CUG WAS A PASSION PROJECT AT FIRST 💻.</div>
-
+  <div id="randomFact"></div>
   <h1 class="centered-heading2">The Best Unblocked Games Out There</h1>
-  <a href="https://cug-games.github.io/CUG/games/"><button class="button">Games</button></a>
+  <a href="https://cug-games.github.io/CUG/games/" class="button">Games</a>
 
   <!-- Sidebar -->
   <div class="sidebar" id="sidebar">
@@ -212,4 +218,3 @@
   </script>
 </body>
 </html>
-
