@@ -11,36 +11,43 @@
     body {
       margin: 0;
       font-family: 'Poppins', Arial, sans-serif;
-      background-color: #121212;
+      background: linear-gradient(135deg, #1d1d1d, #121212);
       color: #E0E0E0;
       overflow-x: hidden;
       text-align: center;
+      padding-bottom: 50px;
     }
 
     /* Logo Styles */
     .logo {
       width: 200px;
       height: auto;
-      margin-top: 30px;
+      margin: 40px auto;
+      transition: transform 0.5s ease;
+    }
+    
+    .logo:hover {
+      transform: scale(1.1) rotate(10deg);
     }
 
     /* Sidebar Styles */
     .sidebar {
       position: fixed;
       top: 0;
-      right: -250px;
+      right: -300px;
       height: 100%;
-      width: 250px;
-      background-color: #1F1F1F;
+      width: 300px;
+      background: linear-gradient(135deg, #292929, #1f1f1f);
       color: #E0E0E0;
-      padding: 40px 20px;
+      padding: 60px 30px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      transition: right 0.3s ease-in-out;
-      box-shadow: -5px 0 20px rgba(0,0,0,0.6);
+      transition: right 0.4s ease-in-out;
+      box-shadow: -10px 0 30px rgba(0,0,0,0.8);
       z-index: 1000;
+      border-radius: 20px 0 0 20px;
     }
 
     .sidebar.show-sidebar {
@@ -50,71 +57,85 @@
     .sidebar a {
       color: #FFD700; /* Gold */
       text-decoration: none;
-      margin: 15px 0;
-      font-size: 18px;
-      font-weight: 500;
+      margin: 20px 0;
+      font-size: 20px;
+      font-weight: 600;
       transition: color 0.3s, transform 0.3s;
     }
 
     .sidebar a:hover {
-      color: #FFC107; /* Bright Gold */
-      transform: scale(1.1);
+      color: #FFEA00; /* Bright Gold */
+      transform: translateX(10px);
     }
 
     /* Magnifying Glass Icon */
     .magnifying-glass {
       position: fixed;
       top: 20px;
-      right: 20px;
-      font-size: 36px;
+      right: 30px;
+      font-size: 40px;
       cursor: pointer;
-      color: #E0E0E0;
+      color: #FFD700;
       z-index: 1001;
+      transition: color 0.3s, transform 0.3s;
+    }
+
+    .magnifying-glass:hover {
+      color: #FFEA00;
+      transform: rotate(90deg);
     }
 
     /* Main Heading Styles */
     .centered-heading {
       color: #FFD700;
-      font-size: 3em;
+      font-size: 4em;
       margin: 20px 0;
-      font-weight: 600;
+      font-weight: 700;
+      text-shadow: 2px 2px 20px rgba(255, 215, 0, 0.5);
     }
 
     .centered-heading2 {
-      color: #FFD700;
-      font-size: 2em;
-      margin: 10px 0;
-      font-weight: 400;
+      color: #FFC107;
+      font-size: 2.5em;
+      margin: 15px 0;
+      font-weight: 500;
+      text-shadow: 2px 2px 10px rgba(255, 193, 7, 0.5);
     }
 
     /* Random Fact Styles */
     #randomFact {
-      margin: 30px auto;
-      font-size: 1.2em;
+      margin: 40px auto;
+      font-size: 1.5em;
       color: #E0E0E0;
-      max-width: 600px;
-      line-height: 1.5;
-      padding: 0 20px;
+      max-width: 700px;
+      line-height: 1.7;
+      padding: 0 30px;
+      background-color: rgba(0, 0, 0, 0.4);
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.5);
     }
 
     /* Button Styles */
     .button {
-      background-color: #FFD700;
+      background: linear-gradient(135deg, #FFD700, #FFC107);
       color: #000;
       border: none;
-      padding: 15px 30px;
-      font-size: 1.2em;
+      padding: 20px 40px;
+      font-size: 1.3em;
       cursor: pointer;
-      border-radius: 5px;
-      transition: background-color 0.3s, transform 0.3s;
+      border-radius: 30px;
+      transition: background 0.4s, transform 0.3s, box-shadow 0.3s;
       text-decoration: none;
       display: inline-block;
-      margin: 20px 0;
+      margin: 30px 0;
+      box-shadow: 0px 4px 15px rgba(255, 215, 0, 0.4);
     }
 
     .button:hover {
-      background-color: #FFC107;
-      transform: scale(1.05);
+      background: linear-gradient(135deg, #FFC107, #FFD700);
+      transform: scale(1.08);
+      box-shadow: 0px 6px 20px rgba(255, 215, 0, 0.6);
     }
 
     /* Responsive Design */
@@ -124,25 +145,25 @@
       }
 
       .sidebar {
-        width: 200px;
-        padding: 30px 15px;
+        width: 240px;
+        padding: 50px 20px;
       }
 
       .magnifying-glass {
-        font-size: 28px;
+        font-size: 32px;
       }
 
       .centered-heading {
-        font-size: 2.5em;
+        font-size: 3em;
       }
 
       .centered-heading2 {
-        font-size: 1.8em;
+        font-size: 2em;
       }
 
       .button {
-        padding: 12px 24px;
-        font-size: 1em;
+        padding: 15px 30px;
+        font-size: 1.1em;
       }
     }
   </style>
@@ -221,5 +242,3 @@
   </script>
 </body>
 </html>
-
-
