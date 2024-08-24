@@ -1,90 +1,205 @@
-/* Your existing CSS styles here */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="icon" href="Logo/Logo2.png" type="image/png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CUG</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <style>
+    /* Preload screen styles */
+    .preload {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      color: yellow;
+    }
 
-body {
-  height: 100vh;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: #252525;
-}
+    .preload img {
+      width: 150px; /* Adjust size as needed */
+      height: auto;
+    }
 
+    .preload h1 {
+      font-size: 24px;
+      margin-top: 20px;
+      font-family: Poppins, Arial, sans-serif;
+    }
 
-.rain-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  overflow: hidden; /* Ensures raindrops stay within the container */
-}
+    /* Sidebar styles */
+    .sidebar {
+      font-family: Poppins, Arial, sans-serif;
+      position: fixed;
+      top: 0;
+      right: -200px;
+      height: 100%;
+      z-index: 999;
+      width: 200px;
+      background-color: #333;
+      padding-top: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      transition: right 0.3s ease;
+    }
 
-.raindrop {
-  background-color: #00ff73;
-  width: 2px;
-  height: 15px;
-  position: absolute;
-  bottom: 100%;
-  animation: fall 1.5s linear infinite;
-}
+    .sidebar.show-sidebar {
+      right: 0;
+    }
 
-@keyframes fall {
-  0% {
-    transform: translateY(0) scale(1);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(100vh) scale(0.2);
-    opacity: 0;
-  }
-}
+    .sidebar a {
+      color: yellow; /* Yellow color */
+      text-decoration: none;
+      margin: 10px 0;
+      font-size: 20px;
+      cursor: pointer;
+      transition: ease 0.15s;
+    }
 
-.centered-heading {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 200;
-  font-size: 100px;
-  text-align: center;
-  color: rgb(0, 255, 106);
-  margin-top: 0px;
-  margin-bottom: 0px;
-}
+    .sidebar a:hover {
+      font-size: 23px;
+    }
 
-.centered-heading2 {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 200;
-  font-size: 25px;
-  left: 0;
-  bottom: 0;
-  color: rgb(255, 255, 255);
-  margin-top: 40px;
-}
+    .magnifying-glass {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 28px;
+      cursor: pointer;
+      color: white;
+    }
 
-.customad {
-  font-size: 5px;
-  width: 350px;
-  height: 160px;
-  border-radius: 10px;
-  box-shadow: #00ff73, 20px;
-  background-color: #00ff73;
-  color: whitesmoke;
-}
+    .centered-heading,
+    .centered-heading2 {
+      color: yellow; /* Yellow color */
+      text-align: center;
+    }
 
-.button {
-  background-color: rgb(0, 255, 106);
-  border: none;
-  border-radius: 10px;
-  padding: 15px 30px;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 200;
-  font-size: 20px;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
+    #randomFact {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 20px;
+      color: yellow; /* Yellow color */
+    }
 
-.button:hover,
-.button:focus {
-  transform: scale(1.1);
-}
+    .button {
+      background-color: yellow; /* Yellow background */
+      color: black; /* Black text color */
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: #ffea00; /* Lighter yellow on hover */
+    }
+  </style>
+</head>
+<body>
+  <!-- Preload Screen -->
+  <div class="preload" id="preloadScreen">
+    <img src="Logo/Logo2.png" alt="Logo">
+    <h1>CUG</h1>
+  </div>
+
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <a href="./games/partners.html">Partners</a>
+    <a href="./games/discord.html">Discord</a>
+    <a href="./games/funding.html">Funders</a>
+    <a href="./games/websites.html">Our Websites</a>
+    <!-- Add more links as needed -->
+  </div>
+
+  <!-- Magnifying Glass Icon -->
+  <div class="magnifying-glass" id="magnifyingGlass">☰</div>
+
+  <!-- Main Content -->
+  <h1 class="centered-heading">CUG</h1>
+  
+  <!-- Display Random Fact or Text -->
+  <div id="randomFact"></div>
+  
+  <h1 class="centered-heading2">The Best Unblocked Games Out There</h1>
+  <a href="./games/"><button class="button">Games</button></a>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const magnifyingGlass = document.getElementById("magnifyingGlass");
+      const sidebar = document.getElementById("sidebar");
+      const randomFactContainer = document.getElementById("randomFact");
+      const preloadScreen = document.getElementById("preloadScreen");
+
+      // Array of random facts or texts
+      const randomFacts = [
+        "Did you know that this website was made by Chip Hill? Also The Founder Of Hillflow Brand 😎.",
+        "Tiktok has almost been banned 3 times 😭.",
+        "Remember Kids Youtube Shorts Is Brain Rot ❌.",
+        "Did you Know CUG Means Chips Unblocked Games 🎮?",
+        "Minecraft On CUG Was originally a easter egg 🥚.",
+        "Skibidi toilet, skibidi, skibidi toilet. Skibidi toilet, skibidi, skibidi toilet 🚽.",
+        "CUG WAS A PASSION PROJECT AT FIRST 💻.",
+        "Cug is used world wide 🌍.",
+        "We Update Every Week 🎉!",
+        "Minecraft is good for the environment ⛏.",
+        "I'm edging 🥩👊.",
+        "Is It Pink 🌊?",
+        "Imma Bout to bust 🥒!",
+        "Did you know adolf hitler had a girlfriend 😶‍🌫?",
+        "I Don't believe in human rights 🤪.",
+        "Dogs Can't Say No 😉.",
+        "Women Don't deserve rights 🧕.",
+        "Fortnite Is Just A Rip Off Of 1v1.lolヽ((◎д◎))ゝ.",
+        "Email Me For Special Milk 🧓.",
+        "Ctrl + Alt + Delete: the three stages of my workday 🔄.",
+        "In a world full of updates, be the bug fixer 🐞.",
+        "Sleep is for the weak, coffee is for the strong ☕️💪.",
+        "Commit early, commit often 📝.",
+        "In the game of love, sometimes you respawn alone 💔🎮.",
+        "Drain Out the Bad Energy 💔.",
+        "In this world where you can be anything be yourself 😇.",
+        "Life Is Like Fortnite Some Land High Ground Some have to build to it 🫶.",
+        "Everyone wants me dead bitch i'm already dead i've been dead for years ⚰.",
+        "Have you every been so alone that nobodys house feels like home 🏠.",
+        "Did you know this website wouldn't still be a thing without suki hash 🫎.",
+       ];
+
+      function getRandomFact() {
+        const randomIndex = Math.floor(Math.random() * randomFacts.length);
+        return randomFacts[randomIndex];
+      }
+
+      function displayRandomFact() {
+        const fact = getRandomFact();
+        randomFactContainer.textContent = fact;
+      }
+
+      // Display random fact when the page is loaded
+      displayRandomFact();
+
+      function toggleSidebar() {
+        sidebar.classList.toggle("show-sidebar");
+      }
+
+      magnifyingGlass.addEventListener("click", toggleSidebar);
+
+      // Hide preload screen once the content is fully loaded
+      window.addEventListener('load', function() {
+        preloadScreen.style.display = 'none';
+      });
+    });
+  </script>
+</body>
+</html>
