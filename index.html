@@ -105,6 +105,14 @@
     .button:hover {
       background-color: #ffea00; /* Lighter yellow on hover */
     }
+
+    /* Logo styles */
+    .logo {
+      display: block;
+      margin: 20px auto; /* Center logo horizontally and add margin */
+      width: 150px; /* Adjust size as needed */
+      height: auto;
+    }
   </style>
 </head>
 <body>
@@ -113,6 +121,16 @@
     <img src="Logo/Logo2.png" alt="Logo">
     <h1>CUG</h1>
   </div>
+
+  <!-- Main Content -->
+  <img src="Logo/Logo2.png" alt="Logo" class="logo"> <!-- Added logo here -->
+  <h1 class="centered-heading">CUG</h1>
+  
+  <!-- Display Random Fact or Text -->
+  <div id="randomFact"></div>
+  
+  <h1 class="centered-heading2">The Best Unblocked Games Out There</h1>
+  <a href="./games/"><button class="button">Games</button></a>
 
   <!-- Sidebar -->
   <div class="sidebar" id="sidebar">
@@ -125,15 +143,6 @@
 
   <!-- Magnifying Glass Icon -->
   <div class="magnifying-glass" id="magnifyingGlass">☰</div>
-
-  <!-- Main Content -->
-  <h1 class="centered-heading">CUG</h1>
-  
-  <!-- Display Random Fact or Text -->
-  <div id="randomFact"></div>
-  
-  <h1 class="centered-heading2">The Best Unblocked Games Out There</h1>
-  <a href="./games/"><button class="button">Games</button></a>
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
