@@ -4,40 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CUG</title>
-  <link rel="icon" href="./Logo/Logo2.png" type="image/png">
+  <link rel="icon" href="Logo/Logo2.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap" rel="stylesheet">
   <style>
     /* General Styles */
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: 'Poppins', Arial, sans-serif;
       color: #fff;
-      background-color: #000;
+      background-color: #121212;
       overflow-x: hidden;
-    }
-
-    /* Preload Screen Styles */
-    .preload {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: black;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      z-index: 1000;
-      color: yellow;
+      text-align: center;
     }
 
-    .preload img {
-      width: 150px;
+    /* Logo Styles */
+    .logo {
+      width: 250px;
       height: auto;
-    }
-
-    .preload h1 {
-      font-size: 24px;
       margin-top: 20px;
     }
 
@@ -45,18 +32,19 @@
     .sidebar {
       position: fixed;
       top: 0;
-      right: -200px;
+      right: -250px;
       height: 100%;
-      width: 200px;
-      background-color: #333;
-      color: yellow;
-      padding-top: 20px;
+      width: 250px;
+      background-color: #222;
+      color: #fff;
+      padding: 20px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: flex-start;
+      justify-content: center;
       transition: right 0.3s ease;
-      z-index: 999;
+      box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+      z-index: 1000;
     }
 
     .sidebar.show-sidebar {
@@ -64,52 +52,16 @@
     }
 
     .sidebar a {
-      color: yellow;
+      color: #ffd700; /* Golden color */
       text-decoration: none;
-      margin: 10px 0;
-      font-size: 20px;
-      text-align: center;
-      transition: font-size 0.15s ease;
+      margin: 15px 0;
+      font-size: 18px;
+      transition: color 0.3s ease, transform 0.3s ease;
     }
 
     .sidebar a:hover {
-      font-size: 23px;
-    }
-
-    /* Main Content Styles */
-    .logo {
-      display: block;
-      margin: 20px auto;
-      width: 150px;
-      height: auto;
-    }
-
-    .centered-heading, .centered-heading2 {
-      color: yellow;
-      text-align: center;
-      margin: 20px;
-    }
-
-    #randomFact {
-      text-align: center;
-      margin-top: 20px;
-      font-size: 20px;
-      color: yellow;
-    }
-
-    .button {
-      background-color: yellow;
-      color: black;
-      border: none;
-      padding: 10px 20px;
-      font-size: 16px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-      text-decoration: none;
-    }
-
-    .button:hover {
-      background-color: #ffea00;
+      color: #ffea00;
+      transform: scale(1.1);
     }
 
     /* Magnifying Glass Icon */
@@ -117,45 +69,80 @@
       position: fixed;
       top: 20px;
       right: 20px;
-      font-size: 28px;
+      font-size: 32px;
       cursor: pointer;
-      color: white;
+      color: #fff;
       z-index: 1001;
+    }
+
+    /* Heading Styles */
+    .centered-heading {
+      color: #ffd700; /* Golden color */
+      font-size: 3em;
+      margin: 20px 0;
+    }
+
+    .centered-heading2 {
+      color: #ffd700; /* Golden color */
+      font-size: 2em;
+      margin: 10px 0;
+    }
+
+    /* Random Fact Styles */
+    #randomFact {
+      margin-top: 20px;
+      font-size: 1.2em;
+      color: #ffd700; /* Golden color */
+      max-width: 600px;
+      line-height: 1.5;
+    }
+
+    /* Button Styles */
+    .button {
+      background-color: #ffd700; /* Golden background */
+      color: #000; /* Black text */
+      border: none;
+      padding: 15px 30px;
+      font-size: 1.2em;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .button:hover {
+      background-color: #ffea00; /* Lighter golden color */
+      transform: scale(1.05);
     }
   </style>
 </head>
 <body>
-  <!-- Preload Screen -->
-  <div class="preload" id="preloadScreen">
-    <img src="./Logo/Logo2.png" alt="Logo">
-    <h1>CUG</h1>
-  </div>
-
-  <!-- Main Content -->
-  <img src="./Logo/Logo2.png" alt="Logo" class="logo">
-  <h1 class="centered-heading">CUG</h1>
-  <div id="randomFact"></div>
-  <h1 class="centered-heading2">The Best Unblocked Games Out There</h1>
-  <a href="https://cug-games.github.io/CUG/games/" class="button">Games</a>
-
   <!-- Sidebar -->
   <div class="sidebar" id="sidebar">
-    <a href="https://cug-games.github.io/CUG/games/partners.html">Partners</a>
-    <a href="https://cug-games.github.io/CUG/games/discord.html">Discord</a>
-    <a href="https://cug-games.github.io/CUG/games/funding.html">Funders</a>
-    <a href="https://cug-games.github.io/CUG/games/websites.html">Our Websites</a>
+    <a href="./games/partners.html">Partners</a>
+    <a href="./games/discord.html">Discord</a>
+    <a href="./games/funding.html">Funders</a>
     <!-- Add more links as needed -->
   </div>
 
   <!-- Magnifying Glass Icon -->
   <div class="magnifying-glass" id="magnifyingGlass">☰</div>
 
+  <!-- Main Content -->
+  <img src="Logo/Logo2.png" alt="Logo" class="logo">
+  <h1 class="centered-heading">CUG</h1>
+  
+  <!-- Display Random Fact or Text -->
+  <div id="randomFact"></div>
+  
+  <h1 class="centered-heading2">The Best Unblocked Games Out There</h1>
+  <a href="./games/" class="button">Games</a>
+
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const magnifyingGlass = document.getElementById("magnifyingGlass");
       const sidebar = document.getElementById("sidebar");
       const randomFactContainer = document.getElementById("randomFact");
-      const preloadScreen = document.getElementById("preloadScreen");
 
       // Array of random facts or texts
       const randomFacts = [
@@ -209,12 +196,8 @@
       }
 
       magnifyingGlass.addEventListener("click", toggleSidebar);
-
-      // Hide preload screen after 2 seconds
-      setTimeout(function() {
-        preloadScreen.style.display = 'none';
-      }, 2000);
     });
   </script>
 </body>
 </html>
+
