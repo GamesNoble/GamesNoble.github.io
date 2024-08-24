@@ -5,27 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CUG</title>
   <link rel="icon" href="Logo/Logo2.png" type="image/png">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
-    /* General Styles */
+    /* Global Styles */
     body {
       margin: 0;
       font-family: 'Poppins', Arial, sans-serif;
-      color: #fff;
       background-color: #121212;
+      color: #E0E0E0;
       overflow-x: hidden;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
       text-align: center;
     }
 
     /* Logo Styles */
     .logo {
-      width: 250px;
+      width: 200px;
       height: auto;
-      margin-top: 20px;
+      margin-top: 30px;
     }
 
     /* Sidebar Styles */
@@ -35,15 +31,15 @@
       right: -250px;
       height: 100%;
       width: 250px;
-      background-color: #222;
-      color: #fff;
-      padding: 20px;
+      background-color: #1F1F1F;
+      color: #E0E0E0;
+      padding: 40px 20px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      transition: right 0.3s ease;
-      box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+      transition: right 0.3s ease-in-out;
+      box-shadow: -5px 0 20px rgba(0,0,0,0.6);
       z-index: 1000;
     }
 
@@ -52,15 +48,16 @@
     }
 
     .sidebar a {
-      color: #ffd700; /* Golden color */
+      color: #FFD700; /* Gold */
       text-decoration: none;
       margin: 15px 0;
       font-size: 18px;
-      transition: color 0.3s ease, transform 0.3s ease;
+      font-weight: 500;
+      transition: color 0.3s, transform 0.3s;
     }
 
     .sidebar a:hover {
-      color: #ffea00;
+      color: #FFC107; /* Bright Gold */
       transform: scale(1.1);
     }
 
@@ -69,50 +66,84 @@
       position: fixed;
       top: 20px;
       right: 20px;
-      font-size: 32px;
+      font-size: 36px;
       cursor: pointer;
-      color: #fff;
+      color: #E0E0E0;
       z-index: 1001;
     }
 
-    /* Heading Styles */
+    /* Main Heading Styles */
     .centered-heading {
-      color: #ffd700; /* Golden color */
+      color: #FFD700;
       font-size: 3em;
       margin: 20px 0;
+      font-weight: 600;
     }
 
     .centered-heading2 {
-      color: #ffd700; /* Golden color */
+      color: #FFD700;
       font-size: 2em;
       margin: 10px 0;
+      font-weight: 400;
     }
 
     /* Random Fact Styles */
     #randomFact {
-      margin-top: 20px;
+      margin: 30px auto;
       font-size: 1.2em;
-      color: #ffd700; /* Golden color */
+      color: #E0E0E0;
       max-width: 600px;
       line-height: 1.5;
+      padding: 0 20px;
     }
 
     /* Button Styles */
     .button {
-      background-color: #ffd700; /* Golden background */
-      color: #000; /* Black text */
+      background-color: #FFD700;
+      color: #000;
       border: none;
       padding: 15px 30px;
       font-size: 1.2em;
       cursor: pointer;
-      transition: background-color 0.3s ease, transform 0.3s ease;
+      border-radius: 5px;
+      transition: background-color 0.3s, transform 0.3s;
       text-decoration: none;
       display: inline-block;
+      margin: 20px 0;
     }
 
     .button:hover {
-      background-color: #ffea00; /* Lighter golden color */
+      background-color: #FFC107;
       transform: scale(1.05);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .logo {
+        width: 150px;
+      }
+
+      .sidebar {
+        width: 200px;
+        padding: 30px 15px;
+      }
+
+      .magnifying-glass {
+        font-size: 28px;
+      }
+
+      .centered-heading {
+        font-size: 2.5em;
+      }
+
+      .centered-heading2 {
+        font-size: 1.8em;
+      }
+
+      .button {
+        padding: 12px 24px;
+        font-size: 1em;
+      }
     }
   </style>
 </head>
