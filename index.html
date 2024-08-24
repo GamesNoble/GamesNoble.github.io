@@ -1,262 +1,216 @@
+
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
+<!-- saved from url=(0032)https://cug-games.github.io/CUG/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link rel="icon" href="./CUG_files/Logo2.png" type="image/png">
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="https://github.com/DamageCoding/CUG/blob/main/Logo/Logo2.png?raw=true" type="image/png">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  <link rel="stylesheet" href="./games.css">
-  <title>CUG - Games</title>
+  <title>CUG</title>
+  <link href="./CUG_files/css2" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="./CUG_files/style.css">
   <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f4f4f4;
-      color: #333;
-      text-align: center;
-    }
-    h1 {
-      color: #ffcc00;
-      margin: 30px 0;
-      font-weight: 600;
-      font-size: 2.5em;
-    }
-    .search-container {
-      position: relative;
-      display: inline-block;
-      margin: 20px;
-    }
-    #searchInput {
-      width: 300px;
-      padding: 12px 50px 12px 20px;
-      border: 2px solid #ddd;
-      border-radius: 30px;
-      font-size: 16px;
-      outline: none;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-    .search-icon {
-      position: absolute;
-      right: 15px;
-      top: 50%;
-      transform: translateY(-50%);
-      color: #888;
-      font-size: 18px;
-    }
-    .grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-      padding: 0 20px;
-      overflow: hidden;
-    }
-    .abutton {
-      width: 200px;
-      background-color: #fff;
-      border: none;
-      border-radius: 15px;
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-      cursor: pointer;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      outline: none;
-    }
-    .abutton img {
-      border-radius: 15px 15px 0 0;
+    /* Preload screen styles */
+    .preload {
+      position: fixed;
+      top: 0;
+      left: 0;
       width: 100%;
+      height: 100%;
+      background-color: black; /* Changed to black */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      color: yellow;
+    }
+
+    .preload img {
+      width: 150px; /* Adjust size as needed */
       height: auto;
     }
-    .game-name {
-      padding: 10px;
-      font-weight: 600;
-      color: #333;
+
+    .preload h1 {
+      font-size: 24px;
+      margin-top: 20px;
+      font-family: Poppins, Arial, sans-serif;
     }
-    .abutton:hover {
-      transform: scale(1.05);
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    }
-    .magnifying-glass {
+
+    /* Sidebar styles */
+    .sidebar {
+      font-family: Poppins, Arial, sans-serif;
       position: fixed;
+      top: 0;
+      right: -200px;
+      height: 100%;
+      z-index: 999;
+      width: 200px;
+      background-color: #333;
+      padding-top: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      transition: right 0.3s ease;
+    }
+
+    .sidebar.show-sidebar {
+      right: 0;
+    }
+
+    .sidebar a {
+      color: yellow; /* Yellow color */
+      text-decoration: none;
+      margin: 10px 0;
+      font-size: 20px;
+      cursor: pointer;
+      transition: ease 0.15s;
+    }
+
+    .sidebar a:hover {
+      font-size: 23px;
+    }
+
+    .magnifying-glass {
+      position: absolute;
       top: 20px;
       right: 20px;
-      font-size: 24px;
+      font-size: 28px;
       cursor: pointer;
-      z-index: 1000;
-      color: #333;
+      color: white;
+    }
+
+    .centered-heading,
+    .centered-heading2 {
+      color: yellow; /* Yellow color */
+      text-align: center;
+    }
+
+    #randomFact {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 20px;
+      color: yellow; /* Yellow color */
+    }
+
+    .button {
+      background-color: yellow; /* Yellow background */
+      color: black; /* Black text color */
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: #ffea00; /* Lighter yellow on hover */
+    }
+
+    /* Logo styles */
+    .logo {
+      display: block;
+      margin: 20px auto; /* Center logo horizontally and add margin */
+      width: 150px; /* Adjust size as needed */
+      height: auto;
     }
   </style>
 </head>
 <body>
-
-  <div class="magnifying-glass" id="magnifyingGlass"><i class="fas fa-search"></i></div>
-
-  <h1>Games</h1>
-
-  <!-- Search input -->
-  <div class="search-container">
-    <input type="text" id="searchInput" placeholder="Search games..." oninput="searchGames()">
-    <i class="fas fa-search search-icon"></i>
+  <!-- Preload Screen -->
+  <div class="preload" id="preloadScreen" style="display: none;">
+    <img src="./CUG_files/Logo2.png" alt="Logo">
+    <h1>CUG</h1>
   </div>
 
-  <div class="grid" id="gamesGrid">
-    <button class="abutton" onclick="window.location.href = './1v1.lol.html';">
-      <img src="https://play-lh.googleusercontent.com/QYGRIDJbyVO7L7jH8CwiKJ4NumTGgcTVqU3ITooLWxro-eeNns1RZ0uwGGFe-r8M4co" alt="1v1.lol">
-      <div class="game-name">1v1.lol</div>
-    </button>
-    <button class="abutton" onclick="window.location.href = './subwaysurfers.html';">
-      <img src="https://images-ext-2.discordapp.net/external/QSK1mJfEjMxTqf-dMM7B_nmZVwC9Q0zHQHz9qa8C43c/https/cdn.mobygames.com/b885ab36-abef-11ed-8d66-02420a000132.webp?format=webp&width=395&height=395" alt="Subway Surfers">
-      <div class="game-name">Subway Surfers</div>
-    </button>
-    <button class="abutton" onclick="window.location.href = './Forcez.html';">
-      <img src="https://static.thenounproject.com/png/4735657-200.png" alt="Forcez">
-      <div class="game-name">Forcez</div>
-    </button>
-    <button class="abutton" onclick="window.location.href = './retrobowl.html';">
-      <img src="https://img.poki.com/cdn-cgi/image/quality=78,width=600,height=600,fit=cover,f=auto/ee9ca3764ef4289a48a1ebf457ef605441ed1f35a0f2eb12707a70d609e53686.png" alt="Retro Bowl">
-      <div class="game-name">Retro Bowl</div>
-    </button>
-    <button class="abutton" onclick="window.location.href = './Bitlife.html';">
-      <img src="https://play-lh.googleusercontent.com/fUM-UyywXxjC8soxAZdIlxJrlRRXmql8wkE426SHzft4lJycSKVd2jCYQQX1BEG9Xw" alt="Bitlife">
-      <div class="game-name">Bitlife</div>
-    </button>
-    <button class="abutton" onclick="window.location.href = './FruitNinja.html';">
-      <img src="https://img.poki.com/cdn-cgi/image/quality=78,width=600,height=600,fit=cover,f=auto/c4dc286c30b8fbde45a0b5d4fe6f2146.png" alt="Fruit Ninja">
-      <div class="game-name">Fruit Ninja</div>
-    </button>
-    <button class="abutton" onclick="window.location.href = './basketballstars.html';">
-      <img src="https://play-lh.googleusercontent.com/EjJV6kCXgX9EIhKEtpYhQF8-BUb5En8sDKpOPiWSQJUxv9_RAfl4tMxyIMkQYgeqC6I=w240-h480-rw" alt="Basket Ball Stars">
-      <div class="game-name">Basket Ball Stars</div>
-    </button>
-    <button class="abutton" onclick="window.location.href = './Blacksmith.html';">
-      <img src="https://play-lh.googleusercontent.com/n8wCaQKY2I4P4K9jFzy6_AJpWOa2uVYLSrlDvZDEJpmtBuOz-cSOuLLGlvn37V1ychU" alt="Black Smith">
-      <div class="game-name">Black Smith</div>
-    </button>
-    <button class="abutton" onclick="window.location.href = './Soccerrandom.html';">
-      <img src="https://play-lh.googleusercontent.com/G1PIlb6HWKSaDre0XpUcmKGps9T4iamsSlwrogB3EJzYv4bz0M2am4D17MtGzndaOOU=w240-h480-rw" alt="Soccer Random">
-      <div class="game-name">Soccer Random</div>
-    </button>
-    <button class="abutton" onclick="window.location.href = './basketballrandom.html';">
-      <img src="https://play-lh.googleusercontent.com/gP8T5Z1O-ngxIloiwcBZzrzyLPYDp0R_1BDNKUDZboIRPVImeyWI8-7aExvB9gAGNKc=w240-h480-rw" alt="Basket Ball Random">
-      <div class="game-name">Basket Ball Random</div>
-    </button>
-    <button class="abutton" onclick="window.location.href = './NUT SIM.html';">
-      <img src="https://nutsimulator.github.io/images/icon.png" alt="Nut Simulator">
-      <div class="game-name">Nut Simulator</div>
-    </button>
-    <button class="abutton" onclick="window.location.href = './cookieclicker.html';">
-      <img src="https://play-lh.googleusercontent.com/Z1MOuuiD05ZN5LkVmMEvKF0mqAc-FknaQ2j8s4dZiO-LSPQX4EEA3RVJdlQEtxe96ok" alt="Cookie Clicker">
-      <div class="game-name">Cookie Clicker</div>
-    </button>
-    <button class="abutton" onclick="window.location.href = './drivemad.html';">
-      <img src="https://img.poki.com/cdn-cgi/image/quality=78,width=600,height=600,fit=cover,f=auto/f8a2160e52333ee0d44ec19e8ca65139.png" alt="Drive Mad">
-      <div class="game-name">Drive Mad</div>
-    </button>
-    <button class="abutton" onclick="window.location.href = './paper.io.html';">
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple116/v4/d6/2e/cf/d62ecfdd-1695-592c-ea3b-c1d873ef601a/AppIcon-1x_U007emarketing-0-7-0-85-220.png/512x512bb.jpg" alt="Paper.io">
-      <div class="game-name">Paper.io</div>
-    </button>
-    <button class="abutton" onclick="window.location.href = './slope.html';">
-      <img src="https://play-lh.googleusercontent.com/uJn2i9h7KxYQarC_c3K4qH6o7gLtflFnhD_dN14MNkzHJ1NeNFzCL69jpB5mT0vCoQs" alt="Slope">
-      <div class="game-name">Slope</div>
-    </button>
-    <button class="abutton" onclick="window.location.href = './roblox.html';">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Roblox_Logo_2022.jpg" alt="Roblox">
-      <div class="game-name">Roblox</div>
-    </button>
-    <button class="abutton" onclick="window.location.href = './OvO.html';">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSP_9wtlG3hoiV0HJQfDm9fHDM6qfjIWRjxNu63Ye2R-VsFSzuRT3P3XwZBAzzFwWClE38&usqp=CAU" alt="OvO">
-      <div class="game-name">OvO</div>
-    </button>
-    <button class="abutton" onclick="window.location.href = './justfall.html';">
-      <img src="https://play-lh.googleusercontent.com/-0rSllZ8as88Jcs3iZ7-JCFyTb3YLB-HjR7bY7P6q_2MAswmDH4h1qNPfFiaZqzkkg" alt="Just Fall">
-      <div class="game-name">Just Fall</div>
-    </button>
-    <button class="abutton" onclick="window.location.href = './happywheels.html';">
-      <img src="https://play-lh.googleusercontent.com/SV8RsV5udSeeONjatT5SwleP6lzV6PjtNPs2VvyohJXWSG9fFLNOfslDEHbpDN337wQ" alt="Happy Wheels">
-      <div class="game-name">Happy Wheels</div>
-    </button>
-    <button class="abutton" onclick="window.location.href = './infinitecraft.html';">
-      <img src="https://static0.srcdn.com/wordpress/wp-content/uploads/2024/02/infinite-craft-temp-game-poster.jpg" alt="Infinite Craft">
-      <div class="game-name">Infinite Craft</div>
-    </button>
-    <button class="abutton" onclick="window.location.href = './Funnyshooter2.html';">
-      <img src="https://classroomjq.github.io/funny-shooter-2/logo.png" alt="Funny Shooter 2">
-      <div class="game-name">Funny Shooter 2</div>
-    </button>
-    <button class="abutton" onclick="window.location.href = './highwayracer.html';">
-      <img src="https://ubg77.github.io/edit/highway-racer-3d/logo.png" alt="Highway Racer">
-      <div class="game-name">Highway Racer</div>
-    </button>
-    <button class="abutton" onclick="window.location.href = './stickmanhook.html';">
-      <img src="https://webglmath.github.io/stickmanhook/logo.png" alt="Stickman Hook">
-      <div class="game-name">Stickman Hook</div>
-    </button>
-    <button class="abutton" onclick="window.location.href = './retrohighway.html';">
-      <img src="https://classroomjq.github.io/retro-highway/logo.png" alt="Retro Highway">
-      <div class="game-name">Retro Highway</div>
-    </button>
-    <button class="abutton" onclick="window.location.href = './smashkarts.html';">
-      <img src="https://webglmath.github.io/smash-karts/logo.png" alt="Smash Karts">
-      <div class="game-name">Smash Karts</div>
-    </button>
-    <button class="abutton" onclick="window.location.href = './johnnyrevenge.html';">
-      <img src="https://slope-game.github.io/johnny-revenge/logo.png" alt="Johnny Revenge">
-      <div class="game-name">Johnny Revenge</div>
-    </button>
-    <button class="abutton" onclick="window.location.href = './onlyup.html';">
-      <img src="https://slope-game.github.io/only-up-3d-parkour-go-ascend/logo.png" alt="Only Up">
-      <div class="game-name">Only Up</div>
-    </button>
-    <button class="abutton" onclick="window.location.href = './minecraft.html';">
-      <img src="https://preview.redd.it/avjal33hpqo61.png?width=512&format=png&auto=webp&s=b652d83347448df74c8ba61c17b322e686ee32a4" alt="Minecraft">
-      <div class="game-name">Minecraft</div>
-    </button>
-    <button class="abutton" onclick="window.location.href = './fnaf1.html';">
-      <img src="https://slope-game.github.io/img/fnaf1.png" alt="FNAF 1">
-      <div class="game-name">FNAF 1</div>
-    </button>
-    <button class="abutton" onclick="window.location.href = './boxingrandom.html';">
-      <img src="https://bitlifeonline.github.io/boxing-random/logo.png" alt="Boxing Random">
-      <div class="game-name">Boxing Random</div>
-    </button>
+  <!-- Main Content -->
+  <img src="./CUG_files/Logo2.png" alt="Logo" class="logo"> <!-- Added logo here -->
+  <h1 class="centered-heading">CUG</h1>
+  
+  <!-- Display Random Fact or Text -->
+  <div id="randomFact">CUG WAS A PASSION PROJECT AT FIRST 💻.</div>
+  
+  <h1 class="centered-heading2">The Best Unblocked Games Out There</h1>
+  <a href="https://cug-games.github.io/CUG/games/"><button class="button">Games</button></a>
+
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <a href="https://cug-games.github.io/CUG/games/partners.html">Partners</a>
+    <a href="https://cug-games.github.io/CUG/games/discord.html">Discord</a>
+    <a href="https://cug-games.github.io/CUG/games/funding.html">Funders</a>
+    <a href="https://cug-games.github.io/CUG/games/websites.html">Our Websites</a>
+    <!-- Add more links as needed -->
   </div>
+
+  <!-- Magnifying Glass Icon -->
+  <div class="magnifying-glass" id="magnifyingGlass">☰</div>
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const magnifyingGlass = document.getElementById("magnifyingGlass");
+      const sidebar = document.getElementById("sidebar");
+      const randomFactContainer = document.getElementById("randomFact");
+      const preloadScreen = document.getElementById("preloadScreen");
 
-      magnifyingGlass.addEventListener("click", function () {
-        document.querySelector('.search-container input').focus();
-      });
-    });
+      // Array of random facts or texts
+      const randomFacts = [
+        "Did you know that this website was made by Chip Hill? Also The Founder Of Hillflow Brand 😎.",
+        "Tiktok has almost been banned 3 times 😭.",
+        "Remember Kids Youtube Shorts Is Brain Rot ❌.",
+        "Did you Know CUG Means Chips Unblocked Games 🎮?",
+        "Minecraft On CUG Was originally a easter egg 🥚.",
+        "Skibidi toilet, skibidi, skibidi toilet. Skibidi toilet, skibidi, skibidi toilet 🚽.",
+        "CUG WAS A PASSION PROJECT AT FIRST 💻.",
+        "Cug is used world wide 🌍.",
+        "We Update Every Week 🎉!",
+        "Minecraft is good for the environment ⛏.",
+        "I'm edging 🥩👊.",
+        "Is It Pink 🌊?",
+        "Imma Bout to bust 🥒!",
+        "Did you know adolf hitler had a girlfriend 😶‍🌫?",
+        "I Don't believe in human rights 🤪.",
+        "Dogs Can't Say No 😉.",
+        "Women Don't deserve rights 🧕.",
+        "Fortnite Is Just A Rip Off Of 1v1.lolヽ((◎д◎))ゝ.",
+        "Email Me For Special Milk 🧓.",
+        "Ctrl + Alt + Delete: the three stages of my workday 🔄.",
+        "In a world full of updates, be the bug fixer 🐞.",
+        "Sleep is for the weak, coffee is for the strong ☕️💪.",
+        "Commit early, commit often 📝.",
+        "In the game of love, sometimes you respawn alone 💔🎮.",
+        "Drain Out the Bad Energy 💔.",
+        "In this world where you can be anything be yourself 😇.",
+        "Life Is Like Fortnite Some Land High Ground Some have to build to it 🫶.",
+        "Everyone wants me dead bitch i'm already dead i've been dead for years ⚰.",
+        "Have you every been so alone that nobodys house feels like home 🏠.",
+        "Did you know this website wouldn't still be a thing without suki hash 🫎.",
+       ];
 
-    function searchGames() {
-      const searchInput = document.getElementById("searchInput").value.toLowerCase();
-      const games = document.querySelectorAll(".abutton");
-
-      games.forEach(game => {
-        const gameName = game.querySelector(".game-name").textContent.toLowerCase();
-        if (gameName.includes(searchInput)) {
-          game.style.display = "block";
-        } else {
-          game.style.display = "none";
-        }
-      });
-
-      // Redirect on specific search terms
-      const redirects = {
-        'lad': './lad.html',
-        'melonplayground': './melonplayground.html',
-        'artclass': './artclass.html'
-      };
-
-      if (redirects[searchInput]) {
-        window.location.href = redirects[searchInput];
+      function getRandomFact() {
+        const randomIndex = Math.floor(Math.random() * randomFacts.length);
+        return randomFacts[randomIndex];
       }
-    }
-  </script>
-</body>
-</html>
 
+      function displayRandomFact() {
+        const fact = getRandomFact();
+        randomFactContainer.textContent = fact;
+      }
+
+      // Display random fact when the page is loaded
+      displayRandomFact();
+
+      function toggleSidebar() {
+        sidebar.classList.toggle("show-sidebar");
+      }
+
+      magnifyingGlass.addEventListener("click", toggleSidebar);
+
+      // Hide preload screen after 2 seconds
+      setTimeout(function() {
+        preloadScreen.style.display = 'none';
+      }, 2000);
+    });
+  </script>
+
+
+</body></html>
