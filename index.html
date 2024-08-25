@@ -51,14 +51,16 @@
       flex-direction: column;
       align-items: flex-start;
       justify-content: flex-start;
-      transition: right 0.4s ease-in-out;
+      transition: right 0.4s ease-in-out, visibility 0.4s ease-in-out;
       box-shadow: -10px 0 30px rgba(0,0,0,0.8);
       z-index: 1000;
       border-radius: 20px 0 0 20px;
+      visibility: hidden;
     }
 
     .sidebar.show-sidebar {
       right: 0;
+      visibility: visible;
     }
 
     .sidebar a {
@@ -244,7 +246,15 @@
       displayRandomFact();
 
       function toggleSidebar() {
-        sidebar.classList.toggle("show-sidebar");
+        if (sidebar.classList.contains("show-sidebar")) {
+          sidebar.classList.remove("show-sidebar");
+          setTimeout(() => {
+            sidebar.style.visibility = "hidden";
+          }, 400); // Match the transition duration
+        } else {
+          sidebar.style.visibility = "visible";
+          sidebar.classList.add("show-sidebar");
+        }
       }
 
       magnifyingGlass.addEventListener("click", toggleSidebar);
@@ -252,3 +262,4 @@
   </script>
 </body>
 </html>
+
