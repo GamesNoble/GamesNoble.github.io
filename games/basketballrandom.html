@@ -8,42 +8,50 @@
         width: 100%;
         background-color: #252525; /* Set the background color to dark grey */
         overflow: hidden;
+        font-family: Arial, sans-serif;
       }
 
       iframe {
         height: 100%;
-        width: 100%;
+        width: calc(100% - 200px); /* Adjust width to leave space for sidebar */
         overflow: auto;
-      }
-
-      .forceIosScrolling {
-        overflow: scroll;
-        -webkit-overflow-scrolling: touch;
-      }
-
-      .logo {
         position: absolute;
-        top: 20px;
-        left: 20px;
-        z-index: 10;
+        left: 0;
+        top: 0;
       }
 
-      .text-link {
+      .sidebar {
         position: absolute;
-        top: 20px;
-        right: 20px;
-        z-index: 10;
+        top: 0;
+        right: 0;
+        width: 200px;
+        height: 100%;
+        background-color: #333; /* Dark grey sidebar */
         color: white;
-        font-family: Arial, sans-serif;
-        font-size: 18px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .sidebar a {
+        color: white;
         text-decoration: none;
+        font-size: 24px;
+        margin: 10px 0;
+      }
+
+      .sidebar a:hover {
+        text-decoration: underline;
       }
 
     </style>
   </head>
   <body>
-    <img src="Logo/Logo4.png" class="logo" alt="Logo" width="100" height="100">
-    <a href="https://nooblegames.github.io/" class="text-link">https://nooblegames.github.io/</a>
-    <iframe src="https://slope-game.github.io/new3723/basket-random/" width="1000" height="700" scrolling="none" frameborder="0"></iframe>
+    <div class="sidebar">
+      <a href="https://nooblegames.github.io/">Home</a>
+    </div>
+    <iframe src="https://slope-game.github.io/new3723/basket-random/" scrolling="none" frameborder="0"></iframe>
   </body>
 </html>
+
