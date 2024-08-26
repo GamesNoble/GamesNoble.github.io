@@ -3,31 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="https://github.com/NoobleGames/Nooble/blob/main/Logo/Logo4.png?raw=true" type="image/png">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <title>Nooble - Games</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <style>
     body {
       font-family: 'Poppins', sans-serif;
       margin: 0;
       padding: 0;
-      background: #1a1a1d;
-      color: #f1f1f1;
+      background: #121212;
+      color: #e0e0e0;
       text-align: center;
       overflow-x: hidden;
+      user-select: none; /* Disable text selection */
     }
 
-    header {
-      background-color: #ffcc00;
-      padding: 20px 0;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 2.5em;
-      color: #1a1a1d;
+    .title {
+      margin: 30px 0;
+      font-size: 3em;
+      color: #fbc02d;
+      font-family: 'Montserrat', sans-serif;
+      text-transform: uppercase;
+      text-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
     }
 
     .search-container {
@@ -39,16 +36,18 @@
     #searchInput {
       width: 400px;
       padding: 12px 50px 12px 20px;
-      border: 2px solid #ffcc00;
-      border-radius: 30px;
-      font-size: 18px;
+      border: 2px solid #fbc02d;
+      border-radius: 25px;
+      font-size: 16px;
       outline: none;
+      background: #1e1e1e;
+      color: #e0e0e0;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
       transition: box-shadow 0.3s ease;
     }
 
     #searchInput:focus {
-      box-shadow: 0 8px 24px rgba(255, 204, 0, 0.5);
+      box-shadow: 0 8px 24px rgba(251, 192, 45, 0.5);
     }
 
     .search-icon {
@@ -56,7 +55,17 @@
       right: 15px;
       top: 50%;
       transform: translateY(-50%);
-      color: #ffcc00;
+      color: #fbc02d;
+      font-size: 20px;
+    }
+
+    .speech-button {
+      position: absolute;
+      right: 60px;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      color: #fbc02d;
       font-size: 20px;
     }
 
@@ -70,6 +79,7 @@
 
     .abutton {
       width: 220px;
+      height: 320px; /* Ensure all buttons have the same height */
       background-color: #2d2d34;
       border: none;
       border-radius: 15px;
@@ -80,19 +90,49 @@
       text-align: left;
       display: flex;
       flex-direction: column;
+      position: relative;
     }
 
     .abutton img {
       border-radius: 15px 15px 0 0;
       width: 100%;
-      height: auto;
+      height: 70%; /* Adjust the height to fit the button's height */
+      object-fit: cover; /* Ensure images cover the button area */
     }
 
     .game-name {
       padding: 15px;
       font-weight: 600;
       font-size: 1.2em;
-      color: #ffcc00;
+      color: #f1f1f1;
+      background-color: #3f3f4f;
+      position: relative;
+      border-radius: 0 0 15px 15px;
+      flex-grow: 1; /* Make sure game name area takes remaining space */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .new-badge, .broken-badge {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      color: #fff;
+      padding: 5px 10px;
+      border-radius: 10px;
+      font-size: 0.8em;
+      font-weight: bold;
+      transform: rotate(-10deg);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    .new-badge {
+      background-color: #ff0000; /* Red background for new badge */
+    }
+
+    .broken-badge {
+      background-color: #9c27b0; /* Purple background for broken badge */
     }
 
     .abutton:hover {
@@ -100,23 +140,13 @@
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
     }
 
-    .magnifying-glass {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      font-size: 26px;
-      cursor: pointer;
-      z-index: 1000;
-      color: #ffcc00;
-    }
-
     footer {
-      background-color: #1a1a1d;
+      background-color: #121212;
       padding: 20px;
-      color: #ffcc00;
+      color: #fbc02d;
       font-size: 0.9em;
       text-align: center;
-      border-top: 2px solid #ffcc00;
+      border-top: 2px solid #fbc02d;
       margin-top: 40px;
     }
 
@@ -128,23 +158,75 @@
         width: 80%;
       }
     }
+
+    /* Modal Styles */
+    .modal {
+      display: none; /* Hidden by default */
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.4); /* Black with opacity */
+    }
+
+    .modal-content {
+      background-color: #2d2d34;
+      margin: 15% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      max-width: 500px;
+      border-radius: 10px;
+      color: #e0e0e0;
+      text-align: center;
+    }
+
+    .modal-content h2 {
+      margin-top: 0;
+    }
+
+    .modal-content button {
+      background-color: #fbc02d;
+      border: none;
+      border-radius: 5px;
+      color: #121212;
+      padding: 10px 20px;
+      font-size: 16px;
+      margin: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .modal-content button:hover {
+      background-color: #f9a825;
+    }
+
+    .modal-content #speechText {
+      margin-bottom: 15px;
+      font-size: 18px;
+      padding: 10px;
+      border-radius: 5px;
+      background-color: #1e1e1e;
+      border: 1px solid #fbc02d;
+      color: #e0e0e0;
+    }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>Nooble - Games</h1>
-  </header>
-
-  <div class="magnifying-glass" id="magnifyingGlass"><i class="fas fa-search"></i></div>
+  <div class="title">Nooble</div>
 
   <div class="search-container">
     <input type="text" id="searchInput" placeholder="Search games..." oninput="searchGames()">
     <i class="fas fa-search search-icon"></i>
+    <i class="fas fa-microphone speech-button" onclick="showWorkInProgressMessage()"></i>
   </div>
 
-    <div class="grid" id="gamesGrid">
-     <button class="abutton" onclick="window.location.href = './1v1.lol.html';">
+  <div class="grid" id="gamesGrid">
+    <button class="abutton" onclick="window.location.href = './1v1.lol.html';">
       <img src="https://play-lh.googleusercontent.com/QYGRIDJbyVO7L7jH8CwiKJ4NumTGgcTVqU3ITooLWxro-eeNns1RZ0uwGGFe-r8M4co" alt="1v1.lol">
       <div class="game-name">1v1.lol</div>
     </button>
@@ -221,6 +303,7 @@
       <div class="game-name">Happy Wheels</div>
     </button>
     <button class="abutton" onclick="window.location.href = './infinitecraft.html';">
+      <div class="broken-badge">Broken</div>
       <img src="https://static0.srcdn.com/wordpress/wp-content/uploads/2024/02/infinite-craft-temp-game-poster.jpg" alt="Infinite Craft">
       <div class="game-name">Infinite Craft</div>
     </button>
@@ -257,6 +340,7 @@
       <div class="game-name">Minecraft</div>
     </button>
     <button class="abutton" onclick="window.location.href = './fnaf1.html';">
+      <div class="new-badge">New</div>
       <img src="https://slope-game.github.io/img/fnaf1.png" alt="FNAF 1">
       <div class="game-name">FNAF 1</div>
     </button>
@@ -267,51 +351,89 @@
   </div>
 
   <footer>
-    &copy; 2024 Nooble - Games | All Rights Reserved
+    Nooble Games - All Rights Reserved &copy; 2024
   </footer>
 
+  <!-- Speech Modal -->
+  <div id="speechModal" class="modal">
+    <div class="modal-content">
+      <h2>Speech Input</h2>
+      <textarea id="speechText" rows="4" readonly></textarea>
+      <button id="stopSpeechButton" onclick="stopSpeech()">Stop</button>
+      <button id="exitSpeechMenuButton" onclick="exitSpeechMenu()">Exit</button>
+    </div>
+  </div>
+
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const magnifyingGlass = document.getElementById("magnifyingGlass");
+    let recognition;
+    let isSpeechModalOpen = false;
 
-      magnifyingGlass.addEventListener("click", function () {
-        document.querySelector('.search-container input').focus();
-      });
-
-      document.addEventListener("contextmenu", function (e) {
-        e.preventDefault(); // Disable right-click context menu
-      });
+    document.addEventListener('DOMContentLoaded', () => {
+      if ('webkitSpeechRecognition' in window) {
+        recognition = new webkitSpeechRecognition();
+        recognition.continuous = false;
+        recognition.interimResults = false;
+        recognition.lang = 'en-US';
+        recognition.onresult = (event) => {
+          const transcript = event.results[0][0].transcript;
+          document.getElementById('speechText').value = transcript;
+        };
+        recognition.onerror = (event) => {
+          console.error('Speech recognition error:', event.error);
+        };
+      } else {
+        console.error('Speech recognition not supported');
+        document.querySelector('.speech-button').style.display = 'none'; // Hide speech button if not supported
+      }
     });
 
     function searchGames() {
-      const searchInput = document.getElementById("searchInput").value.toLowerCase();
-      const games = document.querySelectorAll(".abutton");
-
+      const searchInput = document.getElementById('searchInput').value.toLowerCase();
+      const games = document.querySelectorAll('.abutton');
       games.forEach(game => {
-        const gameName = game.querySelector(".game-name").textContent.toLowerCase();
+        const gameName = game.querySelector('.game-name').textContent.toLowerCase();
         if (gameName.includes(searchInput)) {
-          game.style.display = "block";
+          game.style.display = '';
         } else {
-          game.style.display = "none";
+          game.style.display = 'none';
         }
       });
+    }
 
-      // Redirect on specific search terms
-      const redirects = {
-        'lad': './lad.html',
-        'melonplayground': './melonplayground.html',
-        'artclass': './artclass.html'
-      };
+    function showWorkInProgressMessage() {
+      alert('This feature is a work in progress.');
+    }
 
-      if (redirects[searchInput]) {
-        window.location.href = redirects[searchInput];
+    function stopSpeech() {
+      if (recognition) {
+        recognition.stop();
+        document.getElementById('speechModal').style.display = 'none';
+        isSpeechModalOpen = false;
+        resetSpeechText(); // Reset the speech text when stopping
       }
     }
-  // Disable right-click
-  document.addEventListener('contextmenu', function (e) {
-    e.preventDefault();
-  });
 
+    function exitSpeechMenu() {
+      document.getElementById('speechModal').style.display = 'none';
+      isSpeechModalOpen = false;
+      resetSpeechText(); // Reset the speech text when exiting
+    }
+
+    function resetSpeechText() {
+      document.getElementById('speechText').value = '';
+    }
+
+    document.addEventListener('click', (event) => {
+      const modal = document.getElementById('speechModal');
+      if (isSpeechModalOpen && !modal.contains(event.target) && event.target !== document.querySelector('.speech-button')) {
+        exitSpeechMenu();
+      }
+    });
+
+    // Add event listener for the right-click to disable context menu
+    document.addEventListener('contextmenu', (event) => {
+      event.preventDefault();
+    });
   </script>
 </body>
 </html>
