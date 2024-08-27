@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request a Game</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #1f4037, #99f2c8);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #fff;
+            overflow: hidden;
+        }
+
+        .container {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 14px;
+            text-align: left;
+        }
+
+        input[type="text"], input[type="email"], textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #444;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 16px;
+            color: #fff;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        .confirmation-message {
+            display: none;
+            margin-top: 20px;
+            color: #28a745;
+            font-weight: bold;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: -1;
+            filter: blur(10px);
+        }
+    </style>
+</head>
+<body>
+
+<div class="overlay"></div>
+
+<div class="container">
+    <h2>Request a Game</h2>
+    <form id="requestForm">
+        <label for="gameName">Game Name:</label>
+        <input type="text" id="gameName" name="gameName" required>
+
+        <label for="description">Game Description:</label>
+        <textarea id="description" name="description" required></textarea>
+
+        <label for="email">Your Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <button type="submit">Submit Request</button>
+    </form>
+    <div class="confirmation-message" id="confirmationMessage">
+        Thank you for your request! We'll review it soon.
+    </div>
+</div>
+
+<script>
+    document.addEventListener('contextmenu', event => event.preventDefault());
+
+    const form = document.getElementById('requestForm');
+    const confirmationMessage = document.getElementById('confirmationMessage');
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const gameName = document.getElementById('gameName').value;
+        const description = document.getElementById('description').value;
+        const email = document.getElementById('email').value;
+
+        const webhookUrl = "YOUR_DISCORD_WEBHOOK_URL";
+
+        const embed = {
+            title: "New Game Request",
+            description: "A user has submitted a new game request.",
+            color: 3066993,  // Blueish-green color
+            fields: [
+                {
+                    name: "Game Name",
+                    value: gameName,
+                    inline: true
+                },
+                {
+                    name: "Description",
+                    value: description,
+                    inline: false
+                },
+                {
+                    name: "Email",
+                    value: email,
+                    inline: true
+                }
+            ],
+            timestamp: new Date(),
+            footer: {
+                text: "Game Request System",
+                icon_url: "https://github.com/NoobleGames/NoobleGames.github.io/blob/main/Logo/Logo4.png?raw=true"  // Optional footer icon
+            }
+        };
+
+        const requestBody = {
+            embeds: [embed]
+        };
+
+        fetch(webhookUrl, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(requestBody)
+        }).then(response => {
+            if (response.ok) {
+                confirmationMessage.style.display = 'block';
+                form.reset();
+            } else {
+                alert('There was an issue with your request. Please try again.');
+            }
+        }).catch(error => {
+            alert('Error:', error);
+        });
+    });
+</script>
+
+</body>
+</html>
