@@ -148,6 +148,47 @@
       text-align: center;
       border-top: 2px solid #fbc02d;
       margin-top: 40px;
+      position: relative;
+    }
+
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .footer-logo {
+      width: 50px; /* Adjust size as needed */
+      margin-bottom: 10px;
+    }
+
+    .footer-text {
+      margin-bottom: 10px;
+    }
+
+    .footer-links a {
+      color: #fbc02d;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    .social-links {
+      margin-top: 10px;
+    }
+
+    .social-icon {
+      color: #fbc02d;
+      font-size: 24px;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+
+    .social-icon:hover {
+      color: #f9a825;
     }
 
     @media (max-width: 600px) {
@@ -353,91 +394,77 @@
       <div class="game-name">Emoji Hell</div>
     </button>
   </div>
-
-  <footer>
-    Nooble Games - All Rights Reserved &copy; 2024
-  </footer>
-
-  <!-- Speech Modal -->
   <div id="speechModal" class="modal">
     <div class="modal-content">
-      <h2>Speech Input</h2>
-      <textarea id="speechText" rows="4" readonly></textarea>
-      <button id="stopSpeechButton" onclick="stopSpeech()">Stop</button>
-      <button id="exitSpeechMenuButton" onclick="exitSpeechMenu()">Exit</button>
+      <h2>Speech Recognition</h2>
+      <p id="speechText">Speech recognition is under development. Please use text search for now.</p>
+      <button onclick="closeModal()">Close</button>
     </div>
   </div>
 
+
+
   <script>
-    let recognition;
-    let isSpeechModalOpen = false;
-
-    document.addEventListener('DOMContentLoaded', () => {
-      if ('webkitSpeechRecognition' in window) {
-        recognition = new webkitSpeechRecognition();
-        recognition.continuous = false;
-        recognition.interimResults = false;
-        recognition.lang = 'en-US';
-        recognition.onresult = (event) => {
-          const transcript = event.results[0][0].transcript;
-          document.getElementById('speechText').value = transcript;
-        };
-        recognition.onerror = (event) => {
-          console.error('Speech recognition error:', event.error);
-        };
-      } else {
-        console.error('Speech recognition not supported');
-        document.querySelector('.speech-button').style.display = 'none'; // Hide speech button if not supported
-      }
-    });
-
     function searchGames() {
-      const searchInput = document.getElementById('searchInput').value.toLowerCase();
-      const games = document.querySelectorAll('.abutton');
-      games.forEach(game => {
-        const gameName = game.querySelector('.game-name').textContent.toLowerCase();
-        if (gameName.includes(searchInput)) {
-          game.style.display = '';
+      const input = document.getElementById('searchInput').value.toLowerCase();
+      const gameButtons = document.querySelectorAll('.abutton');
+
+      gameButtons.forEach(button => {
+        const gameName = button.querySelector('.game-name').textContent.toLowerCase();
+        if (gameName.includes(input)) {
+          button.style.display = 'block';
         } else {
-          game.style.display = 'none';
+          button.style.display = 'none';
         }
       });
     }
 
     function showWorkInProgressMessage() {
-      alert('This feature is a work in progress.');
-    }
-
-    function stopSpeech() {
-      if (recognition) {
-        recognition.stop();
-        document.getElementById('speechModal').style.display = 'none';
-        isSpeechModalOpen = false;
-        resetSpeechText(); // Reset the speech text when stopping
-      }
-    }
-
-    function exitSpeechMenu() {
-      document.getElementById('speechModal').style.display = 'none';
-      isSpeechModalOpen = false;
-      resetSpeechText(); // Reset the speech text when exiting
-    }
-
-    function resetSpeechText() {
-      document.getElementById('speechText').value = '';
-    }
-
-    document.addEventListener('click', (event) => {
       const modal = document.getElementById('speechModal');
-      if (isSpeechModalOpen && !modal.contains(event.target) && event.target !== document.querySelector('.speech-button')) {
-        exitSpeechMenu();
-      }
-    });
+      modal.style.display = 'block';
+    }
 
-    // Add event listener for the right-click to disable context menu
-    document.addEventListener('contextmenu', (event) => {
-      event.preventDefault();
-    });
+    function closeModal() {
+      const modal = document.getElementById('speechModal');
+      modal.style.display = 'none';
+    }
+
+    // Close the modal when clicking outside of it
+    window.onclick = function(event) {
+      const modal = document.getElementById('speechModal');
+      if (event.target === modal) {
+        modal.style.display = 'none';
+      }
+    }
   </script>
+
 </body>
 </html>
+
+  <footer>
+    <div class="footer-content">
+      <img src="https://github.com/NoobleGames/NoobleGames.github.io/blob/main/Logo/Logo4.png?raw=true" alt="Nooble Logo" class="footer-logo">
+      <div class="footer-text">
+        Nooble Games - All Rights Reserved &copy; 2024
+      </div>
+      <div class="footer-links">
+        <a href="#request-game">Request a Game</a>
+        <a href="#privacy-policy">Privacy Policy</a>
+      </div>
+      <div class="social-links">
+        <a href="https://twitter.com/yourprofile" target="_blank" class="social-icon">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://facebook.com/yourprofile" target="_blank" class="social-icon">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://instagram.com/yourprofile" target="_blank" class="social-icon">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://youtube.com/yourchannel" target="_blank" class="social-icon">
+          <i class="fab fa-youtube"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
