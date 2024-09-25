@@ -1,37 +1,142 @@
 <html>
   <head>
-     <link rel="icon" href="https://nooblegames.github.io/EMJOIHELL/Logo.png" type="image/png">
-    <title>1v1.LoL</title>
+    <link rel="icon" href="https://nooblegames.github.io/EMJOIHELL/Logo.png" type="image/png">
+    <title>Emjoi Hell- Shift Notice</title>
     <style>
-           body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            width: 100%;
-            background-color: #252525; /* Set the background color to dark grey */
-            overflow: hidden;
-        }
+      body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 100%;
+        background: radial-gradient(circle at top, #1d1d1d, #000000); /* Deep space-like background */
+        color: #ffffff;
+        font-family: 'Roboto', sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        overflow: hidden;
+        position: relative;
+      }
 
-        iframe {
-            height: 100%;
-            width: 100%;
-            overflow: auto;
-        }
+      /* Starry background */
+      @keyframes twinkling {
+        0% { opacity: 0.5; }
+        50% { opacity: 1; }
+        100% { opacity: 0.5; }
+      }
+      .star {
+        position: absolute;
+        background: rgba(255, 255, 255, 0.8);
+        border-radius: 50%;
+        animation: twinkling 3s infinite;
+        box-shadow: 0 0 4px rgba(255, 255, 255, 0.7);
+      }
 
-        .forceIosScrolling {
-            overflow: scroll;
-            -webkit-overflow-scrolling: touch;
+      /* Customize number and size of stars */
+      .star:nth-child(1) { width: 2px; height: 2px; top: 5%; left: 20%; animation-duration: 4s; }
+      .star:nth-child(2) { width: 3px; height: 3px; top: 10%; left: 40%; animation-duration: 6s; }
+      .star:nth-child(3) { width: 2px; height: 2px; top: 20%; right: 25%; animation-duration: 5s; }
+      .star:nth-child(4) { width: 4px; height: 4px; bottom: 10%; right: 15%; animation-duration: 7s; }
+      .star:nth-child(5) { width: 1px; height: 1px; bottom: 15%; left: 10%; animation-duration: 3s; }
+
+      .message-box {
+        max-width: 800px;
+        padding: 50px;
+        background: rgba(42, 42, 42, 0.9); /* Darker, semi-transparent background for contrast */
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.9); /* Stronger shadow for depth */
+        border-radius: 15px;
+        border: 2px solid rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(15px);
+        position: relative;
+        z-index: 10;
+      }
+
+      h1 {
+        font-size: 3.5em;
+        margin-bottom: 20px;
+        color: #ffcc00;
+        background: linear-gradient(135deg, #ffcc00, #ff9900); /* Gradient for a warm glow effect */
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+      }
+
+      p {
+        font-size: 1.4em;
+        line-height: 1.7em;
+        color: #e0e0e0;
+        margin-bottom: 30px;
+      }
+
+      a {
+        color: #ffcc00;
+        text-decoration: none;
+        font-weight: bold;
+        padding: 15px 30px;
+        border: 2px solid #ffcc00;
+        border-radius: 8px;
+        transition: background-color 0.4s, color 0.4s;
+      }
+
+      a:hover {
+        background-color: #ffcc00;
+        color: #2a2a2a;
+      }
+
+      /* Floating geometric shapes */
+      .shape {
+        position: absolute;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.2);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        animation: float 10s ease-in-out infinite;
+      }
+
+      .shape-1 {
+        width: 100px;
+        height: 100px;
+        top: 10%;
+        left: 5%;
+      }
+
+      .shape-2 {
+        width: 150px;
+        height: 150px;
+        bottom: 15%;
+        right: 10%;
+      }
+
+      /* Floating effect */
+      @keyframes float {
+        0%, 100% {
+          transform: translateY(0);
         }
-  
+        50% {
+          transform: translateY(-20px);
+        }
+      }
+
     </style>
-<html>
-  <head>
-    <body>
-      <iframe src="https://nooblegames.github.io/EMJOIHELL/index.html" width="800" height="600" scrolling="none" frameborder="0"></iframe>
-    </body>
   </head>
+  <body>
+    <!-- Starry background -->
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+
+    <div class="message-box">
+      <h1>We’ve Moved!</h1>
+      <p>Due to funding limitations, we have shifted from Emjoi Hell. But fear not! You can now experience our brand-new game <a href="https://nooblegames.github.io/games/CubeDash.html" target="_blank">Cube Dash</a>.</p>
+      <p>We are incredibly thankful for your continued support and hope to see you in the new game. Click the link to start playing Cube Dash now!</p>
+    </div>
+
+    <!-- Decorative floating shapes -->
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+  </body>
 </html>
-<style>
-  
-  
-</style>
+
