@@ -1,29 +1,79 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
-    <title>Blacksmith</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proxy Browser</title>
     <style>
-           body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            width: 100%;
-            background-color: #252525; /* Set the background color to dark grey */
-            overflow: hidden;
-        }
+      body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 100%;
+        background-color: #252525;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: white;
+      }
 
-        iframe {
-            height: 100%;
-            width: 100%;
-            overflow: auto;
-        }
+      iframe {
+        height: 80%;
+        width: 100%;
+        border: none;
+      }
 
-        .forceIosScrolling {
-            overflow: scroll;
-            -webkit-overflow-scrolling: touch;
-        }
-  
+      input[type="text"] {
+        padding: 10px;
+        width: 80%;
+        margin: 20px;
+        border: 2px solid #555;
+        border-radius: 5px;
+        font-size: 16px;
+      }
+
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+      }
     </style>
-    <body>
-       <iframe src="https://glitch.com" width="800" height="600" scrolling="none" frameborder="0"></iframe>        
-    </body>
   </head>
+  <body>
+
+    <h1>Proxy Browser</h1>
+    <p>Type a URL to browse through a proxy:</p>
+
+    <!-- URL input form -->
+    <input type="text" id="urlInput" placeholder="Enter a URL..." />
+    <button onclick="loadProxy()">Go</button>
+
+    <!-- Iframe to load the proxied URL -->
+    <iframe id="proxyIframe" src=""></iframe>
+
+    <script>
+      function loadProxy() {
+        // Get the URL entered by the user
+        var url = document.getElementById('urlInput').value;
+
+        // Make sure the URL starts with http or https
+        if (!/^https?:\/\//i.test(url)) {
+          url = 'http://' + url;
+        }
+
+        // Proxy URL using CORS-Anywhere
+        var proxyUrl = 'https://cors-anywhere.herokuapp.com/' + url;
+
+        // Set the iframe's src to the proxied URL
+        document.getElementById('proxyIframe').src = proxyUrl;
+      }
+    </script>
+
+  </body>
+</html>
+
