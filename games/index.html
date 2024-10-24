@@ -475,26 +475,36 @@
       <div class="footer-text">
         Nooble Games - All Rights Reserved &copy; 2024
       </div>
-      <div class="footer-links">
-      <a href="/games/requestgame">Request a Game</a>
-      <a href="https://docs.google.com/spreadsheets/d/1gbCSYjr4j5DhWJ8ExT4mjzdFKhHxNEg_OGC3ySxPfWE/edit?usp=sharing">Game Request Status</a>
-      <a href="/privacypolicy">Privacy Policy</a>
-      <a href="#" onclick="window.open('https://nooblegames.github.io', '_blank'); return false;">Open In About Blank</a>
-      </div>
-      <div class="social-links">
-        <a href="https://twitter.com/yourprofile" target="_blank" class="social-icon">
-          <i class="fab fa-twitter"></i>
-        </a>
-        <a href="https://facebook.com/yourprofile" target="_blank" class="social-icon">
-          <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="https://instagram.com/yourprofile" target="_blank" class="social-icon">
-          <i class="fab fa-instagram"></i>
-        </a>
-        <a href="https://youtube.com/yourchannel" target="_blank" class="social-icon">
-          <i class="fab fa-youtube"></i>
-        </a>
-      </div>
-    </div>
-  </footer>
+  <div class="footer-links">
+    <a href="/games/requestgame">Request a Game</a>
+    <a href="https://docs.google.com/spreadsheets/d/1gbCSYjr4j5DhWJ8ExT4mjzdFKhHxNEg_OGC3ySxPfWE/edit?usp=sharing">Game Request Status</a>
+    <a href="/privacypolicy">Privacy Policy</a>
+    <a href="#" onclick="openBlankWithCurrentPage(); return false;">Open In About Blank</a>
+  </div>
+  <div class="social-links">
+    <a href="https://twitter.com/yourprofile" target="_blank" class="social-icon">
+      <i class="fab fa-twitter"></i>
+    </a>
+    <a href="https://facebook.com/yourprofile" target="_blank" class="social-icon">
+      <i class="fab fa-facebook-f"></i>
+    </a>
+    <a href="https://instagram.com/yourprofile" target="_blank" class="social-icon">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://youtube.com/yourchannel" target="_blank" class="social-icon">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </div>
+</footer>
+
+<script>
+function openBlankWithCurrentPage() {
+  // Open about:blank in a new tab
+  var newWindow = window.open('about:blank', '_blank');
+  
+  // Write the current page's HTML content to the new tab
+  newWindow.document.write(document.documentElement.outerHTML);
+  newWindow.document.close(); // Close the document to ensure it renders properly
+}
+</script>
 
