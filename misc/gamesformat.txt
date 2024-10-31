@@ -26,7 +26,6 @@ Only Up|https://slope-game.github.io/only-up-3d-parkour-go-ascend/logo.png|./onl
 OvO|https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSP_9wtlG3hoiV0HJQfDm9fHDM6qfjIWRjxNu63Ye2R-VsFSzuRT3P3XwZBAzzFwWClE38&usqp=CAU|./OvO.html|
 PAC-MAN (New)|https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpxFrGb4zSwEOUrA81U99LQIzIQdIRdk2z0g&s|./pacman.html|
 Paper.io|https://is1-ssl.mzstatic.com/image/thumb/Purple116/v4/d6/2e/cf/d62ecfdd-1695-592c-ea3b-c1d873ef601a/AppIcon-1x_U007emarketing-0-7-0-85-220.png/512x512bb.jpg|./paper.io.html|
-Proxy (Limited Time)|https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKwhKyQXXJTOP_WxvD0tgmbxB8rKN8ivssvQ&s|umm.html|
 Retro Bowl|https://ice-wallo-come.github.io/retrobowl.png|./retrobowl.html|
 Retro Highway|https://classroomjq.github.io/retro-highway/logo.png|./retrohighway.html|
 Roblox|https://upload.wikimedia.org/wikipedia/commons/7/7e/Roblox_Logo_2022.jpg|./roblox.html|
