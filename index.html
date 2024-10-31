@@ -1,359 +1,276 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nooble</title>
-  <link rel="icon" href="Logo/Logo4.png" type="image/png">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <style>
-    /* Global Styles */
-    html, body {
-      height: 100%;
-      margin: 0;
-      font-family: 'Poppins', Arial, sans-serif;
-      background: linear-gradient(135deg, #1d1d1d, #121212);
-      color: #E0E0E0;
-      overflow: hidden;
-      text-align: center;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nooble</title>
+    <link rel="icon" href="Logo/Logo4.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        html, body {
+            height: 100%;
+            margin: 0;
+            font-family: 'Poppins', Arial, sans-serif;
+            background: linear-gradient(135deg, #1d1d1d, #121212);
+            color: #E0E0E0;
+            overflow: hidden;
+            text-align: center;
+        }
 
-    body {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
 
-    /* Logo Styles */
-    .logo {
-      width: 200px;
-      height: auto;
-      margin-bottom: 20px;
-      transition: transform 0.5s ease;
-    }
-    
-    .logo:hover {
-      transform: scale(1.1) rotate(10deg);
-    }
+        /* Logo Styles */
+        .logo {
+            width: 200px;
+            height: auto;
+            margin-bottom: 20px;
+            transition: transform 0.5s ease;
+        }
 
-    /* Sidebar Styles */
-    .sidebar {
-      position: fixed;
-      top: 0;
-      right: -350px;
-      height: 100%;
-      width: 350px;
-      background: linear-gradient(135deg, #292929, #1f1f1f);
-      color: #E0E0E0;
-      padding: 60px 30px;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: flex-start;
-      transition: right 0.4s ease-in-out, visibility 0.4s ease-in-out;
-      box-shadow: -10px 0 30px rgba(0,0,0,0.8);
-      z-index: 1000;
-      border-radius: 20px 0 0 20px;
-      visibility: hidden;
-    }
+        .logo:hover {
+            transform: scale(1.1) rotate(10deg);
+        }
 
-    .sidebar.show-sidebar {
-      right: 0;
-      visibility: visible;
-    }
+        /* Sidebar Styles */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: -350px;
+            height: 100%;
+            width: 350px;
+            background: linear-gradient(135deg, #292929, #1f1f1f);
+            color: #E0E0E0;
+            padding: 60px 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            transition: right 0.4s ease-in-out, visibility 0.4s ease-in-out;
+            box-shadow: -10px 0 30px rgba(0,0,0,0.8);
+            z-index: 1000;
+            border-radius: 20px 0 0 20px;
+            visibility: hidden;
+        }
 
-    .sidebar a {
-      color: #FFD700; /* Gold */
-      text-decoration: none;
-      margin: 20px 0;
-      font-size: 22px;
-      font-weight: 600;
-      transition: color 0.3s, transform 0.3s;
-      width: 100%;
-      padding: 10px 20px;
-      border-radius: 10px;
-    }
+        .sidebar.show-sidebar {
+            right: 0;
+            visibility: visible;
+        }
 
-    .sidebar a:hover {
-      color: #FFEA00; /* Bright Gold */
-      background-color: rgba(255, 215, 0, 0.1);
-      transform: translateX(10px);
-    }
+        .sidebar a {
+            color: #FFD700; /* Gold */
+            text-decoration: none;
+            margin: 20px 0;
+            font-size: 22px;
+            font-weight: 600;
+            transition: color 0.3s, transform 0.3s;
+            width: 100%;
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
 
-    /* Magnifying Glass Icon */
-    .magnifying-glass {
-      position: fixed;
-      top: 30px;
-      right: 30px;
-      font-size: 40px;
-      cursor: pointer;
-      color: #FFD700;
-      z-index: 1001;
-      transition: color 0.3s, transform 0.3s;
-    }
+        .sidebar a:hover {
+            color: #FFEA00; /* Bright Gold */
+            background-color: rgba(255, 215, 0, 0.1);
+            transform: translateX(10px);
+        }
 
-    .magnifying-glass:hover {
-      color: #FFEA00;
-      transform: rotate(90deg);
-    }
+        /* Magnifying Glass Icon */
+        .magnifying-glass {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            font-size: 40px;
+            cursor: pointer;
+            color: #FFD700;
+            z-index: 1001;
+            transition: color 0.3s, transform 0.3s;
+        }
 
-    /* Main Heading Styles */
-    .centered-heading {
-      color: #FFD700;
-      font-size: 4em;
-      margin: 10px 0;
-      font-weight: 700;
-      text-shadow: 2px 2px 20px rgba(255, 215, 0, 0.5);
-    }
+        .magnifying-glass:hover {
+            color: #FFEA00;
+            transform: rotate(90deg);
+        }
 
-    .centered-heading2 {
-      color: #FFC107;
-      font-size: 2.5em;
-      margin: 10px 0;
-      font-weight: 500;
-      text-shadow: 2px 2px 10px rgba(255, 193, 7, 0.5);
-    }
+        /* Main Heading Styles */
+        .centered-heading {
+            color: #FFD700;
+            font-size: 4em;
+            margin: 10px 0;
+            font-weight: 700;
+            text-shadow: 2px 2px 20px rgba(255, 215, 0, 0.5);
+        }
 
-    /* Random Fact Styles */
-    #randomFact {
-      margin: 20px auto;
-      font-size: 1.5em;
-      color: #E0E0E0;
-      max-width: 700px;
-      line-height: 1.7;
-      background-color: rgba(0, 0, 0, 0.4);
-      border-radius: 10px;
-      padding: 20px;
-      box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.5);
-    }
+        .centered-heading2 {
+            color: #FFC107;
+            font-size: 2.5em;
+            margin: 10px 0;
+            font-weight: 500;
+            text-shadow: 2px 2px 10px rgba(255, 193, 7, 0.5);
+        }
 
-    /* Button Styles */
-    .button {
-      background: linear-gradient(135deg, #FFD700, #FFC107);
-      color: #000;
-      border: none;
-      padding: 20px 40px;
-      font-size: 1.3em;
-      cursor: pointer;
-      border-radius: 30px;
-      transition: background 0.4s, transform 0.3s, box-shadow 0.3s;
-      text-decoration: none;
-      display: inline-block;
-      margin: 30px 0;
-      box-shadow: 0px 4px 15px rgba(255, 215, 0, 0.4);
-    }
+        /* Random Fact Styles */
+        #randomFact {
+            margin: 20px auto;
+            font-size: 1.5em;
+            color: #E0E0E0;
+            max-width: 700px;
+            line-height: 1.7;
+            background-color: rgba(0, 0, 0, 0.4);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.5);
+        }
 
-    .button:hover {
-      background: linear-gradient(135deg, #FFC107, #FFD700);
-      transform: scale(1.08);
-      box-shadow: 0px 6px 20px rgba(255, 215, 0, 0.6);
-    }
+        /* Button Styles */
+        .button-container {
+            display: flex;
+            gap: 20px;
+        }
 
-    /* Preload Screen Styles */
-    .preload-screen {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: #121212;
-      color: #E0E0E0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      z-index: 10000;
-      transition: opacity 0.5s ease-out;
-      opacity: 1;
-    }
+        .button {
+            background: linear-gradient(135deg, #FFD700, #FFC107);
+            color: #000;
+            border: none;
+            padding: 20px 40px;
+            font-size: 1.3em;
+            cursor: pointer;
+            border-radius: 30px;
+            transition: background 0.4s, transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            margin: 30px 0;
+            box-shadow: 0px 4px 15px rgba(255, 215, 0, 0.4);
+        }
 
-    .preload-logo {
-      width: 150px;
-      height: auto;
-      animation: fadeIn 1s ease-out;
-    }
+        .button:hover {
+            background: linear-gradient(135deg, #FFC107, #FFD700);
+            transform: scale(1.08);
+            box-shadow: 0px 6px 20px rgba(255, 215, 0, 0.6);
+        }
 
-    .preload-heading {
-      font-size: 2em;
-      font-weight: 600;
-      margin: 20px 0;
-      animation: fadeIn 1s ease-out 0.5s;
-    }
+        /* Sidebar toggle styles */
+        .sidebar-toggle {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
 
-    .loading-spinner {
-      border: 8px solid rgba(255, 255, 255, 0.2);
-      border-radius: 50%;
-      border-top: 8px solid #FFD700;
-      width: 50px;
-      height: 50px;
-      animation: spin 1s linear infinite, fadeIn 1s ease-out 1s;
-    }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .logo {
+                width: 150px;
+            }
 
-    /* Keyframes */
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
+            .sidebar {
+                width: 240px;
+                padding: 50px 20px;
+            }
 
-    @keyframes fadeIn {
-      0% { opacity: 0; }
-      100% { opacity: 1; }
-    }
+            .magnifying-glass {
+                font-size: 32px;
+            }
 
-    /* BLUME Text Styles */
-    .blume-text {
-      position: absolute;
-      bottom: 20px;
-      right: 20px;
-      font-size: 1.5em;
-      color: ##FFFFFF;
-      animation: fadeIn 1s ease-out 1.5s;
-      font-weight: 700;
-    }
+            .centered-heading {
+                font-size: 3em;
+            }
 
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      .logo {
-        width: 150px;
-      }
+            .centered-heading2 {
+                font-size: 2em;
+            }
 
-      .sidebar {
-        width: 240px;
-        padding: 50px 20px;
-      }
-
-      .magnifying-glass {
-        font-size: 32px;
-      }
-
-      .centered-heading {
-        font-size: 3em;
-      }
-
-      .centered-heading2 {
-        font-size: 2em;
-      }
-
-      .button {
-        padding: 15px 30px;
-        font-size: 1.1em;
-      }
-
-      .blume-text {
-        font-size: 1.2em;
-      }
-    }
-  </style>
+            .button {
+                padding: 15px 30px;
+                font-size: 1.1em;
+            }
+        }
+    </style>
 </head>
 <body>
-  <!-- Preload Screen -->
-  <div class="preload-screen" id="preloadScreen">
-    <img src="Logo/Logo4.png" alt="Logo" class="preload-logo">
-    <h1 class="preload-heading">Nooble</h1>
-    <div class="loading-spinner"></div>
-    <div class="blume-text">BLUME</div>
-  </div>
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <a href="./games/partners.html">Partners</a>
+        <a href="./games/discord.html">Discord</a>
+        <a href="./games/funding.html">Funders</a>
+        <!-- Add more links as needed -->
+    </div>
 
-  <!-- Sidebar -->
-  <div class="sidebar" id="sidebar">
-    <a href="./games/partners.html">Partners</a>
-    <a href="./games/discord.html">Discord</a>
-    <a href="./games/funding.html">Funders</a>
-    <!-- Add more links as needed -->
-  </div>
+    <!-- Magnifying Glass Icon -->
+    <div class="magnifying-glass" id="magnifyingGlass">☰</div>
 
-  <!-- Magnifying Glass Icon -->
-  <div class="magnifying-glass" id="magnifyingGlass">☰</div>
+    <!-- Main Content -->
+    <img src="Logo/Logo4.png" alt="Logo" class="logo">
+    <h1 class="centered-heading">Nooble</h1>
 
-  <!-- Main Content -->
-  <img src="Logo/Logo4.png" alt="Logo" class="logo">
-  <h1 class="centered-heading">Nooble</h1>
-  
-  <!-- Display Random Fact or Text -->
-  <div id="randomFact"></div>
-  
-  <h1 class="centered-heading2">The Best Unblocked Games Out There</h1>
-  <a href="./games/" class="button">Games</a>
-  <a href="./apps/" class="button">Apps</a>
+    <!-- Display Random Fact or Text -->
+    <div id="randomFact"></div>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const magnifyingGlass = document.getElementById("magnifyingGlass");
-      const sidebar = document.getElementById("sidebar");
-      const randomFactContainer = document.getElementById("randomFact");
-      const preloadScreen = document.getElementById("preloadScreen");
+    <h1 class="centered-heading2">The Best Unblocked Games Out There</h1>
+    <div class="button-container">
+        <a href="./games/" class="button">Games</a>
+        <a href="./apps/" class="button">Apps</a>
+    </div>
 
-      // Array of random facts or texts with emojis
-      const randomFacts = [
-        "Didn't Your Teacher Tell You to stop games? 🎮",
-        "I'm Going To Guess your not the nerd in your class. 🧠",
-        "Ever wondered how many different types of games there are? There are thousands! 🌐",
-        "Are you sure you don't have a gaming addiction? 🕹️",
-        "Games can be a great way to relax and reduce stress after a long day. 😌",
-        "Did you know that some of the most popular games were created by small indie developers? 💡",
-        "Gaming can also be a social activity, helping people to connect with friends and make new ones. 👥",
-        "Did you know that the first video game ever created was a simple game of tennis? 🎾",
-        "Games have been used in educational settings to help teach a variety of subjects. 📚",
-        "Did you know that there are games designed specifically to help improve mental health and well-being? 🌟",
-        "Many games are now designed to be inclusive and accessible to players of all abilities. ♿",
-        "Did you know that some of the most complex games can take years to develop? ⏳",
-        "Games have evolved from simple pixel graphics to incredibly realistic 3D environments. 🕹️",
-        "Did you know that gaming can be a form of art, with many games featuring beautiful and intricate designs? 🎨",
-        "Playing games can help develop strategic thinking and planning skills. 🧩",
-        "Did you know that some video game soundtracks are composed by well-known musicians and orchestras? 🎶",
-        "Games can provide a sense of accomplishment and reward for achieving certain milestones. 🏆",
-        "Did you know that many popular games have active communities of players who share tips and strategies? 🌍",
-        "Gaming can be a fun way to explore new worlds and adventures from the comfort of your home. 🌌",
-        "Did you know that some games are designed to teach real-world skills, such as budgeting or time management? 📈",
-      ];
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const magnifyingGlass = document.getElementById("magnifyingGlass");
+            const sidebar = document.getElementById("sidebar");
+            const randomFactContainer = document.getElementById("randomFact");
 
-      function getRandomFact() {
-        const randomIndex = Math.floor(Math.random() * randomFacts.length);
-        return randomFacts[randomIndex];
-      }
+            // Array of random facts or texts with emojis
+            const randomFacts = [
+                "Didn't Your Teacher Tell You to stop games? 🎮",
+                "I'm Going To Guess your not the nerd in your class. 🧠",
+                "Did your controller get more attention than your textbook? 🎮",
+                "Are you sure you don't have a gaming addiction? 🕹️",
+                "Do you think your teacher would approve of this game time? 🤔",
+                "Did you just say 'one more game' for the hundredth time? 😅",
+                "Didn’t your mom tell you to go outside? 🌳",
+                "Did your teacher give you a ‘pass’ for gaming? 😏",
+                "Didn’t you promise to finish that essay? 😂",
+                "Is this website your secret escape plan? 🗝️",
+            ];
 
-      function displayRandomFact() {
-        const fact = getRandomFact();
-        randomFactContainer.textContent = fact;
-      }
+            function getRandomFact() {
+                const randomIndex = Math.floor(Math.random() * randomFacts.length);
+                return randomFacts[randomIndex];
+            }
 
-      // Display random fact when the page is loaded
-      displayRandomFact();
+            function displayRandomFact() {
+                const fact = getRandomFact();
+                randomFactContainer.textContent = fact;
+            }
 
-      function toggleSidebar() {
-        if (sidebar.classList.contains("show-sidebar")) {
-          sidebar.classList.remove("show-sidebar");
-          setTimeout(() => {
-            sidebar.style.visibility = "hidden";
-          }, 400); // Match the transition duration
-        } else {
-          sidebar.style.visibility = "visible";
-          sidebar.classList.add("show-sidebar");
-        }
-      }
+            // Display random fact when the page is loaded
+            displayRandomFact();
 
-      magnifyingGlass.addEventListener("click", toggleSidebar);
+            function toggleSidebar() {
+                if (sidebar.classList.contains("show-sidebar")) {
+                    sidebar.classList.remove("show-sidebar");
+                    setTimeout(() => {
+                        sidebar.style.visibility = "hidden";
+                    }, 400); // Match the transition duration
+                } else {
+                    sidebar.style.visibility = "visible";
+                    sidebar.classList.add("show-sidebar");
+                }
+            }
 
-      // Preload screen functionality
-      function hidePreloadScreen() {
-        preloadScreen.style.opacity = '0';
-        setTimeout(() => {
-          preloadScreen.style.display = 'none';
-        }, 500); // Match the fade-out transition duration
-      }
+            magnifyingGlass.addEventListener("click", toggleSidebar);
 
-      // Randomly delay hiding the preload screen between 2 and 10 seconds
-      const randomDelay = Math.floor(Math.random() * 8000) + 2000;
-      setTimeout(hidePreloadScreen, randomDelay);
-    });
-
-      // Disable right-click
-  document.addEventListener('contextmenu', function (e) {
-    e.preventDefault();
-  });
-
-  </script>
+            // Disable right-click
+            document.addEventListener('contextmenu', function (e) {
+                e.preventDefault();
+            });
+        });
+    </script>
 </body>
 </html>
+
 
