@@ -35,5 +35,3 @@ Slow Roads|https://cdn-1.webcatalog.io/catalog/slow-roads/slow-roads-icon-filled
 Smash Karts|https://webglmath.github.io/smash-karts/logo.png|./smashkarts.html|
 Stickman Hook|https://webglmath.github.io/stickmanhook/logo.png|./stickmanhook.html|
 TABS|https://lh3.googleusercontent.com/a3RWa2d8OdjAiSpHLAotkUdHU-n56mQ7bNAn2v4eA1fjTGxn2yDAYXxDAYLHt4Pw-KM|./tabs.html|
-titkok|https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKwhKyQXXJTOP_WxvD0tgmbxB8rKN8ivssvQ&s|tiktok|
-What Beats Rock?|https://www.whatbeatsrock.com/_next/image?url=%2Fprofile%2Frock-default.png&w=3840&q=75|./whatbeatsrock.html|
