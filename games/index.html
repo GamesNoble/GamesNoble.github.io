@@ -311,7 +311,7 @@
     });
 
     function fetchGames() {
-      fetch('https://raw.githubusercontent.com/NoobleGames/NoobleGames.github.io/82a804f054024f0bb0203de5042db14b6731b645/misc/gamesformat.txt')
+      fetch('https://github.com/NoobleGames/NoobleGames.github.io/blob/main/misc/gamesformat.txt')
         .then(response => response.text())
         .then(data => {
           const gamesGrid = document.getElementById('gamesGrid');
