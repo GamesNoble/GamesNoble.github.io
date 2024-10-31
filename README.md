@@ -1,22 +1,9 @@
 <div align="center">
   <head>
- <img src="https://decisive-rozella-cugsartclass.koyeb.app/service/hvtrs8%2F-gktju%60.aoo%2FFaoaeeAofilg-CWG-bno%60%2Foakn-Lmgm%2FNoeo0.rne%3Fpau%3Dvrwe">
-<h1>CUG</h1>
+ <img src="https://github.com/NoobleGames/NoobleGames.github.io/blob/main/Logo/Logo4.png?raw=true>
+<h1>Nooble</h1>
 </div>
-A website with tons of games apps and more fun goodies. If you fork this repository, please consider giving it a star ⭐!
-
-## Run locally
-
-You need [NodeJS](https://nodejs.org) and [Git](https://git-scm.com/download) installed on your system.
-
-````bash
-git clone https://github.com/DamageCoding/CUG.git # Clone the repo
-npm install # Install packages
-npm start # Start the bare server + serve static files
-````
-
-## Support
-Most issues can be answered by [opening an issue](https://github.com/DamageCoding/CUG/issues).
+A website with tons of games, apps, proxys and more fun goodies. If you fork this repository, please consider giving it a star ⭐!
 
 ## Contributors
 <a href="https://github.com/DamageCoding/CUG/graphs/contributors">
