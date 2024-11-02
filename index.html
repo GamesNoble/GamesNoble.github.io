@@ -3,273 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nooble</title>
-    <link rel="icon" href="Logo/Logo4.png" type="image/png">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Nooble Access Denied</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* Global Styles */
-        html, body {
-            height: 100%;
-            margin: 0;
-            font-family: 'Poppins', Arial, sans-serif;
-            background: linear-gradient(135deg, #1d1d1d, #121212);
-            color: #E0E0E0;
-            overflow: hidden;
-            text-align: center;
-        }
-
         body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.95)), url('https://source.unsplash.com/random/1920x1080/?technology,abstract') no-repeat center center fixed;
+            background-size: cover;
+            color: #ffffff;
             display: flex;
-            flex-direction: column;
-            align-items: center;
             justify-content: center;
-        }
-
-        /* Logo Styles */
-        .logo {
-            width: 200px;
-            height: auto;
-            margin-bottom: 20px;
-            transition: transform 0.5s ease;
-        }
-
-        .logo:hover {
-            transform: scale(1.1) rotate(10deg);
-        }
-
-        /* Sidebar Styles */
-        .sidebar {
-            position: fixed;
-            top: 0;
-            right: -350px;
-            height: 100%;
-            width: 350px;
-            background: linear-gradient(135deg, #292929, #1f1f1f);
-            color: #E0E0E0;
-            padding: 60px 30px;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            justify-content: flex-start;
-            transition: right 0.4s ease-in-out, visibility 0.4s ease-in-out;
-            box-shadow: -10px 0 30px rgba(0,0,0,0.8);
-            z-index: 1000;
-            border-radius: 20px 0 0 20px;
-            visibility: hidden;
-        }
-
-        .sidebar.show-sidebar {
-            right: 0;
-            visibility: visible;
-        }
-
-        .sidebar a {
-            color: #FFD700; /* Gold */
-            text-decoration: none;
-            margin: 20px 0;
-            font-size: 22px;
-            font-weight: 600;
-            transition: color 0.3s, transform 0.3s;
-            width: 100%;
-            padding: 10px 20px;
-            border-radius: 10px;
-        }
-
-        .sidebar a:hover {
-            color: #FFEA00; /* Bright Gold */
-            background-color: rgba(255, 215, 0, 0.1);
-            transform: translateX(10px);
-        }
-
-        /* Magnifying Glass Icon */
-        .magnifying-glass {
-            position: fixed;
-            top: 30px;
-            right: 30px;
-            font-size: 40px;
-            cursor: pointer;
-            color: #FFD700;
-            z-index: 1001;
-            transition: color 0.3s, transform 0.3s;
-        }
-
-        .magnifying-glass:hover {
-            color: #FFEA00;
-            transform: rotate(90deg);
-        }
-
-        /* Main Heading Styles */
-        .centered-heading {
-            color: #FFD700;
-            font-size: 4em;
-            margin: 10px 0;
-            font-weight: 700;
-            text-shadow: 2px 2px 20px rgba(255, 215, 0, 0.5);
-        }
-
-        .centered-heading2 {
-            color: #FFC107;
-            font-size: 2.5em;
-            margin: 10px 0;
-            font-weight: 500;
-            text-shadow: 2px 2px 10px rgba(255, 193, 7, 0.5);
-        }
-
-        /* Random Fact Styles */
-        #randomFact {
-            margin: 20px auto;
-            font-size: 1.5em;
-            color: #E0E0E0;
-            max-width: 700px;
-            line-height: 1.7;
-            background-color: rgba(0, 0, 0, 0.4);
-            border-radius: 10px;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
             padding: 20px;
-            box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
         }
-
-        /* Button Styles */
-        .button-container {
-            display: flex;
-            gap: 20px;
+        .container {
+            background-color: rgba(30, 30, 30, 0.9);
+            border-radius: 25px;
+            box-shadow: 0 15px 70px rgba(0, 0, 0, 0.7);
+            padding: 50px;
+            max-width: 600px;
+            text-align: center;
+            animation: fadeIn 0.6s ease forwards;
+            opacity: 0;
+            transform: translateY(-20px);
         }
-
-        .button {
-            background: linear-gradient(135deg, #FFD700, #FFC107);
-            color: #000;
-            border: none;
-            padding: 20px 40px;
-            font-size: 1.3em;
-            cursor: pointer;
-            border-radius: 30px;
-            transition: background 0.4s, transform 0.3s, box-shadow 0.3s;
-            text-decoration: none;
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        h1 {
+            font-size: 3.8em;
+            margin-bottom: 20px;
+            color: #61dafb;
+            text-shadow: 4px 4px 20px rgba(0, 0, 0, 0.8);
+            transition: color 0.3s, transform 0.3s;
+        }
+        h1:hover {
+            color: #21a1f1;
+            transform: translateY(-3px);
+        }
+        p {
+            font-size: 1.4em;
+            line-height: 1.6;
+            margin: 15px 0;
+            transition: transform 0.3s;
+        }
+        p:hover {
+            transform: scale(1.02);
+        }
+        .contact {
             display: inline-block;
-            margin: 30px 0;
-            box-shadow: 0px 4px 15px rgba(255, 215, 0, 0.4);
+            margin-top: 20px;
+            font-size: 1.2em;
+            background-color: #61dafb;
+            color: #23272a;
+            padding: 15px 35px;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
         }
-
-        .button:hover {
-            background: linear-gradient(135deg, #FFC107, #FFD700);
-            transform: scale(1.08);
-            box-shadow: 0px 6px 20px rgba(255, 215, 0, 0.6);
+        .contact:hover {
+            background-color: #21a1f1;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
         }
-
-        /* Sidebar toggle styles */
-        .sidebar-toggle {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-        }
-
-        /* Responsive Design */
         @media (max-width: 768px) {
-            .logo {
-                width: 150px;
+            h1 {
+                font-size: 2.8em;
             }
-
-            .sidebar {
-                width: 240px;
-                padding: 50px 20px;
-            }
-
-            .magnifying-glass {
-                font-size: 32px;
-            }
-
-            .centered-heading {
-                font-size: 3em;
-            }
-
-            .centered-heading2 {
-                font-size: 2em;
-            }
-
-            .button {
-                padding: 15px 30px;
-                font-size: 1.1em;
+            p {
+                font-size: 1.2em;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Sidebar -->
-    <div class="sidebar" id="sidebar">
-        <a href="./games/partners.html">Partners</a>
-        <a href="./games/discord.html">Discord</a>
-        <a href="./games/funding.html">Funders</a>
-        <!-- Add more links as needed -->
+    <div class="container">
+        <h1>Nooble</h1>
+        <p>Sorry, we cannot provide you access to Nooble at this time.</p>
+        <p>If you think this is a mistake, please <a class="contact" href="mailto:codename1121111@gmail.com">contact the owners</a>.</p>
     </div>
-
-    <!-- Magnifying Glass Icon -->
-    <div class="magnifying-glass" id="magnifyingGlass">☰</div>
-
-    <!-- Main Content -->
-    <img src="Logo/Logo4.png" alt="Logo" class="logo">
-    <h1 class="centered-heading">Nooble</h1>
-
-    <!-- Display Random Fact or Text -->
-    <div id="randomFact"></div>
-
-    <h1 class="centered-heading2">The Best Unblocked Games Out There</h1>
-    <div class="button-container">
-        <a href="./games/" class="button">Games</a>
-        <a href="./apps/" class="button">Apps</a>
-        <a href="./proxys/" class="button">Proxys</a> <!-- New Proxys button -->
-    </div>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const magnifyingGlass = document.getElementById("magnifyingGlass");
-            const sidebar = document.getElementById("sidebar");
-            const randomFactContainer = document.getElementById("randomFact");
-
-            // Array of random facts or texts with emojis
-            const randomFacts = [
-                "Didn't Your Teacher Tell You to stop games? 🎮",
-                "I'm Going To Guess your not the nerd in your class. 🧠",
-                "Did your controller get more attention than your textbook? 🎮",
-                "Are you sure you don't have a gaming addiction? 🕹️",
-                "Do you think your teacher would approve of this game time? 🤔",
-                "Did you just say 'one more game' for the hundredth time? 😅",
-                "Didn’t your mom tell you to go outside? 🌳",
-                "Did your teacher give you a ‘pass’ for gaming? 😏",
-                "Didn’t you promise to finish that essay? 😂",
-                "Is this website your secret escape plan? 🗝️",
-            ];
-
-            function getRandomFact() {
-                const randomIndex = Math.floor(Math.random() * randomFacts.length);
-                return randomFacts[randomIndex];
-            }
-
-            function displayRandomFact() {
-                const fact = getRandomFact();
-                randomFactContainer.textContent = fact;
-            }
-
-            // Display random fact when the page is loaded
-            displayRandomFact();
-
-            function toggleSidebar() {
-                if (sidebar.classList.contains("show-sidebar")) {
-                    sidebar.classList.remove("show-sidebar");
-                    setTimeout(() => {
-                        sidebar.style.visibility = "hidden";
-                    }, 400); // Match the transition duration
-                } else {
-                    sidebar.style.visibility = "visible";
-                    sidebar.classList.add("show-sidebar");
-                }
-            }
-
-            magnifyingGlass.addEventListener("click", toggleSidebar);
-
-            // Disable right-click
-            document.addEventListener('contextmenu', function (e) {
-                e.preventDefault();
-            });
-        });
-    </script>
 </body>
 </html>
+
