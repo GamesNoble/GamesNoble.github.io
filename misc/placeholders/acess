@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nooble Access Denied</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.95)), url('https://source.unsplash.com/random/1920x1080/?technology,abstract') no-repeat center center fixed;
+            background-size: cover;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 20px;
+            overflow: hidden;
+        }
+        .container {
+            background-color: rgba(30, 30, 30, 0.9);
+            border-radius: 25px;
+            box-shadow: 0 15px 70px rgba(0, 0, 0, 0.7);
+            padding: 50px;
+            max-width: 600px;
+            text-align: center;
+            animation: fadeIn 0.6s ease forwards;
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        h1 {
+            font-size: 3.8em;
+            margin-bottom: 20px;
+            color: #61dafb;
+            text-shadow: 4px 4px 20px rgba(0, 0, 0, 0.8);
+            transition: color 0.3s, transform 0.3s;
+        }
+        h1:hover {
+            color: #21a1f1;
+            transform: translateY(-3px);
+        }
+        p {
+            font-size: 1.4em;
+            line-height: 1.6;
+            margin: 15px 0;
+            transition: transform 0.3s;
+        }
+        p:hover {
+            transform: scale(1.02);
+        }
+        .contact {
+            display: inline-block;
+            margin-top: 20px;
+            font-size: 1.2em;
+            background-color: #61dafb;
+            color: #23272a;
+            padding: 15px 35px;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+        }
+        .contact:hover {
+            background-color: #21a1f1;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+        }
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.8em;
+            }
+            p {
+                font-size: 1.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Nooble</h1>
+        <p>Sorry, we cannot provide you access to Nooble at this time.</p>
+        <p>If you think this is a mistake, please <a class="contact" href="mailto:codename1121111@gmail.com">contact the owners</a>.</p>
+    </div>
+</body>
+</html>
