@@ -1,97 +1,369 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nooble Access Denied</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.95)), url('https://source.unsplash.com/random/1920x1080/?technology,abstract') no-repeat center center fixed;
-            background-size: cover;
-            color: #ffffff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            padding: 20px;
-            overflow: hidden;
-        }
-        .container {
-            background-color: rgba(30, 30, 30, 0.9);
-            border-radius: 25px;
-            box-shadow: 0 15px 70px rgba(0, 0, 0, 0.7);
-            padding: 50px;
-            max-width: 600px;
-            text-align: center;
-            animation: fadeIn 0.6s ease forwards;
-            opacity: 0;
-            transform: translateY(-20px);
-        }
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        h1 {
-            font-size: 3.8em;
-            margin-bottom: 20px;
-            color: #61dafb;
-            text-shadow: 4px 4px 20px rgba(0, 0, 0, 0.8);
-            transition: color 0.3s, transform 0.3s;
-        }
-        h1:hover {
-            color: #21a1f1;
-            transform: translateY(-3px);
-        }
-        p {
-            font-size: 1.4em;
-            line-height: 1.6;
-            margin: 15px 0;
-            transition: transform 0.3s;
-        }
-        p:hover {
-            transform: scale(1.02);
-        }
-        .contact {
-            display: inline-block;
-            margin-top: 20px;
-            font-size: 1.2em;
-            background-color: #61dafb;
-            color: #23272a;
-            padding: 15px 35px;
-            border-radius: 8px;
-            text-decoration: none;
-            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
-        }
-        .contact:hover {
-            background-color: #21a1f1;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
-        }
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2.8em;
-            }
-            p {
-                font-size: 1.2em;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nooble - Games</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #121212;
+      color: #e0e0e0;
+      text-align: center;
+      overflow-x: hidden;
+      user-select: none; /* Disable text selection */
+    }
+
+    .title {
+      margin: 30px 0;
+      font-size: 3em;
+      color: #fbc02d;
+      font-family: 'Montserrat', sans-serif;
+      text-transform: uppercase;
+      text-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
+    }
+
+    .search-container {
+      position: relative;
+      display: inline-block;
+      margin: 30px 0;
+    }
+
+    #searchInput {
+      width: 400px;
+      padding: 12px 50px 12px 20px;
+      border: 2px solid #fbc02d;
+      border-radius: 25px;
+      font-size: 16px;
+      outline: none;
+      background: #1e1e1e;
+      color: #e0e0e0;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      transition: box-shadow 0.3s ease;
+    }
+
+    #searchInput:focus {
+      box-shadow: 0 8px 24px rgba(251, 192, 45, 0.5);
+    }
+
+    .search-icon {
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #fbc02d;
+      font-size: 20px;
+    }
+
+    .speech-button {
+      position: absolute;
+      right: 60px;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      color: #fbc02d;
+      font-size: 20px;
+    }
+
+    .grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      padding: 20px;
+    }
+
+    .abutton {
+      width: 220px;
+      height: 320px; /* Ensure all buttons have the same height */
+      background-color: #2d2d34;
+      border: none;
+      border-radius: 15px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      overflow: hidden;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .abutton img {
+      border-radius: 15px 15px 0 0;
+      width: 100%;
+      height: 70%; /* Adjust the height to fit the button's height */
+      object-fit: cover; /* Ensure images cover the button area */
+    }
+
+    .game-name {
+      padding: 15px;
+      font-weight: 600;
+      font-size: 1.2em;
+      color: #f1f1f1;
+      background-color: #3f3f4f;
+      position: relative;
+      border-radius: 0 0 15px 15px;
+      flex-grow: 1; /* Make sure game name area takes remaining space */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .new-badge, .broken-badge {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      color: #fff;
+      padding: 5px 10px;
+      border-radius: 10px;
+      font-size: 0.8em;
+      font-weight: bold;
+      transform: rotate(-10deg);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    .new-badge {
+      background-color: #ff0000; /* Red background for new badge */
+    }
+
+    .broken-badge {
+      background-color: #9c27b0; /* Purple background for broken badge */
+    }
+
+    .abutton:hover {
+      transform: scale(1.08);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    footer {
+      background-color: #121212;
+      padding: 20px;
+      color: #fbc02d;
+      font-size: 0.9em;
+      text-align: center;
+      border-top: 2px solid #fbc02d;
+      margin-top: 40px;
+      position: relative;
+    }
+
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .footer-logo {
+      width: 50px; /* Adjust size as needed */
+      margin-bottom: 10px;
+    }
+
+    .footer-text {
+      margin-bottom: 10px;
+    }
+
+    .footer-links a {
+      color: #fbc02d;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    .social-links {
+      margin-top: 10px;
+    }
+
+    .social-icon {
+      color: #fbc02d;
+      font-size: 24px;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+
+    .social-icon:hover {
+      color: #f9a825;
+    }
+
+    @media (max-width: 600px) {
+      #searchInput {
+        width: 80%;
+      }
+      .abutton {
+        width: 80%;
+      }
+    }
+
+    /* Modal Styles */
+    .modal {
+      display: none; /* Hidden by default */
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.4); /* Black with opacity */
+    }
+
+    .modal-content {
+      background-color: #2d2d34;
+      margin: 15% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      max-width: 500px;
+      border-radius: 10px;
+      color: #e0e0e0;
+      text-align: center;
+    }
+
+    .modal-content h2 {
+      margin-top: 0;
+    }
+
+    .modal-content button {
+      background-color: #fbc02d;
+      border: none;
+      border-radius: 5px;
+      color: #121212;
+      padding: 10px 20px;
+      font-size: 16px;
+      margin: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .modal-content button:hover {
+      background-color: #f9a825;
+    }
+
+    .modal-content #speechText {
+      margin-bottom: 15px;
+      font-size: 18px;
+      padding: 10px;
+      border-radius: 5px;
+      background-color: #1e1e1e;
+      border: 1px solid #fbc02d;
+      color: #e0e0e0;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Nooble</h1>
-        <p>Sorry, we cannot provide you access to Nooble at this time.</p>
-        <p>If you think this is a mistake, please <a class="contact" href="mailto:codename1121111@gmail.com">contact the owners</a>.</p>
+
+  <div class="title">Nooble</div>
+
+  <div class="search-container">
+    <input type="text" id="searchInput" placeholder="Search games..." oninput="searchGames()">
+    <i class="fas fa-search search-icon"></i>
+    <i class="fas fa-microphone speech-button" onclick="showWorkInProgressMessage()"></i>
+  </div>
+
+  <div class="grid" id="gamesGrid"></div>
+
+  <div id="speechModal" class="modal">
+    <div class="modal-content">
+      <h2>Speech Recognition</h2>
+      <p id="speechText">Speech recognition is under development. Please use text search for now.</p>
+      <button onclick="closeModal()">Close</button>
     </div>
+  </div>
+
+  <footer>
+    <div class="footer-content">
+      <img src="https://github.com/NoobleGames/NoobleGames.github.io/blob/main/Logo/Logo4.png?raw=true" alt="Nooble Logo" class="footer-logo">
+      <div class="footer-text">
+        Nooble Games - All Rights Reserved &copy; 2024
+      </div>
+      <div class="footer-links">
+        <a href="https://forms.gle/F4acRa28NbfujS6QA">Request a Game</a>
+        <a href="https://docs.google.com/spreadsheets/d/1gbCSYjr4j5DhWJ8ExT4mjzdFKhHxNEg_OGC3ySxPfWE/edit?usp=sharing">Game Request Status</a>
+        <a href="/privacypolicy">Privacy Policy</a>
+        <a href="#" onclick="openBlankWithCurrentPage(); return false;">Open In About Blank</a>
+      </div>
+      <div class="social-links">
+        <a href="https://twitter.com/yourprofile" target="_blank" class="social-icon">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://facebook.com/yourprofile" target="_blank" class="social-icon">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://instagram.com/yourprofile" target="_blank" class="social-icon">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://youtube.com/yourchannel" target="_blank" class="social-icon">
+          <i class="fab fa-youtube"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      fetchGames();
+    });
+
+    function fetchGames() {
+      fetch('https://raw.githubusercontent.com/NoobleGames/NoobleGames.github.io/main/misc/gamesformat.txt')
+        .then(response => response.text())
+        .then(data => {
+          const gamesGrid = document.getElementById('gamesGrid');
+          const games = data.trim().split('\n');
+
+          games.forEach(game => {
+            const [name, imageUrl, link] = game.split('|');
+            const button = document.createElement('button');
+            button.className = 'abutton';
+            button.onclick = () => window.location.href = link;
+            button.innerHTML = `
+              <img src="${imageUrl}" alt="${name}">
+              <div class="game-name">${name}</div>
+            `;
+            gamesGrid.appendChild(button);
+          });
+        })
+        .catch(error => console.error('Error fetching games:', error));
+    }
+
+    function searchGames() {
+      const input = document.getElementById('searchInput').value.toLowerCase();
+      const gameButtons = document.querySelectorAll('.abutton');
+
+      gameButtons.forEach(button => {
+        const gameName = button.querySelector('.game-name').textContent.toLowerCase();
+        button.style.display = gameName.includes(input) ? 'block' : 'none';
+      });
+    }
+
+    function showWorkInProgressMessage() {
+      const modal = document.getElementById('speechModal');
+      modal.style.display = 'block';
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('speechModal');
+      modal.style.display = 'none';
+    }
+
+    window.onclick = function(event) {
+      const modal = document.getElementById('speechModal');
+      if (event.target === modal) {
+        modal.style.display = 'none';
+      }
+    }
+
+    function openBlankWithCurrentPage() {
+      var newWindow = window.open('about:blank', '_blank');
+      newWindow.document.write(document.documentElement.outerHTML);
+      newWindow.document.close();
+    }
+  </script>
 </body>
 </html>
