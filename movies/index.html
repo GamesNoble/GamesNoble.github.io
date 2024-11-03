@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nooble - Movies</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #1a1a1a, #333);
+            color: #ffffff;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 40px 0;
+            font-size: 4em;
+            text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.8);
+        }
+
+        h3 {
+            margin: 20px 0;
+            font-size: 2.5em;
+            text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.7);
+            color: #f0a500;
+        }
+
+        #movie-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+            gap: 20px;
+        }
+
+        .movie-item {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 15px;
+            margin: 15px;
+            padding: 20px;
+            width: 240px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.6);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .movie-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 40px rgba(255, 165, 0, 0.8);
+        }
+
+        .movie-item img {
+            width: 100%;
+            border-radius: 15px 15px 0 0;
+            filter: grayscale(100%);
+            transition: filter 0.3s;
+        }
+
+        .movie-item img:hover {
+            filter: grayscale(0%);
+        }
+
+        .movie-item h4 {
+            margin: 10px 0;
+            font-size: 1.8em;
+            color: #ffffff;
+            font-weight: bold;
+        }
+
+        .movie-item a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background: #f0a500;
+            color: #000000;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s, transform 0.3s;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .movie-item a:hover {
+            background: #d98f00;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .attribution {
+            margin: 20px;
+            font-size: 0.9em;
+            color: #cccccc;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .attribution img {
+            height: 20px;
+            vertical-align: middle;
+        }
+
+        /* Modal style */
+        #modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            color: #ffffff;
+            justify-content: center;
+            align-items: center;
+            font-size: 2em;
+            z-index: 1000;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2.5em;
+            }
+
+            h3 {
+                font-size: 1.8em;
+            }
+
+            .movie-item {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Nooble Movies</h1>
+    <h3 class="popular" id='popular'>Popular Movies/TV Shows</h3>
+    
+    <div id="movie-container">
+        <div class="movie-item">
+            <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/63xYQj1BwRFielxsBDXvHIJyXVm.jpg" alt="Movie 1">
+            <h4>Terrifier 3</h4>
+            <a href="#" onclick="showMessage()">Watch</a>
+        </div>
+        <div class="movie-item">
+            <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/jbwYaoYWZwxtPP76AZnfYKQjCEB.jpg" alt="Movie 2">
+            <h4>Deadpool & Wolverine</h4>
+            <a href="#" onclick="showMessage()">Watch</a>
+        </div>
+        <div class="movie-item">
+            <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/wWba3TaojhK7NdycRhoQpsG0FaH.jpg" alt="Movie 3">
+            <h4>Despicable Me 4</h4>
+            <a href="#" onclick="showMessage()">Watch</a>
+        </div>
+        <div class="movie-item">
+            <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/vpnVM9B6NMmQpWeZvzLvDESb2QY.jpg" alt="Movie 4">
+            <h4>Inside Out 2</h4>
+            <a href="#" onclick="showMessage()">Watch</a>
+        </div>
+        <div class="movie-item">
+            <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/4Ki6hf0nN3vp9xDrseyFHfXGa7c.jpg" alt="Movie 5">
+            <h4>Smile 2</h4>
+            <a href="#" onclick="showMessage()">Watch</a>
+        </div>
+        <div class="movie-item">
+            <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/jwoaKYVqPgYemFpaANL941EF94R.jpg" alt="Movie 6">
+            <h4>Trap</h4>
+            <a href="#" onclick="showMessage()">Watch</a>
+        </div>
+    </div>
+
+    <div id="modal">Movies Coming Soon! Please Wait...</div>
+
+    <div class="attribution">
+        Images and Titles provided by
+        <a href="https://www.themoviedb.org/">
+            <img src="https://play-lh.googleusercontent.com/ZVuzhksT-SVMPRRG_QiAurxc0Ex800HkKPRH6uFMW-akgB1Rmp11v3SuR67LklNlCA" alt="TMDB Logo">
+        </a>
+    </div>
+
+    <script>
+        function showMessage() {
+            const modal = document.getElementById('modal');
+            modal.style.display = 'flex';
+            setTimeout(() => {
+                modal.style.display = 'none';
+            }, 2000); // Message displayed for 2 seconds
+        }
+    </script>
+</body>
+
+</html>
