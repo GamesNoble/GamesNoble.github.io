@@ -29,7 +29,7 @@
         }
 
         #movie-container {
-            display: flex;
+            display: none; /* Hide movie container by default */
             flex-wrap: wrap;
             justify-content: center;
             padding: 20px;
@@ -49,6 +49,7 @@
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.6);
             position: relative;
             overflow: hidden;
+            cursor: pointer;
         }
 
         .movie-item:hover {
@@ -60,11 +61,12 @@
             width: 100%;
             border-radius: 15px 15px 0 0;
             filter: grayscale(100%);
-            transition: filter 0.3s;
+            transition: filter 0.3s, transform 0.3s;
         }
 
         .movie-item img:hover {
             filter: grayscale(0%);
+            transform: scale(1.1);
         }
 
         .movie-item h4 {
@@ -107,7 +109,7 @@
 
         /* Modal style */
         #modal {
-            display: none;
+            display: flex; /* Show the modal by default */
             position: fixed;
             top: 0;
             left: 0;
@@ -117,8 +119,59 @@
             color: #ffffff;
             justify-content: center;
             align-items: center;
-            font-size: 2em;
             z-index: 1000;
+        }
+
+        .modal-content {
+            background: rgba(50, 50, 50, 0.9);
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content h2 {
+            margin: 0 0 20px;
+            font-size: 2.5em;
+            color: #f0a500;
+        }
+
+        .lock-icon {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            font-size: 1.2em;
+            border-radius: 5px;
+            border: 1px solid #f0a500;
+            margin-top: 10px;
+            width: 80%;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus {
+            border-color: #d98f00;
+            outline: none;
+        }
+
+        button {
+            padding: 10px 20px;
+            background: #f0a500;
+            color: #000;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        button:hover {
+            background: #d98f00;
+            transform: translateY(-2px);
         }
 
         @media (max-width: 600px) {
@@ -141,41 +194,49 @@
 <body>
     <h1>Nooble Movies</h1>
     <h3 class="popular" id='popular'>Popular Movies/TV Shows</h3>
-    
-    <div id="movie-container">
-        <div class="movie-item">
-            <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/63xYQj1BwRFielxsBDXvHIJyXVm.jpg" alt="Movie 1">
-            <h4>Terrifier 3</h4>
-            <a href="#" onclick="showMessage()">Watch</a>
-        </div>
-        <div class="movie-item">
-            <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/jbwYaoYWZwxtPP76AZnfYKQjCEB.jpg" alt="Movie 2">
-            <h4>Deadpool & Wolverine</h4>
-            <a href="#" onclick="showMessage()">Watch</a>
-        </div>
-        <div class="movie-item">
-            <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/wWba3TaojhK7NdycRhoQpsG0FaH.jpg" alt="Movie 3">
-            <h4>Despicable Me 4</h4>
-            <a href="#" onclick="showMessage()">Watch</a>
-        </div>
-        <div class="movie-item">
-            <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/vpnVM9B6NMmQpWeZvzLvDESb2QY.jpg" alt="Movie 4">
-            <h4>Inside Out 2</h4>
-            <a href="#" onclick="showMessage()">Watch</a>
-        </div>
-        <div class="movie-item">
-            <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/4Ki6hf0nN3vp9xDrseyFHfXGa7c.jpg" alt="Movie 5">
-            <h4>Smile 2</h4>
-            <a href="#" onclick="showMessage()">Watch</a>
-        </div>
-        <div class="movie-item">
-            <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/jwoaKYVqPgYemFpaANL941EF94R.jpg" alt="Movie 6">
-            <h4>Trap</h4>
-            <a href="#" onclick="showMessage()">Watch</a>
+
+    <div id="modal">
+        <div class="modal-content">
+            <img class="lock-icon" src="https://img.icons8.com/ios-filled/50/ffffff/lock.png" alt="Lock Icon">
+            <h2>PRIVATE ROOM</h2>
+            <p>Please Enter An Invite Code</p>
+            <input type="text" id="invite-code" placeholder="Enter your invite code">
+            <button onclick="checkCode()">Submit</button>
         </div>
     </div>
 
-    <div id="modal">Movies Coming Soon! Please Wait...</div>
+    <div id="movie-container">
+        <div class="movie-item">
+            <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/63xYQj1BwRFielxsBDXvHIJyXVm.jpg" alt="Terrifier 3">
+            <h4>Terrifier 3</h4>
+            <a href="#">Watch</a>
+        </div>
+        <div class="movie-item">
+            <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/jbwYaoYWZwxtPP76AZnfYKQjCEB.jpg" alt="Deadpool & Wolverine">
+            <h4>Deadpool & Wolverine</h4>
+            <a href="#">Watch</a>
+        </div>
+        <div class="movie-item">
+            <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/wWba3TaojhK7NdycRhoQpsG0FaH.jpg" alt="Despicable Me 4">
+            <h4>Despicable Me 4</h4>
+            <a href="#">Watch</a>
+        </div>
+        <div class="movie-item">
+            <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/vpnVM9B6NMmQpWeZvzLvDESb2QY.jpg" alt="Inside Out 2">
+            <h4>Inside Out 2</h4>
+            <a href="#">Watch</a>
+        </div>
+        <div class="movie-item">
+            <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/4Ki6hf0nN3vp9xDrseyFHfXGa7c.jpg" alt="Smile 2">
+            <h4>Smile 2</h4>
+            <a href="#">Watch</a>
+        </div>
+        <div class="movie-item">
+            <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/jwoaKYVqPgYemFpaANL941EF94R.jpg" alt="Trap">
+            <h4>Trap</h4>
+            <a href="#">Watch</a>
+        </div>
+    </div>
 
     <div class="attribution">
         Images and Titles provided by
@@ -185,12 +246,18 @@
     </div>
 
     <script>
-        function showMessage() {
+        function checkCode() {
+            const validCodes = ["CHIPUNBLOCKEDGAMES", "NOOBLEISCHIPSHOUSE", "ILOVECHILDREN"];
+            const userInput = document.getElementById('invite-code').value.trim();
             const modal = document.getElementById('modal');
-            modal.style.display = 'flex';
-            setTimeout(() => {
+            const movieContainer = document.getElementById('movie-container');
+
+            if (validCodes.includes(userInput)) {
                 modal.style.display = 'none';
-            }, 2000); // Message displayed for 2 seconds
+                movieContainer.style.display = 'flex'; // Show movie container
+            } else {
+                alert("Invalid invite code. Please try again.");
+            }
         }
     </script>
 </body>
