@@ -163,8 +163,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            flex-wrap: wrap;
-            gap: 20px; /* Space between buttons */
+            flex-wrap: wrap; /* Allow wrapping */
+            gap: 10px; /* Adjust gap as needed */
             margin: 20px auto; /* Adjusted margin for better spacing */
             padding: 20px; /* Added padding */
             max-width: 90%; /* Responsive max-width */
@@ -172,6 +172,8 @@
         }
 
         .button {
+            flex: 1 1 150px; /* Allow buttons to grow and shrink, set a minimum width */
+            max-width: 200px; /* Set a max-width for consistency */
             background: linear-gradient(135deg, #FFD700, #FFC107);
             color: #000;
             border: none;
@@ -181,12 +183,10 @@
             border-radius: 30px;
             transition: background 0.4s, transform 0.3s, box-shadow 0.3s;
             text-decoration: none;
-            display: flex; /* Change to flex to center the icon and text */
-            align-items: center; /* Center icon and text */
-            justify-content: center; /* Center content */
+            display: inline-block;
             box-shadow: 0px 4px 15px rgba(255, 215, 0, 0.4);
-            min-width: 150px; /* Ensure a minimum width for each button */
-            flex-grow: 1; /* Allow buttons to grow and fill available space */
+            position: relative;
+            margin: 10px; /* Added margin to create space around buttons */
         }
 
         .button:hover {
@@ -284,6 +284,7 @@
         <a href="./games/partners.html">Partners</a>
         <a href="./games/discord.html">Discord</a>
         <a href="./games/funding.html">Funders</a>
+        <a href="./movies/">Movies</a> <!-- New Movies Link -->
     </div>
 
     <!-- Magnifying Glass Icon -->
@@ -301,7 +302,7 @@
         <a href="./games/" class="button games">Games</a>
         <a href="./apps/" class="button apps">Apps</a>
         <a href="./proxys/" class="button proxys">Proxys</a>
-        <a href="./movies/" class="button movies">Movies</a> <!-- Added Movies Button -->
+        <a href="./movies/" class="button movies">Movies</a> <!-- New Movies Button -->
     </div>
 
     <script>
