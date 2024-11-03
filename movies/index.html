@@ -5,12 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nooble - Movies</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #1a1a1a, #333);
+            background: linear-gradient(135deg, #0d1b2a, #1b2631);
             color: #ffffff;
             text-align: center;
         }
@@ -18,18 +19,18 @@
         h1 {
             margin: 40px 0;
             font-size: 4em;
-            text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.8);
+            text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.5);
         }
 
         h3 {
             margin: 20px 0;
             font-size: 2.5em;
-            text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.7);
-            color: #f0a500;
+            color: #ff6f61;
+            text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.5);
         }
 
         #movie-container {
-            display: none; /* Hide movie container by default */
+            display: none;
             flex-wrap: wrap;
             justify-content: center;
             padding: 20px;
@@ -39,22 +40,20 @@
         }
 
         .movie-item {
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.15);
             border-radius: 15px;
             margin: 15px;
             padding: 20px;
             width: 240px;
             transition: transform 0.3s, box-shadow 0.3s;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.6);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
             position: relative;
             overflow: hidden;
-            cursor: pointer;
         }
 
         .movie-item:hover {
             transform: scale(1.05);
-            box-shadow: 0 8px 40px rgba(255, 165, 0, 0.8);
+            box-shadow: 0 8px 40px rgba(255, 105, 180, 0.8);
         }
 
         .movie-item img {
@@ -80,19 +79,19 @@
             display: inline-block;
             margin-top: 10px;
             padding: 10px 20px;
-            background: #f0a500;
-            color: #000000;
+            background: #ff6f61;
+            color: #ffffff;
             text-decoration: none;
             border-radius: 5px;
             transition: background 0.3s, transform 0.3s;
             font-weight: bold;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
         }
 
         .movie-item a:hover {
-            background: #d98f00;
+            background: #ff4c4c;
             transform: translateY(-2px);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
         }
 
         .attribution {
@@ -109,36 +108,36 @@
 
         /* Modal style */
         #modal {
-            display: flex; /* Show the modal by default */
+            display: flex;
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.9);
-            color: #ffffff;
+            background: rgba(0, 0, 0, 0.8);
             justify-content: center;
             align-items: center;
             z-index: 1000;
+            transition: opacity 0.3s ease;
         }
 
         .modal-content {
-            background: rgba(50, 50, 50, 0.9);
+            background: linear-gradient(135deg, #1b2631, #2a2d34);
             padding: 40px;
             border-radius: 15px;
             text-align: center;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+            animation: fadeIn 0.5s ease;
         }
 
-        .modal-content h2 {
-            margin: 0 0 20px;
-            font-size: 2.5em;
-            color: #f0a500;
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
         .lock-icon {
-            width: 50px;
-            height: 50px;
+            font-size: 50px;
+            color: #ff6f61;
             margin-bottom: 20px;
         }
 
@@ -146,21 +145,21 @@
             padding: 10px;
             font-size: 1.2em;
             border-radius: 5px;
-            border: 1px solid #f0a500;
+            border: 1px solid #ff6f61;
             margin-top: 10px;
             width: 80%;
             transition: border-color 0.3s;
         }
 
         input[type="text"]:focus {
-            border-color: #d98f00;
+            border-color: #ff4c4c;
             outline: none;
         }
 
         button {
             padding: 10px 20px;
-            background: #f0a500;
-            color: #000;
+            background: #ff6f61;
+            color: #ffffff;
             border: none;
             border-radius: 5px;
             cursor: pointer;
@@ -170,7 +169,7 @@
         }
 
         button:hover {
-            background: #d98f00;
+            background: #ff4c4c;
             transform: translateY(-2px);
         }
 
@@ -197,7 +196,7 @@
 
     <div id="modal">
         <div class="modal-content">
-            <img class="lock-icon" src="https://img.icons8.com/ios-filled/50/ffffff/lock.png" alt="Lock Icon">
+            <i class="fas fa-lock lock-icon"></i>
             <h2>PRIVATE ROOM</h2>
             <p>Please Enter An Invite Code</p>
             <input type="text" id="invite-code" placeholder="Enter your invite code">
