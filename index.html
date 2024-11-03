@@ -6,6 +6,7 @@
     <title>Nooble</title>
     <link rel="icon" href="Logo/Logo4.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         /* Global Styles */
         html, body {
@@ -35,6 +36,33 @@
 
         .logo:hover {
             transform: scale(1.1) rotate(10deg);
+        }
+
+        /* GitHub Section Styles */
+        .github-section {
+            position: fixed;
+            left: 10px;
+            bottom: 10px;
+            color: #E0E0E0;
+            text-align: center;
+            z-index: 1001;
+        }
+
+        .github-link {
+            text-decoration: none;
+            color: #E0E0E0;
+            font-size: 0.9em; /* Smaller font size */
+        }
+
+        .github-logo {
+            font-size: 30px; /* Smaller logo size */
+            margin-top: 5px;
+            transition: color 0.3s, text-shadow 0.3s;
+        }
+
+        .github-link:hover .github-logo {
+            color: #E0E0E0; /* Keep text color the same */
+            text-shadow: 0 0 20px #FFFFFF; /* White glowing effect */
         }
 
         /* Sidebar Styles */
@@ -213,10 +241,22 @@
                 padding: 15px 25px;
                 font-size: 1.1em;
             }
+
+            .github-logo {
+                font-size: 25px; /* Smaller logo size for smaller screens */
+            }
         }
     </style>
 </head>
 <body>
+    <!-- GitHub Section -->
+    <div class="github-section">
+        <a href="https://github.com/your-repo" target="_blank" class="github-link">
+            <h2>Fork us on GitHub</h2>
+            <i class="fab fa-github github-logo"></i>
+        </a>
+    </div>
+
     <!-- Sidebar -->
     <div class="sidebar" id="sidebar">
         <a href="./games/partners.html">Partners</a>
@@ -293,4 +333,5 @@
     </script>
 </body>
 </html>
+
 
