@@ -69,6 +69,29 @@
       font-size: 20px;
     }
 
+    .warning-label {
+      margin: 20px 0;
+      font-size: 1.1em;
+      color: #fbc02d; /* Yellow text for visibility */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 15px;
+      border: 2px dashed #fbc02d; /* Dashed border */
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+    }
+
+    .warning-label:hover {
+      transform: scale(1.02); /* Slight scaling effect on hover */
+    }
+
+    .warning-icon {
+      margin-right: 10px; /* Space between icon and text */
+      font-size: 1.5em; /* Larger icon */
+      color: #fbc02d; /* Icon color */
+    }
+
     .grid {
       display: flex;
       flex-wrap: wrap;
@@ -266,6 +289,11 @@
     <i class="fas fa-microphone speech-button" onclick="showWorkInProgressMessage()"></i>
   </div>
 
+  <div class="warning-label">
+    <i class="fas fa-exclamation-triangle warning-icon"></i>
+    <span>Certain games may not work on your school device due to hardware issues or school restrictions.</span>
+  </div>
+
   <div class="grid" id="gamesGrid"></div>
 
   <div id="speechModal" class="modal">
@@ -367,3 +395,4 @@
   </script>
 </body>
 </html>
+
