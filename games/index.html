@@ -70,20 +70,18 @@
     }
 
     .warning-label {
-      margin: 20px 0;
+      margin: 15px auto; /* Centering */
       font-size: 1.1em;
-      color: #fbc02d; /* Yellow text for visibility */
+      color: #e0e0e0; /* Light text for contrast */
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 10px 15px;
-      border: 2px dashed #fbc02d; /* Dashed border */
+      padding: 12px 20px; /* Increased padding for better appearance */
+      border: 2px solid #fbc02d; /* Solid border for a more prominent look */
       border-radius: 8px;
-      transition: transform 0.3s ease;
-    }
-
-    .warning-label:hover {
-      transform: scale(1.02); /* Slight scaling effect on hover */
+      background: rgba(0, 0, 0, 0.7); /* Slightly transparent background */
+      max-width: 500px; /* Limit width for better appearance */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Subtle shadow */
     }
 
     .warning-icon {
@@ -220,6 +218,9 @@
       }
       .abutton {
         width: 80%;
+      }
+      .warning-label {
+        width: 90%; /* Responsive width for smaller screens */
       }
     }
 
