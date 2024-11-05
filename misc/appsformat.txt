@@ -1,3 +1,4 @@
 Glitch|https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-rQJCWhJ5H6_I63ou8YQEO56Bqwdrfqbqgg&s|./glitch.html|
 Github|https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiYyoZuaiIrBKygBUDqYOYy0IurIMFTvxt0A&s|./github.html|
 MovieBox Pro|https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAQS1bCOnRiBMi258-d7Cv0iyTukyM1I0x6Q&s|./movieboxpro.html|
+Codepal|https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwPyzSP-Kf0Q90YLA1-VeS8W-qc6w2RzCvAg&s|./codepal.html|
