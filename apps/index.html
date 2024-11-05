@@ -70,6 +70,27 @@
       font-size: 20px;
     }
 
+    .warning-label {
+      margin: 15px auto; /* Centering */
+      font-size: 1.1em;
+      color: #e0e0e0; /* Light text for contrast */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 20px; /* Increased padding for better appearance */
+      border: 2px solid #fbc02d; /* Solid border for a more prominent look */
+      border-radius: 8px;
+      background: rgba(0, 0, 0, 0.7); /* Slightly transparent background */
+      max-width: 500px; /* Limit width for better appearance */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+    }
+
+    .warning-icon {
+      margin-right: 10px; /* Space between icon and text */
+      font-size: 1.5em; /* Larger icon */
+      color: #fbc02d; /* Icon color */
+    }
+
     .grid {
       display: flex;
       flex-wrap: wrap;
@@ -199,6 +220,9 @@
       .abutton {
         width: 80%;
       }
+      .warning-label {
+        width: 90%; /* Responsive width for smaller screens */
+      }
     }
 
     /* Modal Styles */
@@ -267,6 +291,11 @@
     <i class="fas fa-microphone speech-button" onclick="showWorkInProgressMessage()"></i>
   </div>
 
+  <div class="warning-label">
+    <i class="fas fa-exclamation-triangle warning-icon"></i>
+    <span>Certain apps may not work on your school device due to hardware issues or school restrictions.</span>
+  </div>
+
   <div class="grid" id="gamesGrid"></div>
 
   <div id="speechModal" class="modal">
@@ -284,8 +313,6 @@
         Nooble Games - All Rights Reserved &copy; 2024
       </div>
       <div class="footer-links">
-        <a href="https://forms.gle/F4acRa28NbfujS6QA">Request a App</a>
-        <a href="https://docs.google.com/spreadsheets/d/1gbCSYjr4j5DhWJ8ExT4mjzdFKhHxNEg_OGC3ySxPfWE/edit?usp=sharing">App Request Status</a>
         <a href="/privacypolicy">Privacy Policy</a>
         <a href="#" onclick="openBlankWithCurrentPage(); return false;">Open In About Blank</a>
       </div>
@@ -330,7 +357,7 @@
             gamesGrid.appendChild(button);
           });
         })
-        .catch(error => console.error('Error fetching apps:', error));
+        .catch(error => console.error('Error fetching games:', error));
     }
 
     function searchGames() {
@@ -368,3 +395,4 @@
   </script>
 </body>
 </html>
+
