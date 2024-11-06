@@ -38,4 +38,4 @@ TABS|https://lh3.googleusercontent.com/a3RWa2d8OdjAiSpHLAotkUdHU-n56mQ7bNAn2v4eA
 You Are Bezos|https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbDrndorg1SWoUPe1spATDAA0aSX4XAiosRg&s|./you-are-bezos.html|
 Yohoho.io|https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlI4TpqUNApui2JN2mN8u73xtylUbQtndVew&s|./yohoho-io.html|
 Snow Rider 3D|https://www.google.com/url?sa=i&url=https%3A%2F%2Fbubble-shooter.co%2Fsnow-rider-3d&psig=AOvVaw2debYHoo8o0lKaZXSHFawT&ust=1731018911169000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCODmsY3iyIkDFQAAAAAdAAAAABAE|./snowrider3d.html|
-Winter Clash 3D|https://www.friv2023.com/games/images/friv-2023-com-winter-clash-3d.webp|./winterclash3d
+Winter Clash 3D|https://bitlifeonline.github.io/winter-clash-3d/logo.png|./winterclash3d
