@@ -39,3 +39,4 @@ You Are Bezos|https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbDrndorg1SW
 Yohoho.io|https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlI4TpqUNApui2JN2mN8u73xtylUbQtndVew&s|./yohoho-io.html|
 Snow Rider 3D|https://slope-game.github.io/snow-rider-3d/logo.png|./snowrider3d.html|
 Winter Clash 3D|https://bitlifeonline.github.io/winter-clash-3d/logo.png|./winterclash3d
+What We Become We Behold|https://img.poki-cdn.com/cdn-cgi/image/quality=78,width=314,height=314,fit=cover,f=auto/a0929e5428c5af2666c9eeb3a0441d4c.png|./whatwebecomewebehold|
