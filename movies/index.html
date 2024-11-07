@@ -30,6 +30,39 @@
             text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.5);
         }
 
+        /* Warning Styles */
+        .warning {
+            background-color: #f4e04d;
+            color: #000;
+            padding: 15px;
+            font-size: 1.2em;
+            border-radius: 5px;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 600px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .warning i {
+            margin-right: 10px;
+        }
+
+        #search-bar {
+            margin: 20px;
+            padding: 10px;
+            width: 80%;
+            max-width: 400px;
+            font-size: 1.2em;
+            border-radius: 5px;
+            border: 1px solid #ff6f61;
+            background: #333;
+            color: #fff;
+        }
+
+        #search-bar::placeholder {
+            color: #ccc;
+        }
+
         #movie-container {
             display: flex;
             flex-wrap: wrap;
@@ -107,6 +140,46 @@
             vertical-align: middle;
         }
 
+        /* Modal styles */
+        #movie-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        #movie-modal iframe {
+            width: 80%;
+            height: 80%;
+            border: none;
+            border-radius: 15px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        #movie-modal .close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 2em;
+            color: white;
+            cursor: pointer;
+        }
+
+        #movie-modal .fullscreen-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 2em;
+            color: white;
+            cursor: pointer;
+        }
+
         @media (max-width: 600px) {
             h1 {
                 font-size: 2.5em;
@@ -128,37 +201,16 @@
     <h1>Nooble Movies</h1>
     <h3 class="popular" id='popular'>Popular Movies/TV Shows</h3>
 
+    <!-- Warning message -->
+    <div class="warning">
+        <i class="fas fa-exclamation-triangle"></i> 
+        <strong>Warning:</strong> Some movies may not work due to provider restrictions.
+    </div>
+
+    <input type="text" id="search-bar" placeholder="Search Movies..." oninput="searchMovies()">
+
     <div id="movie-container">
-        <div class="movie-item">
-            <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/63xYQj1BwRFielxsBDXvHIJyXVm.jpg" alt="Terrifier 3">
-            <h4>Terrifier 3</h4>
-            <a href="./terrifier3.html">Watch</a>
-        </div>
-        <div class="movie-item">
-            <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/jbwYaoYWZwxtPP76AZnfYKQjCEB.jpg" alt="Deadpool & Wolverine">
-            <h4>Deadpool & Wolverine</h4>
-            <a href="deadpool&wolverine.html">Watch</a>
-        </div>
-        <div class="movie-item">
-            <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/wWba3TaojhK7NdycRhoQpsG0FaH.jpg" alt="Despicable Me 4">
-            <h4>Despicable Me 4</h4>
-            <a href="despicableme4.html">Watch</a>
-        </div>
-        <div class="movie-item">
-            <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/vpnVM9B6NMmQpWeZvzLvDESb2QY.jpg" alt="Inside Out 2">
-            <h4>Inside Out 2</h4>
-            <a href="insideout2.html">Watch</a>
-        </div>
-        <div class="movie-item">
-            <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/4Ki6hf0nN3vp9xDrseyFHfXGa7c.jpg" alt="Smile 2">
-            <h4>Smile 2</h4>
-            <a href="smile2.html">Watch</a>
-        </div>
-        <div class="movie-item">
-            <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/jwoaKYVqPgYemFpaANL941EF94R.jpg" alt="Trap">
-            <h4>Trap</h4>
-            <a href="trap.html">Watch</a>
-        </div>
+        <!-- Movie items will appear here -->
     </div>
 
     <div class="attribution">
@@ -168,6 +220,89 @@
         </a>
     </div>
 
+    <!-- Modal for embedded movie -->
+    <div id="movie-modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <span class="fullscreen-btn" onclick="toggleFullscreen()"><i class="fas fa-expand"></i></span>
+        <iframe id="movie-iframe" src="" frameborder="0"></iframe>
+    </div>
+
+    <script>
+        const apiKey = '9ecfd7e66acabc26453faf47ed14b140'; // Replace with your TMDB API key
+        const movieContainer = document.getElementById('movie-container');
+        const searchBar = document.getElementById('search-bar');
+        const movieModal = document.getElementById('movie-modal');
+        const movieIframe = document.getElementById('movie-iframe');
+        const fullscreenBtn = document.querySelector('.fullscreen-btn');
+
+        // Function to fetch popular movies
+        function fetchMovies(query = '') {
+            let url = query ? 
+                `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${query}&language=en-US&page=1&include_adult=false` :
+                `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-US&page=1`;
+
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    displayMovies(data.results);
+                })
+                .catch(error => console.error('Error fetching movies:', error));
+        }
+
+        // Function to display movies
+        function displayMovies(movies) {
+            movieContainer.innerHTML = '';
+            if (movies.length === 0) {
+                movieContainer.innerHTML = '<p>No movies found.</p>';
+            } else {
+                movies.forEach(movie => {
+                    const movieElement = document.createElement('div');
+                    movieElement.classList.add('movie-item');
+                    movieElement.innerHTML = `
+                        <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}">
+                        <h4>${movie.title}</h4>
+                        <a href="#" onclick="openMovie('${movie.id}')">Watch</a>
+                    `;
+                    movieContainer.appendChild(movieElement);
+                });
+            }
+        }
+
+        // Function to open movie modal
+        function openMovie(movieId) {
+            const movieUrl = `https://moviesapi.club/movie/${movieId}`;
+            movieIframe.src = movieUrl;
+            movieModal.style.display = 'flex';
+        }
+
+        // Function to close the modal
+        function closeModal() {
+            movieModal.style.display = 'none';
+            movieIframe.src = '';
+        }
+
+        // Function to toggle fullscreen mode
+        function toggleFullscreen() {
+            if (movieIframe.requestFullscreen) {
+                movieIframe.requestFullscreen();
+            } else if (movieIframe.mozRequestFullScreen) {
+                movieIframe.mozRequestFullScreen();
+            } else if (movieIframe.webkitRequestFullscreen) {
+                movieIframe.webkitRequestFullscreen();
+            } else if (movieIframe.msRequestFullscreen) {
+                movieIframe.msRequestFullscreen();
+            }
+        }
+
+        // Event listener for search bar
+        function searchMovies() {
+            const query = searchBar.value;
+            fetchMovies(query);
+        }
+
+        // Initial fetch of popular movies
+        fetchMovies();
+    </script>
 </body>
 
 </html>
