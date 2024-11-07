@@ -42,3 +42,4 @@ Winter Clash 3D|https://bitlifeonline.github.io/winter-clash-3d/logo.png|./winte
 Yohoho.io|https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlI4TpqUNApui2JN2mN8u73xtylUbQtndVew&s|./yohoho-io.html|
 You Are Bezos|https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbDrndorg1SWoUPe1spATDAA0aSX4XAiosRg&s|./you-are-bezos.html|
 CSGO CLICKER|https://avatars.githubusercontent.com/u/39322951?s=280&v=4|./csgoclicker.html|
+CSGO CLICKER 2|https://img.tapimg.net/market/images/9b330c9431ce80fe959e9ecbd2020cdd.png|./csgoclicker2.html|
