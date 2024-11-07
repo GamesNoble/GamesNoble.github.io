@@ -347,6 +347,14 @@
           const gamesGrid = document.getElementById('gamesGrid');
           const games = data.trim().split('\n');
 
+          // Sort the games alphabetically by name (the first element in each game array)
+          games.sort((a, b) => {
+            const nameA = a.split('|')[0].toLowerCase();
+            const nameB = b.split('|')[0].toLowerCase();
+            return nameA.localeCompare(nameB);
+          });
+
+          // Now create the game buttons for each sorted game
           games.forEach(game => {
             const [name, imageUrl, link] = game.split('|');
             const button = document.createElement('button');
@@ -397,4 +405,5 @@
   </script>
 </body>
 </html>
+
 
