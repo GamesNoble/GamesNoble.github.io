@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embed Movie Page</title>
+    <style>
+        /* Body styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+            position: relative;
+        }
+
+        /* Iframe as background */
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            z-index: 1;
+        }
+
+        /* Dark overlay */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7); /* Dark overlay */
+            z-index: 0; /* Behind the iframe but in front of other elements */
+        }
+
+        /* Warning message styling */
+        .warning {
+            position: absolute;
+            top: -100px; /* Initially off-screen */
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            max-width: 80%;
+            text-align: center;
+            z-index: 2; /* In front of the iframe */
+            animation: slideDown 1s forwards, fadeOut 1s 4s forwards; /* Slide down + fade out after 4 seconds */
+        }
+
+        /* Slide down animation */
+        @keyframes slideDown {
+            0% {
+                top: -100px;
+            }
+            100% {
+                top: 20px; /* Adjust this value to where you want the warning */
+            }
+        }
+
+        /* Fade-out animation */
+        @keyframes fadeOut {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                top: -100px; /* Move it back up after fading out */
+            }
+        }
+
+        .warning button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #e6a800;
+            color: white;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .warning button:hover {
+            background-color: #cc8c00;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Dark overlay -->
+    <div class="overlay"></div>
+
+    <!-- Warning message (animation) -->
+    <div class="warning">
+        ⚠️ **Important Notice:** This content is provided by Nooble. If you are the owner of this content or have any concerns, please contact us at <strong>Codename1121111@gmail.com</strong>.
+        <br>
+        <button onclick="removeWarning()">OK</button>
+    </div>
+
+    <!-- Iframe for the movie content -->
+    <iframe id="movieFrame" src="https://moviesapi.club/movie/533535" allowfullscreen></iframe>
+
+    <script>
+        // Optionally, you can use this function to remove the warning manually
+        function removeWarning() {
+            const warning = document.querySelector('.warning');
+            warning.style.display = 'none'; // Hide the warning
+        }
+
+        // Automatically remove the warning after 5 seconds
+        setTimeout(() => {
+            removeWarning();
+        }, 5000);
+    </script>
+
+</body>
+</html>
