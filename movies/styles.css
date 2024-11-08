@@ -151,25 +151,26 @@ h3 {
     transform: translateY(-3px);
 }
 
+/* Attribution Section */
 .attribution {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    bottom: 10px; /* Reduced bottom position */
+    right: 10px; /* Reduced right position */
     background-color: rgba(0, 0, 0, 0.8);
     color: #fff;
-    padding: 10px 15px; /* Reduced padding for a cleaner look */
-    border-radius: 30px;
-    font-size: 0.9em; /* Reduced font size for better spacing */
+    padding: 5px 10px; /* Reduced padding for a smaller box */
+    border-radius: 20px; /* Reduced border-radius for a tighter look */
+    font-size: 0.8em; /* Reduced font size */
     display: flex;
     align-items: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    justify-content: space-between; /* Added spacing between text and image */
-    max-width: 250px; /* Added max-width to ensure it's not too wide */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    justify-content: space-between;
+    max-width: 200px; /* Reduced max-width to ensure it's more compact */
 }
 
 .attribution img {
-    height: 20px; /* Reduced image size */
-    margin-left: 10px;
+    height: 15px; /* Reduced image size further */
+    margin-left: 8px; /* Adjusted margin for balance */
 }
 
 #movie-modal {
@@ -229,3 +230,4 @@ h3 {
         width: 90%;
     }
 }
+
