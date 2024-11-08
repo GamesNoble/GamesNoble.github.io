@@ -6,8 +6,246 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>INUINOOBLE MOVIES</title>
     <link rel="icon" href="https://github.com/NoobleGames/NoobleGames.github.io/blob/main/Logo/Logo4.png?raw=true" type="image/png">
-    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(145deg, #1a1a1a, #000000);
+            color: #fff;
+            line-height: 1.6;
+            text-align: center;
+            overflow-x: hidden;
+            padding: 20px;
+        }
+
+        h1 {
+            margin: 50px 0;
+            font-size: 4.5em;
+            color: #ff6f61;
+            text-shadow: 0 0 15px rgba(255, 111, 97, 0.8);
+            letter-spacing: 2px;
+        }
+
+        h3 {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .warning {
+            background-color: #ffbb33;
+            color: #000;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            margin: 20px auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            font-size: 1.1em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .warning i {
+            margin-right: 15px;
+            font-size: 1.4em;
+        }
+
+        #search-bar {
+            margin: 40px auto;
+            padding: 15px 25px;
+            width: 85%;
+            max-width: 550px;
+            font-size: 1.3em;
+            border-radius: 50px;
+            border: 1px solid #ff6f61;
+            background-color: #2c2f34;
+            color: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease-in-out;
+        }
+
+        #search-bar::placeholder {
+            color: #bbb;
+        }
+
+        #search-bar:focus {
+            outline: none;
+            border-color: #ff6f61;
+            box-shadow: 0 0 8px rgba(255, 111, 97, 0.7);
+        }
+
+        #movie-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 30px;
+            padding: 30px;
+            margin: 0 auto;
+            width: 90%;
+            max-width: 1200px;
+        }
+
+        .movie-item {
+            background: #2c2f34;
+            border-radius: 15px;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+            transition: all 0.3s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            transform: translateY(0);
+        }
+
+        .movie-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.8);
+        }
+
+        .movie-item img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            transition: all 0.3s ease;
+        }
+
+        .movie-item img:hover {
+            transform: scale(1.1);
+        }
+
+        .movie-info {
+            padding: 20px;
+            flex-grow: 1;
+            background: rgba(0, 0, 0, 0.7);
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+
+        .movie-item h4 {
+            font-size: 1.8em;
+            color: #fff;
+            font-weight: 600;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.7);
+        }
+
+        .movie-item a {
+            display: inline-block;
+            background-color: #ff6f61;
+            padding: 12px 30px;
+            border-radius: 30px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            margin-top: 15px;
+            align-self: center;
+        }
+
+        .movie-item a:hover {
+            background-color: #ff4c4c;
+            transform: translateY(-3px);
+        }
+
+        /* Attribution Section Styling */
+        .attribution {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            max-width: 250px;
+        }
+
+        .attribution img {
+            height: 20px;
+            margin-right: 10px;
+        }
+
+        .attribution span {
+            font-size: 1em;
+            font-weight: bold;
+        }
+
+        #movie-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        #movie-modal iframe {
+            width: 80%;
+            height: 80%;
+            border-radius: 15px;
+            border: none;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+        }
+
+        #movie-modal .close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 2.5em;
+            color: white;
+            cursor: pointer;
+        }
+
+        #movie-modal .fullscreen {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 2.5em;
+            color: white;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 3em;
+            }
+
+            h3 {
+                font-size: 2em;
+            }
+
+            .movie-item {
+                width: 100%;
+                max-width: 350px;
+            }
+
+            #search-bar {
+                width: 90%;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -16,32 +254,98 @@
 
     <div class="warning">
         <i class="fas fa-exclamation-triangle"></i>
-        <strong>Warning:</strong> Some movies may not work due to provider restrictions.
+        <strong>Warning:</strong> Some movies and TV shows may not work due to provider restrictions.
     </div>
 
-    <input type="text" id="search-bar" placeholder="Search Movies..." oninput="searchMovies()">
+    <input type="text" id="search-bar" placeholder="Search Movies or TV Shows..." oninput="searchMovies()">
 
     <div id="movie-container"></div>
 
     <div class="attribution">
         <span>Images Movies and Titles provided by</span>
         <a href="https://www.themoviedb.org/">
-            <img src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_short-8e7b30f73a4020692ccca9c88bafe5dcb6f8a62a4c6bc55cd9ba82bb2cd95f6c.svg" alt="TMDB Logo">
+            <img src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_short-7f60494ab1de4bc87e72b05a3e7baf67ea214edc21f94a5976fd481bb2a55b71.svg" alt="TMDB Logo" />
         </a>
     </div>
 
     <div id="movie-modal">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <span class="fullscreen-btn" onclick="toggleFullscreen()"><i class="fas fa-expand"></i></span>
-        <iframe id="movie-iframe" src="" frameborder="0"></iframe>
+        <span class="close" onclick="closeMovieModal()">&times;</span>
+        <span class="fullscreen" onclick="toggleFullScreen()">&#x26F6;</span>
+        <iframe id="movie-frame" src="" frameborder="0" allowfullscreen></iframe>
     </div>
 
-    <!-- Footer -->
-    <footer>
-        <p>Made with ❤️ for you by Chip Hill</p>
-    </footer>
+    <script>
+        const apiKey = '9ecfd7e66acabc26453faf47ed14b140';
+        const movieContainer = document.getElementById('movie-container');
+        const searchBar = document.getElementById('search-bar');
 
-    <script src="script.js"></script>
+        function fetchMovies(query = '') {
+            const url = query ?
+                `https://api.themoviedb.org/3/search/multi?api_key=${apiKey}&query=${query}&language=en-US` :
+                `https://api.themoviedb.org/3/trending/all/week?api_key=${apiKey}&language=en-US`;
+
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    movieContainer.innerHTML = '';
+                    data.results.forEach(item => {
+                        const isMovie = item.media_type === 'movie';
+                        const isTV = item.media_type === 'tv';
+
+                        if (isMovie || isTV) {
+                            const movieElement = document.createElement('div');
+                            movieElement.classList.add('movie-item');
+                            movieElement.innerHTML = `
+                                <img src="https://image.tmdb.org/t/p/w500${item.poster_path}" alt="${item.title || item.name}">
+                                <div class="movie-info">
+                                    <h4>${item.title || item.name}</h4>
+                                    <a href="#" onclick="openMovie('${item.id}', '${isMovie ? 'movie' : 'tv'}', '${item.name}')">Watch Now</a>
+                                </div>
+                            `;
+                            movieContainer.appendChild(movieElement);
+                        }
+                    });
+                });
+        }
+
+        function openMovie(id, type, title) {
+            if (type === 'tv') {
+                const season = prompt(`Enter season number for "${title}":`);
+                const episode = prompt(`Enter episode number for season ${season}:`);
+                const url = `https://moviesapi.club/tv/${id}-${season}-${episode}`;
+                document.getElementById('movie-frame').src = url;
+            } else {
+                const url = `https://moviesapi.club/movie/${id}`;
+                document.getElementById('movie-frame').src = url;
+            }
+            document.getElementById('movie-modal').style.display = 'flex';
+        }
+
+        function closeMovieModal() {
+            document.getElementById('movie-modal').style.display = 'none';
+        }
+
+        function toggleFullScreen() {
+            const iframe = document.getElementById('movie-frame');
+            if (iframe.requestFullscreen) {
+                iframe.requestFullscreen();
+            } else if (iframe.mozRequestFullScreen) { // Firefox
+                iframe.mozRequestFullScreen();
+            } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari and Opera
+                iframe.webkitRequestFullscreen();
+            } else if (iframe.msRequestFullscreen) { // IE/Edge
+                iframe.msRequestFullscreen();
+            }
+        }
+
+        function searchMovies() {
+            const query = searchBar.value.trim();
+            fetchMovies(query);
+        }
+
+        // Initialize with trending content
+        fetchMovies();
+    </script>
 </body>
 
 </html>
