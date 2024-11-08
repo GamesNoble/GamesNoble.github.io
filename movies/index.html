@@ -161,32 +161,29 @@
             transform: translateY(-3px);
         }
 
-        /* Attribution Section Styling */
-        .attribution {
-            position: fixed;
-            bottom: 10px;
-            right: 10px;
-            background-color: rgba(0, 0, 0, 0.8);
-            color: #fff;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.9em;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            max-width: 250px;
-        }
 
-        .attribution img {
-            height: 20px;
-            margin-right: 10px;
-        }
+    .attribution {
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        background-color: rgba(0, 0, 0, 0.8);
+        color: #fff;
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-size: 0.9em;
+        display: inline-flex; /* Use inline-flex for horizontal alignment */
+        align-items: center;
+    }
 
-        .attribution span {
-            font-size: 1em;
-            font-weight: bold;
-        }
+    .attribution img {
+        height: 20px;
+        margin-left: 5px; /* Space between text and logo */
+    }
+
+    .attribution span {
+        font-size: 1em;
+        font-weight: bold;
+    }
 
         #movie-modal {
             display: none;
