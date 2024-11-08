@@ -1,9 +1,11 @@
+/* General Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Body Styling */
 body {
     font-family: 'Arial', sans-serif;
     background: linear-gradient(145deg, #1a1a1a, #000000);
@@ -14,6 +16,7 @@ body {
     padding: 20px;
 }
 
+/* Header Styling */
 h1 {
     margin: 50px 0;
     font-size: 4.5em;
@@ -31,6 +34,7 @@ h3 {
     letter-spacing: 1px;
 }
 
+/* Warning Section Styling */
 .warning {
     background-color: #ffbb33;
     color: #000;
@@ -50,6 +54,7 @@ h3 {
     font-size: 1.4em;
 }
 
+/* Search Bar Styling */
 #search-bar {
     margin: 40px auto;
     padding: 15px 25px;
@@ -74,6 +79,7 @@ h3 {
     box-shadow: 0 0 8px rgba(255, 111, 97, 0.7);
 }
 
+/* Movie Container Styling */
 #movie-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
@@ -84,6 +90,7 @@ h3 {
     max-width: 1200px;
 }
 
+/* Movie Item Styling */
 .movie-item {
     background: #2c2f34;
     border-radius: 15px;
@@ -113,6 +120,7 @@ h3 {
     transform: scale(1.1);
 }
 
+/* Movie Info Styling */
 .movie-info {
     padding: 20px;
     flex-grow: 1;
@@ -154,25 +162,26 @@ h3 {
 /* Attribution Section */
 .attribution {
     position: fixed;
-    bottom: 10px; /* Reduced bottom position */
-    right: 10px; /* Reduced right position */
+    bottom: 10px;
+    right: 10px;
     background-color: rgba(0, 0, 0, 0.8);
     color: #fff;
-    padding: 5px 10px; /* Reduced padding for a smaller box */
-    border-radius: 20px; /* Reduced border-radius for a tighter look */
-    font-size: 0.8em; /* Reduced font size */
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8em;
     display: flex;
     align-items: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     justify-content: space-between;
-    max-width: 200px; /* Reduced max-width to ensure it's more compact */
+    max-width: 200px;
 }
 
 .attribution img {
-    height: 15px; /* Reduced image size further */
-    margin-left: 8px; /* Adjusted margin for balance */
+    height: 15px;
+    margin-left: 8px;
 }
 
+/* Movie Modal Styling */
 #movie-modal {
     display: none;
     position: fixed;
@@ -212,6 +221,38 @@ h3 {
     cursor: pointer;
 }
 
+/* Footer Styling with Glowing Effect */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 15px;
+    background-color: #2c2f34;
+    color: #ff6f61;
+    font-size: 1.2em;
+    text-align: center;
+    font-weight: bold;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+    animation: glowAnimation 1.5s infinite alternate;
+}
+
+/* Glowing Effect Animation */
+@keyframes glowAnimation {
+    0% {
+        text-shadow: 0 0 5px #ff6f61, 0 0 10px #ff6f61, 0 0 15px #ff6f61, 0 0 20px #ff6f61;
+    }
+    100% {
+        text-shadow: 0 0 10px #ff6f61, 0 0 20px #ff6f61, 0 0 30px #ff6f61, 0 0 40px #ff6f61;
+    }
+}
+
+footer p {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+/* Responsive Adjustments */
 @media (max-width: 768px) {
     h1 {
         font-size: 3em;
