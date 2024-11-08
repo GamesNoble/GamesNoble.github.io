@@ -263,7 +263,7 @@
     <div id="movie-modal">
         <span class="close" onclick="closeModal()">&times;</span>
         <span class="fullscreen-btn" onclick="toggleFullscreen()"><i class="fas fa-expand"></i></span>
-        <iframe id="movie-iframe" src="#" frameborder="0"></iframe>
+        <iframe id="movie-iframe" src="" frameborder="0"></iframe>
     </div>
 
     <script>
@@ -276,8 +276,8 @@
 
         function fetchMovies(query = '') {
             let url = query ?
-                `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${query}&language=en-US&page=1&include_adult=false` :
-                `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-US&page=1`;
+                https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${query}&language=en-US&page=1&include_adult=false :
+                https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-US&page=1;
 
             fetch(url)
                 .then(response => response.json())
@@ -293,20 +293,20 @@
                 movies.forEach(movie => {
                     const movieElement = document.createElement('div');
                     movieElement.classList.add('movie-item');
-                    movieElement.innerHTML = `
+                    movieElement.innerHTML = 
                         <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}">
                         <div class="movie-info">
                             <h4>${movie.title}</h4>
-                            <a href="" onclick="openMovie('${movie.id}')">Watch</a>
+                            <a href="#" onclick="openMovie('${movie.id}')">Watch</a>
                         </div>
-                    `;
+                    ;
                     movieContainer.appendChild(movieElement);
                 });
             }
         }
 
         function openMovie(movieId) {
-            const movieUrl = `https://moviesapi.club/movie/${movieId}`;
+            const movieUrl = https://moviesapi.club/movie/${movieId};
             movieIframe.src = movieUrl;
             movieModal.style.display = 'flex';
         }
