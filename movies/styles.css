@@ -157,16 +157,18 @@ h3 {
     right: 20px;
     background-color: rgba(0, 0, 0, 0.8);
     color: #fff;
-    padding: 15px 25px;
+    padding: 10px 15px; /* Reduced padding for a cleaner look */
     border-radius: 30px;
-    font-size: 1em;
+    font-size: 0.9em; /* Reduced font size for better spacing */
     display: flex;
     align-items: center;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    justify-content: space-between; /* Added spacing between text and image */
+    max-width: 250px; /* Added max-width to ensure it's not too wide */
 }
 
 .attribution img {
-    height: 30px;
+    height: 20px; /* Reduced image size */
     margin-left: 10px;
 }
 
