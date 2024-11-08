@@ -12,66 +12,57 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
         }
 
         body {
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(145deg, #1a1a1a, #000000);
-            color: #fff;
-            line-height: 1.6;
+            background: linear-gradient(145deg, #1b1b1b, #121212);
+            color: #ffffff;
             text-align: center;
-            overflow-x: hidden;
             padding: 20px;
         }
 
         h1 {
-            margin: 50px 0;
-            font-size: 4.5em;
+            font-size: 4em;
             color: #ff6f61;
-            text-shadow: 0 0 15px rgba(255, 111, 97, 0.8);
-            letter-spacing: 2px;
+            text-shadow: 0 4px 10px rgba(255, 111, 97, 0.8);
+            margin-bottom: 30px;
         }
 
         h3 {
-            font-size: 2.5em;
-            font-weight: bold;
+            font-size: 2em;
             color: #fff;
-            margin-bottom: 40px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            margin-bottom: 30px;
         }
 
         .warning {
-            background-color: #ffbb33;
-            color: #000;
-            padding: 20px;
-            border-radius: 10px;
-            width: 80%;
-            margin: 20px auto;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            font-size: 1.1em;
             display: flex;
             align-items: center;
             justify-content: center;
+            background-color: #ffbb33;
+            color: #000;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px auto 30px;
+            width: 85%;
+            max-width: 800px;
         }
 
         .warning i {
-            margin-right: 15px;
-            font-size: 1.4em;
+            margin-right: 10px;
         }
 
         #search-bar {
-            margin: 40px auto;
-            padding: 15px 25px;
-            width: 85%;
-            max-width: 550px;
-            font-size: 1.3em;
-            border-radius: 50px;
-            border: 1px solid #ff6f61;
-            background-color: #2c2f34;
-            color: #fff;
+            width: 90%;
+            max-width: 500px;
+            padding: 15px;
+            font-size: 1.1em;
+            border-radius: 25px;
+            border: none;
+            background-color: #333;
+            color: #ffffff;
+            margin: 20px auto 50px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-            transition: all 0.3s ease-in-out;
         }
 
         #search-bar::placeholder {
@@ -80,7 +71,6 @@
 
         #search-bar:focus {
             outline: none;
-            border-color: #ff6f61;
             box-shadow: 0 0 8px rgba(255, 111, 97, 0.7);
         }
 
@@ -88,102 +78,100 @@
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
             gap: 30px;
-            padding: 30px;
-            margin: 0 auto;
             width: 90%;
             max-width: 1200px;
+            margin: 0 auto;
         }
 
         .movie-item {
-            background: #2c2f34;
+            background: #292929;
             border-radius: 15px;
-            position: relative;
             overflow: hidden;
+            position: relative;
+            transition: transform 0.3s, box-shadow 0.3s;
             cursor: pointer;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
-            transition: all 0.3s ease-in-out;
-            display: flex;
-            flex-direction: column;
-            transform: translateY(0);
         }
 
         .movie-item:hover {
             transform: translateY(-10px);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.8);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
         }
 
         .movie-item img {
             width: 100%;
-            height: 350px;
+            height: 360px;
             object-fit: cover;
-            transition: all 0.3s ease;
-        }
-
-        .movie-item img:hover {
-            transform: scale(1.1);
+            transition: opacity 0.3s;
         }
 
         .movie-info {
-            padding: 20px;
-            flex-grow: 1;
-            background: rgba(0, 0, 0, 0.7);
+            padding: 15px 20px;
+            background: rgba(0, 0, 0, 0.85);
             border-bottom-left-radius: 15px;
             border-bottom-right-radius: 15px;
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
         }
 
         .movie-item h4 {
-            font-size: 1.8em;
-            color: #fff;
-            font-weight: 600;
+            font-size: 1.5em;
             margin-bottom: 10px;
-            text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.7);
+            color: #ff6f61;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        .movie-item .rating,
+        .movie-item .release-date {
+            position: absolute;
+            top: 15px;
+            padding: 5px 8px;
+            font-size: 0.85em;
+            border-radius: 5px;
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.7);
+            font-weight: bold;
+        }
+
+        .movie-item .rating {
+            left: 15px;
+        }
+
+        .movie-item .release-date {
+            right: 15px;
         }
 
         .movie-item a {
             display: inline-block;
+            padding: 10px 25px;
+            margin-top: 15px;
             background-color: #ff6f61;
-            padding: 12px 30px;
             border-radius: 30px;
             color: #fff;
             text-decoration: none;
             font-weight: bold;
-            transition: all 0.3s ease;
-            margin-top: 15px;
-            align-self: center;
+            transition: background 0.3s;
         }
 
         .movie-item a:hover {
             background-color: #ff4c4c;
-            transform: translateY(-3px);
         }
 
+        .attribution {
+            position: fixed;
+            bottom: 15px;
+            right: 15px;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #ffffff;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            display: flex;
+            align-items: center;
+        }
 
-    .attribution {
-        position: fixed;
-        bottom: 10px;
-        right: 10px;
-        background-color: rgba(0, 0, 0, 0.8);
-        color: #fff;
-        padding: 5px 15px;
-        border-radius: 20px;
-        font-size: 0.9em;
-        display: inline-flex; /* Use inline-flex for horizontal alignment */
-        align-items: center;
-    }
-
-    .attribution img {
-        height: 20px;
-        margin-left: 5px; /* Space between text and logo */
-    }
-
-    .attribution span {
-        font-size: 1em;
-        font-weight: bold;
-    }
+        .attribution img {
+            height: 20px;
+            margin-left: 5px;
+        }
 
         #movie-modal {
             display: none;
@@ -230,16 +218,15 @@
             }
 
             h3 {
-                font-size: 2em;
-            }
-
-            .movie-item {
-                width: 100%;
-                max-width: 350px;
+                font-size: 1.8em;
             }
 
             #search-bar {
-                width: 90%;
+                width: 100%;
+            }
+
+            .movie-item {
+                max-width: 100%;
             }
         }
     </style>
@@ -259,7 +246,7 @@
     <div id="movie-container"></div>
 
     <div class="attribution">
-        <span>Images Movies and Titles provided by</span>
+        <span>Images and data provided by</span>
         <a href="https://www.themoviedb.org/">
             <img src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_short-8e7b30f73a4020692ccca9c88bafe5dcb6f8a62a4c6bc55cd9ba82bb2cd95f6c.svg" alt="TMDB Logo" />
         </a>
@@ -290,10 +277,13 @@
                         const isTV = item.media_type === 'tv';
 
                         if (isMovie || isTV) {
+                            const releaseYear = (item.release_date || item.first_air_date || '').slice(0, 4);
                             const movieElement = document.createElement('div');
                             movieElement.classList.add('movie-item');
                             movieElement.innerHTML = `
                                 <img src="https://image.tmdb.org/t/p/w500${item.poster_path}" alt="${item.title || item.name}">
+                                <div class="rating"><i class="fas fa-star"></i> ${item.vote_average.toFixed(1)}/10</div>
+                                <div class="release-date">${releaseYear}</div>
                                 <div class="movie-info">
                                     <h4>${item.title || item.name}</h4>
                                     <a href="#" onclick="openMovie('${item.id}', '${isMovie ? 'movie' : 'tv'}', '${item.name}')">Watch Now</a>
@@ -326,11 +316,11 @@
             const iframe = document.getElementById('movie-frame');
             if (iframe.requestFullscreen) {
                 iframe.requestFullscreen();
-            } else if (iframe.mozRequestFullScreen) { // Firefox
+            } else if (iframe.mozRequestFullScreen) {
                 iframe.mozRequestFullScreen();
-            } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari and Opera
+            } else if (iframe.webkitRequestFullscreen) {
                 iframe.webkitRequestFullscreen();
-            } else if (iframe.msRequestFullscreen) { // IE/Edge
+            } else if (iframe.msRequestFullscreen) {
                 iframe.msRequestFullscreen();
             }
         }
