@@ -1,7 +1,7 @@
-Glitch|https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Glitch_Logo.svg/1024px-Glitch_Logo.svg.png|./glitch.html|
+Glitch|https://cdn.glitch.com/9f58d98a-c6d1-4a9c-9f55-d9cd42e8715b%2FGlitch-logo.svg?v=1625139928347|./glitch.html|
 Github|https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/1024px-Octicons-mark-github.svg.png|./github.html|
-MovieBox Pro|https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/MovieBox_logo.svg/1200px-MovieBox_logo.svg.png|./movieboxpro.html|
-Khan Academy|https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Khan_Academy_logo.svg/800px-Khan_Academy_logo.svg.png|./khanacademy.html|
+MovieBox Pro|https://upload.wikimedia.org/wikipedia/commons/5/53/MovieBox_logo.svg|./movieboxpro.html|
+Khan Academy|https://upload.wikimedia.org/wikipedia/commons/7/77/Khan_Academy_logo_2019.svg|./khanacademy.html|
 CodePen|https://upload.wikimedia.org/wikipedia/commons/2/22/CodePen_logo.svg|./codepen.html|
 Trello|https://upload.wikimedia.org/wikipedia/commons/6/64/Trello_logo_2019.svg|./trello.html|
 W3Schools|https://upload.wikimedia.org/wikipedia/commons/4/47/W3Schools.com_logo.svg|./w3schools.html|
