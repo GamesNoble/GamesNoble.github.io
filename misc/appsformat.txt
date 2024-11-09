@@ -14,3 +14,4 @@ Duolingo|https://seeklogo.com/images/D/duolingo-logo-DB18C5E638-seeklogo.com.png
 Slack|https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaPlbD42KHzVMn8SG2t54umtxYfOz2Mcwm8w&s|./slack.html|
 Vim|https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Vimlogo.svg/1200px-Vimlogo.svg.png|./vim.html|
 Miro|https://www.cdnlogo.com/logos/m/32/miro.svg|./miro.html|
+MOVIEFREE|https://avatars.githubusercontent.com/u/187891305?s=400&u=3bfa6f7762aeec9cd1b47aa5a672ca81ffd332cd&v=4|./moviefree.html|
