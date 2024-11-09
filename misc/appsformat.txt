@@ -6,10 +6,10 @@ CodePen|https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkv1zPiqncI7qRR8FP
 Trello|https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbSbAtptKrdUNiedh_Nbvk8T9VJ9K5-uqr0Q&s|./trello.html|
 W3Schools|https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7walZHqtuksQQ4SUPHAlwLvUmL688mOJv3Q&s|./w3schools.html|
 Scratch|https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-Eu3fhe2i84ppY_1xYuwji19Dg0Y_M4m-7g&s|./scratch.html|
-PicoTorrent|https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdZ_0R7kHRV_Fl5R4jLwErnV_-RDeckGi2Fg&s|./picotorrent.html|
-Medium|https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbtgq9zLeF8-R4yH26h1x2UGJxk9Ggg2GbqA&s|./medium.html|
-Coursera|https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdwOaj4BggNdb40sPtdwXtW9gdRmn1R06k7w&s|./coursera.html|
-Notion|https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXxgF5ixNiz_hqHT0weGeLPs2kfcV03-xW9g&s|./notion.html|
+PicoTorrent|https://avatars.githubusercontent.com/u/13157179?s=280&v=4|./picotorrent.html|
+Medium|https://cdn.icon-icons.com/icons2/3041/PNG/512/medium_logo_icon_189223.png|./medium.html|
+Coursera|https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2d7rurSRthHHw4W1anoF9N3p5xKxhZNK_AQ&s|./coursera.html|
+Notion|https://upload.wikimedia.org/wikipedia/commons/4/45/Notion_app_logo.png|./notion.html|
 Duolingo|https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSviCAHh3j9O7ZG6Jw1WxVVNlKfI64svqD3rA&s|./duolingo.html|
 Slack|https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTm3vqaU-7chXsafHRwv9bF7mOHBr2LBOR_7w&s|./slack.html|
 Vim|https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbwAAUq0QmOWpvApxkr2AbRg8SH4wGn7yx-0&s|./vim.html|
