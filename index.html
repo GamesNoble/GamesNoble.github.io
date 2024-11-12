@@ -49,21 +49,13 @@
             text-shadow: 2px 2px 20px rgba(255, 215, 0, 0.5);
         }
 
-        /* Header Text Above Banner */
-        .ad-header {
-            font-size: 1.5em;
-            color: #FFD700;
-            margin-bottom: 10px;
-            font-weight: bold;
-            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
-            z-index: 1000; /* Ensure it's above other content */
-        }
-
         /* Movie Banner (now an Ad Banner) Styling */
         .ad-banner {
             position: relative;
-            width: 600px; /* Fixed width */
-            height: 250px; /* Fixed height */
+            width: 90vw;  /* Responsive width */
+            height: 40vh; /* Responsive height */
+            max-width: 1000px;  /* Max width to ensure it's not too large */
+            max-height: 500px; /* Max height for better scaling */
             overflow: hidden;
             background-color: #333;
             color: #FFD700;
