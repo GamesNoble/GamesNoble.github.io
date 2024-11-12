@@ -49,6 +49,16 @@
             text-shadow: 2px 2px 20px rgba(255, 215, 0, 0.5);
         }
 
+        /* Header Text Above Banner */
+        .ad-header {
+            font-size: 1.5em;
+            color: #FFD700;
+            margin-bottom: 10px;
+            font-weight: bold;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+            z-index: 1000; /* Ensure it's above other content */
+        }
+
         /* Movie Banner (now an Ad Banner) Styling */
         .ad-banner {
             position: relative;
@@ -74,16 +84,14 @@
             border-radius: 10px;
         }
 
-        /* Header Text Positioned in the Left Corner */
-        .ad-header {
+        .banner-title {
             position: absolute;
-            top: 10px;
-            left: 10px;
-            font-size: 1.5em;
+            bottom: 20px;
+            left: 20px;
             color: #FFD700;
+            font-size: 1.5em;
             font-weight: bold;
             text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
-            z-index: 1000;
         }
 
         /* Close Button Styling */
@@ -148,10 +156,11 @@
     <img src="Logo/Logo4.png" alt="Nooble Games Logo" class="logo">
     <h1 class="centered-heading">Nooble</h1>
 
+    <!-- Header Text Above the Movie Banner -->
+    <div class="ad-header">Watch Movies For Free On The Movie Free</div>
+
     <!-- Small Ad Banner (now Movie Banner) -->
     <div id="movieBanner" class="ad-banner">
-        <!-- Header Text Positioned in the Left Corner -->
-        <div class="ad-header">Watch Movies For Free On The Movie Free</div>
         <img id="bannerImage" src="" alt="Movie Banner">
         <div id="bannerTitle" class="banner-title"></div>
         <!-- Close Button for Ad -->
@@ -163,7 +172,7 @@
         <a href="./games/" class="button games">Games</a>
         <a href="./apps/" class="button apps">Apps</a>
         <a href="./proxys/" class="button proxys">Proxys</a>
-        <a href="./movies/" class="button movies">Movies</a>
+        <a href="./movies/" class="button movies">Media</a>
     </div>
 
     <script>
