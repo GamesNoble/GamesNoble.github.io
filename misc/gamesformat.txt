@@ -47,3 +47,4 @@ Tetris|https://cdn.vox-cdn.com/thumbor/_dxsywiT6vgYCfAkS4DN7K3iEZg=/0x0:1024x102
 Among Us|https://media.pcgamesinsider.biz/2020/9/106770/among-us-logo-r225x225.png|./amongus.html|
 Snow Rider 3D|https://geometrydashsubzero.net/cache/data/image/snow-rider-3d-m340x340.png|./snowrider3d.html|
 Superhot|https://ih1.redbubble.net/image.196567968.1726/raf,360x360,075,t,fafafa:ca443f4786.u2.jpg|./superhot.html|
+Cluster Rush|https://gorillatag.io/cache/data/image/game/cluster-rush1-m150x150.webp|./clusterrush.html|
