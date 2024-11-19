@@ -51,3 +51,4 @@ Cluster Rush|https://gorillatag.io/cache/data/image/game/cluster-rush1-m150x150.
 Eugene's Life|https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsKTgnOq-O8wBQiA7nl0NUGtpwHuWwwP2Lxg&s|./eugeneslife.html
 There Is No Game |https://play-lh.googleusercontent.com/a6DfrYUL6viV0LAZFplqqA44gE0LHE0PyDnKHgdlydiUvccwzSBWrmRQSx5cjdL74Us|./thereisnogame.html
 Jetpack Joyride |https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSBeu7XOF3FmQad0DET1DvZMLqgM_ukcVSqEAvlpqzGLtX9lb3UBCC2cvnxsEf2Sd9496R3|./jetpackjoyride.html
+PaintIt.io|https://github.com/NoobleGames/NoobleGames.github.io/blob/main/misc/images/th.jpeg?raw=true|./paintit.html
