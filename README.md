@@ -11,7 +11,7 @@
 </a>
 
 ## How to be a Contributor
-<p>All you have to do is fix a bug or submit it through the <code>contribrequest.txt</code>.</p>
+<p>All you have to do is fix a bug.</code>.</p>
 
 ## Game Submit
 <p>Have a game you'd like to see added to CUG? Feel free to submit it through <a href="https://github.com/DamageCoding/CUG/discussions/2">this link</a>.</p>
@@ -19,5 +19,5 @@
 ## That's The End (MORE WILL BE ADDED) ✌️
 
 > [!IMPORTANT]
-> You **cannot** deploy to static web hosts, including Netlify, Cloudflare Pages, and GitHub Pages.
+> This Is Kinda Bad When Forked.
 
