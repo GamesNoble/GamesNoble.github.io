@@ -52,3 +52,4 @@ Eugene's Life|https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsKTgnOq-O8w
 There Is No Game |https://play-lh.googleusercontent.com/a6DfrYUL6viV0LAZFplqqA44gE0LHE0PyDnKHgdlydiUvccwzSBWrmRQSx5cjdL74Us|./thereisnogame.html
 Jetpack Joyride |https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSBeu7XOF3FmQad0DET1DvZMLqgM_ukcVSqEAvlpqzGLtX9lb3UBCC2cvnxsEf2Sd9496R3|./jetpackjoyride.html
 PaintIt.io|https://github.com/NoobleGames/NoobleGames.github.io/blob/main/misc/images/th.jpeg?raw=true|./paintit.html
+Friday Night Funkin|https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtWSrt6m1Df9oOCJ6ieT3cEDBb7KDGEzsqcQ&s|./fridaynightfunkin.html
