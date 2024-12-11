@@ -6,102 +6,134 @@
   <title>Nooble | Games</title>
   <link rel="icon" href="https://github.com/NoobleGames/NoobleGames.github.io/blob/main/Logo/Logo4.png?raw=true" type="image/png">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <style>
     body {
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Roboto', sans-serif;
       margin: 0;
       padding: 0;
-      background: #121212;
+      background: linear-gradient(135deg, #121212, #1c1c1c);
       color: #e0e0e0;
       text-align: center;
       overflow-x: hidden;
-      user-select: none; /* Disable text selection */
     }
 
-    .title {
-      margin: 30px 0;
-      font-size: 3em;
-      color: #fbc02d;
-      font-family: 'Montserrat', sans-serif;
-      text-transform: uppercase;
-      text-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
-    }
-
-    .search-container {
-      position: relative;
-      display: inline-block;
-      margin: 30px 0;
-    }
-
-    #searchInput {
-      width: 400px;
-      padding: 12px 50px 12px 20px;
-      border: 2px solid #fbc02d;
-      border-radius: 25px;
-      font-size: 16px;
-      outline: none;
-      background: #1e1e1e;
-      color: #e0e0e0;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-      transition: box-shadow 0.3s ease;
-    }
-
-    #searchInput:focus {
-      box-shadow: 0 8px 24px rgba(251, 192, 45, 0.5);
-    }
-
-    .search-icon {
-      position: absolute;
-      right: 15px;
-      top: 50%;
-      transform: translateY(-50%);
-      color: #fbc02d;
-      font-size: 20px;
-    }
-
-    .speech-button {
-      position: absolute;
-      right: 60px;
-      top: 50%;
-      transform: translateY(-50%);
-      cursor: pointer;
-      color: #fbc02d;
-      font-size: 20px;
-    }
-
-    .warning-label {
-      margin: 15px auto; /* Centering */
-      font-size: 1.1em;
-      color: #e0e0e0; /* Light text for contrast */
+    /* Header Styling */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #121212;
+      padding: 20px 30px;
+      z-index: 10;
       display: flex;
+      justify-content: space-between;
       align-items: center;
-      justify-content: center;
-      padding: 12px 20px; /* Increased padding for better appearance */
-      border: 2px solid #fbc02d; /* Solid border for a more prominent look */
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .logo {
+      font-size: 2em;
+      font-weight: 700;
+      color: #fbc02d;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      text-decoration: none;
+    }
+
+    .links {
+      display: flex;
+      gap: 30px;
+      margin-left: auto;
+      margin-right: 30px;
+    }
+
+    .links a {
+      color: #fbc02d;
+      text-decoration: none;
+      font-size: 1.2em;
+      font-weight: 500;
+      padding: 12px 20px;
+      border: 2px solid #fbc02d;
       border-radius: 8px;
-      background: rgba(0, 0, 0, 0.7); /* Slightly transparent background */
-      max-width: 500px; /* Limit width for better appearance */
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+      transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .links a:hover {
+      background-color: #f9a825;
+      color: #121212;
+      transform: scale(1.05);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Warning Label */
+    .warning-label {
+      margin: 80px auto;
+      padding: 15px;
+      background-color: #fbc02d;
+      color: #121212;
+      font-size: 1.2em;
+      font-weight: bold;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 10px;
+      width: 80%;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     }
 
     .warning-icon {
-      margin-right: 10px; /* Space between icon and text */
-      font-size: 1.5em; /* Larger icon */
-      color: #fbc02d; /* Icon color */
+      margin-right: 10px;
     }
 
+    /* Title Styling */
+    .title {
+      margin-top: 150px;
+      font-size: 4.5em;
+      font-weight: 800;
+      color: #fbc02d;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      text-shadow: 0 6px 12px rgba(0, 0, 0, 0.7);
+    }
+
+    /* Search Container */
+    .search-container {
+      margin-top: 30px;
+      position: relative;
+      display: inline-block;
+    }
+
+    #searchInput {
+      width: 450px;
+      padding: 15px 50px 15px 20px;
+      font-size: 16px;
+      border: 2px solid #fbc02d;
+      border-radius: 30px;
+      background: #1e1e1e;
+      color: #e0e0e0;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      transition: border-color 0.3s ease;
+    }
+
+    #searchInput:focus {
+      border-color: #f9a825;
+    }
+
+    /* Game Grid */
     .grid {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 30px;
-      padding: 20px;
+      gap: 20px;
+      margin-top: 80px;
     }
 
     .abutton {
       width: 220px;
-      height: 320px; /* Ensure all buttons have the same height */
+      height: 280px;
       background-color: #2d2d34;
       border: none;
       border-radius: 15px;
@@ -109,7 +141,7 @@
       cursor: pointer;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       overflow: hidden;
-      text-align: left;
+      text-align: center;
       display: flex;
       flex-direction: column;
       position: relative;
@@ -118,116 +150,31 @@
     .abutton img {
       border-radius: 15px 15px 0 0;
       width: 100%;
-      height: 70%; /* Adjust the height to fit the button's height */
-      object-fit: cover; /* Ensure images cover the button area */
+      height: 70%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .abutton:hover img {
+      transform: scale(1.1);
     }
 
     .game-name {
       padding: 15px;
       font-weight: 600;
-      font-size: 1.2em;
+      font-size: 1.3em;
       color: #f1f1f1;
       background-color: #3f3f4f;
       position: relative;
       border-radius: 0 0 15px 15px;
-      flex-grow: 1; /* Make sure game name area takes remaining space */
       display: flex;
       align-items: center;
       justify-content: center;
     }
 
-    .new-badge, .broken-badge {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      color: #fff;
-      padding: 5px 10px;
-      border-radius: 10px;
-      font-size: 0.8em;
-      font-weight: bold;
-      transform: rotate(-10deg);
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-    }
-
-    .new-badge {
-      background-color: #ff0000; /* Red background for new badge */
-    }
-
-    .broken-badge {
-      background-color: #9c27b0; /* Purple background for broken badge */
-    }
-
-    .abutton:hover {
-      transform: scale(1.08);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-    }
-
-    footer {
-      background-color: #121212;
-      padding: 20px;
-      color: #fbc02d;
-      font-size: 0.9em;
-      text-align: center;
-      border-top: 2px solid #fbc02d;
-      margin-top: 40px;
-      position: relative;
-    }
-
-    .footer-content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .footer-logo {
-      width: 50px; /* Adjust size as needed */
-      margin-bottom: 10px;
-    }
-
-    .footer-text {
-      margin-bottom: 10px;
-    }
-
-    .footer-links a {
-      color: #fbc02d;
-      text-decoration: none;
-      margin: 0 10px;
-    }
-
-    .footer-links a:hover {
-      text-decoration: underline;
-    }
-
-    .social-links {
-      margin-top: 10px;
-    }
-
-    .social-icon {
-      color: #fbc02d;
-      font-size: 24px;
-      margin: 0 10px;
-      text-decoration: none;
-    }
-
-    .social-icon:hover {
-      color: #f9a825;
-    }
-
-    @media (max-width: 600px) {
-      #searchInput {
-        width: 80%;
-      }
-      .abutton {
-        width: 80%;
-      }
-      .warning-label {
-        width: 90%; /* Responsive width for smaller screens */
-      }
-    }
-
     /* Modal Styles */
     .modal {
-      display: none; /* Hidden by default */
+      display: none;
       position: fixed;
       z-index: 1000;
       left: 0;
@@ -235,14 +182,13 @@
       width: 100%;
       height: 100%;
       overflow: auto;
-      background-color: rgba(0,0,0,0.4); /* Black with opacity */
+      background-color: rgba(0, 0, 0, 0.6);
     }
 
     .modal-content {
       background-color: #2d2d34;
       margin: 15% auto;
-      padding: 20px;
-      border: 1px solid #888;
+      padding: 30px;
       width: 80%;
       max-width: 500px;
       border-radius: 10px;
@@ -250,18 +196,13 @@
       text-align: center;
     }
 
-    .modal-content h2 {
-      margin-top: 0;
-    }
-
     .modal-content button {
       background-color: #fbc02d;
       border: none;
       border-radius: 5px;
       color: #121212;
-      padding: 10px 20px;
+      padding: 12px 24px;
       font-size: 16px;
-      margin: 5px;
       cursor: pointer;
       transition: background-color 0.3s ease;
     }
@@ -270,34 +211,111 @@
       background-color: #f9a825;
     }
 
-    .modal-content #speechText {
+    /* Footer Styling */
+    footer {
+      background-color: #121212;
+      padding: 25px 0;
+      color: #fbc02d;
+      font-size: 0.9em;
+      text-align: center;
+      border-top: 2px solid #fbc02d;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .footer-logo {
+      width: 100px;
       margin-bottom: 15px;
-      font-size: 18px;
-      padding: 10px;
-      border-radius: 5px;
-      background-color: #1e1e1e;
-      border: 1px solid #fbc02d;
-      color: #e0e0e0;
+    }
+
+    .footer-links a {
+      color: #fbc02d;
+      text-decoration: none;
+      font-size: 1.1em;
+      padding: 8px 16px;
+      border: 2px solid #fbc02d;
+      border-radius: 8px;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      margin: 5px;
+    }
+
+    .footer-links a:hover {
+      background-color: #f9a825;
+      color: #121212;
+      transform: scale(1.05);
+    }
+
+    .social-links {
+      display: flex;
+      gap: 20px;
+      margin-top: 15px;
+    }
+
+    .social-icon {
+      color: #fbc02d;
+      font-size: 1.8em;
+      transition: color 0.3s ease;
+    }
+
+    .social-icon:hover {
+      color: #f9a825;
+    }
+
+    /* Media Queries */
+    @media (max-width: 600px) {
+      #searchInput {
+        width: 80%;
+      }
+
+      .abutton {
+        width: 80%;
+      }
+
+      .footer-logo {
+        width: 80px;
+      }
     }
   </style>
 </head>
 <body>
 
-  <div class="title">Nooble</div>
+  <header class="header">
+    <a href="#" class="logo">Nooble</a>
+    <div class="links">
+      <a href="#">Games</a>
+      <a href="#">Apps</a>
+      <a href="#">Movies</a>
+      <a href="#">Proxy</a>
+    </div>
+  </header>
 
-  <div class="search-container">
-    <input type="text" id="searchInput" placeholder="Search games..." oninput="searchGames()">
-    <i class="fas fa-search search-icon"></i>
-    <i class="fas fa-microphone speech-button" onclick="showWorkInProgressMessage()"></i>
-  </div>
+  <div class="title">Nooble</div>
 
   <div class="warning-label">
     <i class="fas fa-exclamation-triangle warning-icon"></i>
     <span>Certain games may not work on your school device due to hardware issues or school restrictions.</span>
   </div>
 
-  <div class="grid" id="gamesGrid"></div>
+  <div class="search-container">
+    <input type="text" id="searchInput" placeholder="Search games..." onkeyup="searchGames()">
+  </div>
 
+  <div class="grid" id="gamesGrid">
+    <!-- Game buttons will appear here -->
+  </div>
+
+  <!-- Modal for Speech Recognition -->
   <div id="speechModal" class="modal">
     <div class="modal-content">
       <h2>Speech Recognition</h2>
@@ -306,31 +324,21 @@
     </div>
   </div>
 
+  <!-- Footer -->
   <footer>
     <div class="footer-content">
       <img src="https://github.com/NoobleGames/NoobleGames.github.io/blob/main/Logo/Logo4.png?raw=true" alt="Nooble Logo" class="footer-logo">
-      <div class="footer-text">
-        Nooble Games - All Rights Reserved &copy; 2024
-      </div>
+      <div>Nooble Games - All Rights Reserved &copy; 2024</div>
       <div class="footer-links">
         <a href="https://forms.gle/F4acRa28NbfujS6QA">Request a Game</a>
         <a href="https://docs.google.com/spreadsheets/d/1gbCSYjr4j5DhWJ8ExT4mjzdFKhHxNEg_OGC3ySxPfWE/edit?usp=sharing">Game Request Status</a>
         <a href="/privacypolicy">Privacy Policy</a>
-        <a href="#" onclick="openBlankWithCurrentPage(); return false;">Open In About Blank</a>
       </div>
       <div class="social-links">
-        <a href="https://twitter.com/yourprofile" target="_blank" class="social-icon">
-          <i class="fab fa-twitter"></i>
-        </a>
-        <a href="https://facebook.com/yourprofile" target="_blank" class="social-icon">
-          <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="https://instagram.com/yourprofile" target="_blank" class="social-icon">
-          <i class="fab fa-instagram"></i>
-        </a>
-        <a href="https://youtube.com/yourchannel" target="_blank" class="social-icon">
-          <i class="fab fa-youtube"></i>
-        </a>
+        <a href="https://twitter.com/yourprofile" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+        <a href="https://facebook.com/yourprofile" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://instagram.com/yourprofile" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+        <a href="https://youtube.com/yourchannel" target="_blank" class="social-icon"><i class="fab fa-youtube"></i></a>
       </div>
     </div>
   </footer>
@@ -346,43 +354,18 @@
         .then(data => {
           const gamesGrid = document.getElementById('gamesGrid');
           const games = data.trim().split('\n');
+          games.sort((a, b) => a.split('|')[0].toLowerCase().localeCompare(b.split('|')[0].toLowerCase()));
 
-          // Sort the games alphabetically by name (the first element in each game array)
-          games.sort((a, b) => {
-            const nameA = a.split('|')[0].toLowerCase();
-            const nameB = b.split('|')[0].toLowerCase();
-            return nameA.localeCompare(nameB);
-          });
-
-          // Now create the game buttons for each sorted game
           games.forEach(game => {
             const [name, imageUrl, link] = game.split('|');
             const button = document.createElement('button');
             button.className = 'abutton';
             button.onclick = () => window.location.href = link;
-            button.innerHTML = `
-              <img src="${imageUrl}" alt="${name}">
-              <div class="game-name">${name}</div>
-            `;
+            button.innerHTML = `<img src="${imageUrl}" alt="${name}"><div class="game-name">${name}</div>`;
             gamesGrid.appendChild(button);
           });
         })
         .catch(error => console.error('Error fetching games:', error));
-    }
-
-    function searchGames() {
-      const input = document.getElementById('searchInput').value.toLowerCase();
-      const gameButtons = document.querySelectorAll('.abutton');
-
-      gameButtons.forEach(button => {
-        const gameName = button.querySelector('.game-name').textContent.toLowerCase();
-        button.style.display = gameName.includes(input) ? 'block' : 'none';
-      });
-    }
-
-    function showWorkInProgressMessage() {
-      const modal = document.getElementById('speechModal');
-      modal.style.display = 'block';
     }
 
     function closeModal() {
@@ -390,20 +373,20 @@
       modal.style.display = 'none';
     }
 
-    window.onclick = function(event) {
-      const modal = document.getElementById('speechModal');
-      if (event.target === modal) {
-        modal.style.display = 'none';
-      }
-    }
-
-    function openBlankWithCurrentPage() {
-      var newWindow = window.open('about:blank', '_blank');
-      newWindow.document.write(document.documentElement.outerHTML);
-      newWindow.document.close();
+    function searchGames() {
+      const query = document.getElementById('searchInput').value.toLowerCase();
+      const games = document.querySelectorAll('.abutton');
+      games.forEach(game => {
+        const gameName = game.querySelector('.game-name').textContent.toLowerCase();
+        if (gameName.includes(query)) {
+          game.style.display = 'block';
+        } else {
+          game.style.display = 'none';
+        }
+      });
     }
   </script>
+
 </body>
 </html>
-
 
