@@ -28,6 +28,54 @@
             overflow: hidden;
         }
 
+        /* Header Styling */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #121212;
+            padding: 20px 30px;
+            z-index: 10;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .logo {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: #fbc02d;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-decoration: none;
+        }
+
+        .links {
+            display: flex;
+            gap: 20px;
+            margin-left: auto;
+            margin-right: 30px;
+        }
+
+        .links a {
+            color: #fbc02d;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: bold;
+            padding: 12px 20px;
+            border: 2px solid #fbc02d;
+            border-radius: 8px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .links a:hover {
+            background-color: #f9a825;
+            color: #121212;
+            transform: scale(1.05);
+        }
+
         /* Firebase Particle Container */
         #firebaseParticleContainer {
             position: fixed;
@@ -39,14 +87,14 @@
         }
 
         /* Logo, Heading, and Button Styles */
-        .logo {
+        .logo-img {
             width: 18%;
             max-width: 200px;
             margin-bottom: 10px;
             transition: transform 0.4s ease;
         }
 
-        .logo:hover {
+        .logo-img:hover {
             transform: scale(1.05) rotate(5deg);
         }
 
@@ -111,7 +159,20 @@
 </head>
 <body>
     <div id="firebaseParticleContainer"></div>
-    <img src="Logo/Logo4.png" alt="Logo" class="logo">
+
+    <!-- Header Section -->
+    <header class="header">
+        <a href="#" class="logo">Nooble</a>
+        <div class="links">
+            <a href="/games">Games</a>
+            <a href="/apps">Apps</a>
+            <a href="/proxys">Proxy</a>
+            <a href="/movies">Movies</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <img src="Logo/Logo4.png" alt="Logo" class="logo-img">
     <h1 class="centered-heading">Nooble</h1>
     <h2 class="centered-heading2">The Best Unblocked Games Out There</h2>
     <div id="randomFact"></div>
