@@ -54,3 +54,4 @@ Jetpack Joyride |https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSBeu7XOF3
 PaintIt.io|https://github.com/NoobleGames/NoobleGames.github.io/blob/main/misc/images/th.jpeg?raw=true|./paintit.html
 Friday Night Funkin|https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtWSrt6m1Df9oOCJ6ieT3cEDBb7KDGEzsqcQ&s|./fridaynightfunkin.html
 Baldi's Basics|https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnR62qVq2w6O-eOpdqzC-93xpe2cFv_RVfTw&s|./baldisbasic.html
+Angry Birds|https://upload.wikimedia.org/wikipedia/en/thumb/2/2d/Angry_Birds_promo_art.png/220px-Angry_Birds_promo_art.png|./angrybirds.html
