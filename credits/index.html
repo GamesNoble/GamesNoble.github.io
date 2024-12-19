@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nooble | Credits</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to bottom right, #6b46c1, #9f7aea);
+            color: #ffffff;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 250px;
+            background: #4c3f9b;
+            padding: 30px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            box-shadow: 2px 0 8px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease;
+        }
+
+        .sidebar h1 {
+            color: #e9d8fd;
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .sidebar a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-size: 1.2rem;
+            padding: 10px 15px;
+            border-radius: 6px;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .sidebar a:hover {
+            background-color: #7f56d9;
+            color: #1e293b;
+        }
+
+        .main {
+            margin-left: 250px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 50px 20px;
+            overflow-y: auto;
+        }
+
+        .main h1 {
+            font-size: 3rem;
+            color: #f0e7ff;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .main p {
+            font-size: 1.2rem;
+            color: #d1d5db;
+            margin-bottom: 40px;
+        }
+
+        .credits {
+            width: 100%;
+            max-width: 1100px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .credits h2 {
+            font-size: 2rem;
+            color: #ff61a6;
+            margin-bottom: 15px;
+        }
+
+        .developer-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .developer-card {
+            background: #4c3f9b;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .developer-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+        }
+
+        .developer-card img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border: 3px solid #ff61a6;
+        }
+
+        .developer-card h3 {
+            font-size: 1.4rem;
+            color: #f0e7ff;
+            margin-bottom: 10px;
+        }
+
+        .developer-card p {
+            font-size: 1rem;
+            color: #d1d5db;
+            margin-bottom: 10px;
+        }
+
+        .developer-card .role {
+            font-weight: 600;
+            color: #ff61a6;
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 200px;
+            }
+
+            .main {
+                margin-left: 200px;
+            }
+
+            .main h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+
+            .sidebar h1 {
+                font-size: 1.5rem;
+            }
+
+            .sidebar a {
+                font-size: 1rem;
+            }
+
+            .main {
+                margin-left: 0;
+                padding: 20px;
+            }
+
+            .main h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h1>Nooble</h1>
+        <a href="/index.html">Home</a>
+        <a href="/games/">Games</a>
+        <a href="/proxy/">Proxy</a>
+        <a href="/movies/">Movies</a>
+        <a href="/apps/">Apps</a>
+    </div>
+
+    <div class="main">
+        <h1>Credits</h1>
+        <p>Meet the talented people behind Nooble:</p>
+
+        <div class="credits">
+            <h2>V1 Team</h2>
+            <p>The pioneers who started it all:</p>
+            <div class="developer-list">
+                <div class="developer-card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-OPUfIwklJ9FgwYMG6Q3-dQLmIy28bMKDvw&s" alt="ChipLitFire">
+                    <h3>ChipLitFire</h3>
+                    <p class="role">Creator & Main Developer</p>
+                    <p><em>Laying the foundation for Nooble's success.</em></p>
+                </div>
+                <div class="developer-card">
+                    <img src="https://wallpapers.com/images/hd/cute-blushing-boy-anime-discord-pfp-304ry32l6uz09ybd.jpg" alt="Skye">
+                    <h3>Skye</h3>
+                    <p class="role">Concept Artist</p>
+                    <p><em>Adding the first visual identity to Nooble.</em></p>
+                </div>
+            </div>
+
+            <h2>V2 Team</h2>
+            <p>The team that improved and expanded Nooble:</p>
+            <div class="developer-list">
+                <div class="developer-card">
+                    <img src="https://cdn.pfps.gg/pfps/5401-zillakami.png" alt="FrontyIsReal">
+                    <h3>FrontyIsReal</h3>
+                    <p class="role">Developer</p>
+                    <p><em>Innovating and troubleshooting during the growth phase.</em></p>
+                </div>
+                <div class="developer-card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-OPUfIwklJ9FgwYMG6Q3-dQLmIy28bMKDvw&s" alt="ChipLitFire">
+                    <h3>ChipLitFire</h3>
+                    <p class="role">Creator & Main Developer</p>
+                    <p><em>Continuing to lead Nooble forward.</em></p>
+                </div>
+                <div class="developer-card">
+                    <img src="https://wallpapers.com/images/hd/cute-blushing-boy-anime-discord-pfp-304ry32l6uz09ybd.jpg" alt="Skye">
+                    <h3>Skye</h3>
+                    <p class="role">Concept Artist</p>
+                    <p><em>Adding creative direction to the growing platform.</em></p>
+                </div>
+            </div>
+
+            <h2>V3 Team</h2>
+            <p>The current team ensuring Nooble's success:</p>
+            <div class="developer-list">
+                <div class="developer-card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsnFa6K00QYoJav6jZP6u2pzipeoiOFUSkEQ&s" alt="TheDevMarcus">
+                    <h3>TheDevMarcus</h3>
+                    <p class="role">Game Contributor</p>
+                    <p><em>Introducing exciting new games and features.</em></p>
+                </div>
+                <div class="developer-card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvVVKfYIcb-JS73VYv2SSLQxlva56fsoCH9g&s" alt="WokrFily">
+                    <h3>WokrFily</h3>
+                    <p class="role">Backend Developer</p>
+                    <p><em>Ensuring smooth operations and reliability.</em></p>
+                </div>
+                <div class="developer-card">
+                    <img src="https://cdn.pfps.gg/pfps/5401-zillakami.png" alt="FrontyIsReal">
+                    <h3>FrontyIsReal</h3>
+                    <p class="role">Developer</p>
+                    <p><em>Continuing to innovate and support the platform.</em></p>
+                </div>
+                <div class="developer-card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-OPUfIwklJ9FgwYMG6Q3-dQLmIy28bMKDvw&s" alt="ChipLitFire">
+                    <h3>ChipLitFire</h3>
+                    <p class="role">Creator & Main Developer</p>
+                    <p><em>Leading the team with vision and expertise.</em></p>
+                </div>
+                <div class="developer-card">
+                    <img src="https://wallpapers.com/images/hd/cute-blushing-boy-anime-discord-pfp-304ry32l6uz09ybd.jpg" alt="Skye">
+                    <h3>Skye</h3>
+                    <p class="role">Concept Artist</p>
+                    <p><em>Continuing to inspire with creative contributions.</em></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
