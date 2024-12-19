@@ -90,6 +90,12 @@
             color: #d1d5db;
         }
 
+        .error-message {
+            font-size: 1.5rem;
+            color: #ff0000;
+            margin-top: 20px;
+        }
+
         /* Search Bar */
         .search-bar {
             margin-bottom: 20px;
@@ -211,7 +217,7 @@
   <!-- Sidebar -->
   <div class="sidebar">
     <h1>Nooble</h1>
-    <a href="/index.html">Home</a> <!-- Home link added here -->
+    <a href="/index.html">Home</a>
     <a href="/games/">Games</a>
     <a href="/apps/">Apps</a>
     <a href="/movies/">Movies</a>
@@ -230,6 +236,7 @@
 
         <!-- Movie Grid -->
         <div class="movie-grid" id="movie-container"></div>
+        <div id="error-message" class="error-message" style="display: none;">Error loading movies. Please try again later.</div>
     </div>
 
     <!-- Movie Modal -->
@@ -242,6 +249,7 @@
         const apiKey = '9ecfd7e66acabc26453faf47ed14b140';
         const movieContainer = document.getElementById('movie-container');
         const searchBar = document.getElementById('search-bar');
+        const errorMessage = document.getElementById('error-message');
 
         function fetchMovies(query = '') {
             const url = query ?
@@ -249,9 +257,22 @@
                 `https://api.themoviedb.org/3/trending/all/week?api_key=${apiKey}&language=en-US`;
 
             fetch(url)
-                .then(response => response.json())
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Failed to fetch movies');
+                    }
+                    return response.json();
+                })
                 .then(data => {
                     movieContainer.innerHTML = '';
+                    errorMessage.style.display = 'none';
+
+                    if (data.results.length === 0) {
+                        errorMessage.textContent = 'No movies found. Try a different search.';
+                        errorMessage.style.display = 'block';
+                        return;
+                    }
+
                     data.results.forEach(item => {
                         const isMovie = item.media_type === 'movie';
                         const isTV = item.media_type === 'tv';
@@ -266,12 +287,17 @@
                                     <h4>${item.title || item.name}</h4>
                                     <div class="rating"><i class="fas fa-star"></i> ${item.vote_average.toFixed(1)}/10</div>
                                     <div class="release-date">${releaseYear}</div>
-                                    <a href="#" onclick="openMovie('${item.id}', '${isMovie ? 'movie' : 'tv'}', '${item.name}')">Watch Now</a>
+                                    <a href="#" onclick="openMovie('${item.id}', '${isMovie ? 'movie' : 'tv'}', '${item.title || item.name}')">Watch Now</a>
                                 </div>
                             `;
                             movieContainer.appendChild(movieElement);
                         }
                     });
+                })
+                .catch(error => {
+                    console.error('Error fetching movies:', error);
+                    errorMessage.textContent = 'Error loading movies. Please try again later.';
+                    errorMessage.style.display = 'block';
                 });
         }
 
@@ -279,7 +305,7 @@
             if (type === 'tv') {
                 const season = prompt(`Enter season number for "${title}":`);
                 const episode = prompt(`Enter episode number for season ${season}:`);
-                const url = `https://embed.su/embed/tv/${id}/${season}/${episode}
+                const url = `https://embed.su/embed/tv/${id}/${season}/${episode}`;
                 showMovieModal(url);
             } else if (type === 'movie') {
                 const url = `https://embed.su/embed/movie/${id}`;
