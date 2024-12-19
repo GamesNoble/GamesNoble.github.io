@@ -1,202 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
-<head> 
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nooble | 404 Not Found</title>
-    <meta name="description" content="Oops! The page you are looking for cannot be found. Explore other parts of Nooble Games.">
-    <meta name="keywords" content="404, Nooble Games, page not found, error, unblocked games">
-    <link rel="icon" href="Logo/Logo4.png" type="image/png">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Nooble | Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
-        /* Global Styles */
-        html, body {
-            height: 100%;
+        /* General Reset */
+        * {
             margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
             font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #0f0f0f, #121212);
-            color: #E0E0E0;
-            overflow: hidden;
+            background: radial-gradient(circle, #6b46c1, #9f7aea);
+            color: #ffffff;
+            height: 100vh;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
         }
 
-        /* Logo Styles */
-        .logo {
-            width: 20%; /* Responsive width */
-            max-width: 250px; /* Maximum width */
-            margin-bottom: 20px;
-            transition: transform 0.5s ease;
-        }
-
-        .logo:hover {
-            transform: scale(1.1) rotate(10deg);
-        }
-
-        /* GitHub Section Styles */
-        .github-section {
+        /* Sidebar */
+        .sidebar {
             position: fixed;
-            left: 10px;
-            bottom: 10px;
-            color: #E0E0E0;
-            text-align: center;
-            z-index: 1001;
-        }
-
-        .github-link {
-            text-decoration: none;
-            color: #E0E0E0;
-            font-size: 0.9em;
-        }
-
-        .github-logo {
-            font-size: 30px;
-            margin-top: 5px;
-            transition: color 0.3s, text-shadow 0.3s;
-        }
-
-        .github-link:hover .github-logo {
-            color: #E0E0E0;
-            text-shadow: 0 0 20px #FFFFFF;
-        }
-
-        /* Main Heading Styles */
-        .centered-heading {
-            color: #FFD700;
-            font-size: 4.5em;
-            margin: 10px 0;
-            font-weight: 700;
-            text-shadow: 2px 2px 20px rgba(255, 215, 0, 0.5);
-        }
-
-        .centered-heading2 {
-            color: #FFC107;
-            font-size: 2.5em;
-            margin: 10px 0;
-            font-weight: 500;
-            text-shadow: 2px 2px 10px rgba(255, 193, 7, 0.5);
-        }
-
-        /* Button Styles */
-        .button-container {
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 240px;
+            background: #4c3f9b;
+            padding: 25px;
             display: flex;
+            flex-direction: column;
+            gap: 20px;
+            box-shadow: 2px 0 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .sidebar h1 {
+            color: #e9d8fd;
+            font-size: 2rem;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .sidebar a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-size: 1.2rem;
+            padding: 12px 20px;
+            border-radius: 8px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .sidebar a:hover {
+            background-color: #7f56d9;
+            color: #1e293b;
+        }
+
+        /* Main Content */
+        .main {
+            margin-left: 240px;
+            display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            flex-wrap: nowrap;
-            gap: 20px;
-            margin: 20px auto;
-            padding: 20px;
-            max-width: 90%;
-            overflow: hidden;
+            height: 100vh;
+            text-align: center;
         }
 
-        .button {
-            background: linear-gradient(135deg, #FFD700, #FFC107);
-            color: #000;
+        .main h1 {
+            font-size: 4rem;
+            color: #f0e7ff;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .main p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            color: #d1d5db;
+        }
+
+        .btn-container {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 16px 30px;
+            font-size: 1.5rem;
+            color: #ffffff;
+            background: #7f56d9;
             border: none;
-            padding: 15px 20px;
-            font-size: 1.2em;
-            cursor: pointer;
-            border-radius: 30px;
-            transition: background 0.4s, transform 0.3s, box-shadow 0.3s;
+            border-radius: 50px; /* Rounded button */
             text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            box-shadow: 0px 4px 15px rgba(255, 215, 0, 0.4);
-            min-width: 120px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
         }
 
-        .button:hover {
-            background: linear-gradient(135deg, #FFC107, #FFD700);
-            transform: scale(1.05);
-            box-shadow: 0px 6px 20px rgba(255, 215, 0, 0.6);
+        .btn i {
+            margin-right: 10px;
         }
 
-        /* Sidebar toggle styles */
-        .sidebar-toggle {
-            position: absolute;
-            top: 10px;
-            right: 10px;
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            background-color: #6b46c1;
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .logo {
-                width: 30%;
-            }
-
-            .centered-heading {
-                font-size: 3.5em;
-            }
-
-            .centered-heading2 {
-                font-size: 2em;
-            }
-
-            .button {
-                padding: 10px 15px;
-                font-size: 1em;
-            }
+        /* Footer */
+        .footer {
+            margin-top: auto;
+            margin-left: 240px;
+            padding: 15px 20px;
+            background: #4c3f9b;
+            text-align: center;
+            color: #d1d5db;
         }
+
+        .footer a {
+            color: #c3b9f2;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .footer a:hover {
+            color: #7f56d9;
+        }
+
     </style>
 </head>
 <body>
-    <!-- GitHub Section -->
-    <div class="github-section">
-        <a href="https://github.com/NoobleGames/NoobleGames.github.io/" target="_blank" class="github-link">
-            <h2>Star us on GitHub</h2>
-            <i class="fab fa-github github-logo"></i>
-        </a>
-    </div>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h1>Nooble</h1>
+    <a href="/index.html">Home</a> <!-- Home link added here -->
+    <a href="/games/">Games</a>
+    <a href="/apps/">Apps</a>
+    <a href="/movies/">Movies</a>
+    <a href="/proxy/">Proxy</a>
+  </div>
 
     <!-- Main Content -->
-    <img src="https://github.com/NoobleGames/NoobleGames.github.io/blob/main/Logo/Logo4.png?raw=true" alt="Nooble Games Logo" class="logo">
-    <h1 class="centered-heading">404</h1>
-    <h2 class="centered-heading2">Oops! The page you are looking for is not available.</h2>
-
-    <!-- Button to redirect users back to the home page or other important pages -->
-    <div class="button-container">
-        <a href="/" class="button games">Go Home</a>
-        <a href="./games/" class="button games">Explore Games</a>
-        <a href="./apps/" class="button apps">Apps</a>
-        <a href="./proxys/" class="button proxys">Proxy</a>
-        <a href="./movies/" class="button movies">Movies</a>
+    <div class="main">
+        <h1>404 Not Found.</h1>
+        <p>Oops! The page you are looking for is not available.</p>
+        <div class="btn-container">
+            <a href="/games/" class="btn"><i class="fas fa-gamepad"></i>Games</a>
+            <a href="/proxy/" class="btn"><i class="fas fa-shield-alt"></i>Proxy</a>
+            <a href="/movies/" class="btn"><i class="fas fa-film"></i>Movies</a>
+            <a href="/apps/" class="btn"><i class="fas fa-mobile-alt"></i>Apps</a>
+        </div>
     </div>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const randomFactContainer = document.createElement('div');
-            randomFactContainer.id = "randomFact";
-            document.body.appendChild(randomFactContainer);
-
-            const randomFacts = [
-                "Looks like you've reached a dead end. 🛑",
-                "Did you take a wrong turn? 🤔",
-                "Don't worry, this page is just hiding. 👀",
-                "Oops! This page doesn't exist. 🚫",
-                "The page you were looking for has vanished. 😱",
-                "Lost? Try another page. 🔍",
-                "This page took a vacation. 🌴",
-                "This page is still under construction. 🚧"
-            ];
-
-            function getRandomFact() {
-                const randomIndex = Math.floor(Math.random() * randomFacts.length);
-                return randomFacts[randomIndex];
-            }
-
-            function displayRandomFact() {
-                const fact = getRandomFact();
-                randomFactContainer.textContent = fact;
-            }
-
-            displayRandomFact();
-        });
-    </script>
+    <!-- Footer -->
+    <div class="footer">
+        <p>Developed by Blume | Founded by Chip Hill</p>
+        <a href="https://docs.google.com/spreadsheets/d/1gbCSYjr4j5DhWJ8ExT4mjzdFKhHxNEg_OGC3ySxPfWE/edit?usp=sharing">Nooble Request Status</a>
+        <a href="https://forms.gle/KpZkYLaMh2V9WCVN9">Request App Or Game</a>
+        <a href="/partners">Partners</a>
+        <a href="/credits">Credits</a>
+    </div>
 </body>
 </html>
 
