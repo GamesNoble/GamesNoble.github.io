@@ -1,205 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NOOBLE | Movies</title>
-    <link rel="icon" href="https://github.com/NoobleGames/NoobleGames.github.io/blob/main/Logo/Logo4.png?raw=true" type="image/png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Nooble | Movies</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
         /* General Reset */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
         }
 
         body {
-            background: #000;
-            color: #fff;
+            font-family: 'Poppins', sans-serif;
+            background: radial-gradient(circle, #6b46c1, #9f7aea);
+            color: #ffffff;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
             font-size: 16px;
-            line-height: 1.6;
-            padding: 0;
-            overflow-x: hidden;
-            margin-top: 0;
+            line-height: 1.5;
         }
 
-        /* Header Styling */
-        .header {
+        /* Sidebar */
+        .sidebar {
             position: fixed;
             top: 0;
             left: 0;
-            width: 100%;
-            background-color: #121212;
-            padding: 15px 30px;
+            height: 100%;
+            width: 240px;
+            background: #4c3f9b;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            box-shadow: 2px 0 8px rgba(0, 0, 0, 0.5);
             z-index: 10;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+            transition: transform 0.3s ease;
         }
 
-        .logo {
-            font-size: 2em;
-            font-weight: 700;
-            color: #fbc02d;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            text-decoration: none;
-        }
-
-        .links {
-            display: flex;
-            gap: 25px;
-            margin-left: auto;
-            margin-right: 40px;
-        }
-
-        .links a {
-            color: #fbc02d;
-            text-decoration: none;
-            font-size: 1.2em;
-            font-weight: bold;
-            padding: 12px 20px;
-            border: 2px solid #fbc02d;
-            border-radius: 8px;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
-
-        .links a:hover {
-            background-color: #f9a825;
-            color: #121212;
-            transform: scale(1.1);
-        }
-
-        /* Heading Styling */
-        h1 {
-            font-size: 3.5em;
-            font-weight: bold;
-            color: #fbc02d;
+        .sidebar h1 {
+            color: #e9d8fd;
+            font-size: 2rem;
+            margin-bottom: 30px;
             text-align: center;
-            margin-top: 120px;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            margin-bottom: 60px;
-            animation: fadeIn 2s ease-in-out;
+        }
+
+        .sidebar a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-size: 1.2rem;
+            padding: 12px 20px;
+            border-radius: 8px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .sidebar a:hover {
+            background-color: #7f56d9;
+            color: #1e293b;
+        }
+
+        /* Main Content */
+        .main {
+            margin-left: 240px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            height: 100%;
+            padding-top: 50px;
+            text-align: center;
+            overflow-y: auto;
+            transition: margin-left 0.3s ease;
+        }
+
+        .main h1 {
+            font-size: 4rem;
+            color: #f0e7ff;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .main p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            color: #d1d5db;
         }
 
         /* Search Bar */
-        #search-bar {
-            width: 80%;
-            max-width: 650px;
-            padding: 15px 20px;
-            margin: 0 auto 50px;
-            font-size: 1.2em;
-            border-radius: 50px;
-            border: 2px solid #333;
-            background-color: #333;
-            color: #fff;
-            outline: none;
-            display: block;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+        .search-bar {
+            margin-bottom: 20px;
+            width: 100%;
+            max-width: 450px;
+            display: flex;
+            justify-content: center;
+            padding: 0 20px;
         }
 
-        #search-bar:focus {
-            border-color: #fbc02d;
-            box-shadow: 0 0 10px rgba(251, 192, 45, 0.6);
+        .search-bar input {
+            width: 100%;
+            padding: 12px 20px;
+            border-radius: 30px;
+            border: 1px solid #ccc;
+            font-size: 1.1rem;
+            color: #333;
+            transition: border-color 0.3s ease;
+        }
+
+        .search-bar input:focus {
+            outline: none;
+            border-color: #7f56d9;
         }
 
         /* Movie Grid */
-        #movie-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        .movie-grid {
+            display: flex;
+            flex-wrap: wrap;
             gap: 30px;
-            width: 100%;
-            max-width: 1400px;
-            margin: 0 auto;
-            opacity: 0;
-            animation: fadeIn 1.5s forwards ease-in-out;
+            justify-content: center;
+            margin-top: 50px;
+            transition: transform 0.3s ease;
         }
 
-        /* Movie Card */
         .movie-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 15px;
+            width: 240px;
+            background-color: #7f56d9;
+            padding: 10px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             cursor: pointer;
-            background-color: #1e1e1e;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
-        }
-
-        .movie-item:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.9);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            position: relative;
         }
 
         .movie-item img {
             width: 100%;
-            height: 100%;
+            height: 320px;
             object-fit: cover;
-            transition: opacity 0.3s ease;
+            border-radius: 8px;
+            margin-bottom: 10px;
         }
 
         .movie-info {
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.85);
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            opacity: 0;
-            transition: opacity 0.3s;
-            border-radius: 0 0 15px 15px;
-        }
-
-        .movie-item:hover .movie-info {
-            opacity: 1;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 8px;
         }
 
         .movie-info h4 {
-            font-size: 1.4em;
-            margin-bottom: 10px;
-            color: #fff;
-            font-weight: 600;
-            text-transform: capitalize;
-        }
-
-        .movie-info .rating {
-            font-size: 1.2em;
-            color: #ffd700;
+            font-size: 1.1rem;
+            color: #ffffff;
             margin-bottom: 10px;
         }
 
-        .movie-info .release-date {
-            font-size: 1em;
-            color: #ddd;
-            margin-bottom: 15px;
+        .movie-info .rating, .movie-info .release-date {
+            font-size: 0.9rem;
+            color: #ffffff;
         }
 
         .movie-info a {
-            margin-top: 15px;
-            padding: 12px 25px;
-            background-color: #fbc02d;
-            color: #121212;
-            font-size: 1.1em;
-            font-weight: 600;
-            border-radius: 25px;
+            color: #ffffff;
             text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            display: inline-block;
-            transition: background-color 0.3s ease;
+            margin-top: 10px;
+            font-weight: 600;
         }
 
-        .movie-info a:hover {
-            background-color: #f9a825;
+        .movie-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
         }
 
-        /* Modal */
+        /* Movie Modal */
         #movie-modal {
             display: none;
             position: fixed;
@@ -207,76 +185,54 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.8);
+            background-color: rgba(0, 0, 0, 0.7);
             justify-content: center;
             align-items: center;
-            z-index: 1000;
-            animation: fadeInModal 0.4s ease-in-out;
+            z-index: 20;
         }
 
-        #movie-modal iframe {
+        #movie-frame {
             width: 80%;
             height: 80%;
-            border-radius: 20px;
-            border: none;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
         }
 
-        #movie-modal .close {
+        .close {
             position: absolute;
             top: 20px;
             right: 20px;
-            font-size: 2.5em;
-            color: white;
+            color: #fff;
+            font-size: 2rem;
             cursor: pointer;
-            transition: color 0.3s;
-        }
-
-        #movie-modal .close:hover {
-            color: #fbc02d;
-        }
-
-        /* Fade In Animation */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
-        }
-
-        @keyframes fadeInModal {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
         }
     </style>
 </head>
-
 <body>
-    <!-- Header Section -->
-  <header class="header">
-    <a href="https://nooblegames.github.io" class="logo">Nooble</a>
-    <div class="links">
-      <a href="https://nooblegames.github.io/games">Games</a>
-      <a href="https://nooblegames.github.io/apps">Apps</a>
-      <a href="#">Movies</a>
-      <a href="https://nooblegames.github.io/proxys/">Proxy</a>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h1>Nooble</h1>
+        <a href="#">Home</a>
+        <a href="#">Games</a>
+        <a href="#">Proxy</a>
+        <a href="#">Movies</a>
+        <a href="#">App</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main">
+        <h1>Movies</h1>
+        <p>Explore the latest trending movies and TV shows!</p>
+
+        <!-- Search Bar -->
+        <div class="search-bar">
+            <input type="text" id="search-bar" placeholder="Search Movies..." oninput="searchMovies()">
         </div>
-    </header>
 
-    <h1>Movies & TV Shows</h1>
+        <!-- Movie Grid -->
+        <div class="movie-grid" id="movie-container"></div>
+    </div>
 
-    <input type="text" id="search-bar" placeholder="Search Movies or TV Shows..." oninput="searchMovies()">
-
-    <div id="movie-container"></div>
-
+    <!-- Movie Modal -->
     <div id="movie-modal">
         <span class="close" onclick="closeMovieModal()">&times;</span>
         <iframe id="movie-frame" src="" frameborder="0" allowfullscreen></iframe>
@@ -351,6 +307,4 @@
         fetchMovies();
     </script>
 </body>
-
 </html>
-
