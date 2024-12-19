@@ -6,7 +6,7 @@
   <title>Nooble Proxy</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    /* General Styles */
+    /* General Reset */
     * {
       margin: 0;
       padding: 0;
@@ -15,166 +15,131 @@
 
     body {
       font-family: 'Poppins', Arial, sans-serif;
-      background: linear-gradient(135deg, #131313, #1a1a1a);
+      background: radial-gradient(circle, #6b46c1, #9f7aea);
       color: #fff;
+      height: 100%;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      overflow: hidden;
-      animation: fadeIn 1.5s ease-in-out;
+      font-size: 16px;
+      line-height: 1.5;
     }
 
-    @keyframes fadeIn {
-      0% { opacity: 0; }
-      100% { opacity: 1; }
-    }
-
-    /* Header */
-    header {
-      position: absolute;
+    /* Sidebar */
+    .sidebar {
+      position: fixed;
       top: 0;
-      width: 100%;
-      background: rgba(0, 0, 0, 0.85);
-      padding: 20px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.7);
-      z-index: 1000;
-      border-bottom: 2px solid #ff5722;
-    }
-
-    .logo {
-      font-size: 26px;
-      font-weight: 600;
-      color: #ff5722;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-    }
-
-    .menu {
-      display: flex;
-      gap: 35px;
-    }
-
-    .menu a {
-      text-decoration: none;
-      font-size: 18px;
-      color: rgba(255, 255, 255, 0.8);
-      padding: 8px 20px;
-      border-radius: 4px;
-      transition: background 0.3s ease, color 0.3s ease;
-      position: relative;
-    }
-
-    .menu a:hover {
-      background: rgba(255, 255, 255, 0.1);
-      color: #ff5722;
-    }
-
-    .menu a::after {
-      content: '';
-      position: absolute;
-      bottom: -4px;
-      left: 50%;
-      width: 0;
-      height: 2px;
-      background-color: #ff5722;
-      transition: width 0.3s ease, left 0.3s ease;
-      transform: translateX(-50%);
-    }
-
-    .menu a:hover::after {
-      width: 100%;
       left: 0;
+      height: 100%;
+      width: 240px;
+      background: #4c3f9b;
+      padding: 25px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      box-shadow: 2px 0 8px rgba(0, 0, 0, 0.5);
+      z-index: 10;
+    }
+
+    .sidebar h1 {
+      color: #e9d8fd;
+      font-size: 2rem;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .sidebar a {
+      color: #cbd5e1;
+      text-decoration: none;
+      font-size: 1.2rem;
+      padding: 12px 20px;
+      border-radius: 8px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .sidebar a:hover {
+      background-color: #7f56d9;
+      color: #1e293b;
     }
 
     /* Main Content */
-    .container {
+    .main {
+      margin-left: 240px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      height: 100%;
+      padding-top: 50px;
       text-align: center;
-      margin-top: 150px;
-      animation: slideIn 1s ease-in-out;
+      overflow-y: auto;
     }
 
-    @keyframes slideIn {
-      0% { opacity: 0; transform: translateY(50px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-
-    .container h1 {
-      font-size: 70px;
-      font-weight: 600;
-      letter-spacing: 2px;
-      color: #ff5722;
+    .main h1 {
+      font-size: 4rem;
+      color: #f0e7ff;
       margin-bottom: 20px;
+      font-weight: 600;
     }
 
-    .container p {
-      font-size: 20px;
-      color: rgba(255, 255, 255, 0.7);
-      margin-bottom: 40px;
-      max-width: 650px;
-      margin-left: auto;
-      margin-right: auto;
+    .main p {
+      font-size: 1.3rem;
+      margin-bottom: 30px;
+      color: #d1d5db;
     }
 
     /* Search Bar */
     .search-bar {
+      margin-bottom: 20px;
+      width: 100%;
+      max-width: 450px;
       display: flex;
       justify-content: center;
-      align-items: center;
-      width: 100%;
-      max-width: 750px;
-      background: #222;
-      height: 55px;
-      border-radius: 40px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
-      overflow: hidden;
-      transition: all 0.3s ease-in-out;
-      margin-bottom: 35px;
+      padding: 0 20px;
     }
 
     .search-bar input {
-      flex: 1;
-      height: 100%;
-      padding: 0 22px;
-      border: none;
-      outline: none;
-      background: none;
-      color: white;
-      font-size: 18px;
-      border-radius: 40px;
-      transition: background 0.3s ease, transform 0.3s ease;
-    }
-
-    .search-bar input::placeholder {
-      color: rgba(255, 255, 255, 0.7);
+      width: 100%;
+      padding: 12px 20px;
+      border-radius: 30px;
+      border: 1px solid #ccc;
+      font-size: 1.1rem;
+      color: #333;
+      transition: border-color 0.3s ease;
     }
 
     .search-bar input:focus {
-      background: rgba(255, 255, 255, 0.1);
-      transform: scale(1.05);
+      outline: none;
+      border-color: #7f56d9;
     }
 
+    /* Enhanced Go Button */
     .search-bar button {
       height: 100%;
       width: 120px;
       border: none;
       outline: none;
-      background: #ff5722;
+      background: #7f56d9;  /* Use a vibrant color */
       color: white;
-      font-size: 18px;
+      font-size: 1.2rem;
       font-weight: 600;
       cursor: pointer;
-      transition: background 0.3s ease, transform 0.2s ease;
       border-radius: 40px;
+      transition: all 0.3s ease;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add subtle shadow */
     }
 
     .search-bar button:hover {
-      background: #ff4500;
-      transform: scale(1.1);
+      background: #5a3e9d;  /* Slightly darker shade on hover */
+      transform: scale(1.05);  /* Slightly grow the button */
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);  /* Increase shadow on hover */
+    }
+
+    .search-bar button:active {
+      background: #4a3277;  /* Darker color when clicked */
+      transform: scale(1);  /* Reset scale on active state */
     }
 
     /* Error & Loading Messages */
@@ -193,75 +158,83 @@
       color: #ff5722;
     }
 
-    /* Hills Background */
-    .hills {
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      height: 20%;
-      background: linear-gradient(to top, #121212, #181818);
-      clip-path: polygon(0% 70%, 25% 60%, 50% 80%, 75% 55%, 100% 70%, 100% 100%, 0% 100%);
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+      .sidebar {
+        width: 220px;
+      }
+
+      .main {
+        margin-left: 220px;
+      }
     }
 
-    /* Footer */
-    .footer {
-      position: absolute;
-      bottom: 20px;
-      width: 100%;
-      text-align: center;
-      font-size: 14px;
-      color: rgba(255, 255, 255, 0.4);
-      transition: color 0.3s ease;
-    }
-
-    .footer:hover {
-      color: rgba(255, 255, 255, 0.7);
-    }
-
-    /* Responsive Styles */
     @media (max-width: 768px) {
-      .container h1 {
-        font-size: 45px;
+      .sidebar {
+        width: 200px;
       }
 
-      .search-bar {
-        width: 85%;
+      .main {
+        margin-left: 200px;
+        padding: 20px;
       }
 
-      .menu {
-        display: none;
+      .main h1 {
+        font-size: 3rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 15px;
       }
 
-      .footer {
-        font-size: 12px;
+      .sidebar h1 {
+        font-size: 1.5rem;
+      }
+
+      .sidebar a {
+        font-size: 1rem;
+      }
+
+      .main {
+        margin-left: 0;
+        padding: 10px;
+      }
+
+      .main h1 {
+        font-size: 2.5rem;
       }
     }
   </style>
 </head>
 <body>
-  <header>
-    <div class="logo">NOOBLE PROXY</div>
-    <div class="menu">
-      <a href="/games">Games</a>
-      <a href="/apps">Apps</a>
-      <a href="/movies">Movies</a>
-    </div>
-  </header>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h1>Nooble</h1>
+    <a href="/games">Games</a>
+    <a href="/apps">Apps</a>
+    <a href="/movies">Movies</a>
+    <a href="/proxy">Proxy</a>
+  </div>
 
-  <div class="container">
+  <!-- Main Content -->
+  <div class="main">
     <h1>Nooble Proxy</h1>
     <p>Fast and secure browsing. Enter a URL to get started.</p>
+
+    <!-- Search Bar -->
     <div class="search-bar">
       <input type="text" id="searchBar" placeholder="Enter Link (e.g., Tiktok.com)">
       <button onclick="handleSearch()">Go</button>
     </div>
+    
     <div class="loading" id="loading">Loading...</div>
     <div class="error" id="error">URL does not exist or is not correct. Please try again!</div>
   </div>
-
-  <div class="hills"></div>
-
-  <div class="footer">NoobleGames on GitHub</div>
 
   <script>
     function handleSearch() {
@@ -300,3 +273,4 @@
   </script>
 </body>
 </html>
+
