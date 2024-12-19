@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nooble | Partners</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: radial-gradient(circle, #6b46c1, #9f7aea);
+            color: #ffffff;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 240px;
+            background: #4c3f9b;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            box-shadow: 2px 0 8px rgba(0, 0, 0, 0.5);
+            z-index: 10;
+            transition: transform 0.3s ease;
+        }
+
+        .sidebar h1 {
+            color: #e9d8fd;
+            font-size: 2rem;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .sidebar a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-size: 1.2rem;
+            padding: 12px 20px;
+            border-radius: 8px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .sidebar a:hover {
+            background-color: #7f56d9;
+            color: #1e293b;
+        }
+
+        /* Main Content */
+        .main {
+            margin-left: 240px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            height: 100%;
+            padding-top: 50px;
+            text-align: center;
+            overflow-y: auto;
+            transition: margin-left 0.3s ease;
+        }
+
+        .main h1 {
+            font-size: 4rem;
+            color: #f0e7ff;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .main p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            color: #d1d5db;
+        }
+
+        /* Coming Soon Message */
+        .coming-soon {
+            font-size: 2rem;
+            color: #f0e7ff;
+            font-weight: 600;
+            margin-top: 50px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .sidebar {
+                width: 220px;
+            }
+
+            .main {
+                margin-left: 220px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 200px;
+            }
+
+            .main {
+                margin-left: 200px;
+                padding: 20px;
+            }
+
+            .main h1 {
+                font-size: 3rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+                padding: 15px;
+            }
+
+            .sidebar h1 {
+                font-size: 1.5rem;
+            }
+
+            .sidebar a {
+                font-size: 1rem;
+            }
+
+            .main {
+                margin-left: 0;
+                padding: 10px;
+            }
+
+            .main h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h1>Nooble</h1>
+        <a href="/">Home</a>
+        <a href="/games">Games</a>
+        <a href="/proxy">Proxy</a>
+        <a href="/movies">Movies</a>
+        <a href="/apps">Apps</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main">
+        <h1>Partners</h1>
+        <p>Stay tuned, partners are coming soon!</p>
+
+        <!-- Coming Soon Message -->
+        <div class="coming-soon">
+            Partners Coming Soon
+        </div>
+    </div>
+</body>
+</html>
