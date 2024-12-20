@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nooble | Links</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: radial-gradient(circle, #6b46c1, #9f7aea);
+            color: #ffffff;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 240px;
+            background: #4c3f9b;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            box-shadow: 2px 0 8px rgba(0, 0, 0, 0.5);
+            z-index: 10;
+            transition: transform 0.3s ease;
+        }
+
+        .sidebar h1 {
+            color: #e9d8fd;
+            font-size: 2rem;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .sidebar a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-size: 1.2rem;
+            padding: 12px 20px;
+            border-radius: 8px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .sidebar a:hover {
+            background-color: #7f56d9;
+            color: #1e293b;
+        }
+
+        /* Main Content */
+        .main {
+            margin-left: 240px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            height: 100%;
+            padding-top: 50px;
+            text-align: center;
+            overflow-y: auto;
+            transition: margin-left 0.3s ease;
+        }
+
+        .main h1 {
+            font-size: 3rem;
+            color: #f0e7ff;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .links {
+            list-style: none;
+            margin-top: 20px;
+            padding: 0;
+        }
+
+        .links li {
+            margin: 10px 0;
+        }
+
+        .links a {
+            color: #f0e7ff;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+
+        .links a:hover {
+            color: #c4b5fd;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 200px;
+            }
+
+            .main {
+                margin-left: 200px;
+                padding: 20px;
+            }
+
+            .main h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+                padding: 15px;
+            }
+
+            .main {
+                margin-left: 0;
+                padding: 10px;
+            }
+
+            .main h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h1>Nooble</h1>
+        <a href="/index.html">Home</a>
+        <a href="/games/">Games</a>
+        <a href="/apps/">Apps</a>
+        <a href="/movies/">Movies</a>
+        <a href="/proxy/">Proxy</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main">
+        <h1>Links</h1>
+        <ul class="links">
+            <li><a href="https://chipistheowner.vercel.app/" target="_blank">Chip is the Owner</a></li>
+            <li><a href="https://alexistheowner.vercel.app" target="_blank">Alex is the Owner</a></li>
+            <li><a href="https://738749385-33248303-3234324.vercel.app" target="_blank">Project Page</a></li>
+            <li><a href="https://isuckedthetipofiteverybodyknows.netlify.app/" target="_blank">Fun Page</a></li>
+            <li><a href="https://makemathfunagain.netlify.app/" target="_blank">Make Math Fun Again</a></li>
+            <li><a href="https://carsonistheowner.vercel.app" target="_blank">Carson is the Owner</a></li>
+            <li><a href="https://asheristheowner.vercel.app/" target="_blank">Asher is the Owner</a></li>
+        </ul>
+    </div>
+</body>
+</html>
