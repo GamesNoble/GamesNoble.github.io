@@ -16,9 +16,8 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            background: radial-gradient(circle, #6b46c1, #9f7aea);
+            background: linear-gradient(135deg, #6b46c1, #9f7aea);
             color: #ffffff;
-            height: 100%;
             display: flex;
             flex-direction: column;
             font-size: 16px;
@@ -31,20 +30,20 @@
             top: 0;
             left: 0;
             height: 100%;
-            width: 240px;
+            width: 260px;
             background: #4c3f9b;
-            padding: 25px;
+            padding: 20px;
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 15px;
             box-shadow: 2px 0 8px rgba(0, 0, 0, 0.5);
-            z-index: 10;
+            z-index: 1000;
             transition: transform 0.3s ease;
         }
 
         .sidebar h1 {
             color: #e9d8fd;
-            font-size: 2rem;
+            font-size: 2.2rem;
             margin-bottom: 30px;
             text-align: center;
         }
@@ -56,6 +55,9 @@
             padding: 12px 20px;
             border-radius: 8px;
             transition: background-color 0.3s ease, color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
         .sidebar a:hover {
@@ -65,37 +67,85 @@
 
         /* Main Content */
         .main {
-            margin-left: 240px;
+            margin-left: 260px;
             display: flex;
             flex-direction: column;
-            justify-content: flex-start;
             align-items: center;
-            height: 100%;
-            padding-top: 50px;
+            padding: 50px 20px;
             text-align: center;
             overflow-y: auto;
+            height: 100vh;
             transition: margin-left 0.3s ease;
         }
 
         .main h1 {
-            font-size: 4rem;
+            font-size: 3.5rem;
             color: #f0e7ff;
             margin-bottom: 20px;
             font-weight: 600;
+            text-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
         }
 
         .main p {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             margin-bottom: 30px;
             color: #d1d5db;
         }
 
-        /* Coming Soon Message */
-        .coming-soon {
-            font-size: 2rem;
+        /* Partners Section */
+        .partners {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        .partner-box {
+            background: #7f56d9;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .partner-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        .partner-box img {
+            width: 120px;
+            height: auto;
+            margin-bottom: 15px;
+            border-radius: 50%;
+        }
+
+        .partner-box h3 {
+            font-size: 1.7rem;
             color: #f0e7ff;
+            margin-bottom: 10px;
+        }
+
+        .partner-box p {
+            font-size: 1rem;
+            color: #d1d5db;
+            margin-bottom: 15px;
+        }
+
+        .partner-box a {
+            text-decoration: none;
+            color: #ffffff;
             font-weight: 600;
-            margin-top: 50px;
+            padding: 10px 15px;
+            background: #6b46c1;
+            border-radius: 6px;
+            transition: background-color 0.3s ease;
+        }
+
+        .partner-box a:hover {
+            background-color: #9f7aea;
         }
 
         /* Responsive Design */
@@ -120,7 +170,7 @@
             }
 
             .main h1 {
-                font-size: 3rem;
+                font-size: 2.5rem;
             }
         }
 
@@ -133,7 +183,7 @@
             }
 
             .sidebar h1 {
-                font-size: 1.5rem;
+                font-size: 1.8rem;
             }
 
             .sidebar a {
@@ -146,7 +196,11 @@
             }
 
             .main h1 {
-                font-size: 2.5rem;
+                font-size: 2.2rem;
+            }
+
+            .partners {
+                width: 100%;
             }
         }
     </style>
@@ -155,21 +209,27 @@
     <!-- Sidebar -->
     <div class="sidebar">
         <h1>Nooble</h1>
-    <a href="/index.html">Home</a> <!-- Home link added here -->
-    <a href="/games/">Games</a>
-    <a href="/apps/">Apps</a>
-    <a href="/movies/">Movies</a>
-    <a href="/proxy/">Proxy</a>
+        <a href="/index.html"><i class="fas fa-home"></i> Home</a>
+        <a href="/games/"><i class="fas fa-gamepad"></i> Games</a>
+        <a href="/apps/"><i class="fas fa-mobile-alt"></i> Apps</a>
+        <a href="/movies/"><i class="fas fa-film"></i> Movies</a>
+        <a href="/proxy/"><i class="fas fa-globe"></i> Proxy</a>
     </div>
 
     <!-- Main Content -->
     <div class="main">
-        <h1>Partners</h1>
-        <p>Stay tuned, partners are coming soon!</p>
+        <h1>Our Partners</h1>
+        <p>We collaborate with amazing partners to bring you the best experiences.</p>
 
-        <!-- Coming Soon Message -->
-        <div class="coming-soon">
-            Partners Coming Soon
+        <!-- Partners Section -->
+        <div class="partners">
+            <div class="partner-box">
+                <a href="https://genztranslator.github.io/" target="_blank">
+                    <img src="https://github.com/NoobleGames/NoobleGames.github.io/blob/main/misc/images/Screenshot%202024-12-20%209.38.27%20AM.png?raw=true" alt="Gen Z Translator Logo">
+                    <h3>Gen Z Translator</h3>
+                    <p>Developed by our founder, this tool bridges generational language gaps.</p>
+                </a>
+            </div>
         </div>
     </div>
 </body>
