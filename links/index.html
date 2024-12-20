@@ -85,24 +85,31 @@
         }
 
         .links {
-            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
             margin-top: 20px;
             padding: 0;
         }
 
-        .links li {
-            margin: 10px 0;
-        }
-
         .links a {
+            display: block;
+            width: 200px;
+            padding: 20px;
+            background: #6b46c1;
             color: #f0e7ff;
             text-decoration: none;
             font-size: 1.2rem;
-            transition: color 0.3s ease;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, background-color 0.3s ease;
         }
 
         .links a:hover {
-            color: #c4b5fd;
+            transform: scale(1.05);
+            background: #7f56d9;
         }
 
         /* Responsive Design */
@@ -154,15 +161,16 @@
     <!-- Main Content -->
     <div class="main">
         <h1>Links</h1>
-        <ul class="links">
-            <li><a href="https://chipistheowner.vercel.app/" target="_blank">Chip is the Owner</a></li>
-            <li><a href="https://alexistheowner.vercel.app" target="_blank">Alex is the Owner</a></li>
-            <li><a href="https://738749385-33248303-3234324.vercel.app" target="_blank">Project Page</a></li>
-            <li><a href="https://isuckedthetipofiteverybodyknows.netlify.app/" target="_blank">Fun Page</a></li>
-            <li><a href="https://makemathfunagain.netlify.app/" target="_blank">Make Math Fun Again</a></li>
-            <li><a href="https://carsonistheowner.vercel.app" target="_blank">Carson is the Owner</a></li>
-            <li><a href="https://asheristheowner.vercel.app/" target="_blank">Asher is the Owner</a></li>
-        </ul>
+        <div class="links">
+            <a href="https://chipistheowner.vercel.app/" target="_blank">Link 1 (Nooble)</a>
+            <a href="https://alexistheowner.vercel.app" target="_blank">Link 2 (Nooble)</a>
+            <a href="https://738749385-33248303-3234324.vercel.app" target="_blank">Link 3 (Nooble)</a>
+            <a href="https://isuckedthetipofiteverybodyknows.netlify.app/" target="_blank">Link 4 (Nooble)</a>
+            <a href="https://makemathfunagain.netlify.app/" target="_blank">Link 5 (Nooble)</a>
+            <a href="https://carsonistheowner.vercel.app" target="_blank">Link 6 (Nooble)</a>
+            <a href="https://asheristheowner.vercel.app/" target="_blank">Link 7 (Nooble)</a>
+        </div>
     </div>
 </body>
 </html>
+
