@@ -14,14 +14,12 @@
     }
 
     body {
-      font-family: 'Poppins', Arial, sans-serif;
-      background: radial-gradient(circle, #6b46c1, #9f7aea);
+      font-family: 'Poppins', sans-serif;
+      background: radial-gradient(circle, #333, #000); /* Black gradient background */
       color: #fff;
-      height: 100%;
+      height: 100vh;
       display: flex;
       flex-direction: column;
-      font-size: 16px;
-      line-height: 1.5;
     }
 
     /* Sidebar */
@@ -31,24 +29,23 @@
       left: 0;
       height: 100%;
       width: 240px;
-      background: #4c3f9b;
+      background: #222; /* Dark black for sidebar */
       padding: 25px;
       display: flex;
       flex-direction: column;
       gap: 20px;
       box-shadow: 2px 0 8px rgba(0, 0, 0, 0.5);
-      z-index: 10;
     }
 
     .sidebar h1 {
-      color: #e9d8fd;
+      color: #bbb;
       font-size: 2rem;
       margin-bottom: 30px;
       text-align: center;
     }
 
     .sidebar a {
-      color: #cbd5e1;
+      color: #aaa;
       text-decoration: none;
       font-size: 1.2rem;
       padding: 12px 20px;
@@ -57,8 +54,8 @@
     }
 
     .sidebar a:hover {
-      background-color: #7f56d9;
-      color: #1e293b;
+      background-color: #444;
+      color: #ffffff;
     }
 
     /* Main Content */
@@ -66,17 +63,15 @@
       margin-left: 240px;
       display: flex;
       flex-direction: column;
-      justify-content: flex-start;
+      justify-content: center;
       align-items: center;
-      height: 100%;
-      padding-top: 50px;
+      height: 100vh;
       text-align: center;
-      overflow-y: auto;
     }
 
     .main h1 {
       font-size: 4rem;
-      color: #f0e7ff;
+      color: #ffffff;
       margin-bottom: 20px;
       font-weight: 600;
     }
@@ -84,7 +79,7 @@
     .main p {
       font-size: 1.3rem;
       margin-bottom: 30px;
-      color: #d1d5db;
+      color: #ccc;
     }
 
     /* Search Bar */
@@ -101,45 +96,41 @@
       width: 100%;
       padding: 12px 20px;
       border-radius: 30px;
-      border: 1px solid #ccc;
+      border: 1px solid #555;
       font-size: 1.1rem;
-      color: #333;
-      transition: border-color 0.3s ease;
+      background-color: #222;
+      color: #fff;
+      transition: border-color 0.3s ease, background-color 0.3s ease;
     }
 
     .search-bar input:focus {
       outline: none;
-      border-color: #7f56d9;
+      border-color: #888;
+      background-color: #333;
     }
 
-    /* Enhanced Go Button */
     .search-bar button {
       height: 100%;
       width: 120px;
       border: none;
-      outline: none;
-      background: #7f56d9;  /* Use a vibrant color */
+      background: #444;
       color: white;
       font-size: 1.2rem;
       font-weight: 600;
       cursor: pointer;
-      border-radius: 40px;
+      border-radius: 30px;
       transition: all 0.3s ease;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add subtle shadow */
+      margin-left: 10px;
     }
 
     .search-bar button:hover {
-      background: #5a3e9d;  /* Slightly darker shade on hover */
-      transform: scale(1.05);  /* Slightly grow the button */
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);  /* Increase shadow on hover */
+      background: #666;
+      transform: scale(1.05);
     }
 
     .search-bar button:active {
-      background: #4a3277;  /* Darker color when clicked */
-      transform: scale(1);  /* Reset scale on active state */
+      background: #555;
+      transform: scale(1);
     }
 
     /* Error & Loading Messages */
@@ -155,59 +146,17 @@
     }
 
     .loading {
-      color: #ff5722;
+      color: #ffaa00;
     }
 
-    /* Responsive Design */
-    @media (max-width: 1024px) {
-      .sidebar {
-        width: 220px;
-      }
-
-      .main {
-        margin-left: 220px;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .sidebar {
-        width: 200px;
-      }
-
-      .main {
-        margin-left: 200px;
-        padding: 20px;
-      }
-
-      .main h1 {
-        font-size: 3rem;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .sidebar {
-        width: 100%;
-        height: auto;
-        position: relative;
-        padding: 15px;
-      }
-
-      .sidebar h1 {
-        font-size: 1.5rem;
-      }
-
-      .sidebar a {
-        font-size: 1rem;
-      }
-
-      .main {
-        margin-left: 0;
-        padding: 10px;
-      }
-
-      .main h1 {
-        font-size: 2.5rem;
-      }
+    /* Footer */
+    .footer {
+      margin-top: auto;
+      margin-left: 240px;
+      padding: 15px 20px;
+      background: #222;
+      text-align: center;
+      color: #bbb;
     }
   </style>
 </head>
@@ -215,7 +164,7 @@
   <!-- Sidebar -->
   <div class="sidebar">
     <h1>Nooble</h1>
-    <a href="/index.html">Home</a> <!-- Home link added here -->
+    <a href="/index.html">Home</a>
     <a href="/games/">Games</a>
     <a href="/apps/">Apps</a>
     <a href="/movies/">Movies</a>
@@ -232,7 +181,7 @@
       <input type="text" id="searchBar" placeholder="Enter Link (e.g., Tiktok.com)">
       <button onclick="handleSearch()">Go</button>
     </div>
-    
+
     <div class="loading" id="loading">Loading...</div>
     <div class="error" id="error">URL does not exist or is not correct. Please try again!</div>
   </div>
@@ -243,7 +192,6 @@
       const loading = document.getElementById('loading');
       const error = document.getElementById('error');
 
-      // Hide previous error message and loading indicator
       error.style.display = 'none';
       loading.style.display = 'none';
 
@@ -252,25 +200,26 @@
         return;
       }
 
-      loading.style.display = 'block';  // Show loading message while fetching
+      loading.style.display = 'block';
       const proxy = 'https://api.codetabs.com/v1/proxy?quest=';
 
       fetch(proxy + link)
-        .then((response) => {
+        .then(response => {
           if (!response.ok) {
             throw new Error('URL is invalid or unreachable');
           }
           return response.text();
         })
-        .then((text) => {
+        .then(text => {
           loading.style.display = 'none';
           document.write(text);
         })
-        .catch((error) => {
+        .catch(() => {
           loading.style.display = 'none';
-          error.style.display = 'block';  // Show error message if URL is not valid
+          error.style.display = 'block';
         });
     }
   </script>
 </body>
 </html>
+
