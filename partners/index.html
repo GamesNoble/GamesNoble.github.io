@@ -16,8 +16,9 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #6b46c1, #9f7aea);
+            background: radial-gradient(circle, #6b46c1, #9f7aea);
             color: #ffffff;
+            height: 100%;
             display: flex;
             flex-direction: column;
             font-size: 16px;
@@ -30,20 +31,20 @@
             top: 0;
             left: 0;
             height: 100%;
-            width: 260px;
+            width: 240px;
             background: #4c3f9b;
-            padding: 20px;
+            padding: 25px;
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 20px;
             box-shadow: 2px 0 8px rgba(0, 0, 0, 0.5);
-            z-index: 1000;
+            z-index: 10;
             transition: transform 0.3s ease;
         }
 
         .sidebar h1 {
             color: #e9d8fd;
-            font-size: 2.2rem;
+            font-size: 2rem;
             margin-bottom: 30px;
             text-align: center;
         }
@@ -55,9 +56,6 @@
             padding: 12px 20px;
             border-radius: 8px;
             transition: background-color 0.3s ease, color 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 10px;
         }
 
         .sidebar a:hover {
@@ -67,27 +65,27 @@
 
         /* Main Content */
         .main {
-            margin-left: 260px;
+            margin-left: 240px;
             display: flex;
             flex-direction: column;
+            justify-content: flex-start;
             align-items: center;
-            padding: 50px 20px;
+            height: 100%;
+            padding-top: 50px;
             text-align: center;
             overflow-y: auto;
-            height: 100vh;
             transition: margin-left 0.3s ease;
         }
 
         .main h1 {
-            font-size: 3.5rem;
+            font-size: 4rem;
             color: #f0e7ff;
             margin-bottom: 20px;
             font-weight: 600;
-            text-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
         }
 
         .main p {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             margin-bottom: 30px;
             color: #d1d5db;
         }
@@ -95,35 +93,35 @@
         /* Partners Section */
         .partners {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            width: 90%;
-            margin: 0 auto;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            width: 80%;
+            margin: 30px auto;
         }
 
         .partner-box {
             background: #7f56d9;
-            border-radius: 12px;
+            border-radius: 8px;
             padding: 20px;
             text-align: center;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .partner-box:hover {
             transform: translateY(-10px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
         }
 
         .partner-box img {
-            width: 120px;
+            width: 100px;
             height: auto;
-            margin-bottom: 15px;
-            border-radius: 50%;
+            margin-bottom: 10px;
+            border-radius: 8px;
         }
 
         .partner-box h3 {
-            font-size: 1.7rem;
+            font-size: 1.5rem;
             color: #f0e7ff;
             margin-bottom: 10px;
         }
@@ -131,21 +129,11 @@
         .partner-box p {
             font-size: 1rem;
             color: #d1d5db;
-            margin-bottom: 15px;
         }
 
         .partner-box a {
             text-decoration: none;
-            color: #ffffff;
-            font-weight: 600;
-            padding: 10px 15px;
-            background: #6b46c1;
-            border-radius: 6px;
-            transition: background-color 0.3s ease;
-        }
-
-        .partner-box a:hover {
-            background-color: #9f7aea;
+            color: inherit;
         }
 
         /* Responsive Design */
@@ -170,7 +158,7 @@
             }
 
             .main h1 {
-                font-size: 2.5rem;
+                font-size: 3rem;
             }
         }
 
@@ -183,7 +171,7 @@
             }
 
             .sidebar h1 {
-                font-size: 1.8rem;
+                font-size: 1.5rem;
             }
 
             .sidebar a {
@@ -196,7 +184,7 @@
             }
 
             .main h1 {
-                font-size: 2.2rem;
+                font-size: 2.5rem;
             }
 
             .partners {
@@ -209,25 +197,27 @@
     <!-- Sidebar -->
     <div class="sidebar">
         <h1>Nooble</h1>
-        <a href="/index.html"><i class="fas fa-home"></i> Home</a>
-        <a href="/games/"><i class="fas fa-gamepad"></i> Games</a>
-        <a href="/apps/"><i class="fas fa-mobile-alt"></i> Apps</a>
-        <a href="/movies/"><i class="fas fa-film"></i> Movies</a>
-        <a href="/proxy/"><i class="fas fa-globe"></i> Proxy</a>
+        <a href="/index.html">Home</a>
+        <a href="/games/">Games</a>
+        <a href="/apps/">Apps</a>
+        <a href="/movies/">Movies</a>
+        <a href="/proxy/">Proxy</a>
     </div>
 
     <!-- Main Content -->
     <div class="main">
-        <h1>Our Partners</h1>
-        <p>We collaborate with amazing partners to bring you the best experiences.</p>
+        <h1>Partners</h1>
+        <p>Stay tuned, partners are coming soon!</p>
 
         <!-- Partners Section -->
         <div class="partners">
             <div class="partner-box">
                 <a href="https://genztranslator.github.io/" target="_blank">
-                    <img src="https://github.com/NoobleGames/NoobleGames.github.io/blob/main/misc/images/Screenshot%202024-12-20%209.38.27%20AM.png?raw=true" alt="Gen Z Translator Logo">
+                    <img src="https://github.com/NoobleGames/NoobleGames.github.io/blob/main/misc/images/Screenshot%202024-12-20%209.38.27%20AM.png?raw=true" alt="Partner 1 Logo">
                     <h3>Gen Z Translator</h3>
-                    <p>Developed by our founder, this tool bridges generational language gaps.</p>
+                    <p>Made By Our Lovely Founder And Now Partned With Us As We Look Into Options To Adding Gen Z Trans To Our Website.</p>
+                </a>
+            </div>
                 </a>
             </div>
         </div>
