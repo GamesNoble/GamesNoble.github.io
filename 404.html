@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nooble | Home</title>
+    <title>Nooble | 404</title>
+    <link rel="icon" href="https://github.com/NoobleGames/NoobleGames.github.io/blob/main/Logo/Logo4.png?raw=true" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
@@ -16,7 +17,7 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            background: radial-gradient(circle, #6b46c1, #9f7aea);
+            background: radial-gradient(circle, #333, #000); /* Black gradient background */
             color: #ffffff;
             height: 100vh;
             display: flex;
@@ -30,7 +31,7 @@
             left: 0;
             height: 100%;
             width: 240px;
-            background: #4c3f9b;
+            background: #222; /* Dark black for sidebar */
             padding: 25px;
             display: flex;
             flex-direction: column;
@@ -39,14 +40,14 @@
         }
 
         .sidebar h1 {
-            color: #e9d8fd;
+            color: #bbb; /* Light gray */
             font-size: 2rem;
             margin-bottom: 30px;
             text-align: center;
         }
 
         .sidebar a {
-            color: #cbd5e1;
+            color: #aaa; /* Gray links */
             text-decoration: none;
             font-size: 1.2rem;
             padding: 12px 20px;
@@ -55,8 +56,8 @@
         }
 
         .sidebar a:hover {
-            background-color: #7f56d9;
-            color: #1e293b;
+            background-color: #444; /* Dark gray on hover */
+            color: #ffffff;
         }
 
         /* Main Content */
@@ -72,7 +73,7 @@
 
         .main h1 {
             font-size: 4rem;
-            color: #f0e7ff;
+            color: #ffffff;
             margin-bottom: 20px;
             font-weight: 600;
         }
@@ -80,7 +81,7 @@
         .main p {
             font-size: 1.3rem;
             margin-bottom: 30px;
-            color: #d1d5db;
+            color: #ccc; /* Light gray for text */
         }
 
         .btn-container {
@@ -95,7 +96,7 @@
             padding: 16px 30px;
             font-size: 1.5rem;
             color: #ffffff;
-            background: #7f56d9;
+            background: #444; /* Dark gray for buttons */
             border: none;
             border-radius: 50px; /* Rounded button */
             text-decoration: none;
@@ -111,7 +112,7 @@
         .btn:hover {
             transform: translateY(-5px);
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-            background-color: #6b46c1;
+            background-color: #666; /* Slightly lighter gray on hover */
         }
 
         /* Footer */
@@ -119,38 +120,37 @@
             margin-top: auto;
             margin-left: 240px;
             padding: 15px 20px;
-            background: #4c3f9b;
+            background: #222; /* Dark black for footer */
             text-align: center;
-            color: #d1d5db;
+            color: #bbb; /* Light gray for footer text */
         }
 
         .footer a {
-            color: #c3b9f2;
+            color: #aaa; /* Gray links */
             text-decoration: none;
             margin: 0 10px;
         }
 
         .footer a:hover {
-            color: #7f56d9;
+            color: #fff; /* White on hover */
         }
-
     </style>
 </head>
 <body>
-  <!-- Sidebar -->
-  <div class="sidebar">
-    <h1>Nooble</h1>
-    <a href="/index.html">Home</a> <!-- Home link added here -->
-    <a href="/games/">Games</a>
-    <a href="/apps/">Apps</a>
-    <a href="/movies/">Movies</a>
-    <a href="/proxy/">Proxy</a>
-  </div>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h1>Nooble</h1>
+        <a href="/index.html">Home</a>
+        <a href="/games/">Games</a>
+        <a href="/apps/">Apps</a>
+        <a href="/movies/">Movies</a>
+        <a href="/proxy/">Proxy</a>
+    </div>
 
     <!-- Main Content -->
     <div class="main">
         <h1>404 Not Found.</h1>
-        <p>Oops! The page you are looking for is not available.</p>
+        <p>Oops! Page Not Found.</p>
         <div class="btn-container">
             <a href="/games/" class="btn"><i class="fas fa-gamepad"></i>Games</a>
             <a href="/proxy/" class="btn"><i class="fas fa-shield-alt"></i>Proxy</a>
@@ -162,10 +162,21 @@
     <!-- Footer -->
     <div class="footer">
         <p>Developed by Blume | Founded by Chip Hill</p>
-        <a href="https://docs.google.com/spreadsheets/d/1gbCSYjr4j5DhWJ8ExT4mjzdFKhHxNEg_OGC3ySxPfWE/edit?usp=sharing">Nooble Request Status</a>
-        <a href="https://forms.gle/KpZkYLaMh2V9WCVN9">Request App Or Game</a>
-        <a href="/partners">Partners</a>
-        <a href="/credits">Credits</a>
+        <a href="https://docs.google.com/spreadsheets/d/1gbCSYjr4j5DhWJ8ExT4mjzdFKhHxNEg_OGC3ySxPfWE/edit?usp=sharing">
+            <i class="fa fa-file"></i> Nooble Request Status
+        </a>
+        <a href="https://forms.gle/KpZkYLaMh2V9WCVN9">
+            <i class="fa fa-pencil"></i> Request App Or Game
+        </a>
+        <a href="/partners">
+            <i class="fa fa-handshake"></i> Partners
+        </a>
+        <a href="/credits">
+            <i class="fa fa-star"></i> Credits
+        </a>
+        <a href="/links">
+            <i class="fa fa-link"></i> Our Links
+        </a>
     </div>
 </body>
 </html>
