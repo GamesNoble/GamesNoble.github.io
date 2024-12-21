@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nooble | Update Logs</title>
+    <link rel="icon" href="https://github.com/NoobleGames/NoobleGames.github.io/blob/main/Logo/Logo4.png?raw=true" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: radial-gradient(circle, #1c1c1c, #000); /* Dark gradient background */
+            color: #ffffff;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 240px;
+            background: #222;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            box-shadow: 2px 0 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .sidebar h1 {
+            color: #bbb; /* Light gray */
+            font-size: 2rem;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .sidebar a {
+            color: #aaa; /* Gray links */
+            text-decoration: none;
+            font-size: 1.2rem;
+            padding: 12px 20px;
+            border-radius: 8px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .sidebar a:hover {
+            background-color: #444;
+            color: #ffffff;
+        }
+
+        /* Main Content */
+        .main {
+            margin-left: 240px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 30px;
+            text-align: center;
+            overflow-y: auto; /* Allow scrolling if necessary */
+        }
+
+        .main h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+            color: #ffffff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Shadow effect */
+        }
+
+        .update-log {
+            width: 80%;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+            margin-top: 20px;
+            position: relative;
+        }
+
+        .update-log::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 5px;
+            background: linear-gradient(to bottom, #6e7ff3, #3b87f2); /* Gradient border */
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+        }
+
+        .update-log h2 {
+            margin-bottom: 15px;
+            color: #ffffff; /* White color */
+            border-bottom: 2px solid #6e7ff3;
+            padding-bottom: 10px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+        }
+
+        .update-log p {
+            color: #ccc;
+            margin-bottom: 10px;
+            line-height: 1.8;
+            transition: color 0.3s ease;
+        }
+
+        .update-log p:hover {
+            color: #fff; /* Change color on hover */
+            cursor: pointer;
+        }
+
+        .update-log p strong {
+            color: #ffffff; /* Bold text color */
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h1>Nooble</h1>
+        <a href="/index.html">Home</a>
+        <a href="/games/">Games</a>
+        <a href="/apps/">Apps</a>
+        <a href="/movies/">Movies</a>
+        <a href="/proxy/">Proxy</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main">
+        <h1>Update Logs</h1>
+        
+        <section class="update-log">
+            <h2>Latest Update Logs</h2>
+            <p><strong>Version 3.3 - Dec 21:</strong> Added Update Logs, changed layout, fixed bugs, and added a few games.</p>
+            <!-- Add more update logs as necessary -->
+        </section>
+    </div>
+</body>
+</html>
