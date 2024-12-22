@@ -20,6 +20,10 @@
     <link rel="icon" href="https://github.com/NoobleGames/NoobleGames.github.io/blob/main/Logo/Logo4.png?raw=true" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" /> <!-- Toastr CSS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script> <!-- Toastr JS -->
+
     <style>
         /* General Reset */
         * {
@@ -159,6 +163,26 @@
                 font-size: 2rem;
             }
         }
+
+        /* Toastr Custom Styles */
+        .toast {
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            opacity: 0.9; /* Semi-transparent */
+            color: #fff; /* White text */
+        }
+        .toast-success {
+            background-color: #28a745; /* Green background */
+        }
+        .toast-error {
+            background-color: #dc3545; /* Red background */
+        }
+        .toast-warning {
+            background-color: #ffc107; /* Yellow background or orange */
+        }
+        .toast-info {
+            background-color: #17a2b8; /* Blue background */
+        }
     </style>
 </head>
 <body>
@@ -177,7 +201,7 @@
         <h1>Links</h1>
         <div class="links">
             <a href="https://chipistheowner.vercel.app/" target="_blank">Link 1 (Nooble)</a>
-            <a href="https://alexistheowner.vercel.app" target="_blank">Link 2 (Nooble)</a>
+            <a href="https://alexithetowner.vercel.app" target="_blank">Link 2 (Nooble)</a>
             <a href="https://738749385-33248303-3234324.vercel.app" target="_blank">Link 3 (Nooble)</a>
             <a href="https://isuckedthetipofiteverybodyknows.netlify.app/" target="_blank">Link 4 (Nooble)</a>
             <a href="https://makemathfunagain.netlify.app/" target="_blank">Link 5 (Nooble)</a>
@@ -185,5 +209,27 @@
             <a href="https://asheristheowner.vercel.app/" target="_blank">Link 7 (Nooble)</a>
         </div>
     </div>
+
+    <script>
+        // Show notification on page load
+        $(document).ready(function() {
+            toastr.options = {
+                "closeButton": true,
+                "debug": false,
+                "newestOnTop": true,
+                "progressBar": true,
+                "positionClass": "toast-top-right", // Position of the notification
+                "preventDuplicates": true, // Prevent duplicate notifications
+                "timeOut": "5000", // Automatically close after 5 seconds
+                "extendedTimeOut": "1000",
+                "showEasing": "swing",
+                "hideEasing": "linear",
+                "showMethod": "fadeIn",
+                "hideMethod": "fadeOut"
+            };
+
+            toastr.warning("For the Vercel links, sometimes the updates can take up to 10 hours. Please use the main website for the quickest updates.");  // Customize your notification message here
+        });
+    </script>
 </body>
 </html>
