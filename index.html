@@ -10,12 +10,10 @@
     <meta property="og:image" content="https://github.com/NoobleGames/NoobleGames.github.io/blob/main/Logo/Logo4.png?raw=true" />
     <meta property="og:url" content="" /> 
     <meta property="og:type" content="website" />
-
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Nooble - Your One-Stop Gateway to Unblocked Content!" />
     <meta name="twitter:description" content="Explore a wide range of games, apps, movies, and proxy services all in one place!" />
     <meta name="twitter:image" content="https://github.com/NoobleGames/NoobleGames.github.io/blob/main/Logo/Logo4.png?raw=true" />
-
     <link rel="icon" href="https://github.com/NoobleGames/NoobleGames.github.io/blob/main/Logo/Logo4.png?raw=true" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
@@ -28,11 +26,12 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            background: radial-gradient(circle, #333, #000);
+            background: radial-gradient(circle, rgba(43, 43, 43, 0.9), rgba(0, 0, 0, 0.9)), url('https://source.unsplash.com/random/1920x1080') no-repeat center center/cover;
             color: #ffffff;
             height: 100vh;
             display: flex;
             flex-direction: column;
+            overflow: hidden;
         }
 
         .sidebar {
@@ -62,12 +61,13 @@
             font-size: 1.2rem;
             padding: 12px 20px;
             border-radius: 8px;
-            transition: background-color 0.3s ease, color 0.3s ease;
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
         }
 
         .sidebar a:hover {
             background-color: #444;
             color: #ffffff;
+            transform: scale(1.05);
         }
 
         .main {
@@ -78,26 +78,38 @@
             align-items: center;
             height: 100vh;
             text-align: center;
+            padding: 0 30px;
         }
 
         .main h1 {
-            font-size: 4rem;
-            color: #ffffff;
+            font-size: 4.5rem;
             margin-bottom: 20px;
-            font-weight: 600;
+            font-weight: bold;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+            letter-spacing: 1px;
         }
 
         .main p {
-            font-size: 1.3rem;
+            font-size: 1.5rem;
             margin-bottom: 30px;
             color: #ccc;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
         }
 
         .random-quote {
-            font-size: 1.2rem;
+            font-size: 1.6rem;
             margin-bottom: 30px;
             color: #ddd; 
             font-style: italic;
+            font-weight: 400; 
+            background: rgba(0, 0, 0, 0.7); 
+            padding: 10px 20px;
+            border-radius: 12px; 
+            transition: background-color 0.3s ease;
+        }
+
+        .random-quote:hover {
+            background: rgba(255, 255, 255, 0.2);
         }
 
         .btn-container {
@@ -117,13 +129,15 @@
             border-radius: 50px;
             text-decoration: none;
             text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
 
         .btn:hover {
             transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
             background-color: #666;
         }
 
@@ -135,15 +149,18 @@
             margin-top: auto;
             margin-left: 240px;
             padding: 15px 20px;
-            background: #222; 
+            background: rgba(34, 34, 34, 0.9);
             text-align: center;
             color: #bbb;
+            border-top: 2px solid #444;
+            transition: background 0.3s ease; 
         }
 
         .footer a {
             color: #aaa;
             text-decoration: none;
             margin: 0 10px;
+            transition: color 0.3s ease;
         }
 
         .footer a:hover {
@@ -164,7 +181,7 @@
     <div class="main">
         <h1>Welcome!</h1>
         <p>Your One-Time Gateway To All Things Unblocked!</p>
-        <p class="random-quote" id="random-quote">Loading quote...</p> <!-- For random quote -->
+        <p class="random-quote" id="random-quote">Loading quote...</p>
         <div class="btn-container">
             <a href="/games/" class="btn"><i class="fas fa-gamepad"></i>Games</a>
             <a href="/proxy/" class="btn"><i class="fas fa-shield-alt"></i>Proxy</a>
