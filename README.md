@@ -30,7 +30,7 @@
 <h2 style="text-align: center;">🎮 Game Submission</h2>
 <p style="text-align: center;">
   Have a game you’d love to see on Nooble? 
-  We’d love to hear from you! Submit your game idea through <a href="https://github.com/DamageCoding/CUG/discussions/2" style="color: #4CAF50;">this link</a>!
+  We’d love to hear from you! Submit your game idea through <a href="https://forms.gle/KpZkYLaMh2V9WCVN9" style="color: #4CAF50;">this link</a>!
 </p>
 
 <hr>
