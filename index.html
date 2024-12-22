@@ -26,7 +26,7 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            background: radial-gradient(circle, rgba(43, 43, 43, 0.9), rgba(0, 0, 0, 0.9)), url('https://source.unsplash.com/random/1920x1080') no-repeat center center/cover;
+            background: radial-gradient(circle, rgba(43, 43, 43, 0.9), rgba(0, 0, 0, 0.9)), url('') no-repeat center center/cover;
             color: #ffffff;
             height: 100vh;
             display: flex;
@@ -229,7 +229,6 @@
 
         function loadRandomQuote() {
             const weightedQuotes = [];
-
             quotes.forEach(quote => {
                 for (let i = 0; i < quote.weight; i++) {
                     weightedQuotes.push(quote.text);
