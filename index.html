@@ -4,14 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nooble | Home</title>
-    <!-- Open Graph Tags for Discord and Other Social Media -->
+
     <meta property="og:title" content="Nooble - Your One-Stop Gateway to Unblocked Content!" />
     <meta property="og:description" content="Explore a wide range of games, apps, movies, and proxy services all in one place!" />
     <meta property="og:image" content="https://github.com/NoobleGames/NoobleGames.github.io/blob/main/Logo/Logo4.png?raw=true" />
     <meta property="og:url" content="" /> 
     <meta property="og:type" content="website" />
-    
-    <!-- Twitter Card Tags -->
+
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Nooble - Your One-Stop Gateway to Unblocked Content!" />
     <meta name="twitter:description" content="Explore a wide range of games, apps, movies, and proxy services all in one place!" />
@@ -30,7 +29,7 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            background: radial-gradient(circle, #333, #000); /* Black gradient background */
+            background: radial-gradient(circle, #333, #000);
             color: #ffffff;
             height: 100vh;
             display: flex;
@@ -44,7 +43,7 @@
             left: 0;
             height: 100%;
             width: 240px;
-            background: #222; /* Dark black for sidebar */
+            background: #222;
             padding: 25px;
             display: flex;
             flex-direction: column;
@@ -53,14 +52,14 @@
         }
 
         .sidebar h1 {
-            color: #bbb; /* Light gray */
+            color: #bbb;
             font-size: 2rem;
             margin-bottom: 30px;
             text-align: center;
         }
 
         .sidebar a {
-            color: #aaa; /* Gray links */
+            color: #aaa;
             text-decoration: none;
             font-size: 1.2rem;
             padding: 12px 20px;
@@ -69,7 +68,7 @@
         }
 
         .sidebar a:hover {
-            background-color: #444; /* Dark gray on hover */
+            background-color: #444;
             color: #ffffff;
         }
 
@@ -94,7 +93,14 @@
         .main p {
             font-size: 1.3rem;
             margin-bottom: 30px;
-            color: #ccc; /* Light gray for text */
+            color: #ccc;
+        }
+
+        .random-quote {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #ddd; 
+            font-style: italic;
         }
 
         .btn-container {
@@ -109,23 +115,23 @@
             padding: 16px 30px;
             font-size: 1.5rem;
             color: #ffffff;
-            background: #444; /* Dark gray for buttons */
+            background: #444;
             border: none;
-            border-radius: 50px; /* Rounded button */
+            border-radius: 50px;
             text-decoration: none;
             text-align: center;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
         }
 
-        .btn i {
-            margin-right: 10px;
-        }
-
         .btn:hover {
             transform: translateY(-5px);
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-            background-color: #666; /* Slightly lighter gray on hover */
+            background-color: #666;
+        }
+
+        .btn i {
+            margin-right: 8px; /* Adjusting space between icon and text */
         }
 
         /* Footer */
@@ -133,19 +139,19 @@
             margin-top: auto;
             margin-left: 240px;
             padding: 15px 20px;
-            background: #222; /* Dark black for footer */
+            background: #222; 
             text-align: center;
-            color: #bbb; /* Light gray for footer text */
+            color: #bbb;
         }
 
         .footer a {
-            color: #aaa; /* Gray links */
+            color: #aaa;
             text-decoration: none;
             margin: 0 10px;
         }
 
         .footer a:hover {
-            color: #fff; /* White on hover */
+            color: #fff; 
         }
     </style>
 </head>
@@ -164,6 +170,7 @@
     <div class="main">
         <h1>Welcome!</h1>
         <p>Your One-Time Gateway To All Things Unblocked!</p>
+        <p class="random-quote" id="random-quote">Loading quote...</p> <!-- For random quote -->
         <div class="btn-container">
             <a href="/games/" class="btn"><i class="fas fa-gamepad"></i>Games</a>
             <a href="/proxy/" class="btn"><i class="fas fa-shield-alt"></i>Proxy</a>
@@ -194,5 +201,41 @@
             <i class="fas fa-sync"></i> Update Logs
         </a>
     </div>
+
+    <script>
+        // Quotes with their respective (randomized) weights
+        const quotes = [
+            { text: "100% ChatGpt.", weight: 3 },
+            { text: "You have all F's, don't you?", weight: 1 },
+            { text: "I smell you through the screen, nerd.", weight: 2 },
+            { text: "Seriously? Dude, basketball random?", weight: 1 },
+            { text: "Lowwww tapppper faddddeee.", weight: 1 },
+            { text: "I guess Nooble is alright; not the best.", weight: 1 },
+            { text: "Dexter Morgan or Sexter Morgan?", weight: 1 },
+            { text: "I need six months of vacations, twice a year.", weight: 1 },
+            { text: "Brain loading… please wait.", weight: 1 },
+            { text: "You call it chaos, I call it life experience.", weight: 2 },
+            { text: "If karma doesn’t hit you, I gladly will.", weight: 3 },
+        ];
+
+        // Function to load a random quote based on weights
+        function loadRandomQuote() {
+            const weightedQuotes = [];
+
+            // Create an array containing quotes based on their weights
+            quotes.forEach(quote => {
+                for (let i = 0; i < quote.weight; i++) {
+                    weightedQuotes.push(quote.text);
+                }
+            });
+
+            // Select a random quote from the weighted array
+            const randomIndex = Math.floor(Math.random() * weightedQuotes.length);
+            document.getElementById('random-quote').textContent = weightedQuotes[randomIndex];
+        }
+
+        // Load a random quote on page load
+        window.onload = loadRandomQuote;
+    </script>
 </body>
 </html>
