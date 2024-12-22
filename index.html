@@ -20,7 +20,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
-        /* General Reset */
         * {
             margin: 0;
             padding: 0;
@@ -36,7 +35,6 @@
             flex-direction: column;
         }
 
-        /* Sidebar */
         .sidebar {
             position: fixed;
             top: 0;
@@ -72,7 +70,6 @@
             color: #ffffff;
         }
 
-        /* Main Content */
         .main {
             margin-left: 240px;
             display: flex;
@@ -131,10 +128,9 @@
         }
 
         .btn i {
-            margin-right: 8px; /* Adjusting space between icon and text */
+            margin-right: 8px; 
         }
 
-        /* Footer */
         .footer {
             margin-top: auto;
             margin-left: 240px;
@@ -156,7 +152,6 @@
     </style>
 </head>
 <body>
-    <!-- Sidebar -->
     <div class="sidebar">
         <h1>Nooble</h1>
         <a href="/index.html">Home</a>
@@ -166,7 +161,6 @@
         <a href="/proxy/">Proxy</a>
     </div>
 
-    <!-- Main Content -->
     <div class="main">
         <h1>Welcome!</h1>
         <p>Your One-Time Gateway To All Things Unblocked!</p>
@@ -179,7 +173,6 @@
         </div>
     </div>
 
-    <!-- Footer -->
     <div class="footer">
         <p>Developed by Blume | Founded by Chip Hill</p>
         <a href="https://docs.google.com/spreadsheets/d/1gbCSYjr4j5DhWJ8ExT4mjzdFKhHxNEg_OGC3ySxPfWE/edit?usp=sharing">
@@ -203,7 +196,6 @@
     </div>
 
     <script>
-        // Quotes with their respective (randomized) weights
         const quotes = [
             { text: "100% ChatGpt.", weight: 3 },
             { text: "You have all F's, don't you?", weight: 1 },
@@ -218,23 +210,19 @@
             { text: "If karma doesn’t hit you, I gladly will.", weight: 3 },
         ];
 
-        // Function to load a random quote based on weights
         function loadRandomQuote() {
             const weightedQuotes = [];
 
-            // Create an array containing quotes based on their weights
             quotes.forEach(quote => {
                 for (let i = 0; i < quote.weight; i++) {
                     weightedQuotes.push(quote.text);
                 }
             });
 
-            // Select a random quote from the weighted array
             const randomIndex = Math.floor(Math.random() * weightedQuotes.length);
             document.getElementById('random-quote').textContent = weightedQuotes[randomIndex];
         }
 
-        // Load a random quote on page load
         window.onload = loadRandomQuote;
     </script>
 </body>
