@@ -122,6 +122,30 @@
             background: #7f56d9;
         }
 
+        .link-generator {
+            margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .link-generator .generate-link {
+            padding: 15px 30px;
+            background-color: #7f56d9;
+            color: #fff;
+            text-decoration: none; /* Prevent underline */
+            border-radius: 8px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .link-generator .generate-link:hover {
+            background-color: #6a45c1;
+        }
+
         @media (max-width: 768px) {
             .sidebar {
                 width: 200px;
@@ -195,6 +219,13 @@
             <a href="https://makemathfunagain.netlify.app/" target="_blank">Link 5 (Nooble)</a>
             <a href="https://carsonistheowner.vercel.app" target="_blank">Link 6 (Nooble)</a>
             <a href="https://asheristheowner.vercel.app/" target="_blank">Link 7 (Nooble)</a>
+        </div>
+
+        <div class="link-generator">
+            <h2>Link Generator</h2>
+            <a href="/misc/p/gen.html" class="generate-link">
+                <i class="fas fa-play"></i> Generate Link
+            </a>
         </div>
     </div>
 
