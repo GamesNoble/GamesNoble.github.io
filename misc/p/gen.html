@@ -1,1 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nooble | Link Gen</title>
+    <link rel="icon" href="https://github.com/NoobleGames/NoobleGames.github.io/blob/main/Logo/Logo4.png?raw=true" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to right, #1a1a1a, #373737);
+            color: #ffffff;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            overflow: hidden;
+        }
+
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 240px;
+            background: rgba(26, 26, 26, 0.9);
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            box-shadow: 2px 0 8px rgba(0, 0, 0, 0.5);
+            z-index: 10;
+        }
+
+        .sidebar h1 {
+            color: #e9e9e9;
+            font-size: 2rem;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .sidebar a {
+            color: #cccccc;
+            text-decoration: none;
+            font-size: 1.2rem;
+            padding: 12px 20px;
+            border-radius: 8px;
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+        }
+
+        .sidebar a:hover {
+            background-color: #333333;
+            color: #ffffff;
+            transform: scale(1.05);
+        }
+
+        .main {
+            margin-left: 240px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            height: 100%;
+            padding: 50px 20px 20px 20px;
+            text-align: center;
+            overflow-y: auto;
+            transition: margin-left 0.3s ease;
+        }
+
+        .main h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .link-output {
+            margin-top: 20px;
+            font-size: 1.5rem;
+            color: #f0e7ff;
+        }
+
+        .link-generator {
+            margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: transform 0.3s;
+        }
+
+        .link-generator .generate-link {
+            padding: 15px 30px;
+            background-color: #7f56d9;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .link-generator .generate-link:hover {
+            background-color: #6a45c1;
+            transform: scale(1.05);
+        }
+
+        .timer {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            color: #ffdd57;
+            transition: all 0.3s;
+        }
+
+        #overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8); /* Darker overlay */
+            display: none;
+            z-index: 5; /* Just below the sidebar */
+        }
+
+        .link-button {
+            background-color: #f0e7ff;
+            color: #373737;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .link-button:hover {
+            background-color: #d6c4ff;
+            transform: scale(1.05);
+        }
+
+        .code-entry {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .code-entry input {
+            padding: 10px;
+            border-radius: 5px;
+            border: 2px solid #7f56d9; /* Border color */
+            font-size: 1rem;
+            margin-bottom: 10px;
+            width: 80%;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .code-entry input:focus {
+            border-color: #6a45c1; /* Change border color on focus */
+        }
+
+        .code-entry button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .code-entry button:hover {
+            background-color: #218838;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h1>Nooble</h1>
+        <a href="/index.html">Home</a>
+        <a href="/games/">Games</a>
+        <a href="/apps/">Apps</a>
+        <a href="/movies/">Movies</a>
+        <a href="/proxy/">Proxy</a>
+    </div>
+
+    <div class="main">
+        <h1>Link Gen</h1>
+        <div class="link-output" id="generatedLink"></div>
+        <div class="timer" id="timer"></div>
+        <div class="link-generator">
+            <button id="generateLink" class="generate-link">Generate Link</button>
+        </div>
+    </div>
+
+    <div id="overlay"></div>
+
+    <script>
+        // Disable right-click context menu
+        document.addEventListener('contextmenu', event => event.preventDefault());
+
+        const links = [
+            "https://chickengenbyblume.vercel.app/",
+            "https://lowtaperfadegenbyblume.vercel.app/",
+            "https://foundgenbyblume.vercel.app/",
+        ];
+
+        let timerInterval;
+        let linkElement;
+
+        document.getElementById('generateLink').addEventListener('click', () => {
+            const randomIndex = Math.floor(Math.random() * links.length);
+            const selectedLink = links[randomIndex];
+
+            // Display the link and apply blur effect
+            const generatedLinkDiv = document.getElementById('generatedLink');
+            generatedLinkDiv.innerHTML = `<button class='link-button' onclick='window.open("${selectedLink}", "_blank");'>Access Link</button>`;
+            linkElement = generatedLinkDiv.querySelector('.link-button');
+            const timerDiv = document.getElementById('timer');
+            timerDiv.innerHTML = "Link will be clear in: <span id='countdown'>180</span> seconds";
+            
+            // Show overlay to block interaction
+            document.getElementById('overlay').style.display = 'block';
+
+            // Clear previously set timer
+            clearInterval(timerInterval);
+            let timeRemaining = 180; // 3 minutes
+
+            // Start countdown
+            timerInterval = setInterval(() => {
+                timeRemaining -= 1;
+                document.getElementById('countdown').innerText = timeRemaining;
+                if (timeRemaining <= 0) {
+                    clearInterval(timerInterval);
+                    linkElement.classList.remove('blurred'); // Remove blur
+                    timerDiv.innerHTML = "Link is now clear!";
+                    // Hide overlay when link is clear
+                    document.getElementById('overlay').style.display = 'none';
+                }
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
