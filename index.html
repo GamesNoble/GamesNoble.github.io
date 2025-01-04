@@ -147,23 +147,43 @@
         .footer {
             margin-top: auto;
             margin-left: 240px;
-            padding: 15px 20px;
+            padding: 20px 20px; 
             background: rgba(34, 34, 34, 0.9);
             text-align: center;
             color: #bbb;
             border-top: 2px solid #444;
-            transition: background 0.3s ease; 
+            font-size: 1rem; 
+            line-height: 1.5; 
         }
 
         .footer a {
             color: #aaa;
             text-decoration: none;
-            margin: 0 10px;
+            margin: 0 5px; 
             transition: color 0.3s ease;
+            font-size: 0.9rem; 
         }
 
         .footer a:hover {
             color: #fff; 
+        }
+
+        .social-icons {
+            margin-top: 20px; 
+            display: flex; 
+            justify-content: center; 
+            gap: 20px; 
+        }
+
+        .social-icons a {
+            color: #ffffff; 
+            font-size: 2rem;
+            transition: color 0.3s ease, transform 0.3s ease; 
+        }
+
+        .social-icons a:hover {
+            color: #ccc; 
+            transform: scale(1.1); 
         }
     </style>
 </head>
@@ -186,6 +206,15 @@
             <a href="/proxy/" class="btn"><i class="fas fa-shield-alt"></i>Proxy</a>
             <a href="/movies/" class="btn"><i class="fas fa-film"></i>Movies</a>
             <a href="/apps/" class="btn"><i class="fas fa-mobile-alt"></i>Apps</a>
+        </div>
+
+        <div class="social-icons">
+            <a href="/misc/p/discord.html" target="_blank">
+                <i class="fab fa-discord"></i>
+            </a>
+            <a href="https://github.com/NoobleGames/NoobleGames.github.io" target="_blank">
+                <i class="fab fa-github"></i>
+            </a>
         </div>
     </div>
 
