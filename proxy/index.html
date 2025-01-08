@@ -9,222 +9,196 @@
     <meta property="og:image" content="https://github.com/NoobleGames/NoobleGames.github.io/blob/main/Logo/Logo4.png?raw=true" />
     <meta property="og:url" content="" /> 
     <meta property="og:type" content="website" />
-    
-
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Nooble - Your One-Stop Gateway to Unblocked Content!" />
     <meta name="twitter:description" content="Explore a wide range of games, apps, movies, and proxy services all in one place!" />
     <meta name="twitter:image" content="https://github.com/NoobleGames/NoobleGames.github.io/blob/main/Logo/Logo4.png?raw=true" />
-
     <link rel="icon" href="https://github.com/NoobleGames/NoobleGames.github.io/blob/main/Logo/Logo4.png?raw=true" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: radial-gradient(circle, #333, #000); /* Black gradient background */
-      color: #fff;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .sidebar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 240px;
-      background: #222; /* Dark black for sidebar */
-      padding: 25px;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      box-shadow: 2px 0 8px rgba(0, 0, 0, 0.5);
-    }
-
-    .sidebar h1 {
-      color: #bbb;
-      font-size: 2rem;
-      margin-bottom: 30px;
-      text-align: center;
-    }
-
-    .sidebar a {
-      color: #aaa;
-      text-decoration: none;
-      font-size: 1.2rem;
-      padding: 12px 20px;
-      border-radius: 8px;
-      transition: background-color 0.3s ease, color 0.3s ease;
-    }
-
-    .sidebar a:hover {
-      background-color: #444;
-      color: #ffffff;
-    }
-
-    .main {
-      margin-left: 240px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      text-align: center;
-    }
-
-    .main h1 {
-      font-size: 4rem;
-      color: #ffffff;
-      margin-bottom: 20px;
-      font-weight: 600;
-    }
-
-    .main p {
-      font-size: 1.3rem;
-      margin-bottom: 30px;
-      color: #ccc;
-    }
-
-    .search-bar {
-      margin-bottom: 20px;
-      width: 100%;
-      max-width: 450px;
-      display: flex;
-      justify-content: center;
-      padding: 0 20px;
-    }
-
-    .search-bar input {
-      width: 100%;
-      padding: 12px 20px;
-      border-radius: 30px;
-      border: 1px solid #555;
-      font-size: 1.1rem;
-      background-color: #222;
-      color: #fff;
-      transition: border-color 0.3s ease, background-color 0.3s ease;
-    }
-
-    .search-bar input:focus {
-      outline: none;
-      border-color: #888;
-      background-color: #333;
-    }
-
-    .search-bar button {
-      height: 100%;
-      width: 120px;
-      border: none;
-      background: #444;
-      color: white;
-      font-size: 1.2rem;
-      font-weight: 600;
-      cursor: pointer;
-      border-radius: 30px;
-      transition: all 0.3s ease;
-      margin-left: 10px;
-    }
-
-    .search-bar button:hover {
-      background: #666;
-      transform: scale(1.05);
-    }
-
-    .search-bar button:active {
-      background: #555;
-      transform: scale(1);
-    }
-
-    .error,
-    .loading {
-      display: none;
-      font-size: 18px;
-      margin-top: 20px;
-    }
-
-    .error {
-      color: #ff4500;
-    }
-
-    .loading {
-      color: #ffaa00;
-    }
-
-    .footer {
-      margin-top: auto;
-      margin-left: 240px;
-      padding: 15px 20px;
-      background: #222;
-      text-align: center;
-      color: #bbb;
-    }
-  </style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: radial-gradient(circle, #333, #000);
+            color: #fff;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 240px;
+            background: #222;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            box-shadow: 2px 0 8px rgba(0, 0, 0, 0.5);
+        }
+        .sidebar h1 {
+            color: #bbb;
+            font-size: 2rem;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .sidebar a {
+            color: #aaa;
+            text-decoration: none;
+            font-size: 1.2rem;
+            padding: 12px 20px;
+            border-radius: 8px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .sidebar a:hover {
+            background-color: #444;
+            color: #ffffff;
+        }
+        .main {
+            margin-left: 240px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+        .main h1 {
+            font-size: 4rem;
+            color: #ffffff;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        .main p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            color: #ccc;
+        }
+        .search-bar {
+            margin-bottom: 20px;
+            width: 100%;
+            max-width: 450px;
+            display: flex;
+            justify-content: center;
+            padding: 0 20px;
+        }
+        .search-bar input {
+            width: 100%;
+            padding: 12px 20px;
+            border-radius: 30px;
+            border: 1px solid #555;
+            font-size: 1.1rem;
+            background-color: #222;
+            color: #fff;
+            transition: border-color 0.3s ease, background-color 0.3s ease;
+        }
+        .search-bar input:focus {
+            outline: none;
+            border-color: #888;
+            background-color: #333;
+        }
+        .search-bar button {
+            height: 100%;
+            width: 120px;
+            border: none;
+            background: #444;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            margin-left: 10px;
+        }
+        .search-bar button:hover {
+            background: #666;
+            transform: scale(1.05);
+        }
+        .search-bar button:active {
+            background: #555;
+            transform: scale(1);
+        }
+        .error,
+        .loading {
+            display: none;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+        .error {
+            color: #ff4500;
+        }
+        .loading {
+            color: #ffaa00;
+        }
+        .footer {
+            margin-top: auto;
+            margin-left: 240px;
+            padding: 15px 20px;
+            background: #222;
+            text-align: center;
+            color: #bbb;
+        }
+    </style>
 </head>
 <body>
-  <div class="sidebar">
-    <h1>Nooble</h1>
-    <a href="/index.html">Home</a>
-    <a href="/games/">Games</a>
-    <a href="/apps/">Apps</a>
-    <a href="/movies/">Movies</a>
-    <a href="/proxy/">Proxy</a>
-  </div>
-
-  <div class="main">
-    <h1>Nooble Proxy</h1>
-    <p>Fast and secure browsing. Enter a URL to get started.</p>
-
-    <div class="search-bar">
-      <input type="text" id="searchBar" placeholder="Enter Link (e.g., Tiktok.com)">
-      <button onclick="handleSearch()">Go</button>
+    <div class="sidebar">
+        <h1>Nooble</h1>
+        <a href="/index.html">Home</a>
+        <a href="/games/">Games</a>
+        <a href="/apps/">Apps</a>
+        <a href="/movies/">Movies</a>
+        <a href="/proxy/">Proxy</a>
     </div>
+    <div class="main">
+        <h1>Nooble Proxy</h1>
+        <p>Fast and secure browsing. Enter a URL to get started.</p>
+        <div class="search-bar">
+            <input type="text" id="searchBar" placeholder="Enter Link (e.g., Tiktok.com)">
+            <button onclick="handleSearch()">Go</button>
+        </div>
+        <div class="loading" id="loading">Loading...</div>
+        <div class="error" id="error">URL does not exist or is not correct. Please try again!</div>
+    </div>
+    <script>
+        function handleSearch() {
+            const link = document.getElementById('searchBar').value.trim();
+            const loading = document.getElementById('loading');
+            const error = document.getElementById('error');
 
-    <div class="loading" id="loading">Loading...</div>
-    <div class="error" id="error">URL does not exist or is not correct. Please try again!</div>
-  </div>
+            error.style.display = 'none';
+            loading.style.display = 'none';
 
-  <script>
-    function handleSearch() {
-      const link = document.getElementById('searchBar').value.trim();
-      const loading = document.getElementById('loading');
-      const error = document.getElementById('error');
+            if (!link) {
+                alert('Please enter a URL!');
+                return;
+            }
 
-      error.style.display = 'none';
-      loading.style.display = 'none';
+            loading.style.display = 'block';
+            const proxy = 'https://api.codetabs.com/v1/proxy?quest=';
 
-      if (!link) {
-        alert('Please enter a URL!');
-        return;
-      }
-
-      loading.style.display = 'block';
-      const proxy = 'https://api.codetabs.com/v1/proxy?quest=';
-
-      fetch(proxy + link)
-        .then(response => {
-          if (!response.ok) {
-            throw new Error('URL is invalid or unreachable');
-          }
-          return response.text();
-        })
-        .then(text => {
-          loading.style.display = 'none';
-          document.write(text);
-        })
-        .catch(() => {
-          loading.style.display = 'none';
-          error.style.display = 'block';
-        });
-    }
-  </script>
+            fetch(proxy + link)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('URL is invalid or unreachable');
+                    }
+                    return response.text();
+                })
+                .then(text => {
+                    loading.style.display = 'none';
+                    document.write(text);
+                })
+                .catch(() => {
+                    loading.style.display = 'none';
+                    error.style.display = 'block';
+                });
+        }
+    </script>
 </body>
 </html>
-
