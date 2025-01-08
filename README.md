@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://github.com/NoobleGames/NoobleGames.github.io/blob/main/Logo/Logo4.png?raw=true" alt="Nooble Logo" width="300" height="300">
+  <img src="https://github.com/NoobleGames/NoobleGames.github.io/blob/main/Logo/Logo4.png?raw=true" alt="Nooble Logo" width="300" height="300"> 
   <h1 style="font-family: 'Arial', sans-serif; color: #4CAF50;">Welcome to Nooble!</h1>
 </div>
 
