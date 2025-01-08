@@ -1,154 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nooble | Codepen</title> <!-- Add your page title here -->
-
-    <!-- Link to the PNG favicon -->
-    <link rel="icon" href="https://github.com/NoobleGames/NoobleGames.github.io/blob/main/Logo/Logo4.png?raw=true" type="image/png"> <!-- Replace 'favicon.png' with the path to your PNG favicon -->
+    <title>Nooble | Codepen</title>
+    <link rel="icon" href="https://github.com/NoobleGames/NoobleGames.github.io/blob/main/Logo/Logo4.png?raw=true" type="image/png">
 
     <style>
-      body, html {
-        margin: 0;
-        padding: 0;
-        height: 100%;
-        width: 100%;
-        background-color: #252525; /* Set the background color to dark grey */
-        overflow: hidden;
-        font-family: Arial, sans-serif;
-      }
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            background-color: #252525;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
 
-      iframe {
-        height: 100%;
-        width: 100%;
-        overflow: auto;
-        position: absolute;
-        left: 0;
-        top: 0;
-        transition: width 0.3s ease, left 0.3s ease; /* Smooth transition when the sidebar is opened */
-      }
+        iframe {
+            height: 100%;
+            width: 100%;
+            overflow: auto;
+            position: absolute;
+            left: 0;
+            top: 0;
+            transition: width 0.3s ease, left 0.3s ease;
+        }
 
-      .sidebar {
-        position: absolute;
-        top: 0;
-        left: -300px; /* Initially hide the sidebar off-screen */
-        width: 300px;
-        height: 100%;
-        background: linear-gradient(to bottom, #333, #1e1e1e); /* Gradient background */
-        color: white;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding-top: 60px;
-        box-shadow: 4px 0 10px rgba(0,0,0,0.7);
-        transition: left 0.3s ease; /* Smooth transition when the sidebar is opened */
-        z-index: 100;
-      }
+        .sidebar {
+            position: absolute;
+            top: 0;
+            left: -300px;
+            width: 300px;
+            height: 100%;
+            background: linear-gradient(to bottom, #333, #1e1e1e);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 60px;
+            box-shadow: 4px 0 10px rgba(0,0,0,0.7);
+            transition: left 0.3s ease;
+            z-index: 100;
+        }
 
-      .sidebar a, .sidebar button {
-        color: white;
-        text-decoration: none;
-        font-size: 20px;
-        margin: 10px 0; /* Uniform margin */
-        padding: 15px;
-        width: 80%; /* Consistent width */
-        text-align: center;
-        border-radius: 5px;
-        box-sizing: border-box; /* Ensure padding and border are included in width */
-        transition: background-color 0.3s ease, transform 0.3s ease;
-      }
+        .sidebar a, .sidebar button {
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            margin: 10px 0;
+            padding: 15px;
+            width: 80%;
+            text-align: center;
+            border-radius: 5px;
+            box-sizing: border-box;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
 
-      .sidebar a {
-        background-color: #444;
-        display: block; /* Ensure it is a block-level element */
-      }
+        .sidebar a {
+            background-color: #444;
+            display: block;
+        }
 
-      .sidebar a:hover {
-        background-color: #555;
-        transform: scale(1.05); /* Slight scale effect on hover */
-      }
+        .sidebar a:hover {
+            background-color: #555;
+            transform: scale(1.05);
+        }
 
-      .sidebar button {
-        background-color: #555;
-        border: none;
-        cursor: pointer;
-      }
+        .sidebar button {
+            background-color: #555;
+            border: none;
+            cursor: pointer;
+        }
 
-      .sidebar button:hover {
-        background-color: #666;
-        transform: scale(1.05); /* Slight scale effect on hover */
-      }
+        .sidebar button:hover {
+            background-color: #666;
+            transform: scale(1.05);
+        }
 
-      .hamburger {
-        position: absolute;
-        top: 20px;
-        left: 20px;
-        cursor: pointer;
-        z-index: 101;
-      }
+        .hamburger {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            cursor: pointer;
+            z-index: 101;
+        }
 
-      .hamburger div {
-        width: 35px;
-        height: 4px;
-        background-color: white;
-        margin: 6px 0;
-        transition: all 0.3s ease;
-        border-radius: 2px;
-      }
+        .hamburger div {
+            width: 35px;
+            height: 4px;
+            background-color: white;
+            margin: 6px 0;
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
 
-      .hamburger:hover div {
-        background-color: #ccc;
-      }
+        .hamburger:hover div {
+            background-color: #ccc;
+        }
 
-      .text-link {
-        position: absolute;
-        top: 10px;
-        left: 50%;
-        transform: translateX(-50%); /* Center horizontally */
-        z-index: 10;
-        color: white;
-        font-size: 18px;
-        text-decoration: none;
-        background-color: #1e1e1e;
-        padding: 12px 20px;
-        border-radius: 5px;
-        white-space: nowrap; /* Prevent text wrapping */
-        display: block; /* Ensure it is displayed as a block element */
-        box-shadow: 0 4px 6px rgba(0,0,0,0.3); /* Add shadow for better visibility */
-        transition: background-color 0.3s ease, transform 0.3s ease;
-      }
+        .text-link {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            color: white;
+            font-size: 18px;
+            text-decoration: none;
+            background-color: #1e1e1e;
+            padding: 12px 20px;
+            border-radius: 5px;
+            white-space: nowrap;
+            display: block;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
 
-      .text-link:hover {
-        background-color: #333;
-        transform: scale(1.05); /* Slight scale effect on hover */
-      }
+        .text-link:hover {
+            background-color: #333;
+            transform: scale(1.05);
+        }
 
-      .sidebar-open .sidebar {
-        left: 0; /* Slide the sidebar into view */
-      }
+        .sidebar-open .sidebar {
+            left: 0;
+        }
 
-      .sidebar-open iframe {
-        width: calc(100% - 300px); /* Adjust iframe width when sidebar is open */
-        left: 300px; /* Push iframe right when sidebar is open */
-      }
+        .sidebar-open iframe {
+            width: calc(100% - 300px);
+            left: 300px;
+        }
 
-      .hidden {
-        display: none; /* Hide the element */
-      }
-
+        .hidden {
+            display: none;
+        }
     </style>
-  </head>
-  <body>
+</head>
+<body>
     <div class="hamburger" onclick="toggleSidebar()">
-      <div></div>
-      <div></div>
-      <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
     </div>
 
     <div class="sidebar">
-      <a href="https://nooblegames.github.io/">Home</a>
-      <button onclick="toggleLink()">Toggle Link</button>
+        <a href="https://nooblegames.github.io/">Home</a>
+        <button onclick="toggleLink()">Toggle Link</button>
     </div>
 
     <a href="https://nooblegames.github.io/" id="text-link" class="text-link">https://nooblegames.github.io/</a>
@@ -156,18 +153,14 @@
     <iframe src="https://codepen.io" scrolling="none" frameborder="0"></iframe>
 
     <script>
-      function toggleSidebar() {
-        document.body.classList.toggle('sidebar-open');
-      }
-
-      function toggleLink() {
-        const link = document.getElementById('text-link');
-        if (link.classList.contains('hidden')) {
-          link.classList.remove('hidden');
-        } else {
-          link.classList.add('hidden');
+        function toggleSidebar() {
+            document.body.classList.toggle('sidebar-open');
         }
-      }
+
+        function toggleLink() {
+            const link = document.getElementById('text-link');
+            link.classList.toggle('hidden');
+        }
     </script>
-  </body>
+</body>
 </html>
