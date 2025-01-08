@@ -88,7 +88,6 @@
 
         .update-log {
             width: 80%;
-            margin-top: 20px;
         }
 
         .log-entry {
@@ -124,40 +123,23 @@
             color: #ccc;
             margin-bottom: 10px;
             line-height: 1.8;
-            transition: color 0.3s ease;
         }
 
         .log-entry p:hover {
             color: #fff;
-            cursor: pointer;
         }
 
         .log-entry p strong {
             color: #ffffff;
         }
 
-        footer {
-            margin-top: auto;
+        .future-plans {
+            width: 80%;
+            background: rgba(255, 255, 255, 0.1);
             padding: 20px;
-            background: #222;
-            text-align: center;
-            color: #bbb;
-            border-top: 1px solid #444;
-        }
-
-        .footer-icons {
-            margin-top: 10px;
-        }
-
-        .footer-icons a {
-            color: #bbb;
-            margin: 0 10px;
-            font-size: 1.5rem;
-            transition: color 0.3s;
-        }
-
-        .footer-icons a:hover {
-            color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+            margin-bottom: 20px;
         }
     </style>
 </head>
@@ -173,22 +155,36 @@
 
     <div class="main">
         <h1>Update Logs</h1>
+        <section class="future-plans">
+            <h2>Future Plans</h2>
+            <p>
+                We are planning a significant rework of the website to enhance user experience and streamline maintenance. While this may not change the overall appearance of the site, some aesthetic aspects could evolve. Your patience during this transition is greatly appreciated.
+            </p>
+        </section>
         <section class="update-log">
             <div class="log-entry">
                 <h2>Version 3.6 - Jan 5</h2>
-                <p><strong>Details:</strong> Introduced Discord and GitHub logos for easy access to our community and repository. UI improvements made to the footer for better aesthetics.</p>
+                <p>
+                    Introduced Discord and GitHub logos for easy access to our community and repository. UI improvements made to the footer for better aesthetics.
+                </p>
             </div>
             <div class="log-entry">
                 <h2>Version 3.5 - Jan 1</h2>
-                <p><strong>Details:</strong> Implemented backend enhancements for movie listings, improving the efficiency and response time of data retrieval. Fixed minor bugs to improve user experience.</p>
+                <p>
+                    Implemented backend enhancements for movie listings, improving the efficiency and response time of data retrieval. Fixed minor bugs to improve user experience.
+                </p>
             </div>
             <div class="log-entry">
                 <h2>Version 3.4 - Dec 28</h2>
-                <p><strong>Details:</strong> Added Nooble Link Generator that provides easy access to create and manage unblocked links for content access.</p>
+                <p>
+                    Added Nooble Link Generator that provides easy access to create and manage unblocked links for content access.
+                </p>
             </div>
             <div class="log-entry">
                 <h2>Version 3.3 - Dec 21</h2>
-                <p><strong>Details:</strong> Introduced the Update Logs feature, redesigned layout for better navigation, addressed various bugs reported by users, and expanded the library of available games.</p>
+                <p>
+                    Introduced the Update Logs feature, redesigned layout for better navigation, addressed various bugs reported by users, and expanded the library of available games.
+                </p>
             </div>
         </section>
     </div>
