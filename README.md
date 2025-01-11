@@ -12,8 +12,8 @@
 
 <h2 style="text-align: center;">🌟 Contributors</h2>
 <div align="center">
-  <a href="https://github.com/DamageCoding/CUG/graphs/contributors">
-    <img src="https://contrib.rocks/image?repo=DamageCoding/CUG" alt="Contributors Image" style="border-radius: 10px;" />
+  <a href="https://github.com/NoobleGames/NoobleGames.github.io/graphs/contributors">
+    <img src="https://contrib.rocks/image?repo=NoobleGames/NoobleGames.github.io" alt="Contributors Image" style="border-radius: 10px;" />
   </a>
 </div>
 
