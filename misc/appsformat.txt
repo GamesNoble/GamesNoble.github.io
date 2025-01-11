@@ -9,7 +9,7 @@ Scratch|https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-Eu3fhe2i84ppY_1x
 PicoTorrent|https://avatars.githubusercontent.com/u/13157179?s=280&v=4|./picotorrent.html|
 Medium|https://cdn.icon-icons.com/icons2/3041/PNG/512/medium_logo_icon_189223.png|./medium.html|
 Coursera|https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2d7rurSRthHHw4W1anoF9N3p5xKxhZNK_AQ&s|./coursera.html|
-Notion|https://upload.wikimedia.org/wikipedia/commons/4/45/Notion_app_logo.png|./notion.html|
+Notion|https://upload.wikimedia.org/wikipedia/commons/4/45/Notion_app_logo.png|./notion.html|  
 Duolingo|https://seeklogo.com/images/D/duolingo-logo-DB18C5E638-seeklogo.com.png|./duolingo.html|
 Slack|https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaPlbD42KHzVMn8SG2t54umtxYfOz2Mcwm8w&s|./slack.html|
 Vim|https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Vimlogo.svg/1200px-Vimlogo.svg.png|./vim.html|
