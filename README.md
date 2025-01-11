@@ -7,7 +7,7 @@
   Discover an exciting collection of games, applications, proxies, and endless fun!
   If you enjoy what you see here, please consider <strong>forking this repository</strong> and giving it a star ⭐!
 </p>
-
+  
 <hr>
 
 <h2 style="text-align: center;">🌟 Contributors</h2>
