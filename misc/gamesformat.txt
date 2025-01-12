@@ -13,7 +13,7 @@ Fruit Ninja|/misc/images/FruitNinja.png|./FruitNinja.html|
 Funny Shooter 2|/misc/images/funnyshooter2.png|./Funnyshooter2.html|
 Galaga|/misc/images/galaga.png|./galaga.html|
 Happy Wheels|/misc/images/happywheels.png|./happywheels.html|
-Highway Racer|https://ubg77.github.io/edit/highway-racer-3d/logo.png|./highwayracer.html|
+Highway Racer|/misc/images/highwayracer.png|./highwayracer.html|
 House Of Hazards|https://cdn-1.webcatalog.io/catalog/poki-house-of-hazards/poki-house-of-hazards-icon-filled-256.webp?v=1714779541602|./houseofhazards.html|
 Johnny Revenge|https://slope-game.github.io/johnny-revenge/logo.png|./johnnyrevenge.html|
 Just Fall|https://play-lh.googleusercontent.com/-0rSllZ8as88Jcs3iZ7-JCFyTb3YLB-HjR7bY7P6q_2MAswmDH4h1qNPfFiaZqzkkg|./justfall.html|
