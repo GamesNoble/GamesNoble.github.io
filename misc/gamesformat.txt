@@ -1,7 +1,7 @@
 1v1.lol|/misc/images/1v1lol.png|./1v1.lol.html|
 Basket Ball Random|/misc/images/BasketBallRandom.png|./basketballrandom.html|
 Basket Ball Stars|https://play-lh.googleusercontent.com/EjJV6kCXgX9EIhKEtpYhQF8-BUb5En8sDKpOPiWSQJUxv9_RAfl4tMxyIMkQYgeqC6I=w240-h480-rw|./basketballstars.html|
-Bitlife|https://play-lh.googleusercontent.com/fUM-UyywXxjC8soxAZdIlxJrlRRXmql8wkE426SHzft4lJycSKVd2jCYQQX1BEG9Xw|./Bitlife.html|
+Bitlife|/misc/images/Bitlife.png|./Bitlife.html|
 Black Smith|https://play-lh.googleusercontent.com/n8wCaQKY2I4P4K9jFzy6_AJpWOa2uVYLSrlDvZDEJpmtBuOz-cSOuLLGlvn37V1ychU|./Blacksmith.html|   
 Boxing Physics 2|https://classroomjq.github.io/boxing-physics-2/logo.png|./boxingphysics.html|
 Boxing Random|https://bitlifeonline.github.io/boxing-random/logo.png|./boxingrandom.html|
