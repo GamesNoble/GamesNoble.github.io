@@ -20,9 +20,9 @@ Just Fall|/misc/images/justfall.png|./justfall.html|
 KARLSON'T|/misc/images/karlsont.png|./karlsont.html|
 Minecraft|/misc/images/minecraft.png|./minecraft.html|
 Nut Simulator|/misc/images/nutsimulator.png|./NUT SIM.html|
-Only Up|https://slope-game.github.io/only-up-3d-parkour-go-ascend/logo.png|./onlyup.html|
-OvO|https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSP_9wtlG3hoiV0HJQfDm9fHDM6qfjIWRjxNu63Ye2R-VsFSzuRT3P3XwZBAzzFwWClE38&usqp=CAU|./OvO.html|
-PAC-MAN (New)|https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpxFrGb4zSwEOUrA81U99LQIzIQdIRdk2z0g&s|./pacman.html|
+Only Up|/misc/images/onlyup.png|./onlyup.html|
+OvO|/misc/images/ovo.png|./OvO.html|
+PAC-MAN |/misc/images/pacman.png|./pacman.html|
 Paper.io|https://is1-ssl.mzstatic.com/image/thumb/Purple116/v4/d6/2e/cf/d62ecfdd-1695-592c-ea3b-c1d873ef601a/AppIcon-1x_U007emarketing-0-7-0-85-220.png/512x512bb.jpg|./paper.io.html|
 Rebels Clash|https://bitlifeonline.github.io/rebels-clash/logo.png|./rebelsclash.html|
 Retro Highway|https://classroomjq.github.io/retro-highway/logo.png|./retrohighway.html|
