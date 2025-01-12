@@ -3,7 +3,7 @@ Basket Ball Random|/misc/images/BasketBallRandom.png|./basketballrandom.html|
 Basket Ball Stars|/misc/images/BasketBallStars.png|./basketballstars.html|
 Bitlife|/misc/images/Bitlife.png|./Bitlife.html|
 Black Smith|/misc/images/BlackSmith.png|./Blacksmith.html|   
-Boxing Physics 2|https://classroomjq.github.io/boxing-physics-2/logo.png|./boxingphysics.html|
+Boxing Physics 2|/misc/images/BoxingPhysics2.png.|./boxingphysics.html|
 Boxing Random|https://bitlifeonline.github.io/boxing-random/logo.png|./boxingrandom.html|
 Cookie Clicker|https://play-lh.googleusercontent.com/Z1MOuuiD05ZN5LkVmMEvKF0mqAc-FknaQ2j8s4dZiO-LSPQX4EEA3RVJdlQEtxe96ok|./cookieclicker.html|
 Cube Dash|https://github.com/NoobleGames/Cube-Dash/blob/main/Cube%20Dash.png?raw=true|./CubeDash.html|
