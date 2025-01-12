@@ -14,7 +14,7 @@ Funny Shooter 2|/misc/images/funnyshooter2.png|./Funnyshooter2.html|
 Galaga|/misc/images/galaga.png|./galaga.html|
 Happy Wheels|/misc/images/happywheels.png|./happywheels.html|
 Highway Racer|/misc/images/highwayracer.png|./highwayracer.html|
-House Of Hazards|https://cdn-1.webcatalog.io/catalog/poki-house-of-hazards/poki-house-of-hazards-icon-filled-256.webp?v=1714779541602|./houseofhazards.html|
+House Of Hazards|/misc/images/houseofhazards.webp|./houseofhazards.html|
 Johnny Revenge|https://slope-game.github.io/johnny-revenge/logo.png|./johnnyrevenge.html|
 Just Fall|https://play-lh.googleusercontent.com/-0rSllZ8as88Jcs3iZ7-JCFyTb3YLB-HjR7bY7P6q_2MAswmDH4h1qNPfFiaZqzkkg|./justfall.html|
 KARLSON'T|https://cdn1.iconfinder.com/data/icons/files-folder-001-solid/32/Banned_data_document_file_paper_block_error-512.png|./karlsont.html|
