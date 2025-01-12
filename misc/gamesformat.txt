@@ -1,6 +1,6 @@
 1v1.lol|/misc/images/1v1lol.png|./1v1.lol.html|
 Basket Ball Random|/misc/images/BasketBallRandom.png|./basketballrandom.html|
-Basket Ball Stars|https://play-lh.googleusercontent.com/EjJV6kCXgX9EIhKEtpYhQF8-BUb5En8sDKpOPiWSQJUxv9_RAfl4tMxyIMkQYgeqC6I=w240-h480-rw|./basketballstars.html|
+Basket Ball Stars|/misc/images/BasketBallStars.png|./basketballstars.html|
 Bitlife|/misc/images/Bitlife.png|./Bitlife.html|
 Black Smith|/misc/images/BlackSmith.png|./Blacksmith.html|   
 Boxing Physics 2|https://classroomjq.github.io/boxing-physics-2/logo.png|./boxingphysics.html|
