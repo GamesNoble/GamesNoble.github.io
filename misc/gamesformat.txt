@@ -17,9 +17,9 @@ Highway Racer|/misc/images/highwayracer.png|./highwayracer.html|
 House Of Hazards|/misc/images/houseofhazards.webp|./houseofhazards.html|
 Johnny Revenge|/misc/images/johnnyrevenge.png|./johnnyrevenge.html|
 Just Fall|/misc/images/justfall.png|./justfall.html|
-KARLSON'T|/misc/images/karlsont.png.png|./karlsont.html|
-Minecraft|https://preview.redd.it/avjal33hpqo61.png?width=512&format=png&auto=webp&s=b652d83347448df74c8ba61c17b322e686ee32a4|./minecraft.html|
-Nut Simulator|https://nutsimulator.github.io/images/icon.png|./NUT SIM.html|
+KARLSON'T|/misc/images/karlsont.png|./karlsont.html|
+Minecraft|/misc/images/minecraft.png|./minecraft.html|
+Nut Simulator|/misc/images/nutsimulator.png|./NUT SIM.html|
 Only Up|https://slope-game.github.io/only-up-3d-parkour-go-ascend/logo.png|./onlyup.html|
 OvO|https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSP_9wtlG3hoiV0HJQfDm9fHDM6qfjIWRjxNu63Ye2R-VsFSzuRT3P3XwZBAzzFwWClE38&usqp=CAU|./OvO.html|
 PAC-MAN (New)|https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpxFrGb4zSwEOUrA81U99LQIzIQdIRdk2z0g&s|./pacman.html|
