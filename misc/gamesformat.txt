@@ -23,9 +23,9 @@ Nut Simulator|/misc/images/nutsimulator.png|./NUT SIM.html|
 Only Up|/misc/images/onlyup.png|./onlyup.html|
 OvO|/misc/images/ovo.png|./OvO.html|
 PAC-MAN |/misc/images/pacman.png|./pacman.html|
-Paper.io|https://is1-ssl.mzstatic.com/image/thumb/Purple116/v4/d6/2e/cf/d62ecfdd-1695-592c-ea3b-c1d873ef601a/AppIcon-1x_U007emarketing-0-7-0-85-220.png/512x512bb.jpg|./paper.io.html|
-Rebels Clash|https://bitlifeonline.github.io/rebels-clash/logo.png|./rebelsclash.html|
-Retro Highway|https://classroomjq.github.io/retro-highway/logo.png|./retrohighway.html|
+Paper.io|/misc/images/paperio.png|./paper.io.html|
+Rebels Clash|/misc/images/rebelsclash.png|./rebelsclash.html|
+Retro Highway|/misc/images/retrohighway.png|./retrohighway.html|
 Roblox|https://upload.wikimedia.org/wikipedia/commons/7/7e/Roblox_Logo_2022.jpg|./roblox.html|
 Rolly Vortex|https://lh3.googleusercontent.com/TMIIm3c1UZQPP1iSn0VJ-YLAqb9nG4IRQ0ZVe411L2rxJXuyNiRNhwu7b4MPXZpKrDXO|./rollyvortex.html|
 Slope|https://play-lh.googleusercontent.com/uJn2i9h7KxYQarC_c3K4qH6o7gLtflFnhD_dN14MNkzHJ1NeNFzCL69jpB5mT0vCoQs|./slope.html|
