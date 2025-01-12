@@ -15,7 +15,6 @@ Galaga|https://banner2.cleanpng.com/20180523/ctc/avqdxpch4.webp|./galaga.html|
 Happy Wheels|https://play-lh.googleusercontent.com/SV8RsV5udSeeONjatT5SwleP6lzV6PjtNPs2VvyohJXWSG9fFLNOfslDEHbpDN337wQ|./happywheels.html|
 Highway Racer|https://ubg77.github.io/edit/highway-racer-3d/logo.png|./highwayracer.html|
 House Of Hazards|https://cdn-1.webcatalog.io/catalog/poki-house-of-hazards/poki-house-of-hazards-icon-filled-256.webp?v=1714779541602|./houseofhazards.html|
-Infinite Craft (Broken)|https://static0.srcdn.com/wordpress/wp-content/uploads/2024/02/infinite-craft-temp-game-poster.jpg|./infinitecraft.html|
 Johnny Revenge|https://slope-game.github.io/johnny-revenge/logo.png|./johnnyrevenge.html|
 Just Fall|https://play-lh.googleusercontent.com/-0rSllZ8as88Jcs3iZ7-JCFyTb3YLB-HjR7bY7P6q_2MAswmDH4h1qNPfFiaZqzkkg|./justfall.html|
 KARLSON'T|https://cdn1.iconfinder.com/data/icons/files-folder-001-solid/32/Banned_data_document_file_paper_block_error-512.png|./karlsont.html|
