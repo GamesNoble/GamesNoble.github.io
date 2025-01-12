@@ -145,6 +145,9 @@
             flex-direction: column;
             justify-content: flex-end;
             position: relative;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
         }
 
         .game-card img {
@@ -161,9 +164,16 @@
             margin-top: 15px;
         }
 
-        .game-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+        .game-card.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .loading {
+            margin: 20px;
+            font-size: 1.5rem;
+            color: #fff;
+            display: none;
         }
 
         @media (max-width: 1024px) {
@@ -256,70 +266,81 @@
         
         <div class="game-grid" id="gamesGrid">
         </div>
+        <div class="loading" id="loading">Loading games...</div>
+        <div id="loadMore" style="height: 2px;"></div>
     </div>
 
     <script>
+        let games = [];
+        let currentIndex = 0;
+        const gamesToLoad = 10;
+
         document.addEventListener('DOMContentLoaded', () => {
             fetchGames();
+            setupObserver();
         });
-
-        const imageLoadingInterval = setInterval(() => {
-            const gameCards = document.querySelectorAll('.game-card');
-            gameCards.forEach((card, index) => {
-                if (card.querySelector('img').complete) {
-                } else {
-                    if (index >= gameCards.length - 5) {
-                        card.querySelector('img').src = card.querySelector('img').dataset.src;
-                        card.querySelector('img').onload = () => {
-                            clearInterval(imageLoadingInterval);
-                        }
-                        card.querySelector('img').onerror = () => {
-                            clearInterval(imageLoadingInterval);
-                        };
-                    }
-                }
-            });
-        }, 100);
 
         function fetchGames() {
             fetch('/misc/gamesformat.txt')
                 .then(response => response.text())
                 .then(data => {
-                    const gamesGrid = document.getElementById('gamesGrid');
-                    const games = data.trim().split('\n');
-                    games.sort((a, b) => a.split('|')[0].toLowerCase().localeCompare(b.split('|')[0].toLowerCase()));
-
-                    games.forEach(game => {
-                        const [name, imageUrl, link] = game.split('|');
-                        const card = document.createElement('div');
-                        card.className = 'game-card';
-                        card.style.order = games.indexOf(game);
-                        card.onclick = () => window.location.href = link;
-                        const img = document.createElement('img');
-                        img.src = imageUrl;
-                        img.dataset.src = imageUrl;
-                        img.onerror = () => {
-                        };
-                        card.innerHTML = 
-                            `<img src="${imageUrl}" alt="${name}" onerror="this.src='https://via.placeholder.com/240x200'; this.onerror=null;">
-                            <h3>${name}</h3>`;
-                        gamesGrid.appendChild(card);
-                    });
+                    games = data.trim().split('\n').map(game => game.split('|'));
+                    loadMoreGames(); 
                 })
                 .catch(error => console.error('Error loading games:', error));
+        }
+
+        function loadMoreGames() {
+            const gamesGrid = document.getElementById('gamesGrid');
+            const loading = document.getElementById('loading');
+            loading.style.display = 'block'; 
+
+            for (let i = currentIndex; i < currentIndex + gamesToLoad && i < games.length; i++) {
+                const [name, imageUrl, link] = games[i];
+
+                const card = document.createElement('div');
+                card.className = 'game-card';
+                card.onclick = () => window.location.href = link;
+                card.innerHTML = `<img src="${imageUrl}" alt="${name}" onerror="this.src='https://via.placeholder.com/240x200'; this.onerror=null;">
+                                  <h3>${name}</h3>`;
+                gamesGrid.appendChild(card);
+
+                setTimeout(() => {
+                    card.classList.add('show');
+                }, 100);
+            }
+
+            currentIndex += gamesToLoad;
+            loading.style.display = 'none'; 
+
+            if (currentIndex >= games.length) {
+                observer.disconnect();
+            }
+        }
+
+        function setupObserver() {
+            const loadMoreElement = document.getElementById('loadMore');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        loadMoreGames();
+                    }
+                });
+            });
+
+            observer.observe(loadMoreElement);
         }
 
         function filterGames() {
             const searchTerm = document.getElementById('gameSearch').value.toLowerCase();
             const gameCards = document.querySelectorAll('.game-card');
             gameCards.forEach(card => {
-                if (card.querySelector('img').complete) {
-                    const gameName = card.querySelector('h3').textContent.toLowerCase();
-                    if (gameName.includes(searchTerm)) {
-                        card.style.display = '';
-                    } else {
-                        card.style.display = 'none';
-                    }
+                const gameName = card.querySelector('h3').textContent.toLowerCase();
+                if (gameName.includes(searchTerm)) {
+                    card.style.display = '';
+                } else {
+                    card.style.display = 'none';
                 }
             });
         }
