@@ -9,7 +9,7 @@ Cookie Clicker|/misc/images/CookieClicker.png|./cookieclicker.html|
 Cube Dash|/misc/images/CubeDash.png|./CubeDash.html|
 Donkey Kong|/misc/images/DonkeyKong.png|./donkeykong.html|
 Drive Mad|/misc/images/drivemad.png|./drivemad.html|
-Fruit Ninja|https://github.com/NoobleGames/NoobleGames.github.io/blob/main/misc/images/Fruit_Ninja_logo.png?raw=true|./FruitNinja.html|
+Fruit Ninja|/misc/images/FruitNinja.png|./FruitNinja.html|
 Funny Shooter 2|https://classroomjq.github.io/funny-shooter-2/logo.png|./Funnyshooter2.html|
 Galaga|https://banner2.cleanpng.com/20180523/ctc/avqdxpch4.webp|./galaga.html|
 Happy Wheels|https://play-lh.googleusercontent.com/SV8RsV5udSeeONjatT5SwleP6lzV6PjtNPs2VvyohJXWSG9fFLNOfslDEHbpDN337wQ|./happywheels.html|
