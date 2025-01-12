@@ -2,7 +2,7 @@
 Basket Ball Random|/misc/images/BasketBallRandom.png|./basketballrandom.html|
 Basket Ball Stars|https://play-lh.googleusercontent.com/EjJV6kCXgX9EIhKEtpYhQF8-BUb5En8sDKpOPiWSQJUxv9_RAfl4tMxyIMkQYgeqC6I=w240-h480-rw|./basketballstars.html|
 Bitlife|/misc/images/Bitlife.png|./Bitlife.html|
-Black Smith|https://play-lh.googleusercontent.com/n8wCaQKY2I4P4K9jFzy6_AJpWOa2uVYLSrlDvZDEJpmtBuOz-cSOuLLGlvn37V1ychU|./Blacksmith.html|   
+Black Smith|/misc/images/BlackSmith.png|./Blacksmith.html|   
 Boxing Physics 2|https://classroomjq.github.io/boxing-physics-2/logo.png|./boxingphysics.html|
 Boxing Random|https://bitlifeonline.github.io/boxing-random/logo.png|./boxingrandom.html|
 Cookie Clicker|https://play-lh.googleusercontent.com/Z1MOuuiD05ZN5LkVmMEvKF0mqAc-FknaQ2j8s4dZiO-LSPQX4EEA3RVJdlQEtxe96ok|./cookieclicker.html|
