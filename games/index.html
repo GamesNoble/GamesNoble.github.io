@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nooble | Games</title>    
+    <title>Nooble | Games</title>
     <meta property="og:title" content="Nooble - Your One-Stop Gateway to Unblocked Content!" />
     <meta property="og:description" content="Explore a wide range of games, apps, movies, and proxy services all in one place!" />
     <meta property="og:image" content="https://github.com/NoobleGames/NoobleGames.github.io/blob/main/Logo/Logo4.png?raw=true" />
@@ -264,8 +264,7 @@
             <input type="text" id="gameSearch" placeholder="Search Games..." oninput="filterGames()">
         </div>
         
-        <div class="game-grid" id="gamesGrid">
-        </div>
+        <div class="game-grid" id="gamesGrid"></div>
         <div class="loading" id="loading">Loading games...</div>
         <div id="loadMore" style="height: 2px;"></div>
     </div>
@@ -285,6 +284,7 @@
                 .then(response => response.text())
                 .then(data => {
                     games = data.trim().split('\n').map(game => game.split('|'));
+                    games.sort((a, b) => a[0].localeCompare(b[0]));
                     loadMoreGames(); 
                 })
                 .catch(error => console.error('Error loading games:', error));
