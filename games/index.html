@@ -139,18 +139,31 @@
             border-radius: 10px;
             text-align: center;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-            transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.5s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             cursor: pointer;
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
             position: relative;
-            opacity: 0;
         }
 
-        .game-card.visible {
-            opacity: 1;
-            transform: translateY(0);
+        .game-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .game-card h3 {
+            font-size: 1.2rem;
+            color: #fff;
+            margin-top: 15px;
+        }
+
+        .game-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
         }
 
         @media (max-width: 1024px) {
@@ -241,81 +254,73 @@
             <input type="text" id="gameSearch" placeholder="Search Games..." oninput="filterGames()">
         </div>
         
-        <div class="game-grid" id="gamesGrid"></div>
+        <div class="game-grid" id="gamesGrid">
+        </div>
     </div>
 
     <script>
-        const gamesPerLoad = 8;
-        let allGames = [];
-        let currentLoadIndex = 0;
-
         document.addEventListener('DOMContentLoaded', () => {
             fetchGames();
-            setupScrollObserver();
         });
+
+        const imageLoadingInterval = setInterval(() => {
+            const gameCards = document.querySelectorAll('.game-card');
+            gameCards.forEach((card, index) => {
+                if (card.querySelector('img').complete) {
+                } else {
+                    if (index >= gameCards.length - 5) {
+                        card.querySelector('img').src = card.querySelector('img').dataset.src;
+                        card.querySelector('img').onload = () => {
+                            clearInterval(imageLoadingInterval);
+                        }
+                        card.querySelector('img').onerror = () => {
+                            clearInterval(imageLoadingInterval);
+                        };
+                    }
+                }
+            });
+        }, 100);
 
         function fetchGames() {
             fetch('/misc/gamesformat.txt')
                 .then(response => response.text())
                 .then(data => {
-                    allGames = data.trim().split('\n').map(game => game.split('|'));
-                    allGames.sort((a, b) => a[0].toLowerCase().localeCompare(b[0].toLowerCase()));
-                    loadMoreGames();
+                    const gamesGrid = document.getElementById('gamesGrid');
+                    const games = data.trim().split('\n');
+                    games.sort((a, b) => a.split('|')[0].toLowerCase().localeCompare(b.split('|')[0].toLowerCase()));
+
+                    games.forEach(game => {
+                        const [name, imageUrl, link] = game.split('|');
+                        const card = document.createElement('div');
+                        card.className = 'game-card';
+                        card.style.order = games.indexOf(game);
+                        card.onclick = () => window.location.href = link;
+                        const img = document.createElement('img');
+                        img.src = imageUrl;
+                        img.dataset.src = imageUrl;
+                        img.onerror = () => {
+                        };
+                        card.innerHTML = 
+                            `<img src="${imageUrl}" alt="${name}" onerror="this.src='https://via.placeholder.com/240x200'; this.onerror=null;">
+                            <h3>${name}</h3>`;
+                        gamesGrid.appendChild(card);
+                    });
                 })
                 .catch(error => console.error('Error loading games:', error));
-        }
-
-        function loadMoreGames() {
-            const gamesGrid = document.getElementById('gamesGrid');
-            const gamesToLoad = allGames.slice(currentLoadIndex, currentLoadIndex + gamesPerLoad);
-            
-            gamesToLoad.forEach(game => {
-                const [name, imageUrl, link] = game;
-                const card = document.createElement('div');
-                card.className = 'game-card';
-                card.innerHTML = `<img src="${imageUrl}" alt="${name}">
-                                  <h3>${name}</h3>`;
-                card.onclick = () => window.location.href = link;
-                gamesGrid.appendChild(card);
-                requestAnimationFrame(() => {
-                    requestAnimationFrame(() => {
-                        card.classList.add('visible');
-                    });
-                });
-            });
-            
-            currentLoadIndex += gamesToLoad.length;
-            if (currentLoadIndex >= allGames.length) {
-                observer.disconnect();
-            }
-        }
-
-        function setupScrollObserver() {
-            const options = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 1.0
-            };
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        loadMoreGames();
-                    }
-                });
-            }, options);
-
-            const observerTarget = document.createElement('div');
-            observerTarget.style.height = '1px';
-            document.body.appendChild(observerTarget);
-            observer.observe(observerTarget);
         }
 
         function filterGames() {
             const searchTerm = document.getElementById('gameSearch').value.toLowerCase();
             const gameCards = document.querySelectorAll('.game-card');
             gameCards.forEach(card => {
-                const gameName = card.querySelector('h3').textContent.toLowerCase();
-                card.style.display = gameName.includes(searchTerm) ? '' : 'none';
+                if (card.querySelector('img').complete) {
+                    const gameName = card.querySelector('h3').textContent.toLowerCase();
+                    if (gameName.includes(searchTerm)) {
+                        card.style.display = '';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                }
             });
         }
     </script>
