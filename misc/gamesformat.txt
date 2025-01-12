@@ -1,7 +1,7 @@
 1v1.lol|/misc/images/1v1lol.png|./1v1.lol.html|
 Basket Ball Random|/misc/images/BasketBallRandom.png|./basketballrandom.html|
 Basket Ball Stars|/misc/images/BasketBallStars.png|./basketballstars.html|
-Bitlife|/misc/images/Bitlife.png|./Bitlife.html|
+Bitlife|/misc/images/Bitlife.png|./Bitlife.html|   
 Black Smith|/misc/images/BlackSmith.png|./Blacksmith.html|   
 Boxing Physics 2|/misc/images/BoxingPhysics2.png|./boxingphysics.html|
 Boxing Random|/misc/images/BoxingRandom.png|./boxingrandom.html|
