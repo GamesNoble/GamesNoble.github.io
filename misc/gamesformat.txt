@@ -10,7 +10,7 @@ Cube Dash|/misc/images/CubeDash.png|./CubeDash.html|
 Donkey Kong|/misc/images/DonkeyKong.png|./donkeykong.html|
 Drive Mad|/misc/images/drivemad.png|./drivemad.html|
 Fruit Ninja|/misc/images/FruitNinja.png|./FruitNinja.html|
-Funny Shooter 2|https://classroomjq.github.io/funny-shooter-2/logo.png|./Funnyshooter2.html|
+Funny Shooter 2|/misc/images/funnyshooter2.png|./Funnyshooter2.html|
 Galaga|https://banner2.cleanpng.com/20180523/ctc/avqdxpch4.webp|./galaga.html|
 Happy Wheels|https://play-lh.googleusercontent.com/SV8RsV5udSeeONjatT5SwleP6lzV6PjtNPs2VvyohJXWSG9fFLNOfslDEHbpDN337wQ|./happywheels.html|
 Highway Racer|https://ubg77.github.io/edit/highway-racer-3d/logo.png|./highwayracer.html|
