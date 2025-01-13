@@ -17,12 +17,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
-     * {
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
             font-family: 'Poppins', sans-serif;
             background: radial-gradient(circle, #333, #000);
@@ -33,7 +32,6 @@
             font-size: 16px;
             line-height: 1.5;
         }
-
         .sidebar {
             position: fixed;
             top: 0;
@@ -49,14 +47,12 @@
             z-index: 10;
             transition: transform 0.3s ease;
         }
-
         .sidebar h1 {
             color: #bbb;
             font-size: 2rem;
             margin-bottom: 30px;
             text-align: center;
         }
-
         .sidebar a {
             color: #aaa;
             text-decoration: none;
@@ -65,12 +61,10 @@
             border-radius: 8px;
             transition: background-color 0.3s ease, color 0.3s ease;
         }
-
         .sidebar a:hover {
             background-color: #444;
             color: #ffffff;
         }
-
         .main {
             margin-left: 240px;
             display: flex;
@@ -83,20 +77,17 @@
             overflow-y: auto;
             transition: margin-left 0.3s ease;
         }
-
         .main h1 {
             font-size: 4rem;
             color: #ffffff;
             margin-bottom: 20px;
             font-weight: 600;
         }
-
         .main p {
             font-size: 1.3rem;
             margin-bottom: 30px;
             color: #ccc;
         }
-
         .search-bar {
             margin-bottom: 20px;
             width: 100%;
@@ -105,7 +96,6 @@
             justify-content: center;
             padding: 0 20px;
         }
-
         .search-bar input {
             width: 100%;
             padding: 12px 20px;
@@ -116,13 +106,11 @@
             color: #fff;
             transition: border-color 0.3s ease, background-color 0.3s ease;
         }
-
         .search-bar input:focus {
             outline: none;
             border-color: #888;
             background-color: #333;
         }
-
         .game-grid {
             display: flex;
             flex-wrap: wrap;
@@ -130,7 +118,6 @@
             justify-content: center;
             margin-top: 50px;
         }
-
         .game-card {
             width: 240px;
             height: 320px;
@@ -148,7 +135,6 @@
             opacity: 0;
             animation: fadeIn 0.5s forwards;
         }
-
         .game-card img {
             width: 100%;
             height: 200px;
@@ -156,58 +142,47 @@
             border-radius: 8px;
             margin-bottom: 10px;
         }
-
         .game-card h3 {
             font-size: 1.2rem;
             color: #fff;
             margin-top: 15px;
         }
-
         .game-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
         }
-
         @keyframes fadeIn {
             to {
                 opacity: 1;
             }
         }
-
         @media (max-width: 1024px) {
             .sidebar {
                 width: 220px;
             }
-
             .main {
                 margin-left: 220px;
             }
         }
-
         @media (max-width: 768px) {
             .sidebar {
                 width: 200px;
             }
-
             .main {
                 margin-left: 200px;
                 padding: 20px;
             }
-
             .main h1 {
                 font-size: 3rem;
             }
-
             .game-grid {
                 gap: 20px;
             }
-
             .game-card {
                 width: 220px;
                 height: 300px;
             }
         }
-
         @media (max-width: 480px) {
             .sidebar {
                 width: 100%;
@@ -215,28 +190,22 @@
                 position: relative;
                 padding: 15px;
             }
-
             .sidebar h1 {
                 font-size: 1.5rem;
             }
-
             .sidebar a {
                 font-size: 1rem;
             }
-
             .main {
                 margin-left: 0;
                 padding: 10px;
             }
-
             .main h1 {
                 font-size: 2.5rem;
             }
-
             .game-grid {
                 gap: 10px;
             }
-
             .game-card {
                 width: 200px;
                 height: 280px;
@@ -267,40 +236,21 @@
     </div>
 
     <script>
-        const gameCards = [];
-        let imageLoadCheckInterval;
-
         document.addEventListener('DOMContentLoaded', () => {
             fetchGames();
-            startImageLoadCheck();
-            setUpScrollObserver();
+            startImageLoadingCheck();
         });
 
-        function startImageLoadCheck() {
-            imageLoadCheckInterval = setInterval(() => {
+        function startImageLoadingCheck() {
+            setInterval(() => {
+                const gameCards = document.querySelectorAll('.game-card');
                 gameCards.forEach((card) => {
                     const img = card.querySelector('img');
                     if (!img.complete) {
-                        img.src = img.dataset.src; 
+                        img.src = img.dataset.src;
                     }
                 });
-            }, 10000); 
-        }
-
-        function setUpScrollObserver() {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const img = entry.target.querySelector('img');
-                        if (img && !img.complete) {
-                            img.src = img.dataset.src;
-                        }
-                    }
-                });
-            });
-
-            const gameCardsList = document.querySelectorAll('.game-card');
-            gameCardsList.forEach(card => observer.observe(card));
+            }, 10000);
         }
 
         function fetchGames() {
@@ -318,15 +268,27 @@
                         card.style.animationDelay = `${index * 0.1}s`;
                         card.onclick = () => window.location.href = link;
                         const img = document.createElement('img');
-                        img.src = ''; 
-                        img.dataset.src = imageUrl; 
+                        img.dataset.src = imageUrl;
+                        img.src = '';
+                        img.alt = name;
+
+                        const observer = new IntersectionObserver((entries) => {
+                            entries.forEach(entry => {
+                                if (entry.isIntersecting) {
+                                    img.src = entry.target.dataset.src;
+                                    observer.unobserve(entry.target);
+                                }
+                            });
+                        });
+                        
                         img.onerror = () => {
                             img.src = 'https://via.placeholder.com/240x200';
                         };
-                        card.innerHTML = `<h3>${name}</h3>`;
+
                         card.appendChild(img);
+                        card.innerHTML += `<h3>${name}</h3>`;
                         gamesGrid.appendChild(card);
-                        gameCards.push(card); 
+                        observer.observe(img);
                     });
                 })
                 .catch(error => console.error('Error loading games:', error));
@@ -334,13 +296,11 @@
 
         function filterGames() {
             const searchTerm = document.getElementById('gameSearch').value.toLowerCase();
-            const gameCardsList = document.querySelectorAll('.game-card');
-            gameCardsList.forEach(card => {
-                const gameName = card.querySelector('h3').textContent.toLowerCase();
-                if (gameName.includes(searchTerm)) {
-                    card.style.display = '';
-                } else {
-                    card.style.display = 'none';
+            const gameCards = document.querySelectorAll('.game-card');
+            gameCards.forEach(card => {
+                if (card.querySelector('img').complete) {
+                    const gameName = card.querySelector('h3').textContent.toLowerCase();
+                    card.style.display = gameName.includes(searchTerm) ? '' : 'none';
                 }
             });
         }
