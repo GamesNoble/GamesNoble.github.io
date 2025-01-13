@@ -51,3 +51,4 @@ Friday Night Funkin|/misc/images/fridaynightfunkin.png|./fridaynightfunkin.html
 Baldi's Basics|/misc/images/baldisbasic.png|./baldisbasic.html
 Angry Birds|/misc/images/angrybirds.png|./angrybirds.html
 Murder|/misc/images/murder.png|./murder.html
+Crossy Road|/misc/images/crossyroad.png|./crossyroad.html
