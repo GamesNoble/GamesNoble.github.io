@@ -3,8 +3,8 @@
 <head> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    <title>Nooble | Flappy Bird</title>
-    <link rel="icon" href="https://github.com/NoobleGames/NoobleGames.github.io/blob/main/Logo/Logo4.png?raw=true" type="image/png">
+    <title>Nooble | Flappy Bird</title>                   
+    <link rel="icon" href="/misc/favicon/Nooble.png" type="image/png">
     <style>
         body, html {
             margin: 0;
@@ -98,26 +98,27 @@
             background-color: #ccc;
         }
 
-        .text-link {
+        .text-link-wrapper {
             position: absolute;
             top: 10px;
             left: 50%;
             transform: translateX(-50%);
             z-index: 10;
+            white-space: nowrap;
+        }
+
+        .text-link {
             color: white;
             font-size: 18px;
             text-decoration: none;
             background-color: #1e1e1e;
             padding: 12px 20px;
             border-radius: 5px;
-            white-space: nowrap;
-            display: block;
             box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-            transition: background-color 0.3s ease, transform 0.3s ease;
+            transition: transform 0.3s ease;
         }
 
         .text-link:hover {
-            background-color: #333;
             transform: scale(1.05);
         }
 
@@ -145,9 +146,12 @@
     <div class="sidebar">
         <a href="https://nooblegames.github.io/">Home</a>
         <button onclick="toggleLink()">Toggle Link</button>
+        <button onclick="toggleHamburger()">Toggle Hamburger</button>
     </div>
 
-    <a href="https://nooblegames.github.io/" id="text-link" class="text-link">https://nooblegames.github.io/</a>
+    <div class="text-link-wrapper" id="text-link-container">
+        <a href="https://nooblegames.github.io/" id="text-link" class="text-link">https://nooblegames.github.io/</a>
+    </div>
 
     <iframe src="https://chipmisc.github.io/selenite-old/flappybird/" scrolling="none" frameborder="0"></iframe>
 
@@ -163,6 +167,12 @@
             } else {
                 link.classList.add('hidden');
             }
+        }
+
+        function toggleHamburger() {
+            const hamburger = document.querySelector('.hamburger');
+            hamburger.classList.toggle('hidden');
+            toggleSidebar(); 
         }
     </script>
 </body>
