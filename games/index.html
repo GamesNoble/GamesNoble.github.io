@@ -278,56 +278,48 @@
                     const gamesGrid = document.getElementById('gamesGrid');
                     const games = data.trim().split('\n');
                     games.sort((a, b) => a.split('|')[0].toLowerCase().localeCompare(b.split('|')[0].toLowerCase()));
-                    
-                    games.slice(0, 12).forEach((game, index) => {
+
+                    games.forEach((game, index) => {
                         const [name, imageUrl, link] = game.split('|');
                         const card = document.createElement('div');
                         card.className = 'game-card';
                         card.style.animationDelay = `${index * 0.1}s`;
                         card.onclick = () => window.location.href = link;
                         const img = document.createElement('img');
-                        img.src = imageUrl;
-                        img.dataset.src = imageUrl;
+                        img.src = ''; // Start with an empty src to control loading
+                        img.dataset.src = imageUrl; // Store the actual source
                         img.onerror = () => {
-                            img.src = 'https://via.placeholder.com/240x200'; 
+                            img.src = 'https://via.placeholder.com/240x200'; // Fallback image
                         };
-                        card.appendChild(img);
-                        card.innerHTML += `<h3>${name}</h3>`;
+                        card.innerHTML = `<img src="${img.src}" data-src="${imageUrl}" alt="${name}">
+                                          <h3>${name}</h3>`;
                         gamesGrid.appendChild(card);
                     });
-                    loadAdditionalImages(games);
+                    loadImagesOnScroll(); // Start the image loading logic
                 })
                 .catch(error => console.error('Error loading games:', error));
         }
 
-        function loadAdditionalImages(games) {
-            let loadedImages = 12;
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting && loadedImages < games.length) {
-                        const [name, imageUrl, link] = games[loadedImages].split('|');
-                        const card = document.createElement('div');
-                        card.className = 'game-card';
-                        card.style.animationDelay = `${loadedImages * 0.1}s`;
-                        card.onclick = () => window.location.href = link;
-                        const img = document.createElement('img');
-                        img.src = imageUrl;
-                        img.dataset.src = imageUrl;
-                        img.onerror = () => {
-                            img.src = 'https://via.placeholder.com/240x200'; 
-                        };
-                        card.appendChild(img);
-                        card.innerHTML += `<h3>${name}</h3>`;
-                        document.getElementById('gamesGrid').appendChild(card);
-                        loadedImages++;
+        function loadImagesOnScroll() {
+            const gameCards = document.querySelectorAll('.game-card');
+            const loadImages = () => {
+                gameCards.forEach(card => {
+                    const img = card.querySelector('img');
+                    if (img && !img.src) { // Load image if src is empty
+                        img.src = img.dataset.src;
                     }
                 });
+            };
+
+            // Load images on scroll when near the bottom
+            window.addEventListener('scroll', () => {
+                if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 500) {
+                    loadImages();
+                }
             });
 
-            const lastCard = document.createElement('div');
-            lastCard.style.height = '1px';
-            document.getElementById('gamesGrid').appendChild(lastCard);
-            observer.observe(lastCard);
+            // Initial load on DOM content loaded
+            loadImages();
         }
 
         function filterGames() {
@@ -335,11 +327,7 @@
             const gameCards = document.querySelectorAll('.game-card');
             gameCards.forEach(card => {
                 const gameName = card.querySelector('h3').textContent.toLowerCase();
-                if (gameName.includes(searchTerm)) {
-                    card.style.display = '';
-                } else {
-                    card.style.display = 'none';
-                }
+                card.style.display = gameName.includes(searchTerm) ? '' : 'none';
             });
         }
     </script>
