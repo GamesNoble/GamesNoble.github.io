@@ -252,7 +252,7 @@
             color: #fff;
             border: none;
             border-radius: 5px;
-            padding: 10px 15px;
+            padding: 10px;
             cursor: pointer;
             display: none;
             transition: background-color 0.3s ease;
@@ -260,6 +260,10 @@
 
         .back-to-top:hover {
             background-color: #555;
+        }
+
+        .fa-arrow-up {
+            font-size: 1.5rem;
         }
     </style>
 </head>
@@ -285,7 +289,7 @@
         </div>
     </div>
 
-    <button class="back-to-top" onclick="scrollToTop()">Back to Top</button>
+    <button class="back-to-top" onclick="scrollToTop()"><i class="fas fa-arrow-up"></i></button>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
