@@ -139,12 +139,14 @@
             border-radius: 10px;
             text-align: center;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.5s ease;
             cursor: pointer;
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
             position: relative;
+            opacity: 0;
+            animation: fadeIn 0.5s forwards;
         }
 
         .game-card img {
@@ -164,6 +166,12 @@
         .game-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
         }
 
         @media (max-width: 1024px) {
@@ -289,19 +297,18 @@
                     const games = data.trim().split('\n');
                     games.sort((a, b) => a.split('|')[0].toLowerCase().localeCompare(b.split('|')[0].toLowerCase()));
 
-                    games.forEach(game => {
+                    games.forEach((game, index) => {
                         const [name, imageUrl, link] = game.split('|');
                         const card = document.createElement('div');
                         card.className = 'game-card';
-                        card.style.order = games.indexOf(game);
+                        card.style.animationDelay = `${index * 0.1}s`;
                         card.onclick = () => window.location.href = link;
                         const img = document.createElement('img');
                         img.src = imageUrl;
                         img.dataset.src = imageUrl;
                         img.onerror = () => {
                         };
-                        card.innerHTML = 
-                            `<img src="${imageUrl}" alt="${name}" onerror="this.src='https://via.placeholder.com/240x200'; this.onerror=null;">
+                        card.innerHTML = `<img src="${imageUrl}" alt="${name}" onerror="this.src='https://via.placeholder.com/240x200'; this.onerror=null;">
                             <h3>${name}</h3>`;
                         gamesGrid.appendChild(card);
                     });
