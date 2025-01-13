@@ -1,28 +1,36 @@
-<!DOCTYPE html> 
-<html lang="en">
-<head>
-    <meta charset="UTF-8"> 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <title>Nooble | 404</title>
-    <link rel="icon" href="https://github.com/NoobleGames/NoobleGames.github.io/blob/main/Logo/Logo4.png?raw=true" type="image/png">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<!DOCTYPE html>
+<html lang="en">       
+<head>    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <title>Nooble | Home</title>    
+    <meta property="og:title" content="Nooble - Your One-Stop Gateway to Unblocked Content!" />
+    <meta property="og:description" content="Explore a wide range of games, apps, movies, and proxy services all in one place!" />
+    <meta property="og:image" content="https://github.com/NoobleGames/NoobleGames.github.io/blob/main/Logo/Logo4.png?raw=true" />
+    <meta property="og:url" content="" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Nooble - Your One-Stop Gateway to Unblocked Content!" />
+    <meta name="twitter:description" content="Explore a wide range of games, apps, movies, and proxy services all in one place!" />
+    <meta name="twitter:image" content="https://github.com/NoobleGames/NoobleGames.github.io/blob/main/Logo/Logo4.png?raw=true" />
+    <link rel="icon" href="/misc/favicon/Nooble.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">  
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <style>
+    <style>   
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
             font-family: 'Poppins', sans-serif;
-            background: radial-gradient(circle, #333, #000);
+            background: radial-gradient(circle, rgba(43, 43, 43, 0.9), rgba(0, 0, 0, 0.9)), url('') no-repeat center center/cover;
             color: #ffffff;
             height: 100vh;
             display: flex;
             flex-direction: column;
+            overflow: hidden;
         }
-
         .sidebar {
             position: fixed;
             top: 0;
@@ -36,28 +44,28 @@
             gap: 20px;
             box-shadow: 2px 0 8px rgba(0, 0, 0, 0.5);
         }
-
         .sidebar h1 {
             color: #bbb;
             font-size: 2rem;
             margin-bottom: 30px;
             text-align: center;
+            letter-spacing: 1px;
         }
-
         .sidebar a {
             color: #aaa;
             text-decoration: none;
             font-size: 1.2rem;
             padding: 12px 20px;
             border-radius: 8px;
-            transition: background-color 0.3s ease, color 0.3s ease;
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
-
         .sidebar a:hover {
             background-color: #444;
-            color: #ffffff;
+            color: #fff;
+            transform: scale(1.05);
         }
-
         .main {
             margin-left: 240px;
             display: flex;
@@ -66,69 +74,97 @@
             align-items: center;
             height: 100vh;
             text-align: center;
+            padding: 0 30px;
         }
-
         .main h1 {
             font-size: 4rem;
-            color: #ffffff;
             margin-bottom: 20px;
-            font-weight: 600;
+            font-weight: 700;
+            text-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+            letter-spacing: 1px;
         }
-
         .main p {
-            font-size: 1.3rem;
+            font-size: 1.25rem;
             margin-bottom: 30px;
             color: #ccc;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
         }
-
+        .random-quote {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #ddd;
+            font-weight: 400;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px 30px;
+            border-radius: 12px;
+            transition: background-color 0.3s ease;
+        }
+        .random-quote:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
         .btn-container {
             display: flex;
-            gap: 30px;
+            gap: 20px;
             justify-content: center;
             flex-wrap: wrap;
         }
-
         .btn {
             display: inline-block;
-            padding: 16px 30px;
-            font-size: 1.5rem;
+            padding: 15px 30px;
+            font-size: 1.2rem;
             color: #ffffff;
             background: #444;
             border: none;
-            border-radius: 50px;
+            border-radius: 30px;
             text-decoration: none;
             text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
-
-        .btn i {
-            margin-right: 10px;
-        }
-
         .btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-            background-color: #666;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+            background-color: #5a5a5a;
         }
-
+        .btn i {
+            margin-right: 8px;
+        }
         .footer {
             margin-top: auto;
             margin-left: 240px;
-            padding: 15px 20px;
-            background: #222;
+            padding: 20px 20px;
+            background: rgba(34, 34, 34, 0.9);
             text-align: center;
             color: #bbb;
+            border-top: 2px solid #444;
+            font-size: 0.9rem;
+            line-height: 1.5;
         }
-
         .footer a {
             color: #aaa;
             text-decoration: none;
-            margin: 0 10px;
+            margin: 0 5px;
+            transition: color 0.3s ease;
         }
-
         .footer a:hover {
             color: #fff;
+        }
+        .social-icons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .social-icons a {
+            color: #ffffff;
+            font-size: 1.8rem;
+            transition: transform 0.3s, color 0.3s;
+        }
+        .social-icons a:hover {
+            color: #ccc;
+            transform: scale(1.1);
         }
     </style>
 </head>
@@ -143,13 +179,22 @@
     </div>
 
     <div class="main">
-        <h1>404 Not Found.</h1>
+        <h1 id="welcome-message">404 Not Found!</h1>
         <p>Oops! Page Not Found.</p>
         <div class="btn-container">
             <a href="/games/" class="btn"><i class="fas fa-gamepad"></i>Games</a>
             <a href="/proxy/" class="btn"><i class="fas fa-shield-alt"></i>Proxy</a>
             <a href="/movies/" class="btn"><i class="fas fa-film"></i>Movies</a>
             <a href="/apps/" class="btn"><i class="fas fa-mobile-alt"></i>Apps</a>
+        </div>
+
+        <div class="social-icons">
+            <a href="/misc/p/discord.html">
+                <i class="fab fa-discord"></i>
+            </a>
+            <a href="https://github.com/NoobleGames/NoobleGames.github.io" target="_blank">
+                <i class="fab fa-github"></i>
+            </a>
         </div>
     </div>
 
@@ -170,6 +215,10 @@
         <a href="/links">
             <i class="fa fa-link"></i> Our Links
         </a>
+        <a href="/misc/p/updatelogs.html">
+            <i class="fas fa-sync"></i> Update Logs
+        </a>
     </div>
+
 </body>
 </html>
