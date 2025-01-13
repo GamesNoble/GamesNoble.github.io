@@ -1,22 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">       
-<head>    
+<html lang="en">
+<head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
-    <title>Nooble | Home</title>    
-    <meta property="og:title" content="Nooble - Your One-Stop Gateway to Unblocked Content!" />
-    <meta property="og:description" content="Explore a wide range of games, apps, movies, and proxy services all in one place!" />
-    <meta property="og:image" content="/misc/favicon/Nooble.png" />
-    <meta property="og:url" content="" />
-    <meta property="og:type" content="website" />      
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Nooble - Your One-Stop Gateway to Unblocked Content!" />
-    <meta name="twitter:description" content="Explore a wide range of games, apps, movies, and proxy services all in one place!" />
-    <meta name="twitter:image" content="/misc/favicon/Nooble.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nooble | Home</title>
+    <meta property="og:title" content="Nooble - Your One-Stop Gateway to Unblocked Content!">
+    <meta property="og:description" content="Explore a wide range of games, apps, movies, and proxy services all in one place!">
+    <meta property="og:image" content="/misc/favicon/Nooble.png">
+    <meta property="og:url" content="">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Nooble - Your One-Stop Gateway to Unblocked Content!">
+    <meta name="twitter:description" content="Explore a wide range of games, apps, movies, and proxy services all in one place!">
+    <meta name="twitter:image" content="/misc/favicon/Nooble.png">
     <link rel="icon" href="/misc/favicon/Nooble.png" type="image/png">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">  
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <style>   
+    <style>
         * {
             margin: 0;
             padding: 0;
@@ -97,7 +97,8 @@
             background: rgba(255, 255, 255, 0.1);
             padding: 15px 30px;
             border-radius: 12px;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, cursor 0.3s ease;
+            cursor: pointer;
         }
         .random-quote:hover {
             background: rgba(255, 255, 255, 0.2);
@@ -222,31 +223,24 @@
     </div>
 
     <script>
-        const quotes = [
-            { text: "100% ChatGpt.", weight: 3 },
-            { text: "You have all F's, don't you?", weight: 1 },
-            { text: "I smell you through the screen, nerd.", weight: 2 },
-            { text: "Seriously? Dude, basketball random?", weight: 1 },
-            { text: "Lowwww tapppper faddddeee.", weight: 1 },
-            { text: "I guess Nooble is alright its not the best.", weight: 1 },
-            { text: "Dexter Morgan or Sexter Morgan?", weight: 1 },
-            { text: "I need six months of vacations, twice a year.", weight: 1 },
-            { text: "Brain loading… please wait.", weight: 1 },
-            { text: "You call it chaos, I call it life experience.", weight: 2 },
-            { text: "If karma doesn’t hit you, I gladly will.", weight: 3 },
-            { text: "You're Softminded.", weight: 3 },
-        ];
+        const quotesUrl = "/misc/backend/quotes.json";
 
         function loadRandomQuote() {
-            const weightedQuotes = [];
-            quotes.forEach(quote => {
-                for (let i = 0; i < quote.weight; i++) {
-                    weightedQuotes.push(quote.text);
-                }
-            });
+            fetch(quotesUrl)
+                .then(response => response.json())
+                .then(data => {
+                    const weightedQuotes = [];
+                    data.forEach(quote => {
+                        const chance = Math.floor(Math.random() * 100);
+                        if (chance <= parseInt(quote.chance)) {
+                            weightedQuotes.push(quote.text);
+                        }
+                    });
 
-            const randomIndex = Math.floor(Math.random() * weightedQuotes.length);
-            document.getElementById('random-quote').textContent = weightedQuotes[randomIndex];
+                    const randomIndex = Math.floor(Math.random() * weightedQuotes.length);
+                    document.getElementById('random-quote').textContent = weightedQuotes[randomIndex];
+                })
+                .catch(error => console.error(error));
         }
 
         function updateWelcomeMessage(name) {
@@ -268,15 +262,16 @@
 
         function clearName() {
             localStorage.removeItem('name');
-            updateWelcomeMessage(""); 
+            updateWelcomeMessage("");
         }
 
         window.onload = function() {
             loadRandomQuote();
-            
             const storedName = getName();
             updateWelcomeMessage(storedName);
         };
+
+        document.getElementById('random-quote').addEventListener('click', loadRandomQuote);
 
         document.addEventListener('keydown', (event) => {
             if (event.altKey && event.key === 'y') {
