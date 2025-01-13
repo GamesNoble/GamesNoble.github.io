@@ -17,7 +17,7 @@
     },
     {
         "text": "Lowwww tapppper faddddeee.",
-        "chance": "50"
+        "chance": "32"
     },
     {
         "text": "I guess Nooble is alright its not the best.",
@@ -37,7 +37,7 @@
     },
     {
         "text": "You call it chaos, I call it life experience.",
-        "chance": "80"
+        "chance": "45"
     },
     {
         "text": "If karma doesn’t hit you, I gladly will.",
@@ -46,5 +46,9 @@
     {
         "text": "You're Softminded.",
         "chance": "70"
+    },
+    {
+        "text": "Dude Why Would Netflix Squid Game Kill thanos that's forked up.",
+        "chance": "30"
     }
 ]
