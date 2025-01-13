@@ -3,7 +3,7 @@
   <h1 style="font-family: 'Arial', sans-serif; color: #4CAF50;">Welcome to Nooble!</h1>
 </div>
    
-<p style="font-size: 18px; line-height: 1.6; text-align: center;">
+<p style="font-size: 18px; line-height: 1.6; text-align: center;">           
   Discover an exciting collection of games, applications, proxies, and endless fun!
   If you enjoy what you see here, please consider <strong>forking this repository</strong> and giving it a star ⭐!
 </p>  
