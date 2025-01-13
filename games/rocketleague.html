@@ -1,0 +1,179 @@
+<!DOCTYPE html> 
+<html lang="en">      
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Nooble | Rocket League</title>                   
+    <link rel="icon" href="/misc/favicon/Nooble.png" type="image/png">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            background-color: #252525;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+
+        iframe {
+            height: 100%;
+            width: 100%;
+            overflow: auto;
+            position: absolute;
+            left: 0;
+            top: 0;
+            transition: width 0.3s ease, left 0.3s ease;
+        }
+
+        .sidebar {
+            position: absolute;
+            top: 0;
+            left: -300px;
+            width: 300px;
+            height: 100%;
+            background: linear-gradient(to bottom, #333, #1e1e1e);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 60px;
+            box-shadow: 4px 0 10px rgba(0,0,0,0.7);
+            transition: left 0.3s ease;
+            z-index: 100;
+        }
+
+        .sidebar a, .sidebar button {
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            margin: 10px 0;
+            padding: 15px;
+            width: 80%;
+            text-align: center;
+            border-radius: 5px;
+            box-sizing: border-box;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .sidebar a {
+            background-color: #444;
+            display: block;
+        }
+
+        .sidebar a:hover {
+            background-color: #555;
+            transform: scale(1.05);
+        }
+
+        .sidebar button {
+            background-color: #555;
+            border: none;
+            cursor: pointer;
+        }
+
+        .sidebar button:hover {
+            background-color: #666;
+            transform: scale(1.05);
+        }
+
+        .hamburger {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            cursor: pointer;
+            z-index: 101;
+        }
+
+        .hamburger div {
+            width: 35px;
+            height: 4px;
+            background-color: white;
+            margin: 6px 0;
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+
+        .hamburger:hover div {
+            background-color: #ccc;
+        }
+
+        .text-link-wrapper {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            white-space: nowrap;
+        }
+
+        .text-link {
+            color: white;
+            font-size: 18px;
+            text-decoration: none;
+            background-color: #1e1e1e;
+            padding: 12px 20px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .text-link:hover {
+            transform: scale(1.05);
+        }
+
+        .sidebar-open .sidebar {
+            left: 0;
+        }
+
+        .sidebar-open iframe {
+            width: calc(100% - 300px);
+            left: 300px;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="hamburger" onclick="toggleSidebar()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <div class="sidebar">
+        <a href="https://nooblegames.github.io/">Home</a>
+        <button onclick="toggleLink()">Toggle Link</button>
+        <button onclick="toggleHamburger()">Toggle Hamburger</button>
+    </div>
+
+    <div class="text-link-wrapper" id="text-link-container">
+        <a href="https://nooblegames.github.io/" id="text-link" class="text-link">https://nooblegames.github.io/</a>
+    </div>
+
+    <iframe src="https://chipmisc.github.io/selenite-old/rocketleague/" scrolling="none" frameborder="0"></iframe>
+
+    <script>
+        function toggleSidebar() {
+            document.body.classList.toggle('sidebar-open');
+        }
+
+        function toggleLink() {
+            const link = document.getElementById('text-link');
+            if (link.classList.contains('hidden')) {
+                link.classList.remove('hidden');
+            } else {
+                link.classList.add('hidden');
+            }
+        }
+
+        function toggleHamburger() {
+            const hamburger = document.querySelector('.hamburger');
+            hamburger.classList.toggle('hidden');
+            toggleSidebar(); 
+        }
+    </script>
+</body>
+</html>
