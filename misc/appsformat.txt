@@ -1,6 +1,6 @@
 Glitch|/misc/images/apps/glitch.png|./glitch.html|
 Github|/misc/images/apps/github.png|./github.html|
-MovieBox Pro|/misc/images/apps/|./movieboxpro.html|
+MovieBox Pro|/misc/images/apps/movieboxpro.png|./movieboxpro.html|
 Khan Academy|/misc/images/apps/khanacademy.png|./khanacademy.html|
 CodePen|/misc/images/apps/codepen.png|./codepen.html|
 Trello|/misc/images/apps/trello.png|./trello.html|
