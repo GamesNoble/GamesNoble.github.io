@@ -6,7 +6,7 @@ CodePen|/misc/images/apps/codepen.png|./codepen.html|
 Trello|/misc/images/apps/trello.png|./trello.html|
 W3Schools|/misc/images/apps/w3schools.png|./w3schools.html|
 Scratch|/misc/images/apps/scratch.png|./scratch.html|
-PicoTorrent|/misc/images/apps/picotorrent.png|./picotorrent.html|
+PicoTorrent|/misc/images/apps/picotorrent.png|./picotorrent.html|   
 Medium|/misc/images/apps/medium.png|./medium.html|
 Coursera|/misc/images/apps/coarsera.png|./coursera.html|
 Notion|/misc/images/apps/notion.png|./notion.html|  
