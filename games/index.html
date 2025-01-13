@@ -267,9 +267,42 @@
     </div>
 
     <script>
+        const gameCards = [];
+        let imageLoadCheckInterval;
+
         document.addEventListener('DOMContentLoaded', () => {
             fetchGames();
+            startImageLoadCheck();
+            setUpScrollObserver();
         });
+
+        function startImageLoadCheck() {
+            imageLoadCheckInterval = setInterval(() => {
+                gameCards.forEach((card) => {
+                    const img = card.querySelector('img');
+                    if (!img.complete) {
+                        img.src = img.dataset.src; // Retry loading image
+                    }
+                });
+            }, 3000); // Check every 3 seconds
+        }
+
+        function setUpScrollObserver() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // If the game cards come into view, try to load images again
+                        const img = entry.target.querySelector('img');
+                        if (img && !img.complete) {
+                            img.src = img.dataset.src;
+                        }
+                    }
+                });
+            });
+
+            const gameCardsList = document.querySelectorAll('.game-card');
+            gameCardsList.forEach(card => observer.observe(card));
+        }
 
         function fetchGames() {
             fetch('/misc/gamesformat.txt')
@@ -286,48 +319,30 @@
                         card.style.animationDelay = `${index * 0.1}s`;
                         card.onclick = () => window.location.href = link;
                         const img = document.createElement('img');
-                        img.src = ''; // Start with an empty src to control loading
-                        img.dataset.src = imageUrl; // Store the actual source
+                        img.src = ''; // Start without a src to delay loading
+                        img.dataset.src = imageUrl; // Store the image URL for later
                         img.onerror = () => {
-                            img.src = 'https://via.placeholder.com/240x200'; // Fallback image
+                            img.src = 'https://via.placeholder.com/240x200'; // Fallback placeholder
                         };
-                        card.innerHTML = `<img src="${img.src}" data-src="${imageUrl}" alt="${name}">
-                                          <h3>${name}</h3>`;
+                        card.innerHTML = `<h3>${name}</h3>`;
+                        card.appendChild(img);
                         gamesGrid.appendChild(card);
+                        gameCards.push(card); // Store reference to game card
                     });
-                    loadImagesOnScroll(); // Start the image loading logic
                 })
                 .catch(error => console.error('Error loading games:', error));
         }
 
-        function loadImagesOnScroll() {
-            const gameCards = document.querySelectorAll('.game-card');
-            const loadImages = () => {
-                gameCards.forEach(card => {
-                    const img = card.querySelector('img');
-                    if (img && !img.src) { // Load image if src is empty
-                        img.src = img.dataset.src;
-                    }
-                });
-            };
-
-            // Load images on scroll when near the bottom
-            window.addEventListener('scroll', () => {
-                if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 500) {
-                    loadImages();
-                }
-            });
-
-            // Initial load on DOM content loaded
-            loadImages();
-        }
-
         function filterGames() {
             const searchTerm = document.getElementById('gameSearch').value.toLowerCase();
-            const gameCards = document.querySelectorAll('.game-card');
-            gameCards.forEach(card => {
+            const gameCardsList = document.querySelectorAll('.game-card');
+            gameCardsList.forEach(card => {
                 const gameName = card.querySelector('h3').textContent.toLowerCase();
-                card.style.display = gameName.includes(searchTerm) ? '' : 'none';
+                if (gameName.includes(searchTerm)) {
+                    card.style.display = '';
+                } else {
+                    card.style.display = 'none';
+                }
             });
         }
     </script>
