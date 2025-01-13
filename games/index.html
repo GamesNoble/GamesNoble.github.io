@@ -281,17 +281,16 @@
                 gameCards.forEach((card) => {
                     const img = card.querySelector('img');
                     if (!img.complete) {
-                        img.src = img.dataset.src; // Retry loading image
+                        img.src = img.dataset.src; 
                     }
                 });
-            }, 3000); // Check every 3 seconds
+            }, 10000); 
         }
 
         function setUpScrollObserver() {
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        // If the game cards come into view, try to load images again
                         const img = entry.target.querySelector('img');
                         if (img && !img.complete) {
                             img.src = img.dataset.src;
@@ -319,10 +318,10 @@
                         card.style.animationDelay = `${index * 0.1}s`;
                         card.onclick = () => window.location.href = link;
                         const img = document.createElement('img');
-                        img.src = ''; // Start without a src to delay loading
-                        img.dataset.src = imageUrl; // Store the image URL for later
+                        img.src = ''; 
+                        img.dataset.src = imageUrl; 
                         img.onerror = () => {
-                            img.src = 'https://via.placeholder.com/240x200'; // Fallback placeholder
+                            img.src = 'https://via.placeholder.com/240x200';
                         };
                         card.innerHTML = `<h3>${name}</h3>`;
                         card.appendChild(img);
