@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nooble | Apps</title>
     <meta property="og:title" content="Nooble - Your One-Stop Gateway to Unblocked Content!" />
-    <meta property="og:description" content="Explore a wide range of games, apps, movies, and proxy services all in one place!" />
+    <meta property="og:description" content="Explore a wide range of apps, games, movies, and proxy services all in one place!" />
     <meta property="og:image" content="https://github.com/NoobleGames/NoobleGames.github.io/blob/main/Logo/Logo4.png?raw=true" />
     <meta property="og:url" content="" /> 
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Nooble - Your One-Stop Gateway to Unblocked Content!" />
-    <meta name="twitter:description" content="Explore a wide range of games, apps, movies, and proxy services all in one place!" />
+    <meta name="twitter:description" content="Explore a wide range of apps, games, movies, and proxy services all in one place!" />
     <meta name="twitter:image" content="https://github.com/NoobleGames/NoobleGames.github.io/blob/main/Logo/Logo4.png?raw=true" />
     <link rel="icon" href="https://github.com/NoobleGames/NoobleGames.github.io/blob/main/Logo/Logo4.png?raw=true" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
@@ -25,13 +25,14 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #121212;
+            background: radial-gradient(circle, #333, #000);
             color: #ffffff;
             height: 100%;
             display: flex;
             flex-direction: column;
             font-size: 16px;
             line-height: 1.5;
+            position: relative;
         }
 
         .sidebar {
@@ -46,6 +47,8 @@
             flex-direction: column;
             gap: 20px;
             box-shadow: 2px 0 8px rgba(0, 0, 0, 0.5);
+            z-index: 10;
+            transition: transform 0.3s ease;
         }
 
         .sidebar h1 {
@@ -84,7 +87,7 @@
 
         .main h1 {
             font-size: 4rem;
-            color: #f0e7ff;
+            color: #ffffff;
             margin-bottom: 20px;
             font-weight: 600;
         }
@@ -92,7 +95,7 @@
         .main p {
             font-size: 1.3rem;
             margin-bottom: 30px;
-            color: #d1d5db;
+            color: #ccc;
         }
 
         .search-bar {
@@ -108,15 +111,17 @@
             width: 100%;
             padding: 12px 20px;
             border-radius: 30px;
-            border: 1px solid #ccc;
+            border: 1px solid #555;
             font-size: 1.1rem;
-            color: #333;
-            transition: border-color 0.3s ease;
+            background-color: #222;
+            color: #fff;
+            transition: border-color 0.3s ease, background-color 0.3s ease;
         }
 
         .search-bar input:focus {
             outline: none;
-            border-color: #7f56d9;
+            border-color: #888;
+            background-color: #333;
         }
 
         .app-grid {
@@ -125,23 +130,24 @@
             gap: 30px;
             justify-content: center;
             margin-top: 50px;
-            transition: transform 0.3s ease;
         }
 
         .app-card {
             width: 240px;
             height: 320px;
-            background-color: #1a1a1a;
+            background-color: #444;
             padding: 10px;
             border-radius: 10px;
             text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.5s ease;
             cursor: pointer;
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
             position: relative;
+            opacity: 0;
+            animation: fadeIn 0.5s forwards;
         }
 
         .app-card img {
@@ -154,22 +160,19 @@
 
         .app-card h3 {
             font-size: 1.2rem;
-            color: #ffffff;
+            color: #fff;
             margin-top: 15px;
-            transition: color 0.3s ease;
-            padding: 10px;
-            border-radius: 8px;
-            margin-bottom: 0;
-            background: none;
         }
 
         .app-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
         }
 
-        .app-card:hover h3 {
-            color: #d1d5db;
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
         }
 
         @media (max-width: 1024px) {
@@ -240,6 +243,32 @@
                 height: 280px;
             }
         }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #444;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            cursor: pointer;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            pointer-events: none;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto; /* Allows click when visible */
+        }
+
+        .fa-arrow-up {
+            font-size: 1.5rem;
+        }
     </style>
 </head>
 <body>
@@ -264,26 +293,42 @@
         </div>
     </div>
 
+    <button class="back-to-top" onclick="scrollToTop()"><i class="fas fa-arrow-up"></i></button>
+
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             fetchApps();
+            window.addEventListener('scroll', handleScroll);
         });
 
+        const imageLoadingInterval = setInterval(() => {
+            const appCards = document.querySelectorAll('.app-card');
+            appCards.forEach((card) => {
+                const img = card.querySelector('img');
+                if (img && !img.complete) {
+                    img.src = img.dataset.src;
+                }
+            });
+        }, 20000);
+
         function fetchApps() {
-            fetch('https://raw.githubusercontent.com/NoobleGames/NoobleGames.github.io/main/misc/appsformat.txt')
+            fetch('/misc/appsformat.txt')
                 .then(response => response.text())
                 .then(data => {
                     const appsGrid = document.getElementById('appsGrid');
                     const apps = data.trim().split('\n');
                     apps.sort((a, b) => a.split('|')[0].toLowerCase().localeCompare(b.split('|')[0].toLowerCase()));
 
-                    apps.forEach(app => {
+                    apps.forEach((app, index) => {
                         const [name, imageUrl, link] = app.split('|');
                         const card = document.createElement('div');
                         card.className = 'app-card';
+                        card.style.animationDelay = `${index * 0.1}s`;
                         card.onclick = () => window.location.href = link;
-                        card.innerHTML = 
-                            `<img src="${imageUrl}" alt="${name}">
+                        const img = document.createElement('img');
+                        img.src = imageUrl;
+                        img.dataset.src = imageUrl;
+                        card.innerHTML = `<img src="${imageUrl}" alt="${name}" onerror="this.src='https://via.placeholder.com/240x200'; this.onerror=null;">
                             <h3>${name}</h3>`;
                         appsGrid.appendChild(card);
                     });
@@ -295,13 +340,28 @@
             const searchTerm = document.getElementById('appSearch').value.toLowerCase();
             const appCards = document.querySelectorAll('.app-card');
             appCards.forEach(card => {
-                const appName = card.querySelector('h3').textContent.toLowerCase();
-                if (appName.includes(searchTerm)) {
-                    card.style.display = '';
-                } else {
-                    card.style.display = 'none';
+                if (card.querySelector('img').complete) {
+                    const appName = card.querySelector('h3').textContent.toLowerCase();
+                    if (appName.includes(searchTerm)) {
+                        card.style.display = '';
+                    } else {
+                        card.style.display = 'none';
+                    }
                 }
             });
+        }
+
+        function handleScroll() {
+            const backToTopButton = document.querySelector('.back-to-top');
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
+            }
+        }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     </script>
 </body>
