@@ -254,12 +254,16 @@
             border-radius: 5px;
             padding: 10px;
             cursor: pointer;
-            display: none;
-            transition: background-color 0.3s ease;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            pointer-events: none;
         }
 
-        .back-to-top:hover {
-            background-color: #555;
+        .back-to-top.show {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto; /* Allows click when visible */
         }
 
         .fa-arrow-up {
@@ -350,9 +354,9 @@
         function handleScroll() {
             const backToTopButton = document.querySelector('.back-to-top');
             if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-                backToTopButton.style.display = "block";
+                backToTopButton.classList.add('show');
             } else {
-                backToTopButton.style.display = "none";
+                backToTopButton.classList.remove('show');
             }
         }
 
