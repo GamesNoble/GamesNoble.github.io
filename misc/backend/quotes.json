@@ -4,7 +4,7 @@
         "chance": "100"
     },
     {
-        "text": "You have all F's, don't you?",  
+        "text": "You have all F's, don't you?",
         "chance": "80"
     },
     {
@@ -58,5 +58,9 @@
     {
         "text": "Nooble > HomeWork Or School Work",
         "chance": "37"
+    },
+    {
+        "text": "Fun fact: your school is probably going to block this site",
+        "chance": "75"
     }
 ]
