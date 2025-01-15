@@ -48,7 +48,6 @@
             gap: 20px;
             box-shadow: 2px 0 8px rgba(0, 0, 0, 0.5);
             z-index: 10;
-            transition: transform 0.3s ease;
         }
 
         .sidebar h1 {
@@ -82,7 +81,6 @@
             padding-top: 50px;
             text-align: center;
             overflow-y: auto;
-            transition: margin-left 0.3s ease;
         }
 
         .main h1 {
@@ -140,12 +138,8 @@
             border-radius: 10px;
             text-align: center;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-            transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.5s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             cursor: pointer;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            position: relative;
         }
 
         .game-card img {
@@ -154,12 +148,14 @@
             object-fit: cover;
             border-radius: 8px;
             margin-bottom: 10px;
-            opacity: 0; /* Start hidden */
-            transition: opacity 0.5s ease; /* Smooth appearance */
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
         }
 
         .game-card img.loaded {
-            opacity: 1; /* Fade in effect */
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .game-card h3 {
@@ -171,12 +167,6 @@
         .game-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
-        }
-
-        @keyframes fadeIn {
-            to {
-                opacity: 1;
-            }
         }
 
         @media (max-width: 1024px) {
@@ -267,7 +257,7 @@
         .back-to-top.show {
             opacity: 1;
             transform: translateY(0);
-            pointer-events: auto; /* Allows click when visible */
+            pointer-events: auto;
         }
 
         .fa-arrow-up {
@@ -305,14 +295,13 @@
             window.addEventListener('scroll', handleScroll);
         });
 
-        // Lazy load images when they are in view
         function lazyLoadImages(entries, observer) {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const img = entry.target;
-                    img.src = img.dataset.src; // set the actual source
-                    img.classList.add('loaded'); // add loaded class for fade-in effect
-                    observer.unobserve(img); // stop observing once loaded
+                    img.src = img.dataset.src;
+                    img.classList.add('loaded');
+                    observer.unobserve(img);
                 }
             });
         }
@@ -332,10 +321,13 @@
                         card.style.animationDelay = `${index * 0.1}s`;
                         card.onclick = () => window.location.href = link;
                         const img = document.createElement('img');
-                        img.dataset.src = imageUrl; // Store the actual src in data-src
-                        img.src = 'https://www.firstbenefits.org/wp-content/uploads/2017/10/placeholder-1024x1024.png'; // Placeholder until loaded
+                        img.dataset.src = imageUrl;
+                        img.src = 'https://i.ibb.co/34prgQJ/nooble.png';
                         img.alt = name;
-                        img.onload = () => img.classList.add('loaded'); // Fade in when loaded
+
+                        img.onload = () => {
+                            img.classList.add('loaded');
+                        };
 
                         const heading = document.createElement('h3');
                         heading.textContent = name;
@@ -344,7 +336,6 @@
                         card.appendChild(heading);
                         gamesGrid.appendChild(card);
 
-                        // Set up intersection observer to lazy load images
                         const observer = new IntersectionObserver(lazyLoadImages);
                         observer.observe(img);
                     });
