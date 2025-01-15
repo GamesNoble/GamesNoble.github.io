@@ -146,8 +146,6 @@
             flex-direction: column;
             justify-content: flex-end;
             position: relative;
-            opacity: 0;
-            animation: fadeIn 0.5s forwards;
         }
 
         .game-card img {
@@ -156,6 +154,12 @@
             object-fit: cover;
             border-radius: 8px;
             margin-bottom: 10px;
+            opacity: 0; /* Start hidden */
+            transition: opacity 0.5s ease; /* Smooth appearance */
+        }
+
+        .game-card img.loaded {
+            opacity: 1; /* Fade in effect */
         }
 
         .game-card h3 {
@@ -301,15 +305,17 @@
             window.addEventListener('scroll', handleScroll);
         });
 
-        const imageLoadingInterval = setInterval(() => {
-            const gameCards = document.querySelectorAll('.game-card');
-            gameCards.forEach((card) => {
-                const img = card.querySelector('img');
-                if (img && !img.complete) {
-                    img.src = img.dataset.src;
+        // Lazy load images when they are in view
+        function lazyLoadImages(entries, observer) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src; // set the actual source
+                    img.classList.add('loaded'); // add loaded class for fade-in effect
+                    observer.unobserve(img); // stop observing once loaded
                 }
             });
-        }, 20000);
+        }
 
         function fetchGames() {
             fetch('/misc/gamesformat.txt')
@@ -326,11 +332,21 @@
                         card.style.animationDelay = `${index * 0.1}s`;
                         card.onclick = () => window.location.href = link;
                         const img = document.createElement('img');
-                        img.src = imageUrl;
-                        img.dataset.src = imageUrl;
-                        card.innerHTML = `<img src="${imageUrl}" alt="${name}" onerror="this.src='https://via.placeholder.com/240x200'; this.onerror=null;">
-                            <h3>${name}</h3>`;
+                        img.dataset.src = imageUrl; // Store the actual src in data-src
+                        img.src = 'https://www.firstbenefits.org/wp-content/uploads/2017/10/placeholder-1024x1024.png'; // Placeholder until loaded
+                        img.alt = name;
+                        img.onload = () => img.classList.add('loaded'); // Fade in when loaded
+
+                        const heading = document.createElement('h3');
+                        heading.textContent = name;
+
+                        card.appendChild(img);
+                        card.appendChild(heading);
                         gamesGrid.appendChild(card);
+
+                        // Set up intersection observer to lazy load images
+                        const observer = new IntersectionObserver(lazyLoadImages);
+                        observer.observe(img);
                     });
                 })
                 .catch(error => console.error('Error loading games:', error));
