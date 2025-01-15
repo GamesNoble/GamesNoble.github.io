@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>    
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nooble | Apps</title>
     <meta property="og:title" content="Nooble - Your One-Stop Gateway to Unblocked Content!" />
-    <meta property="og:description" content="Explore a wide range of apps, games, movies, and proxy services all in one place!" />
+    <meta property="og:description" content="Explore a wide range of games, apps, movies, and proxy services all in one place!" />
     <meta property="og:image" content="https://github.com/NoobleGames/NoobleGames.github.io/blob/main/Logo/Logo4.png?raw=true" />
     <meta property="og:url" content="" /> 
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Nooble - Your One-Stop Gateway to Unblocked Content!" />
-    <meta name="twitter:description" content="Explore a wide range of apps, games, movies, and proxy services all in one place!" />
+    <meta name="twitter:description" content="Explore a wide range of games, apps, movies, and proxy services all in one place!" />
     <meta name="twitter:image" content="https://github.com/NoobleGames/NoobleGames.github.io/blob/main/Logo/Logo4.png?raw=true" />
     <link rel="icon" href="https://github.com/NoobleGames/NoobleGames.github.io/blob/main/Logo/Logo4.png?raw=true" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
@@ -48,7 +48,6 @@
             gap: 20px;
             box-shadow: 2px 0 8px rgba(0, 0, 0, 0.5);
             z-index: 10;
-            transition: transform 0.3s ease;
         }
 
         .sidebar h1 {
@@ -82,7 +81,6 @@
             padding-top: 50px;
             text-align: center;
             overflow-y: auto;
-            transition: margin-left 0.3s ease;
         }
 
         .main h1 {
@@ -124,7 +122,7 @@
             background-color: #333;
         }
 
-        .app-grid {
+        .game-grid {
             display: flex;
             flex-wrap: wrap;
             gap: 30px;
@@ -132,7 +130,7 @@
             margin-top: 50px;
         }
 
-        .app-card {
+        .game-card {
             width: 240px;
             height: 320px;
             background-color: #444;
@@ -140,39 +138,35 @@
             border-radius: 10px;
             text-align: center;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-            transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.5s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             cursor: pointer;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            position: relative;
-            opacity: 0;
-            animation: fadeIn 0.5s forwards;
         }
 
-        .app-card img {
+        .game-card img {
             width: 100%;
             height: 200px;
             object-fit: cover;
             border-radius: 8px;
             margin-bottom: 10px;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
         }
 
-        .app-card h3 {
+        .game-card img.loaded {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .game-card h3 {
             font-size: 1.2rem;
             color: #fff;
             margin-top: 15px;
         }
 
-        .app-card:hover {
+        .game-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
-        }
-
-        @keyframes fadeIn {
-            to {
-                opacity: 1;
-            }
         }
 
         @media (max-width: 1024px) {
@@ -199,11 +193,11 @@
                 font-size: 3rem;
             }
 
-            .app-grid {
+            .game-grid {
                 gap: 20px;
             }
 
-            .app-card {
+            .game-card {
                 width: 220px;
                 height: 300px;
             }
@@ -234,11 +228,11 @@
                 font-size: 2.5rem;
             }
 
-            .app-grid {
+            .game-grid {
                 gap: 10px;
             }
 
-            .app-card {
+            .game-card {
                 width: 200px;
                 height: 280px;
             }
@@ -263,7 +257,7 @@
         .back-to-top.show {
             opacity: 1;
             transform: translateY(0);
-            pointer-events: auto; /* Allows click when visible */
+            pointer-events: auto;
         }
 
         .fa-arrow-up {
@@ -289,7 +283,7 @@
             <input type="text" id="appSearch" placeholder="Search Apps..." oninput="filterApps()">
         </div>
         
-        <div class="app-grid" id="appsGrid">
+        <div class="game-grid" id="appsGrid">
         </div>
     </div>
 
@@ -301,15 +295,16 @@
             window.addEventListener('scroll', handleScroll);
         });
 
-        const imageLoadingInterval = setInterval(() => {
-            const appCards = document.querySelectorAll('.app-card');
-            appCards.forEach((card) => {
-                const img = card.querySelector('img');
-                if (img && !img.complete) {
+        function lazyLoadImages(entries, observer) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
                     img.src = img.dataset.src;
+                    img.classList.add('loaded');
+                    observer.unobserve(img);
                 }
             });
-        }, 20000);
+        }
 
         function fetchApps() {
             fetch('/misc/appsformat.txt')
@@ -322,15 +317,27 @@
                     apps.forEach((app, index) => {
                         const [name, imageUrl, link] = app.split('|');
                         const card = document.createElement('div');
-                        card.className = 'app-card';
+                        card.className = 'game-card';
                         card.style.animationDelay = `${index * 0.1}s`;
                         card.onclick = () => window.location.href = link;
                         const img = document.createElement('img');
-                        img.src = imageUrl;
                         img.dataset.src = imageUrl;
-                        card.innerHTML = `<img src="${imageUrl}" alt="${name}" onerror="this.src='https://via.placeholder.com/240x200'; this.onerror=null;">
-                            <h3>${name}</h3>`;
+                        img.src = 'https://i.ibb.co/34prgQJ/nooble.png';
+                        img.alt = name;
+
+                        img.onload = () => {
+                            img.classList.add('loaded');
+                        };
+
+                        const heading = document.createElement('h3');
+                        heading.textContent = name;
+
+                        card.appendChild(img);
+                        card.appendChild(heading);
                         appsGrid.appendChild(card);
+
+                        const observer = new IntersectionObserver(lazyLoadImages);
+                        observer.observe(img);
                     });
                 })
                 .catch(error => console.error('Error loading apps:', error));
@@ -338,7 +345,7 @@
 
         function filterApps() {
             const searchTerm = document.getElementById('appSearch').value.toLowerCase();
-            const appCards = document.querySelectorAll('.app-card');
+            const appCards = document.querySelectorAll('.game-card');
             appCards.forEach(card => {
                 if (card.querySelector('img').complete) {
                     const appName = card.querySelector('h3').textContent.toLowerCase();
