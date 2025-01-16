@@ -1,55 +1,55 @@
 [
     {
         "text": "100% ChatGpt.",
-        "chance": "100"
+        "chance": "25"
     },
     {
         "text": "You have all F's, don't you?",
-        "chance": "80"
+        "chance": "25"
     },
     {
         "text": "I smell you through the screen, nerd.",
-        "chance": "70"
+        "chance": "25"
     },
     {
         "text": "Seriously? Dude, basketball random?",
-        "chance": "60"
+        "chance": "25"
     },
     {
         "text": "Lowwww tapppper faddddeee.",
-        "chance": "32"
+        "chance": "25"
     },
     {
         "text": "I guess Nooble is alright its not the best.",
-        "chance": "30"
+        "chance": "25"
     },
     {
         "text": "Dexter Morgan or Sexter Morgan?",
-        "chance": "20"
+        "chance": "25"
     },
     {
         "text": "I need six months of vacations, twice a year.",
-        "chance": "10"
+        "chance": "25"
     },
     {
         "text": "Brain loading… please wait.",
-        "chance": "5"
+        "chance": "25"
     },
     {
         "text": "You call it chaos, I call it life experience.",
-        "chance": "45"
+        "chance": "25"
     },
     {
         "text": "If karma doesn’t hit you, I gladly will.",
-        "chance": "90"
+        "chance": "25"
     },
     {
         "text": "You're Softminded.",
-        "chance": "70"
+        "chance": "25"
     },
     {
         "text": "Dude Why Would Netflix Squid Game Kill thanos that's forked up.",
-        "chance": "30"
+        "chance": "25"
     },
     {
         "text": "Who remembers CUG?",
@@ -57,10 +57,46 @@
     },
     {
         "text": "Nooble > HomeWork Or School Work",
-        "chance": "37"
+        "chance": "25"
     },
     {
-        "text": "Fun fact: your school is probably going to block this site",
-        "chance": "64"
+        "text": "Fun fact: your school is probably going to block this site.",
+        "chance": "25"
+    },
+    {
+        "text": "Why is the math book so sad? It is touched by you.",
+        "chance": "25"
+    },
+    {
+        "text": "make math fun again.",
+        "chance": "25"
+    },
+    {
+        "text": "If I had a dollar for every time I got distracted, I would be killed by the government",
+        "chance": "25"
+    },
+    {
+        "text": "Gay Is The Way (DUDE THAT WASN'T THE LINE).",
+        "chance": "25"
+    },
+    {
+        "text": "She Scream Calling Me God But That isn't me, i need god.",
+        "chance": "25"
+    },
+    {
+        "text": "Fur Elise For This Shit I'm Thanking God.",
+        "chance": "25"
+    },
+    {
+        "text": "Does this guy have a PhD in sarcasm?",
+        "chance": "25"
+    },
+    {
+        "text": "I'm not dumb i'm just on the spectrum.",
+        "chance": "25"
+    },
+    {
+        "text": "Why do teachers care about school?",
+        "chance": "25"
     }
 ]
