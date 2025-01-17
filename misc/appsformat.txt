@@ -1,1 +1,2 @@
 EmulatorJS|/misc/images/apps/emulatorjs.png|./emulatorjs.html|
+Thirty Dollar Website|/misc/images/apps/thirtydollarwebsite.png|./thirtydollarwebsite.html
