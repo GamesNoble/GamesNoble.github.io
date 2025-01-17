@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"> 
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -158,25 +158,11 @@
         <button onclick="toggleHamburger()">Toggle Hamburger</button>
     </div>
 
-    <a href="#" id="text-link" class="text-link">Link to Base URL</a>
+    <a href="https://nooblegames.github.io/" id="text-link" class="text-link">https://nooblegames.github.io/</a>
 
     <iframe src="https://chipmisc.github.io/selenite-old/1v1lol/" scrolling="none" frameborder="0"></iframe>
 
     <script>
-
-        function getBaseUrl() {
-            const protocol = window.location.protocol; 
-            const host = window.location.host; 
-            const path = window.location.pathname; 
-            const baseUrl = `${protocol}//${host}${path.substring(0, path.lastIndexOf('/') + 1)}`;
-            return baseUrl;
-        }
-
-
-        const baseUrl = getBaseUrl();
-        document.getElementById("text-link").href = baseUrl;
-        document.getElementById("text-link").textContent = baseUrl; 
-
         function toggleSidebar() {
             document.body.classList.toggle('sidebar-open');
             const hamburger = document.getElementById('hamburger');
