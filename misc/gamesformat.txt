@@ -5,7 +5,7 @@ Bitlife|/misc/images/Bitlife.png|./Bitlife.html|
 Black Smith|/misc/images/BlackSmith.png|./Blacksmith.html|     
 Boxing Physics 2|/misc/images/BoxingPhysics2.png|./boxingphysics2.html|
 Boxing Random|/misc/images/BoxingRandom.png|./boxingrandom.html|  
-Cookie Clicker|/misc/images/CookieClicker.png|./cookieclicker.html|
+Cookie Clicker|/misc/images/CookieClicker.png|./cookieclicker.html| 
 Donkey Kong|/misc/images/DonkeyKong.png|./donkeykong.html|
 Drive Mad|/misc/images/drivemad.png|./drivemad.html|
 Fruit Ninja|/misc/images/FruitNinja.png|./FruitNinja.html|
