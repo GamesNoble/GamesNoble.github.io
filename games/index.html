@@ -131,42 +131,46 @@
         }
 
         .game-card {
-            width: 240px;
-            height: 320px;
+            width: 200px;
+            height: 280px;
             background-color: #444;
             padding: 10px;
-            border-radius: 10px;
+            border-radius: 8px;
             text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.2s ease;
         }
 
         .game-card img {
             width: 100%;
-            height: 200px;
+            height: auto;
             object-fit: cover;
             border-radius: 8px;
-            margin-bottom: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .game-title {
+            font-size: 1.1rem;
+            color: white;
+            margin-top: 10px;
             opacity: 0;
-            transform: translateY(10px);
-            transition: opacity 0.5s ease, transform 0.5s ease;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            white-space: nowrap;
         }
 
-        .game-card img.loaded {
+        .game-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .game-card:hover .game-title {
             opacity: 1;
-            transform: translateY(0);
-        }
-
-        .game-card h3 {
-            font-size: 1.2rem;
-            color: #fff;
-            margin-top: 15px;
-        }
-
-        .game-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+            transform: translate(-50%, 0);
         }
 
         @media (max-width: 1024px) {
@@ -198,8 +202,12 @@
             }
 
             .game-card {
-                width: 220px;
-                height: 300px;
+                width: 180px;
+                height: 260px;
+            }
+
+            .game-title {
+                font-size: 1rem;
             }
         }
 
@@ -233,8 +241,8 @@
             }
 
             .game-card {
-                width: 200px;
-                height: 280px;
+                width: 160px;
+                height: 240px;
             }
         }
 
@@ -283,8 +291,7 @@
             <input type="text" id="gameSearch" placeholder="Search Games..." oninput="filterGames()">
         </div>
         
-        <div class="game-grid" id="gamesGrid">
-        </div>
+        <div class="game-grid" id="gamesGrid"></div>
     </div>
 
     <button class="back-to-top" onclick="scrollToTop()"><i class="fas fa-arrow-up"></i></button>
@@ -330,6 +337,7 @@
                         };
 
                         const heading = document.createElement('h3');
+                        heading.className = 'game-title';
                         heading.textContent = name;
 
                         card.appendChild(img);
