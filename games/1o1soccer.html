@@ -1,10 +1,10 @@
-<!DOCTYPE html> 
-<html lang="en">      
-<head> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nooble | 1 On 1 Soccer</title>
-    <link rel="icon" href="https://github.com/NoobleGames/NoobleGames.github.io/blob/main/Logo/Logo4.png?raw=true" type="image/png">
+    <link rel="icon" href="/misc/favicon/Nooble.png" type="image/png">
     <style>
         body, html {
             margin: 0;
@@ -32,7 +32,7 @@
             left: -300px;
             width: 300px;
             height: 100%;
-            background: linear-gradient(to bottom, #333, #1e1e1e);
+            background: linear-gradient(180deg, #3b3b3b, #1e1e1e);
             color: white;
             display: flex;
             flex-direction: column;
@@ -41,9 +41,10 @@
             box-shadow: 4px 0 10px rgba(0,0,0,0.7);
             transition: left 0.3s ease;
             z-index: 100;
+            border-radius: 0 10px 10px 0;
         }
 
-        .sidebar a, .sidebar button {
+        .sidebar a {
             color: white;
             text-decoration: none;
             font-size: 20px;
@@ -51,30 +52,34 @@
             padding: 15px;
             width: 80%;
             text-align: center;
-            border-radius: 5px;
-            box-sizing: border-box;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
-
-        .sidebar a {
             background-color: #444;
-            display: block;
+            border-radius: 30px;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
         }
 
         .sidebar a:hover {
             background-color: #555;
-            transform: scale(1.05);
+            box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.3);
         }
 
         .sidebar button {
             background-color: #555;
             border: none;
             cursor: pointer;
+            padding: 15px;
+            border-radius: 30px;
+            color: white;
+            font-size: 20px;
+            width: 80%;
+            margin: 10px 0;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
         }
 
         .sidebar button:hover {
             background-color: #666;
-            transform: scale(1.05);
+            box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.3);
         }
 
         .hamburger {
@@ -83,6 +88,7 @@
             left: 20px;
             cursor: pointer;
             z-index: 101;
+            transition: opacity 0.3s ease;
         }
 
         .hamburger div {
@@ -107,18 +113,17 @@
             color: white;
             font-size: 18px;
             text-decoration: none;
-            background-color: #1e1e1e;
+            background-color: transparent;
             padding: 12px 20px;
-            border-radius: 5px;
+            border-radius: 30px;
             white-space: nowrap;
             display: block;
             box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-            transition: background-color 0.3s ease, transform 0.3s ease;
+            transition: background-color 0.3s ease;
         }
 
         .text-link:hover {
-            background-color: #333;
-            transform: scale(1.05);
+            background-color: rgba(255, 255, 255, 0.1);
         }
 
         .sidebar-open .sidebar {
@@ -133,18 +138,24 @@
         .hidden {
             display: none;
         }
+
+        .hide-hamburger {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
     </style>
 </head>
 <body>
-    <div class="hamburger" onclick="toggleSidebar()">
+    <div class="hamburger" id="hamburger" onclick="toggleSidebar()">
         <div></div>
         <div></div>
         <div></div>
     </div>
 
     <div class="sidebar">
-        <a href="https://nooblegames.github.io/">Home</a>
+        <a href="/index.html">Home</a>
         <button onclick="toggleLink()">Toggle Link</button>
+        <button onclick="toggleHamburger()">Toggle Hamburger</button>
     </div>
 
     <a href="https://nooblegames.github.io/" id="text-link" class="text-link">https://nooblegames.github.io/</a>
@@ -154,15 +165,20 @@
     <script>
         function toggleSidebar() {
             document.body.classList.toggle('sidebar-open');
+            const hamburger = document.getElementById('hamburger');
         }
 
         function toggleLink() {
             const link = document.getElementById('text-link');
-            if (link.classList.contains('hidden')) {
-                link.classList.remove('hidden');
-            } else {
-                link.classList.add('hidden');
-            }
+            link.classList.toggle('hidden');
+        }
+
+        function toggleHamburger() {
+            const hamburger = document.getElementById('hamburger');
+            hamburger.classList.add('hide-hamburger');
+            setTimeout(() => {
+                toggleSidebar();
+            }, 300);
         }
     </script>
 </body>
