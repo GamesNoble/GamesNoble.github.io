@@ -35,7 +35,6 @@ TABS|/misc/images/tabs.png|./tabs.html|
 What We Become We Behold|/misc/images/webecomewhatwebehold.png|./whatwebecomewebehold.html|
 Winter Clash 3D|/misc/images/winterclash3d.png|./winterclash3d|
 Yohoho.io|/misc/images/yohohoio.png|./yohoho-io.html|
-You Are Bezos|/misc/images/youarebezos.png|./you-are-bezos.html|
 CSGO CLICKER|/misc/images/csgoclicker.png|./csgoclicker.html|
 CSGO CLICKER 2|/misc/images/csgoclicker2.png|./csgoclicker2.html|
 Tetris|/misc/images/tetris.png|./tetris.html|
