@@ -306,6 +306,7 @@
 
     <button class="back-to-top" onclick="scrollToTop()"><i class="fas fa-arrow-up"></i></button>
 
+    <script src="/misc/backend/imagehandler.js" defer></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             fetchGames();
@@ -337,11 +338,13 @@
                         card.className = 'game-card';
                         card.style.animationDelay = `${index * 0.1}s`;
                         card.onclick = () => window.location.href = link;
+
                         const img = document.createElement('img');
                         img.dataset.src = imageUrl;
                         img.src = 'https://i.ibb.co/34prgQJ/nooble.png'; 
                         img.alt = name;
 
+                        img.onerror = function() { handleImageError(this); };
                         img.onload = () => {
                             img.classList.add('loaded');
                         };
