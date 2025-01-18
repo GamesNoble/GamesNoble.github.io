@@ -1,184 +1,349 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>   
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nooble | 1v1.lol</title>
-    <link rel="icon" href="/misc/favicon/Nooble.png" type="image/png">
+    <title>Nooble | Games</title>
+    <meta property="og:title" content="Nooble - Your One-Stop Gateway to Unblocked Content!" />
+    <meta property="og:description" content="Explore a wide range of games, apps, movies, and proxy services all in one place!" />
+    <meta property="og:image" content="https://github.com/NoobleGames/NoobleGames.github.io/blob/main/Logo/Logo4.png?raw=true" />
+    <meta property="og:url" content="" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Nooble - Your One-Stop Gateway to Unblocked Content!" />
+    <meta name="twitter:description" content="Explore a wide range of games, apps, movies, and proxy services all in one place!" />
+    <meta name="twitter:image" content="https://github.com/NoobleGames/NoobleGames.github.io/blob/main/Logo/Logo4.png?raw=true" />
+    <link rel="icon" href="https://github.com/NoobleGames/NoobleGames.github.io/blob/main/Logo/Logo4.png?raw=true" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
-        body, html {
+        * {
             margin: 0;
-            padding: 0; 
-            height: 100%;
-            width: 100%;  
-            background-color: #252525;
-            overflow: hidden;
-            font-family: Arial, sans-serif;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        iframe {
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: radial-gradient(circle, #333, #000);
+            color: #ffffff;
             height: 100%;
-            width: 100%;
-            overflow: auto;
-            position: absolute;
-            left: 0;
-            top: 0;
-            transition: width 0.3s ease, left 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            font-size: 16px;
+            line-height: 1.5;
+            position: relative;
         }
 
         .sidebar {
-            position: absolute;
+            position: fixed;
             top: 0;
-            left: -300px;
-            width: 300px;
+            left: 0;
             height: 100%;
-            background: linear-gradient(180deg, #3b3b3b, #1e1e1e);
-            color: white;
+            width: 240px;
+            background: #222;
+            padding: 25px;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            padding-top: 60px;
-            box-shadow: 4px 0 10px rgba(0,0,0,0.7);
-            transition: left 0.3s ease;
-            z-index: 100;
-            border-radius: 0 10px 10px 0;
+            gap: 20px;
+            box-shadow: 2px 0 8px rgba(0, 0, 0, 0.5);
+            z-index: 10;
+        }
+
+        .sidebar h1 {
+            color: #bbb;
+            font-size: 2rem;
+            margin-bottom: 30px;
+            text-align: center;
         }
 
         .sidebar a {
-            color: white;
+            color: #aaa;
             text-decoration: none;
-            font-size: 20px;
-            margin: 10px 0;
-            padding: 15px;
-            width: 80%;
-            text-align: center;
-            background-color: #444;
-            border-radius: 30px;
-            transition: background-color 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            font-size: 1.2rem;
+            padding: 12px 20px;
+            border-radius: 8px;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
         .sidebar a:hover {
-            background-color: #555;
-            box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.3);
+            background-color: #444;
+            color: #ffffff;
         }
 
-        .sidebar button {
-            background-color: #555;
-            border: none;
-            cursor: pointer;
-            padding: 15px;
-            border-radius: 30px;
-            color: white;
-            font-size: 20px;
-            width: 80%;
-            margin: 10px 0;
-            transition: background-color 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        .main {
+            margin-left: 240px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            height: 100%;
+            padding-top: 50px;
+            text-align: center;
+            overflow-y: auto;
         }
 
-        .sidebar button:hover {
-            background-color: #666;
-            box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.3);
+        .main h1 {
+            font-size: 4rem;
+            color: #ffffff;
+            margin-bottom: 20px;
+            font-weight: 600;
         }
 
-        .hamburger {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            cursor: pointer;
-            z-index: 101;
-            transition: opacity 0.3s ease;
+        .main p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            color: #ccc;
         }
 
-        .hamburger div {
-            width: 35px;
-            height: 4px;
-            background-color: white;
-            margin: 6px 0;
-            transition: all 0.3s ease;
-            border-radius: 2px;
+        .search-bar {
+            margin-bottom: 20px;
+            width: 100%;
+            max-width: 450px;
+            display: flex;
+            justify-content: center;
+            padding: 0 20px;
         }
 
-        .hamburger:hover div {
-            background-color: #ccc;
-        }
-
-        .text-link {
-            position: absolute;
-            top: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 10;
-            color: white;
-            font-size: 18px;
-            text-decoration: none;
-            background-color: transparent;
+        .search-bar input {
+            width: 100%;
             padding: 12px 20px;
             border-radius: 30px;
+            border: 1px solid #555;
+            font-size: 1.1rem;
+            background-color: #222;
+            color: #fff;
+            transition: border-color 0.3s ease, background-color 0.3s ease;
+        }
+
+        .search-bar input:focus {
+            outline: none;
+            border-color: #888;
+            background-color: #333;
+        }
+
+        .game-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            margin-top: 50px;
+        }
+
+        .game-card {
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+        }
+
+        .game-card img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .game-title {
+            font-size: 1.2rem;
+            color: white;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
             white-space: nowrap;
-            display: block;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-            transition: background-color 0.3s ease;
-        }
-
-        .text-link:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-        }
-
-        .sidebar-open .sidebar {
-            left: 0;
-        }
-
-        .sidebar-open iframe {
-            width: calc(100% - 300px);
-            left: 300px;
-        }
-
-        .hidden {
-            display: none;
-        }
-
-        .hide-hamburger {
             opacity: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            width: 100%;
+            text-align: center;
             transition: opacity 0.3s ease;
+        }
+
+        .game-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .game-card:hover .game-title {
+            opacity: 1;
+        }
+
+        @media (max-width: 1024px) {
+            .sidebar {
+                width: 220px;
+            }
+            .main {
+                margin-left: 220px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 200px;
+            }
+            .main {
+                margin-left: 200px;
+                padding: 20px;
+            }
+            .main h1 {
+                font-size: 3rem;
+            }
+            .game-grid {
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+                padding: 15px;
+            }
+            .sidebar h1 {
+                font-size: 1.5rem;
+            }
+            .main {
+                margin-left: 0;
+                padding: 10px;
+            }
+            .main h1 {
+                font-size: 2.5rem;
+            }
+            .game-grid {
+                gap: 10px;
+            }
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #444;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            cursor: pointer;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            pointer-events: none;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        .fa-arrow-up {
+            font-size: 1.5rem;
         }
     </style>
 </head>
 <body>
-    <div class="hamburger" id="hamburger" onclick="toggleSidebar()">
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
-
     <div class="sidebar">
+        <h1>Nooble</h1>
         <a href="/index.html">Home</a>
-        <button onclick="toggleLink()">Toggle Link</button>
-        <button onclick="toggleHamburger()">Toggle Hamburger</button>
+        <a href="/games/">Games</a>
+        <a href="/apps/">Apps</a>
+        <a href="/movies/">Movies</a>
+        <a href="/proxy/">Proxy</a>
     </div>
 
-    <a href="https://nooblegames.github.io/" id="text-link" class="text-link">https://nooblegames.github.io/</a>
+    <div class="main">
+        <h1>Games</h1>
+        <p>Explore our collection of unblocked games!</p>
 
-    <iframe src="https://chipmisc.github.io/selenite-old/1v1lol/" scrolling="none" frameborder="0"></iframe>
+        <div class="search-bar">
+            <input type="text" id="gameSearch" placeholder="Search Games..." oninput="filterGames()">
+        </div>
+        
+        <div class="game-grid" id="gamesGrid"></div>
+    </div>
+
+    <button class="back-to-top" onclick="scrollToTop()"><i class="fas fa-arrow-up"></i></button>
 
     <script>
-        function toggleSidebar() {
-            document.body.classList.toggle('sidebar-open');
-            const hamburger = document.getElementById('hamburger');
+        document.addEventListener('DOMContentLoaded', () => {
+            fetchGames();
+            window.addEventListener('scroll', handleScroll);
+        });
+
+        function lazyLoadImages(entries, observer) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src;
+                    img.classList.add('loaded');
+                    observer.unobserve(img);
+                }
+            });
         }
 
-        function toggleLink() {
-            const link = document.getElementById('text-link');
-            link.classList.toggle('hidden');
+        function fetchGames() {
+            fetch('/misc/gamesformat.txt')
+                .then(response => response.text())
+                .then(data => {
+                    const gamesGrid = document.getElementById('gamesGrid');
+                    const games = data.trim().split('\n');
+                    games.sort((a, b) => a.split('|')[0].toLowerCase().localeCompare(b.split('|')[0].toLowerCase()));
+
+                    games.forEach((game, index) => {
+                        const [name, imageUrl, link] = game.split('|');
+                        const card = document.createElement('div');
+                        card.className = 'game-card';
+                        card.style.animationDelay = `${index * 0.1}s`;
+                        card.onclick = () => window.location.href = link;
+                        const img = document.createElement('img');
+                        img.dataset.src = imageUrl;
+                        img.src = 'https://i.ibb.co/34prgQJ/nooble.png';
+                        img.alt = name;
+
+                        img.onload = () => {
+                            img.classList.add('loaded');
+                        };
+
+                        const heading = document.createElement('h3');
+                        heading.className = 'game-title';
+                        heading.textContent = name;
+
+                        card.appendChild(img);
+                        card.appendChild(heading);
+                        gamesGrid.appendChild(card);
+
+                        const observer = new IntersectionObserver(lazyLoadImages);
+                        observer.observe(img);
+                    });
+                })
+                .catch(error => console.error('Error loading games:', error));
         }
 
-        function toggleHamburger() {
-            const hamburger = document.getElementById('hamburger');
-            hamburger.classList.add('hide-hamburger');
-            setTimeout(() => {
-                toggleSidebar();
-            }, 300);
+        function filterGames() {
+            const searchTerm = document.getElementById('gameSearch').value.toLowerCase();
+            const gameCards = document.querySelectorAll('.game-card');
+            gameCards.forEach(card => {
+                if (card.querySelector('img').complete) {
+                    const gameName = card.querySelector('h3').textContent.toLowerCase();
+                    if (gameName.includes(searchTerm)) {
+                        card.style.display = '';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                }
+            });
+        }
+
+        function handleScroll() {
+            const backToTopButton = document.querySelector('.back-to-top');
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
+            }
+        }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     </script>
 </body>
