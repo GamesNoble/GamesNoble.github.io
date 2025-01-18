@@ -54,3 +54,4 @@ Rocket League|/misc/images/rocketleague.png|./rocketleague.html
 Flappy Bird|/misc/images/flappybird.png|./flappybird.html
 2048|/misc/images/2048.png|./2048.html
 Cut the Rope|/misc/images/cuttherope.png|./cuttherope.html
+1 On 1 Soccer|/misc/images/1o1soccer.png|./1o1soccer.html
