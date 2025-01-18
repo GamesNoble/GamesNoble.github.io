@@ -1,4 +1,4 @@
-1v1.lol|/misc/images/1v1lol.png|./1v1.lol.html|
+1v1.lol|/misc/images/1v1lol.png|./1v1.lol.html| 
 Basket Random|/misc/images/basketrandom.png|./basketrandom.html|
 Basket Ball Stars|/misc/images/BasketBallStars.png|./basketballstars.html|
 Bitlife|/misc/images/Bitlife.png|./Bitlife.html|   
