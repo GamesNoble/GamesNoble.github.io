@@ -48,7 +48,6 @@
             gap: 20px;
             box-shadow: 2px 0 8px rgba(0, 0, 0, 0.5);
             z-index: 10;
-            transition: transform 0.3s ease;
         }
 
         .sidebar h1 {
@@ -82,7 +81,6 @@
             padding-top: 50px;
             text-align: center;
             overflow-y: auto;
-            transition: margin-left 0.3s ease;
         }
 
         .main h1 {
@@ -133,46 +131,52 @@
         }
 
         .game-card {
-            width: 240px;
-            height: 320px;
+            width: 220px;
+            height: 300px;
             background-color: #444;
             padding: 10px;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-            transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.5s ease;
-            cursor: pointer;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            position: relative;
-            opacity: 0;
-            animation: fadeIn 0.5s forwards;
-        }
-
-        .game-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
             border-radius: 8px;
-            margin-bottom: 10px;
-        }
-
-        .game-card h3 {
-            font-size: 1.2rem;
-            color: #fff;
-            margin-top: 15px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
         }
 
         .game-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
         }
 
-        @keyframes fadeIn {
-            to {
-                opacity: 1;
-            }
+        .game-card img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .game-title {
+            font-size: 1.2rem;
+            color: white;
+            margin-top: 10px;
+            opacity: 0;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            white-space: nowrap;
+        }
+
+        .game-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .game-card:hover .game-title {
+            opacity: 1;
+            transform: translate(-50%, 0);
         }
 
         @media (max-width: 1024px) {
@@ -204,8 +208,12 @@
             }
 
             .game-card {
-                width: 220px;
-                height: 300px;
+                width: 200px;
+                height: 280px;
+            }
+
+            .game-title {
+                font-size: 1.1rem;
             }
         }
 
@@ -239,8 +247,12 @@
             }
 
             .game-card {
-                width: 200px;
-                height: 280px;
+                width: 160px;
+                height: 240px;
+            }
+
+            .game-title {
+                font-size: 0.9rem;
             }
         }
 
@@ -263,7 +275,7 @@
         .back-to-top.show {
             opacity: 1;
             transform: translateY(0);
-            pointer-events: auto; /* Allows click when visible */
+            pointer-events: auto;
         }
 
         .fa-arrow-up {
@@ -289,8 +301,7 @@
             <input type="text" id="gameSearch" placeholder="Search Games..." oninput="filterGames()">
         </div>
         
-        <div class="game-grid" id="gamesGrid">
-        </div>
+        <div class="game-grid" id="gamesGrid"></div>
     </div>
 
     <button class="back-to-top" onclick="scrollToTop()"><i class="fas fa-arrow-up"></i></button>
@@ -301,15 +312,16 @@
             window.addEventListener('scroll', handleScroll);
         });
 
-        const imageLoadingInterval = setInterval(() => {
-            const gameCards = document.querySelectorAll('.game-card');
-            gameCards.forEach((card) => {
-                const img = card.querySelector('img');
-                if (img && !img.complete) {
+        function lazyLoadImages(entries, observer) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
                     img.src = img.dataset.src;
+                    img.classList.add('loaded');
+                    observer.unobserve(img);
                 }
             });
-        }, 20000);
+        }
 
         function fetchGames() {
             fetch('/misc/gamesformat.txt')
@@ -326,11 +338,24 @@
                         card.style.animationDelay = `${index * 0.1}s`;
                         card.onclick = () => window.location.href = link;
                         const img = document.createElement('img');
-                        img.src = imageUrl;
                         img.dataset.src = imageUrl;
-                        card.innerHTML = `<img src="${imageUrl}" alt="${name}" onerror="this.src='https://via.placeholder.com/240x200'; this.onerror=null;">
-                            <h3>${name}</h3>`;
+                        img.src = 'https://i.ibb.co/34prgQJ/nooble.png';
+                        img.alt = name;
+
+                        img.onload = () => {
+                            img.classList.add('loaded');
+                        };
+
+                        const heading = document.createElement('h3');
+                        heading.className = 'game-title';
+                        heading.textContent = name;
+
+                        card.appendChild(img);
+                        card.appendChild(heading);
                         gamesGrid.appendChild(card);
+
+                        const observer = new IntersectionObserver(lazyLoadImages);
+                        observer.observe(img);
                     });
                 })
                 .catch(error => console.error('Error loading games:', error));
