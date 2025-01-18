@@ -7,7 +7,7 @@
     <meta property="og:title" content="Nooble - Your One-Stop Gateway to Unblocked Content!" />
     <meta property="og:description" content="Explore a wide range of games, apps, movies, and proxy services all in one place!" />
     <meta property="og:image" content="https://github.com/NoobleGames/NoobleGames.github.io/blob/main/Logo/Logo4.png?raw=true" />
-    <meta property="og:url" content="" />
+    <meta property="og:url" content="" /> 
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Nooble - Your One-Stop Gateway to Unblocked Content!" />
@@ -25,13 +25,14 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            background: radial-gradient(circle, #2c2c2c, #1a1a1a);
+            background: radial-gradient(circle, #333, #000);
             color: #ffffff;
             height: 100%;
             display: flex;
             flex-direction: column;
             font-size: 16px;
             line-height: 1.5;
+            position: relative;
         }
 
         .sidebar {
@@ -45,12 +46,13 @@
             display: flex;
             flex-direction: column;
             gap: 20px;
-            box-shadow: 2px 0 12px rgba(0, 0, 0, 0.6);
+            box-shadow: 2px 0 8px rgba(0, 0, 0, 0.5);
             z-index: 10;
+            transition: transform 0.3s ease;
         }
 
         .sidebar h1 {
-            color: #eee;
+            color: #bbb;
             font-size: 2rem;
             margin-bottom: 30px;
             text-align: center;
@@ -67,7 +69,7 @@
 
         .sidebar a:hover {
             background-color: #444;
-            color: #fff;
+            color: #ffffff;
         }
 
         .main {
@@ -80,11 +82,12 @@
             padding-top: 50px;
             text-align: center;
             overflow-y: auto;
+            transition: margin-left 0.3s ease;
         }
 
         .main h1 {
-            font-size: 3.5rem;
-            color: #fff;
+            font-size: 4rem;
+            color: #ffffff;
             margin-bottom: 20px;
             font-weight: 600;
         }
@@ -110,7 +113,7 @@
             border-radius: 30px;
             border: 1px solid #555;
             font-size: 1.1rem;
-            background-color: #333;
+            background-color: #222;
             color: #fff;
             transition: border-color 0.3s ease, background-color 0.3s ease;
         }
@@ -118,7 +121,7 @@
         .search-bar input:focus {
             outline: none;
             border-color: #888;
-            background-color: #444;
+            background-color: #333;
         }
 
         .game-grid {
@@ -130,55 +133,53 @@
         }
 
         .game-card {
-            position: relative;
+            width: 240px;
+            height: 320px;
+            background-color: #444;
+            padding: 10px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.5s ease;
             cursor: pointer;
-            overflow: hidden;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            width: 200px; /* fixed width for card */
-        }
-
-        .game-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            position: relative;
+            opacity: 0;
+            animation: fadeIn 0.5s forwards;
         }
 
         .game-card img {
             width: 100%;
-            height: 150px; /* fixed height for images */
+            height: 200px;
             object-fit: cover;
-            border-radius: 15px 15px 0 0;
+            border-radius: 8px;
+            margin-bottom: 10px;
         }
 
-        .game-title {
+        .game-card h3 {
             font-size: 1.2rem;
-            color: white;
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            white-space: nowrap;
-            opacity: 0;
-            background-color: rgba(0, 0, 0, 0.7);
-            width: 100%;
-            text-align: center;
-            transition: opacity 0.3s ease;
-            padding: 10px 0;
+            color: #fff;
+            margin-top: 15px;
         }
 
-        .game-card:hover img {
-            transform: scale(1.1);
+        .game-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
         }
 
-        .game-card:hover .game-title {
-            opacity: 1;
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
         }
 
         @media (max-width: 1024px) {
             .sidebar {
                 width: 220px;
             }
+
             .main {
                 margin-left: 220px;
             }
@@ -188,15 +189,23 @@
             .sidebar {
                 width: 200px;
             }
+
             .main {
                 margin-left: 200px;
                 padding: 20px;
             }
+
             .main h1 {
                 font-size: 3rem;
             }
+
             .game-grid {
                 gap: 20px;
+            }
+
+            .game-card {
+                width: 220px;
+                height: 300px;
             }
         }
 
@@ -207,18 +216,31 @@
                 position: relative;
                 padding: 15px;
             }
+
             .sidebar h1 {
                 font-size: 1.5rem;
             }
+
+            .sidebar a {
+                font-size: 1rem;
+            }
+
             .main {
                 margin-left: 0;
                 padding: 10px;
             }
+
             .main h1 {
                 font-size: 2.5rem;
             }
+
             .game-grid {
                 gap: 10px;
+            }
+
+            .game-card {
+                width: 200px;
+                height: 280px;
             }
         }
 
@@ -229,8 +251,8 @@
             background-color: #444;
             color: #fff;
             border: none;
-            border-radius: 50%;
-            padding: 15px;
+            border-radius: 5px;
+            padding: 10px;
             cursor: pointer;
             opacity: 0;
             transform: translateY(50px);
@@ -241,7 +263,7 @@
         .back-to-top.show {
             opacity: 1;
             transform: translateY(0);
-            pointer-events: auto;
+            pointer-events: auto; /* Allows click when visible */
         }
 
         .fa-arrow-up {
@@ -267,7 +289,8 @@
             <input type="text" id="gameSearch" placeholder="Search Games..." oninput="filterGames()">
         </div>
         
-        <div class="game-grid" id="gamesGrid"></div>
+        <div class="game-grid" id="gamesGrid">
+        </div>
     </div>
 
     <button class="back-to-top" onclick="scrollToTop()"><i class="fas fa-arrow-up"></i></button>
@@ -278,16 +301,15 @@
             window.addEventListener('scroll', handleScroll);
         });
 
-        function lazyLoadImages(entries, observer) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const img = entry.target;
+        const imageLoadingInterval = setInterval(() => {
+            const gameCards = document.querySelectorAll('.game-card');
+            gameCards.forEach((card) => {
+                const img = card.querySelector('img');
+                if (img && !img.complete) {
                     img.src = img.dataset.src;
-                    img.classList.add('loaded');
-                    observer.unobserve(img);
                 }
             });
-        }
+        }, 20000);
 
         function fetchGames() {
             fetch('/misc/gamesformat.txt')
@@ -304,24 +326,11 @@
                         card.style.animationDelay = `${index * 0.1}s`;
                         card.onclick = () => window.location.href = link;
                         const img = document.createElement('img');
+                        img.src = imageUrl;
                         img.dataset.src = imageUrl;
-                        img.src = 'https://i.ibb.co/34prgQJ/nooble.png';
-                        img.alt = name;
-
-                        img.onload = () => {
-                            img.classList.add('loaded');
-                        };
-
-                        const heading = document.createElement('h3');
-                        heading.className = 'game-title';
-                        heading.textContent = name;
-
-                        card.appendChild(img);
-                        card.appendChild(heading);
+                        card.innerHTML = `<img src="${imageUrl}" alt="${name}" onerror="this.src='https://via.placeholder.com/240x200'; this.onerror=null;">
+                            <h3>${name}</h3>`;
                         gamesGrid.appendChild(card);
-
-                        const observer = new IntersectionObserver(lazyLoadImages);
-                        observer.observe(img);
                     });
                 })
                 .catch(error => console.error('Error loading games:', error));
@@ -333,7 +342,11 @@
             gameCards.forEach(card => {
                 if (card.querySelector('img').complete) {
                     const gameName = card.querySelector('h3').textContent.toLowerCase();
-                    card.style.display = gameName.includes(searchTerm) ? '' : 'none';
+                    if (gameName.includes(searchTerm)) {
+                        card.style.display = '';
+                    } else {
+                        card.style.display = 'none';
+                    }
                 }
             });
         }
