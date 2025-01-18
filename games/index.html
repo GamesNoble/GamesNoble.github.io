@@ -7,7 +7,7 @@
     <meta property="og:title" content="Nooble - Your One-Stop Gateway to Unblocked Content!" />
     <meta property="og:description" content="Explore a wide range of games, apps, movies, and proxy services all in one place!" />
     <meta property="og:image" content="https://github.com/NoobleGames/NoobleGames.github.io/blob/main/Logo/Logo4.png?raw=true" />
-    <meta property="og:url" content="" /> 
+    <meta property="og:url" content="" />  
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Nooble - Your One-Stop Gateway to Unblocked Content!" />
@@ -324,7 +324,7 @@
         }
 
         function fetchGames() {
-            fetch('/misc/gamesformat.txt')
+            fetch('/misc/gamesformat.txt') 
                 .then(response => response.text())
                 .then(data => {
                     const gamesGrid = document.getElementById('gamesGrid');
@@ -339,7 +339,7 @@
                         card.onclick = () => window.location.href = link;
                         const img = document.createElement('img');
                         img.dataset.src = imageUrl;
-                        img.src = 'https://i.ibb.co/34prgQJ/nooble.png';
+                        img.src = 'https://i.ibb.co/34prgQJ/nooble.png'; 
                         img.alt = name;
 
                         img.onload = () => {
