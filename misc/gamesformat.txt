@@ -53,3 +53,4 @@ Murder|/misc/images/murder.png|./murder.html
 Crossy Road|/misc/images/crossyroad.png|./crossyroad.html
 Rocket League|/misc/images/rocketleague.png|./rocketleague.html
 Flappy Bird|/misc/images/flappybird.png|./flappybird.html
+2048|/misc/images/2048.png|./2048.html
