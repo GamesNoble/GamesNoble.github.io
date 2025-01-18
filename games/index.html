@@ -7,7 +7,7 @@
     <meta property="og:title" content="Nooble - Your One-Stop Gateway to Unblocked Content!" />
     <meta property="og:description" content="Explore a wide range of games, apps, movies, and proxy services all in one place!" />
     <meta property="og:image" content="https://github.com/NoobleGames/NoobleGames.github.io/blob/main/Logo/Logo4.png?raw=true" />
-    <meta property="og:url" content="" /> 
+    <meta property="og:url" content="" />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Nooble - Your One-Stop Gateway to Unblocked Content!" />
@@ -25,14 +25,13 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            background: radial-gradient(circle, #333, #000);
+            background: radial-gradient(circle, #2c2c2c, #1a1a1a);
             color: #ffffff;
             height: 100%;
             display: flex;
             flex-direction: column;
             font-size: 16px;
             line-height: 1.5;
-            position: relative;
         }
 
         .sidebar {
@@ -46,12 +45,12 @@
             display: flex;
             flex-direction: column;
             gap: 20px;
-            box-shadow: 2px 0 8px rgba(0, 0, 0, 0.5);
+            box-shadow: 2px 0 12px rgba(0, 0, 0, 0.6);
             z-index: 10;
         }
 
         .sidebar h1 {
-            color: #bbb;
+            color: #eee;
             font-size: 2rem;
             margin-bottom: 30px;
             text-align: center;
@@ -68,7 +67,7 @@
 
         .sidebar a:hover {
             background-color: #444;
-            color: #ffffff;
+            color: #fff;
         }
 
         .main {
@@ -84,8 +83,8 @@
         }
 
         .main h1 {
-            font-size: 4rem;
-            color: #ffffff;
+            font-size: 3.5rem;
+            color: #fff;
             margin-bottom: 20px;
             font-weight: 600;
         }
@@ -111,7 +110,7 @@
             border-radius: 30px;
             border: 1px solid #555;
             font-size: 1.1rem;
-            background-color: #222;
+            background-color: #333;
             color: #fff;
             transition: border-color 0.3s ease, background-color 0.3s ease;
         }
@@ -119,7 +118,7 @@
         .search-bar input:focus {
             outline: none;
             border-color: #888;
-            background-color: #333;
+            background-color: #444;
         }
 
         .game-grid {
@@ -131,43 +130,40 @@
         }
 
         .game-card {
-            width: 220px;
-            height: 300px;
-            background-color: #444;
-            padding: 10px;
-            border-radius: 8px;
-            text-align: center;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
             position: relative;
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
             cursor: pointer;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .game-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
         }
 
         .game-card img {
             width: 100%;
             height: auto;
             object-fit: cover;
-            border-radius: 8px;
-            transition: transform 0.3s ease;
+            border-radius: 15px 15px 0 0;
         }
 
         .game-title {
             font-size: 1.2rem;
             color: white;
-            margin-top: 10px;
-            opacity: 0;
-            transition: opacity 0.3s ease, transform 0.3s ease;
             position: absolute;
-            bottom: 15px;
+            bottom: 0;
             left: 50%;
             transform: translateX(-50%);
             white-space: nowrap;
+            opacity: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            width: 100%;
+            text-align: center;
+            transition: opacity 0.3s ease;
+            padding: 10px 0;
         }
 
         .game-card:hover img {
@@ -176,14 +172,12 @@
 
         .game-card:hover .game-title {
             opacity: 1;
-            transform: translate(-50%, 0);
         }
 
         @media (max-width: 1024px) {
             .sidebar {
                 width: 220px;
             }
-
             .main {
                 margin-left: 220px;
             }
@@ -193,27 +187,15 @@
             .sidebar {
                 width: 200px;
             }
-
             .main {
                 margin-left: 200px;
                 padding: 20px;
             }
-
             .main h1 {
                 font-size: 3rem;
             }
-
             .game-grid {
                 gap: 20px;
-            }
-
-            .game-card {
-                width: 200px;
-                height: 280px;
-            }
-
-            .game-title {
-                font-size: 1.1rem;
             }
         }
 
@@ -224,35 +206,18 @@
                 position: relative;
                 padding: 15px;
             }
-
             .sidebar h1 {
                 font-size: 1.5rem;
             }
-
-            .sidebar a {
-                font-size: 1rem;
-            }
-
             .main {
                 margin-left: 0;
                 padding: 10px;
             }
-
             .main h1 {
                 font-size: 2.5rem;
             }
-
             .game-grid {
                 gap: 10px;
-            }
-
-            .game-card {
-                width: 160px;
-                height: 240px;
-            }
-
-            .game-title {
-                font-size: 0.9rem;
             }
         }
 
@@ -263,8 +228,8 @@
             background-color: #444;
             color: #fff;
             border: none;
-            border-radius: 5px;
-            padding: 10px;
+            border-radius: 50%;
+            padding: 15px;
             cursor: pointer;
             opacity: 0;
             transform: translateY(50px);
@@ -367,11 +332,7 @@
             gameCards.forEach(card => {
                 if (card.querySelector('img').complete) {
                     const gameName = card.querySelector('h3').textContent.toLowerCase();
-                    if (gameName.includes(searchTerm)) {
-                        card.style.display = '';
-                    } else {
-                        card.style.display = 'none';
-                    }
+                    card.style.display = gameName.includes(searchTerm) ? '' : 'none';
                 }
             });
         }
