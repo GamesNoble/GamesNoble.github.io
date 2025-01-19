@@ -58,3 +58,4 @@ Cut the Rope|/misc/images/cuttherope.png|./cuttherope.html
 Spacebar Clicker|/misc/images/spacebarclicker.png|./spacebarclicker.html
 Stacktris|/misc/images/stacktris.png|./stacktris.html
 Deal Or No Deal|/misc/images/dealornodeal.png|./dealornodeal.html
+Amazing Rope Police|/misc/images/amazingropepolice.png|./amazingropepolice.html
