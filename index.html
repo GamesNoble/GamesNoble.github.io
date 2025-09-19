@@ -1,162 +1,288 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nooble - NEW BEGINNINGS</title>
-  <style>
-    /* Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: "Poppins", sans-serif;
-      background: #0f172a;
-      color: #f8fafc;
-      overflow-x: hidden;
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 2rem;
-      position: relative;
-    }
-
-    /* Floating background orbs */
-    .orb {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(80px);
-      opacity: 0.6;
-      animation: float 12s infinite ease-in-out alternate;
-    }
-    .orb1 {
-      width: 300px; height: 300px;
-      background: #38bdf8;
-      top: -50px; left: -80px;
-    }
-    .orb2 {
-      width: 250px; height: 250px;
-      background: #f472b6;
-      bottom: -60px; right: -60px;
-      animation-delay: 3s;
-    }
-    .orb3 {
-      width: 200px; height: 200px;
-      background: #facc15;
-      top: 40%; left: 70%;
-      animation-delay: 6s;
-    }
-    @keyframes float {
-      from { transform: translateY(0px) translateX(0px); }
-      to { transform: translateY(-40px) translateX(30px); }
-    }
-
-    /* Card */
-    .card {
-      position: relative;
-      max-width: 850px;
-      background: rgba(30, 41, 59, 0.85);
-      padding: 3rem;
-      border-radius: 22px;
-      box-shadow: 0 10px 50px rgba(0,0,0,0.6);
-      backdrop-filter: blur(15px);
-      text-align: center;
-      animation: fadeIn 1.2s ease-out;
-      z-index: 10;
-    }
-
-    h1 {
-      font-size: 3rem;
-      font-weight: 800;
-      margin-bottom: 1rem;
-      background: linear-gradient(90deg, #38bdf8, #facc15, #f472b6, #38bdf8);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-size: 300% 300%;
-      animation: gradientShift 8s infinite linear;
-    }
-
-    p {
-      font-size: 1.15rem;
-      line-height: 1.8;
-      margin: 1rem 0;
-      color: #e2e8f0;
-      animation: fadeUp 1s ease-out forwards;
-    }
-
-    strong {
-      color: #facc15;
-    }
-    em {
-      color: #94a3b8;
-    }
-
-    .cta {
-      display: inline-block;
-      margin-top: 2rem;
-      padding: 0.9rem 2rem;
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: #0f172a;
-      background: linear-gradient(90deg, #38bdf8, #facc15);
-      border: none;
-      border-radius: 12px;
-      cursor: pointer;
-      box-shadow: 0 6px 20px rgba(56, 189, 248, 0.4);
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-    }
-    .cta:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 10px 30px rgba(250, 204, 21, 0.5);
-    }
-
-    .footer {
-      margin-top: 2rem;
-      font-size: 1rem;
-      color: #cbd5e1;
-    }
-
-    /* Animations */
-    @keyframes fadeIn {
-      from { opacity: 0; transform: scale(0.95); }
-      to { opacity: 1; transform: scale(1); }
-    }
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes gradientShift {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nooble | Home</title>
+    <meta property="og:title" content="Nooble - Your One-Stop Gateway to Unblocked Content!">
+    <meta property="og:description" content="Explore a wide range of games, apps, movies, and proxy services all in one place!">
+    <meta property="og:image" content="/misc/favicon/Nooble.png">
+    <meta property="og:url" content="">
+    <meta property="og:type" content="website">  
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Nooble - Your One-Stop Gateway to Unblocked Content!">
+    <meta name="twitter:description" content="Explore a wide range of games, apps, movies, and proxy services all in one place!">
+    <meta name="twitter:image" content="/misc/favicon/Nooble.png">
+    <link rel="icon" href="/misc/favicon/Nooble.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: radial-gradient(circle, rgba(43, 43, 43, 0.9), rgba(0, 0, 0, 0.9)), url('') no-repeat center center/cover;
+            color: #ffffff;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 240px;
+            background: #222;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            box-shadow: 2px 0 8px rgba(0, 0, 0, 0.5);
+        }
+        .sidebar h1 {
+            color: #bbb;
+            font-size: 2rem;
+            margin-bottom: 30px;
+            text-align: center;
+            letter-spacing: 1px;
+        }
+        .sidebar a {
+            color: #aaa;
+            text-decoration: none;
+            font-size: 1.2rem;
+            padding: 12px 20px;
+            border-radius: 8px;
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .sidebar a:hover {
+            background-color: #444;
+            color: #fff;
+            transform: scale(1.05);
+        }
+        .main {
+            margin-left: 240px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            padding: 0 30px;
+        }
+        .main h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+            letter-spacing: 1px;
+        }
+        .main p {
+            font-size: 1.25rem;
+            margin-bottom: 30px;
+            color: #ccc;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+        .random-quote {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #ddd;
+            font-weight: 400;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px 30px;
+            border-radius: 12px;
+            transition: background-color 0.3s ease, cursor 0.3s ease;
+            cursor: pointer;
+        }
+        .random-quote:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        .btn-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            color: #ffffff;
+            background: #444;
+            border: none;
+            border-radius: 30px;
+            text-decoration: none;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+            background-color: #5a5a5a;
+        }
+        .btn i {
+            margin-right: 8px;
+        }
+        .footer {
+            margin-top: auto;
+            margin-left: 240px;
+            padding: 20px 20px;
+            background: rgba(34, 34, 34, 0.9);
+            text-align: center;
+            color: #bbb;
+            border-top: 2px solid #444;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        .footer a {
+            color: #aaa;
+            text-decoration: none;
+            margin: 0 5px;
+            transition: color 0.3s ease;
+        }
+        .footer a:hover {
+            color: #fff;
+        }
+        .social-icons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .social-icons a {
+            color: #ffffff;
+            font-size: 1.8rem;
+            transition: transform 0.3s, color 0.3s;
+        }
+        .social-icons a:hover {
+            color: #ccc;
+            transform: scale(1.1);
+        }
+    </style>
 </head>
 <body>
-  <!-- Floating Orbs -->
-  <div class="orb orb1"></div>
-  <div class="orb orb2"></div>
-  <div class="orb orb3"></div>
-
-  <div class="card">
-    <h1>Nooble - NEW BEGINNINGS</h1>
-    <p>
-      Nooble has grown into something much bigger than I ever imagined—and the fact that you’re here right now is proof of that. When I first started, I was just an 11-year-old looking for a way to play unblocked games. Back then, I created a small site called <strong>CUG</strong> (2022–2023).
-    </p>
-    <p>
-      But Nooble has become so much more. Over time, it’s evolved into a full project with an amazing dev team behind it. That’s why I’m excited to announce our next big step: <strong>NUG – New Unblocked Games</strong>, launching soon.
-    </p>
-    <p>
-      The Nooble site <em>might</em> remain available even after NUG launches—though no promises. Either way, we can’t wait to share this new chapter with you all!
-    </p>
-    <button class="cta">🚀 NUG Coming Soon</button>
-    <div class="footer">
-      — The Nooble Team
+    <div class="sidebar">
+        <h1>Nooble</h1>
+        <a href="/index.html">Home</a>
+        <a href="/games/">Games</a>
+        <a href="/apps/">Apps</a>
+        <a href="/movies/">Movies</a>
+        <a href="/proxy/">Proxy</a>
     </div>
-  </div>
+
+    <div class="main">
+        <h1 id="welcome-message">Welcome!</h1>
+        <p>Your One-Time Gateway To All Things Unblocked!</p>
+        <p class="random-quote" id="random-quote">Loading quote...</p>
+        <div class="btn-container">
+            <a href="/games/" class="btn"><i class="fas fa-gamepad"></i>Games</a>
+            <a href="/proxy/" class="btn"><i class="fas fa-shield-alt"></i>Proxy</a>
+            <a href="/movies/" class="btn"><i class="fas fa-film"></i>Movies</a>
+            <a href="/apps/" class="btn"><i class="fas fa-mobile-alt"></i>Apps</a>
+        </div>
+
+        <div class="social-icons">
+            <a href="/misc/p/discord.html">
+                <i class="fab fa-discord"></i>
+            </a>
+            <a href="https://github.com/NoobleGames/NoobleGames.github.io" target="_blank">
+                <i class="fab fa-github"></i>
+            </a>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Developed by Blume | Founded by Chip Hill</p>
+        <a href="https://docs.google.com/spreadsheets/d/1PzVU-o46Qtm7VZh4nGF3HwENzbFttmZGHVdMGfbEDt0/edit?usp=sharing">
+            <i class="fa fa-file"></i> Nooble Request Status
+        </a>
+        <a href="https://forms.gle/Swu1aQuEd2sdX1gv5">
+            <i class="fa fa-pencil"></i> Request App Or Game
+        </a>
+        <a href="/partners">
+            <i class="fa fa-handshake"></i> Partners
+        </a>
+        <a href="/credits">
+            <i class="fa fa-star"></i> Credits
+        </a>
+        <a href="/links">
+            <i class="fa fa-link"></i> Our Links
+        </a>
+        <a href="/misc/p/updatelogs.html">
+            <i class="fas fa-sync"></i> Update Logs
+        </a>
+    </div>
+
+    <script>
+        const quotesUrl = "/misc/backend/quotes.json";
+
+        function loadRandomQuote() {
+            fetch(quotesUrl)
+                .then(response => response.json())
+                .then(data => {
+                    const weightedQuotes = [];
+                    data.forEach(quote => {
+                        const chance = Math.floor(Math.random() * 100);
+                        if (chance <= parseInt(quote.chance)) {
+                            weightedQuotes.push(quote.text);
+                        }
+                    });
+
+                    const randomIndex = Math.floor(Math.random() * weightedQuotes.length);
+                    document.getElementById('random-quote').textContent = weightedQuotes[randomIndex];
+                })
+                .catch(error => console.error(error));
+        }
+
+        function updateWelcomeMessage(name) {
+            if (name) {
+                document.getElementById('welcome-message').textContent = `Welcome ${name}!`;
+            } else {
+                document.getElementById('welcome-message').textContent = "Welcome!";
+            }
+        }
+
+        function getName() {
+            return localStorage.getItem('name');
+        }
+
+        function setName(name) {
+            localStorage.setItem('name', name);
+            updateWelcomeMessage(name);
+        }
+
+        function clearName() {
+            localStorage.removeItem('name');
+            updateWelcomeMessage("");
+        }
+
+        window.onload = function() {
+            loadRandomQuote();
+            const storedName = getName();
+            updateWelcomeMessage(storedName);
+        };
+
+        document.getElementById('random-quote').addEventListener('click', loadRandomQuote);
+
+        document.addEventListener('keydown', (event) => {
+            if (event.altKey && event.key === 'y') {
+                const input = prompt('Please enter your name:');
+                if (input) {
+                    setName(input);
+                }
+            } else if (event.altKey && event.key === 'u') {
+                clearName();
+            }
+        });
+    </script>
 </body>
 </html>
