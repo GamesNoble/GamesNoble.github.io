@@ -168,10 +168,59 @@
             transform: scale(1.1);
         }
     </style>
-    <link rel="stylesheet" href="/misc/sidebar.css">
 </head>
 <body>
-    $sidebar_html
+    <div class="sidebar">
+        <h1>Noble</h1>
+        <a href="/index.html">Home</a>
+        <a href="/g/">Games</a>
+        <a href="/movies/">Movies</a>
+        <a href="/a/">Apps</a>
+        <a href="/p/">Proxy</a>
+    </div>
+
+    <div class="main">
+        <h1 id="welcome-message">Noble</h1>
+        <p>Your one-stop gateway to entertainment!</p>
+        <p class="random-quote" id="random-quote">Loading quote...</p>
+        <div class="btn-container">
+            <a href="/g/" class="btn"><i class="fas fa-gamepad"></i>Games</a>
+            <a href="/movies/" class="btn"><i class="fas fa-film"></i>Movies</a>
+            <a href="/a/" class="btn"><i class="fas fa-box"></i>Apps</a>
+            <a href="/p/" class="btn"><i class="fas fa-lock"></i>Proxy</a>
+        </div>
+
+        <div class="social-icons">
+            <a href="/misc/p/discord.html">
+                <i class="fab fa-discord"></i>
+            </a>
+            <a href="https://github.com/NobleGames/NobleGames.github.io" target="_blank">
+                <i class="fab fa-github"></i>
+            </a>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Developed by Blume | Founded by Chip Hill</p>
+        <a href="https://docs.google.com/spreadsheets/d/1PzVU-o46Qtm7VZh4nGF3HwENzbFttmZGHVdMGfbEDt0/edit?usp=sharing">
+            <i class="fa fa-file"></i> Noble Request Status
+        </a>
+        <a href="https://forms.gle/Swu1aQuEd2sdX1gv5">
+            <i class="fa fa-pencil"></i> Request Content
+        </a>
+        <a href="/partners">
+            <i class="fa fa-handshake"></i> Partners
+        </a>
+        <a href="/credits">
+            <i class="fa fa-star"></i> Credits
+        </a>
+        <a href="/links">
+            <i class="fa fa-link"></i> Our Links
+        </a>
+        <a href="/misc/p/updatelogs.html">
+            <i class="fas fa-sync"></i> Update Logs
+        </a>
+    </div>
 
     <script>
         const quotesUrl = "/misc/backend/quotes.json";
