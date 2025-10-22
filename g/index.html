@@ -192,11 +192,11 @@
                 font-size: 3rem;
             }
 
-            .game-grid {
+            .app-grid {
                 gap: 20px;
             }
 
-            .game-card {
+            .app-card {
                 width: 200px;
                 height: 200px;
             }
@@ -231,16 +231,16 @@
                 font-size: 2.5rem;
             }
 
-            .game-grid {
+            .app-grid {
                 gap: 10px;
             }
 
-            .game-card {
+            .app-card {
                 width: 160px;
                 height: 160px;
             }
 
-            .game-title {
+            .app-title {
                 font-size: 0.9rem;
             }
         }
@@ -290,7 +290,7 @@
             <input type="text" id="gameSearch" placeholder="Search Games..." oninput="filterGames()">
         </div>
         
-        <div class="game-grid" id="gamesGrid"></div>
+        <div class="app-grid" id="appGrid"></div>
     </div>
 
     <button class="back-to-top" onclick="scrollToTop()"><i class="fas fa-arrow-up"></i></button>
@@ -313,7 +313,7 @@
             });
         }
 
-        function fetchGames() {
+        function fetchapps() {
             fetch('/misc/gamesformat.txt') 
                 .then(response => response.text())
                 .then(data => {
@@ -352,7 +352,7 @@
                 .catch(error => console.error('Error loading games:', error));
         }
 
-        function filterGames() {
+        function filterapps() {
             const searchTerm = document.getElementById('gameSearch').value.toLowerCase();
             const gameCards = document.querySelectorAll('.game-card');
             gameCards.forEach(card => {
@@ -382,3 +382,4 @@
     </script>
 </body>
 </html>
+
