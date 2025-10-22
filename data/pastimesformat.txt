@@ -1,0 +1,65 @@
+1v1.lol|/assets/images/1v1lol.png|./1v1.lol.html| 
+Basket Random|/assets/images/basketrandom.png|./basketrandom.html|
+Basket Ball Stars|/assets/images/BasketBallStars.png|./basketballstars.html|
+Bitlife|/assets/images/Bitlife.png|./Bitlife.html|   
+Black Smith|/assets/images/BlackSmith.png|./Blacksmith.html|     
+Boxing Physics 2|/assets/images/BoxingPhysics2.png|./boxingphysics2.html|
+Boxing Random|/assets/images/BoxingRandom.png|./boxingrandom.html|  
+Cookie Clicker|/assets/images/CookieClicker.png|./cookieclicker.html| 
+Donkey Kong|/assets/images/DonkeyKong.png|./donkeykong.html|
+Drive Mad|/assets/images/drivemad.png|./drivemad.html|
+Fruit Ninja|/assets/images/FruitNinja.png|./FruitNinja.html|
+Funny Shooter 2|/assets/images/funnyshooter2.png|./Funnyshooter2.html|
+Galaga|/assets/images/galaga.png|./galaga.html|   
+Happy Wheels|/assets/images/happywheels.png|./happywheels.html|
+Highway Racer|/assets/images/highwayracer.png|./highwayracer.html|
+House Of Hazards|/assets/images/houseofhazards.webp|./houseofhazards.html|
+Johnny Revenge|/assets/images/johnnyrevenge.png|./johnnyrevenge.html|
+Just Fall|/assets/images/justfall.png|./justfall.html|
+KARLSON'T|/assets/images/karlsont.png|./karlsont.html|
+Minecraft|/assets/images/minecraft.png|./minecraft.html|
+Nut Simulator|/assets/images/nutsimulator.png|./NUT SIM.html|
+Only Up|/assets/images/onlyup.png|./onlyup.html|
+OvO|/assets/images/ovo.png|./OvO.html|
+PAC-MAN |/assets/images/pacman.png|./pacman.html|
+Paper.io|/assets/images/paperio.png|./paper.io.html|
+Rebels Clash|/assets/images/rebelsclash.png|./rebelsclash.html|
+Retro Highway|/assets/images/retrohighway.png|./retrohighway.html|
+Roblox|/assets/images/roblox.png|./roblox.html|
+Rolly Vortex|/assets/images/rollyvortex.png|./rollyvortex.html|
+Slope|/assets/images/slope.png|./slope.html|
+Slow Roads|/assets/images/slowroads.png|./slowroads.html|
+Smash Karts|/assets/images/smashkarts.png|./smashkarts.html|
+Stickman Hook|/assets/images/stickmanhook.png|./stickmanhook.html|
+TABS|/assets/images/tabs.png|./tabs.html|
+What We Become We Behold|/assets/images/webecomewhatwebehold.png|./whatwebecomewebehold.html|
+Winter Clash 3D|/assets/images/winterclash3d.png|./winterclash3d|
+Yohoho.io|/assets/images/yohohoio.png|./yohoho-io.html|
+CSGO CLICKER|/assets/images/csgoclicker.png|./csgoclicker.html|
+CSGO CLICKER 2|/assets/images/csgoclicker2.png|./csgoclicker2.html|
+Tetris|/assets/images/tetris.png|./tetris.html|
+Among Us|/assets/images/Amongus.png|./amongus.html|
+Snow Rider 3D|/assets/images/snowrider3d.png|./snowrider3d.html|
+Superhot|/assets/images/superhot.png|./superhot.html|
+Cluster Rush|/assets/images/clusterrush.png|./clusterrush.html|
+Eugene'''s Life|/assets/images/eugeneslife.png|./eugeneslife.html
+There Is No Game |/assets/images/thereisnogame.png|./thereisnogame.html
+Jetpack Joyride |/assets/images/jetpackjoyride.png|./jetpackjoyride.html
+Friday Night Funkin|/assets/images/fridaynightfunkin.png|./fridaynightfunkin.html
+Baldi'''s Basics|/assets/images/baldisbasic.png|./baldisbasic.html
+Angry Birds|/assets/images/angrybirds.png|./angrybirds.html
+Murder|/assets/images/murder.png|./murder.html
+Crossy Road|/assets/images/crossyroad.png|./crossyroad.html
+Rocket League|/assets/images/rocketleague.png|./rocketleague.html
+Flappy Bird|/assets/images/flappybird.png|./flappybird.html
+2048|/assets/images/2048.png|./2048.html
+Cut the Rope|/assets/images/cuttherope.png|./cuttherope.html
+1 On 1 Soccer|/assets/images/1o1soccer.png|./1o1soccer.html
+Spacebar Clicker|/assets/images/spacebarclicker.png|./spacebarclicker.html
+Stacktris|/assets/images/stacktris.png|./stacktris.html
+Deal Or No Deal|/assets/images/dealornodeal.png|./dealornodeal.html
+Amazing Rope Police|/assets/images/amazingropepolice.png|./amazingropepolice.html
+Gimme The Airpod|/assets/images/gimmetheairpod.png|./gimmetheairpod.html
+Learn To Fly|/assets/images/learntofly.png|./learntofly.html
+Backrooms|/assets/images/backrooms.png|./backrooms.html
+Half Life|/assets/images/halflife.png|./halflife.html
