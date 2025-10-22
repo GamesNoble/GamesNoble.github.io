@@ -6,14 +6,14 @@
     <title>Noble | Pastimes</title>
     <meta property="og:title" content="Noble - Your One-Stop Gateway to Entertainment!">
     <meta property="og:description" content="Explore a wide range of movies and entertainment all in one place!">
-    <meta property="og:image" content="/misc/favicon/Noble.png">
+    <meta property="og:image" content="/assets/misc/favicon/Noble.png">
     <meta property="og:url" content="">
     <meta property="og:type" content="website">  
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Noble - Your One-Stop Gateway to Entertainment!">
     <meta name="twitter:description" content="Explore a wide range of movies and entertainment all in one place!">
-    <meta name="twitter:image" content="/misc/favicon/Noble.png">
-    <link rel="icon" href="/misc/favicon/Noble.png" type="image/png">
+    <meta name="twitter:image" content="/assets/misc/favicon/Noble.png">
+    <link rel="icon" href="/assets/misc/favicon/Noble.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
@@ -295,7 +295,7 @@
 
     <button class="back-to-top" onclick="scrollToTop()"><i class="fas fa-arrow-up"></i></button>
 
-    <script src="assets/js/imagehandler.js" defer></script>
+    <script src="/assets/js/imagehandler.js" defer></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             fetchPastimes();
@@ -314,11 +314,12 @@
         }
 
         function fetchPastimes() {
-            fetch('assets/data/pastimesformat.txt') 
+            fetch('/data/pastimesformat.txt') 
                 .then(response => response.text())
                 .then(data => {
                     const pastimesGrid = document.getElementById('pastimeGrid');
-                    const pastimes = data.trim().split('\n');
+                    const pastimes = data.trim().split('
+');
                     pastimes.sort((a, b) => a.split('|')[0].toLowerCase().localeCompare(b.split('|')[0].toLowerCase()));
 
                     pastimes.forEach((pastime, index) => {
@@ -329,7 +330,7 @@
 
                         const img = document.createElement('img');
                         img.dataset.src = imageUrl;
-                        img.src = '/misc/images/placeholder.png'; 
+                        img.src = '/assets/images/placeholder.png'; 
                         img.alt = name;
 
                         img.onerror = function() { handleImageError(this); };

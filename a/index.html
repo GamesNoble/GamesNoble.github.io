@@ -6,14 +6,14 @@
     <title>Noble | Apps</title>
     <meta property="og:title" content="Noble - Your One-Stop Gateway to Unblocked Content!" />
     <meta property="og:description" content="Explore a wide range of games, apps, movies, and proxy services all in one place!" />
-    <meta property="og:image" content="https://github.com/NobleGames/NobleGames.github.io/blob/main/Logo/Logo4.png?raw=true" />
+    <meta property="og:image" content="/assets/Logo/Logo4.png" />
     <meta property="og:url" content="" />  
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Noble - Your One-Stop Gateway to Unblocked Content!" />
     <meta name="twitter:description" content="Explore a wide range of games, apps, movies, and proxy services all in one place!" />
-    <meta name="twitter:image" content="https://github.com/NobleGames/NobleGames.github.io/blob/main/Logo/Logo4.png?raw=true" />
-    <link rel="icon" href="https://github.com/NobleGames/NobleGames.github.io/blob/main/Logo/Logo4.png?raw=true" type="image/png">
+    <meta name="twitter:image" content="/assets/Logo/Logo4.png" />
+    <link rel="icon" href="/assets/Logo/Logo4.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
@@ -271,14 +271,31 @@
             font-size: 1.5rem;
         }
     </style>
-    <link rel="stylesheet" href="/misc/sidebar.css">
 </head>
 <body>
-    $sidebar_html
+    <div class="sidebar">
+        <h1>Noble</h1>
+        <a href="/index.html">Home</a>
+        <a href="/g/">Games</a>
+        <a href="/a/">Apps</a>
+        <a href="/movies/">Movies</a>
+        <a href="/p/">Proxy</a>
+    </div>
+
+    <div class="main">
+        <h1>Apps</h1>
+        <p>Explore our collection of Apps!</p>
+
+        <div class="search-bar">
+            <input type="text" id="appSearch" placeholder="Search Apps..." oninput="filterApps()">
+        </div>
+        
+        <div class="app-grid" id="appsGrid"></div>
+    </div>
 
     <button class="back-to-top" onclick="scrollToTop()"><i class="fas fa-arrow-up"></i></button>
 
-    <script src="/misc/backend/imagehandler.js" defer></script>
+    <script src="/assets/js/imagehandler.js" defer></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             fetchApps();
@@ -297,7 +314,7 @@
         }
 
         function fetchApps() {
-            fetch('/misc/appsformat.txt') 
+            fetch('/assets/data/appsformat.txt') 
                 .then(response => response.text())
                 .then(data => {
                     const appsGrid = document.getElementById('appsGrid');
@@ -312,7 +329,7 @@
 
                         const img = document.createElement('img');
                         img.dataset.src = imageUrl;
-                        img.src = '/misc/images/placeholder.png'; 
+                        img.src = '/assets/images/placeholder.png'; 
                         img.alt = name;
 
                         img.onerror = function() { handleImageError(this); };
