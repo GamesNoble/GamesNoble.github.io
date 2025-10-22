@@ -271,27 +271,10 @@
             font-size: 1.5rem;
         }
     </style>
+    <link rel="stylesheet" href="/misc/sidebar.css">
 </head>
 <body>
-    <div class="sidebar">
-        <h1>Noble</h1>
-        <a href="/index.html">Home</a>
-        <a href="/games/">Games</a>
-        <a href="/apps/">Apps</a>
-        <a href="/movies/">Movies</a>
-        <a href="/proxy/">Proxy</a>
-    </div>
-
-    <div class="main">
-        <h1>Games</h1>
-        <p>Explore our collection of unblocked games!</p>
-
-        <div class="search-bar">
-            <input type="text" id="gameSearch" placeholder="Search Games..." oninput="filterGames()">
-        </div>
-        
-        <div class="game-grid" id="gamesGrid"></div>
-    </div>
+    $sidebar_html
 
     <button class="back-to-top" onclick="scrollToTop()"><i class="fas fa-arrow-up"></i></button>
 

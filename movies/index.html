@@ -214,78 +214,10 @@
             cursor: pointer;
         }
     </style>
+    <link rel="stylesheet" href="/misc/sidebar.css">
 </head>
 <body>
-    <div class="sidebar">
-        <h1>Noble</h1>
-        <a href="/index.html">Home</a>
-        <a href="/games/">Games</a>
-        <a href="/apps/">Apps</a>
-        <a href="/movies/">Movies</a>
-        <a href="/proxy/">Proxy</a>
-    </div>
-
-    <div class="main">
-        <h1>Movies</h1>
-        <p>Explore the latest trending movies and TV shows!</p>
-
-        <div class="search-bar">
-            <input type="text" id="search-bar" placeholder="Search Movies..." oninput="searchMovies()">
-        </div>
-
-        <div class="movie-grid" id="movie-container"></div>
-        <div id="error-message" class="error-message" style="display: none;">Error loading movies. Please try again later.</div>
-    </div>
-
-    <div id="movie-modal">
-        <span class="close" onclick="closeMovieModal()">&times;</span>
-        <iframe id="movie-frame" src="" frameborder="0" allowfullscreen></iframe>
-    </div>
-
-    <script>
-        const apiKey = '9ecfd7e66acabc26453faf47ed14b140';
-        const movieContainer = document.getElementById('movie-container');
-        const searchBar = document.getElementById('search-bar');
-        const errorMessage = document.getElementById('error-message');
-
-        function fetchMovies(query = '') {
-            const url = query ?
-                `https://api.themoviedb.org/3/search/multi?api_key=${apiKey}&query=${query}&language=en-US` :
-                `https://api.themoviedb.org/3/trending/all/week?api_key=${apiKey}&language=en-US`;
-
-            fetch(url)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Failed to fetch movies');
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    movieContainer.innerHTML = '';
-                    errorMessage.style.display = 'none';
-
-                    if (data.results.length === 0) {
-                        errorMessage.textContent = 'No movies found. Try a different search.';
-                        errorMessage.style.display = 'block';
-                        return;
-                    }
-
-                    data.results.forEach(item => {
-                        const isMovie = item.media_type === 'movie';
-                        const isTV = item.media_type === 'tv';
-
-                        if (isMovie || isTV) {
-                            const releaseYear = (item.release_date || item.first_air_date || '').slice(0, 4);
-                            const movieElement = document.createElement('div');
-                            movieElement.classList.add('movie-item');
-                            movieElement.innerHTML = `
-                                <img src="https://image.tmdb.org/t/p/w500${item.poster_path}" alt="${item.title || item.name}">
-                                <div class="movie-info">
-                                    <h4>${item.title || item.name}</h4>
-                                    <div class="rating"><i class="fas fa-star"></i> ${item.vote_average.toFixed(1)}/10</div>
-                                    <div class="release-date">${releaseYear}</div>
-                                    <a href="#" onclick="openMovie('${item.id}', '${isMovie ? 'movie' : 'tv'}', '${item.title || item.name}')">Watch Now</a>
-                                </div>
+    $sidebar_html
                             `;
                             movieContainer.appendChild(movieElement);
                         }

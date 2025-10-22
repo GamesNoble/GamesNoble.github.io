@@ -146,26 +146,10 @@
             color: #bbb;
         }
     </style>
+    <link rel="stylesheet" href="/misc/sidebar.css">
 </head>
 <body>
-    <div class="sidebar">
-        <h1>Noble</h1>
-        <a href="/index.html">Home</a>
-        <a href="/games/">Games</a>
-        <a href="/apps/">Apps</a>
-        <a href="/movies/">Movies</a>
-        <a href="/proxy/">Proxy</a>
-    </div>
-    <div class="main">
-        <h1>Noble Proxy</h1>
-        <p>Fast and secure browsing. Enter a URL to get started.</p>
-        <div class="search-bar">
-            <input type="text" id="searchBar" placeholder="Enter Link (e.g., Tiktok.com)">
-            <button onclick="handleSearch()">Go</button>
-        </div>
-        <div class="loading" id="loading">Loading...</div>
-        <div class="error" id="error">URL does not exist or is not correct. Please try again!</div>
-    </div>
+    $sidebar_html
     <script>
         function handleSearch() {
             const link = document.getElementById('searchBar').value.trim();
