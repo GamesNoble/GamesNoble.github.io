@@ -42,11 +42,11 @@ Among Us|/misc/images/Amongus.png|./amongus.html|
 Snow Rider 3D|/misc/images/snowrider3d.png|./snowrider3d.html|
 Superhot|/misc/images/superhot.png|./superhot.html|
 Cluster Rush|/misc/images/clusterrush.png|./clusterrush.html|
-Eugene's Life|/misc/images/eugeneslife.png|./eugeneslife.html
+Eugene'''s Life|/misc/images/eugeneslife.png|./eugeneslife.html
 There Is No Game |/misc/images/thereisnogame.png|./thereisnogame.html
 Jetpack Joyride |/misc/images/jetpackjoyride.png|./jetpackjoyride.html
 Friday Night Funkin|/misc/images/fridaynightfunkin.png|./fridaynightfunkin.html
-Baldi's Basics|/misc/images/baldisbasic.png|./baldisbasic.html
+Baldi'''s Basics|/misc/images/baldisbasic.png|./baldisbasic.html
 Angry Birds|/misc/images/angrybirds.png|./angrybirds.html
 Murder|/misc/images/murder.png|./murder.html
 Crossy Road|/misc/images/crossyroad.png|./crossyroad.html

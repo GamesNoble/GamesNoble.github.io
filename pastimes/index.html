@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noble | Pastimes</title>
+    <meta property="og:title" content="Noble - Your One-Stop Gateway to Entertainment!">
+    <meta property="og:description" content="Explore a wide range of movies and entertainment all in one place!">
+    <meta property="og:image" content="/misc/favicon/Noble.png">
+    <meta property="og:url" content="">
+    <meta property="og:type" content="website">  
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Noble - Your One-Stop Gateway to Entertainment!">
+    <meta name="twitter:description" content="Explore a wide range of movies and entertainment all in one place!">
+    <meta name="twitter:image" content="/misc/favicon/Noble.png">
+    <link rel="icon" href="/misc/favicon/Noble.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: radial-gradient(circle, #333, #000);
+            color: #ffffff;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            font-size: 16px;
+            line-height: 1.5;
+            position: relative;
+        }
+
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 240px;
+            background: #222;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            box-shadow: 2px 0 8px rgba(0, 0, 0, 0.5);
+            z-index: 10;
+        }
+
+        .sidebar h1 {
+            color: #bbb;
+            font-size: 2rem;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .sidebar a {
+            color: #aaa;
+            text-decoration: none;
+            font-size: 1.2rem;
+            padding: 12px 20px;
+            border-radius: 8px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .sidebar a:hover {
+            background-color: #444;
+            color: #ffffff;
+        }
+
+        .main {
+            margin-left: 240px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            height: 100%;
+            padding-top: 50px;
+            text-align: center;
+            overflow-y: auto;
+        }
+
+        .main h1 {
+            font-size: 4rem;
+            color: #ffffff;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .main p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            color: #ccc;
+        }
+
+        .search-bar {
+            margin-bottom: 20px;
+            width: 100%;
+            max-width: 450px;
+            display: flex;
+            justify-content: center;
+            padding: 0 20px;
+        }
+
+        .search-bar input {
+            width: 100%;
+            padding: 12px 20px;
+            border-radius: 30px;
+            border: 1px solid #555;
+            font-size: 1.1rem;
+            background-color: #222;
+            color: #fff;
+            transition: border-color 0.3s ease, background-color 0.3s ease;
+        }
+
+        .search-bar input:focus {
+            outline: none;
+            border-color: #888;
+            background-color: #333;
+        }
+
+        .pastime-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            margin-top: 50px;
+        }
+
+        .pastime-card {
+            width: 220px;
+            height: 220px;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .pastime-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .pastime-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+
+        .pastime-title {
+            font-size: 1.2rem;
+            color: white;
+            text-align: center;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 10px 0;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .pastime-card:hover .pastime-title {
+            opacity: 1;
+        }
+
+        @media (max-width: 1024px) {
+            .sidebar {
+                width: 220px;
+            }
+
+            .main {
+                margin-left: 220px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 200px;
+            }
+
+            .main {
+                margin-left: 200px;
+                padding: 20px;
+            }
+
+            .main h1 {
+                font-size: 3rem;
+            }
+
+            .app-grid {
+                gap: 20px;
+            }
+
+            .app-card {
+                width: 200px;
+                height: 200px;
+            }
+
+            .pastime-title {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+                padding: 15px;
+            }
+
+            .sidebar h1 {
+                font-size: 1.5rem;
+            }
+
+            .sidebar a {
+                font-size: 1rem;
+            }
+
+            .main {
+                margin-left: 0;
+                padding: 10px;
+            }
+
+            .main h1 {
+                font-size: 2.5rem;
+            }
+
+            .app-grid {
+                gap: 10px;
+            }
+
+            .app-card {
+                width: 160px;
+                height: 160px;
+            }
+
+            .app-title {
+                font-size: 0.9rem;
+            }
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #444;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            cursor: pointer;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            pointer-events: none;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        .fa-arrow-up {
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h1>Noble</h1>
+        <a href="/index.html">Home</a>
+        <a href="/pastimes/">Games</a>
+        <a href="/a/">Apps</a>
+        <a href="/movies/">Movies</a>
+        <a href="/p/">Proxy</a>
+    </div>
+
+    <div class="main">
+        <h1>Pastimes</h1>
+        <p>Explore our collection of Pastimes!</p>
+
+        <div class="search-bar">
+            <input type="text" id="pastimeSearch" placeholder="Search Pastimes..." oninput="filterPastimes()">
+        </div>
+        
+        <div class="pastime-grid" id="pastimeGrid"></div>
+    </div>
+
+    <button class="back-to-top" onclick="scrollToTop()"><i class="fas fa-arrow-up"></i></button>
+
+    <script src="/misc/backend/imagehandler.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            fetchPastimes();
+            window.addEventListener('scroll', handleScroll);
+        });
+
+        function lazyLoadImages(entries, observer) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src;
+                    img.classList.add('loaded');
+                    observer.unobserve(img);
+                }
+            });
+        }
+
+        function fetchPastimes() {
+            fetch('/misc/pastimesformat.txt') 
+                .then(response => response.text())
+                .then(data => {
+                    const pastimesGrid = document.getElementById('pastimeGrid');
+                    const pastimes = data.trim().split('\n');
+                    pastimes.sort((a, b) => a.split('|')[0].toLowerCase().localeCompare(b.split('|')[0].toLowerCase()));
+
+                    pastimes.forEach((pastime, index) => {
+                        const [name, imageUrl, link] = pastime.split('|');
+                        const card = document.createElement('div');
+                        card.className = 'pastime-card';
+                        card.onclick = () => window.location.href = link;
+
+                        const img = document.createElement('img');
+                        img.dataset.src = imageUrl;
+                        img.src = '/misc/images/placeholder.png'; 
+                        img.alt = name;
+
+                        img.onerror = function() { handleImageError(this); };
+                        img.onload = () => {
+                            img.classList.add('loaded');
+                        };
+
+                        const heading = document.createElement('div');
+                        heading.className = 'pastime-title';
+                        heading.textContent = name;
+
+                        card.appendChild(img);
+                        card.appendChild(heading);
+                        pastimesGrid.appendChild(card);
+
+                        const observer = new IntersectionObserver(lazyLoadImages);
+                        observer.observe(img);
+                    });
+                })
+                .catch(error => console.error('Error loading pastimes:', error));
+        }
+
+        function filterPastimes() {
+            const searchTerm = document.getElementById('pastimeSearch').value.toLowerCase();
+            const pastimeCards = document.querySelectorAll('.pastime-card');
+            pastimeCards.forEach(card => {
+                if (card.querySelector('img').complete) {
+                    const pastimeName = card.querySelector('.pastime-title').textContent.toLowerCase();
+                    if (pastimeName.includes(searchTerm)) {
+                        card.style.display = '';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                }
+            });
+        }
+
+        function handleScroll() {
+            const backToTopButton = document.querySelector('.back-to-top');
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
+            }
+        }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
